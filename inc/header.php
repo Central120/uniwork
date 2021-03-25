@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 <a class="navbar-brand" href="#">
     <img src="images/logo.png" width="30" height="30" alt="">
   </a>
@@ -35,6 +35,8 @@
       <li class="nav-item">
         <a class="nav-link" href="#">Reviews</a>
       </li>
+      </ul>
+      <ul class="navbar-nav">
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Account
