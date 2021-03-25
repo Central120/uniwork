@@ -15,6 +15,27 @@
   <p>Below are the most recent announcements.</p>
   <br>
   <p>We currently discounts on the following items: </p>
+  <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                <div class="tile">
+                    <div class="wrapper">
+                        <div class="header">Event Title</div>
+
+                        <div class="banner-img">
+                            <img src="http://via.placeholder.com/640x360" alt="Image 1">
+                        </div>
+
+                        <div class="dates">
+                            <div class="start">
+                                <strong>STARTS</strong> 12:30 JAN 2015
+                                <span></span>
+                            </div>
+                            <div class="ends">
+                                <strong>ENDS</strong> 14:30 JAN 2015
+                            </div>
+                        </div>
+</div>
 
 <?php include "inc/footer.php"; ?>
 </body>
