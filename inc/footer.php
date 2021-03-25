@@ -1,4 +1,4 @@
-<footer class='footer bg-dark text-white' style='padding-top: 0px;left:0;bottom:0;width:100%;'>
+<footer class='footer bg-dark text-white' style='padding-top: 0px;left:0;bottom:0;width:100%;position:absolute;'>
 
 <!-- Social Icons -->
 <div class='bg-primary'>
