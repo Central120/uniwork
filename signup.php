@@ -8,12 +8,18 @@
    	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
      <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700' rel='stylesheet' type='text/css' />
 
-		
+		<style>
+        input[type=text], input[type=select]
+        {
+            width:25%;
+        }
+        </style>
   </head>
   <body>
   <?php include "inc/header.php"; ?>
 <div class="container">
     <center>
+    
         <h2 class="mb-42">Kerry's K9 - Account Login</h2>
 
    
@@ -21,12 +27,12 @@
         <form id="SignupForm" action="inc/usersignup.php" method="POST">
             <div class="form-group">
                 <label for="username">Account Username</label>
-                <input type="text" class="form-control" placeholder="Username" name="username" style="width: 145px;">
+                <input type="text" class="form-control" placeholder="Username" name="username">
             </div>
 
             <div class="form-group">
                 <label for="password">Account Password</label>
-                <input type="password" class="form-control" placeholder="Password" name="password" style="width: 145px;">
+                <input type="password" class="form-control" placeholder="Password" name="password">
             </div>
             <div class="row">
 				<div class="col-xs-12 col-sm-6 col-md-6">
