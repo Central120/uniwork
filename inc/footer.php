@@ -1,5 +1,9 @@
 <footer class='footer bg-dark text-white' style='padding-top: 0px;left:0;bottom:0;width:100%;position:absolute;'>
 
+<?php
+    $timestamp = getDate("Y");
+?>
+
 <!-- Social Icons -->
 <div class='bg-primary'>
     <div class='container'>
@@ -67,7 +71,7 @@
 <!-- Copyright-->
 <div class='container-fluid'>
     <p class='text-center m-0 py-1'>
-        © 2021 Copyright <a href='index.php' class='text-white'>Kerry's K9's</a>
+        © <?php echo $timestamp; ?> Copyright <a href='index.php' class='text-white'>Kerry's K9's</a>
     </p>
 </div>
 <!-- Copyright -->
