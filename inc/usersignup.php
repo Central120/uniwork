@@ -1,5 +1,5 @@
 <?php
-include "dbconnect.php";
+include_once "dbconnect.php";
 ini_set('display_errors', 1);
 
 $username = mysqli_real_escape_string($conn, $_POST['username']);
@@ -21,7 +21,7 @@ else
 {
     $sa1 = md5($salt . $seca1);
     $sa2 = md5($salt . $seca2);
-    $inserttodb = mysqli_query($conn, "INSERT INTO `accounts` VALUES (DEFAULT, '$username', '$hashpw', '$secq1','$secq2', '$sa1','$sa2', '0')");
+    $inserttodb = mysqli_query($conn, "INSERT INTO `accounts` VALUES (DEFAULT, '$username', '$hashpw', '$secq1','$secq2', '$sa1','$sa2', '1')");
     if ($inserttodb)
     {
         echo "Account has been created";
