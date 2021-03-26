@@ -6,7 +6,7 @@ $username = mysqli_real_escape_string($con, $_POST['username']);
 $password = mysqli_real_escape_string($con, $_POST['password']);
 $passencrypt = md5($password);
 
-$sql = "SELECT * FROM `team` WHERE `username` = '$username' AND `password` = '$password'";
+$sql = "SELECT * FROM `accounts` WHERE `username` = '$username' AND `password` = '$password'";
 
 $results = mysqli_query($con,$sql);
 $userCount = mysqli_num_rows($results);
