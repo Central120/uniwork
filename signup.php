@@ -20,7 +20,7 @@
 <div class="container">
     <center>
     
-        <h2 class="mb-42">Kerry's K9 - Account Login</h2>
+        <h2 class="mb-42">Kerry's K9 - Account Signup</h2>
 
    
 
@@ -49,7 +49,7 @@
 				<div class="col-xs-12 col-sm-6 col-md-6">
 					<div class="form-group">
 						<label for="SecA1">Security Answer 1</label>
-						<input type="text" name="SecA1" id="SecA1" class="form-control " required placeholder="Security Answer 1" tabindex="6">
+						<input type="text" name="SecA1" style='width:100% !important' id="SecA1" class="form-control " required placeholder="Security Answer 1" tabindex="6">
 					</div>
 				</div>
 			</div>
@@ -69,7 +69,7 @@
 				<div class="col-xs-12 col-sm-6 col-md-6">
 					<div class="form-group">
 						<label for="SecA2">Security Answer 2</label>
-						<input type="text" name="SecA2" id="SecA2" class="form-control " required placeholder="Security Answer 2" tabindex="6">
+						<input type="text" name="SecA2" style='width:100% !important' id="SecA2" class="form-control " required placeholder="Security Answer 2" tabindex="6">
 					</div>
 				</div>
 			</div>
