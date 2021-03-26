@@ -19,12 +19,12 @@
         <form id="LoginForm" action="inc/userlogin.php" method="POST">
             <div class="form-group">
                 <label for="username">Account Username</label>
-                <input type="text" class="form-control" placeholder="Username" name="username" style="width: 85px;">
+                <input type="text" class="form-control" placeholder="Username" name="username" style="width: 145px;">
             </div>
 
             <div class="form-group">
                 <label for="password">Account Password</label>
-                <input type="password" class="form-control" placeholder="Password" name="password" style="width: 85px">
+                <input type="password" class="form-control" placeholder="Password" name="password" style="width: 145px;">
             </div>
         </form>
     </center>
