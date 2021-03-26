@@ -57,7 +57,7 @@
             <h4>Contact</h4>
             <hr class='bg-white mb-2 mt-0 d-inline-block mx-auto w-25'>
             <p><i class='fa fa-home mr-3'></i> #</p>
-            <p><i class='fa fa-envelope mr-3'></i>#</p>
+            <p><i class='fa fa-envelope mr-3'></i>support@kerrysk9.xyz</p>
             <p><i class='fa fa-phone mr-3'></i> #</p>
             <p><i class='fa fa-print mr-3'></i> #</p>
         </div>
