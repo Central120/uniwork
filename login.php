@@ -16,17 +16,7 @@
     <center>
         <h2 class="mb-42">Kerry's K9 - Account Login</h2>
 
-        <?php
-
-$url = 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI'];
-
-if (strpos($url,'login') !== false) {
-    echo 'Im on login.';
-} else {
-    echo 'No login.';
-}
-
-?>
+   
 
         <form id="LoginForm" action="inc/userlogin.php" method="POST">
             <div class="form-group">
