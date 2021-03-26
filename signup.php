@@ -9,7 +9,7 @@
      <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700' rel='stylesheet' type='text/css' />
 
 		<style>
-        input[type=text], input[type=select]
+        input[type=text], input[type=password], select
         {
             width:25%;
         }
