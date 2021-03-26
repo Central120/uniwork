@@ -12,7 +12,7 @@
   </head>
   <body>
   <?php include "inc/header.php"; ?>
-<div class="container">
+<div class="container" style="height: 500px;">
     <center>
         <h2 class="mb-42">Kerry's K9 - Account Login</h2>
     </center>
