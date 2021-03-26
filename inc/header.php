@@ -1,3 +1,8 @@
+<?php
+$url = 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI'];
+?>
+
+
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 <a class="navbar-brand" href="#">
     <img src="images/logo.png" width="64" height="64" alt="">
@@ -8,7 +13,9 @@
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
+      <li class="nav-item <?php if (strpos($url,'index') !== false) {
+    echo 'active';
+} ?>">
         <a class="nav-link" href="#">Home</a>
       </li>
       <li class="nav-item dropdown">
@@ -42,7 +49,7 @@
           Account
         </a>
         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">Login</a>
+          <a class="dropdown-item active" href="#">Login</a>
           <a class="dropdown-item" href="#">Sign up</a>
           <a class="dropdown-item" href="#">Account Settings</a>
           <a class="dropdown-item" href="#">Logout</a>
