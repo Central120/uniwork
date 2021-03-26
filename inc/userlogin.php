@@ -14,7 +14,7 @@ $countfindaccount = mysqli_num_rows($findaccount);
 if ($countfindaccount != 0)
 {
     $rowfindaccount = mysqli_fetch_assoc($findaccount);
-    $usertype = $rowfindaccount['admin_status'];
+    $usertype = $rowfindaccount['admin_id'];
 
     if ($usertype == '0')
     {
