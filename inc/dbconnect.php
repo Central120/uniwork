@@ -5,7 +5,7 @@ $username = "u898383871_root";
 $password = "DatabasePassword123!";
 $dbname = "u898383871_uni";
 
-$con = mysqli_connect("$serverhost", "$username", "$password", "$dbname");
+$conn = mysqli_connect("$serverhost", "$username", "$password", "$dbname");
 
 // Check connection
 if (mysqli_connect_errno()) {
