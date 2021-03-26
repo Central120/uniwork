@@ -12,9 +12,16 @@
   </head>
   <body>
   <?php include "inc/header.php"; ?>
-<div class="container" style="height: 500px;">
+<div class="container">
     <center>
         <h2 class="mb-42">Kerry's K9 - Account Login</h2>
+
+        <form id="LoginForm" action="inc/userlogin.php" method="POST">
+            <div class="form-group">
+                <label for="username">Account Username</label>
+                <input type="text" class="form-control" placeholder="Username" name="username">
+            </div>
+        </form>
     </center>
 </div>
 
