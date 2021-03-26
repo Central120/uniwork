@@ -23,23 +23,35 @@ $url = 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI'];
           Bookings
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">Request a booking</a>
-          <a class="dropdown-item" href="#">View current bookings</a>
+          <a class="dropdown-item <?php if (strpos($url,'requestbooking') !== false) {
+    echo 'active';
+} ?>" href="#">Request a booking</a>
+          <a class="dropdown-item <?php if (strpos($url,'currentbookings') !== false) {
+    echo 'active';
+} ?>" href="#">View current bookings</a>
       </li>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Shop
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">Cart</a>
+          <a class="dropdown-item <?php if (strpos($url,'cart') !== false) {
+    echo 'active';
+} ?>" href="#">Cart</a>
       </li>
-      <li class="nav-item">
+      <li class="nav-item <?php if (strpos($url,'news') !== false) {
+    echo 'active';
+} ?>">
         <a class="nav-link" href="#">News</a>
       </li>
-      <li class="nav-item">
+      <li class="nav-item <?php if (strpos($url,'images') !== false) {
+    echo 'active';
+} ?>">
         <a class="nav-link" href="#">Images</a>
       </li>
-      <li class="nav-item">
+      <li class="nav-item <?php if (strpos($url,'reviews') !== false) {
+    echo 'active';
+} ?>">
         <a class="nav-link" href="#">Reviews</a>
       </li>
       </ul>
@@ -49,11 +61,19 @@ $url = 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI'];
           Account
         </a>
         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item active" href="#">Login</a>
-          <a class="dropdown-item" href="#">Sign up</a>
-          <a class="dropdown-item" href="#">Account Settings</a>
+          <a class="dropdown-item <?php if (strpos($url,'login') !== false) {
+    echo 'active';
+} ?>" href="#">Login</a>
+          <a class="dropdown-item <?php if (strpos($url,'signup') !== false) {
+    echo 'active';
+} ?>" href="#">Sign up</a>
+          <a class="dropdown-item <?php if (strpos($url,'settings') !== false) {
+    echo 'active';
+} ?>" href="#">Account Settings</a>
           <a class="dropdown-item" href="#">Logout</a>
-          <a class="dropdown-item" href="#">Admin</a>
+          <a class="dropdown-item <?php if (strpos($url,'adminlogin') !== false) {
+    echo 'active';
+} ?>" href="#">Admin</a>
       </li>
       
     </ul>
