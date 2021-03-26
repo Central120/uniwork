@@ -28,7 +28,7 @@
             </div>
 
             <div class="form-group">
-                <input type="submit" class="btn btn-primary" placeholder="Login">
+                <button type="submit" class="btn btn-primary">Login</button>
             </div>
         </form>
     </center>
