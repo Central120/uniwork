@@ -1,5 +1,5 @@
 <?php
-include "inc/dbconnect.php";
+include "dbconnect.php";
 ini_set('display_errors', 1);
 
 $username = mysqli_real_escape_string($conn, $_POST['username']);
