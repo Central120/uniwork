@@ -1,7 +1,7 @@
 <footer class='footer bg-dark text-white' style='padding-top: 0px;left:0;bottom:0;width:100%;position:absolute;'>
 
 <?php
-    $timestamp = date("Y");
+    $getYear = date("Y");
 ?>
 
 <!-- Social Icons -->
@@ -71,7 +71,7 @@
 <!-- Copyright-->
 <div class='container-fluid'>
     <p class='text-center m-0 py-1'>
-        © <?php echo $timestamp; ?> Copyright <a href='index.php' class='text-white'>Kerry's K9's</a>
+        © <?php echo $getYear; ?> Copyright <a href='index.php' class='text-white'>Kerry's K9's</a>
     </p>
 </div>
 <!-- Copyright -->
