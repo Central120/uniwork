@@ -72,7 +72,7 @@
 <!-- Copyright-->
 <div class='container-fluid'>
     <p class='text-center m-0 py-1'>
-    <a href='index.php' class='text-white'>Kerry's K9's</a> © <?php echo $startYear, " - ", $getYear; ?> Copyright 
+    © <?php echo $startYear; ?> <a href='index.php' class='text-white'>Kerry's K9's</a>
     </p>
 </div>
 <!-- Copyright -->
