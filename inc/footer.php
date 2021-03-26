@@ -1,6 +1,7 @@
 <footer class='footer bg-dark text-white' style='padding-top: 0px;left:0;bottom:0;width:100%;position:absolute;'>
 
 <?php
+    $startYear = "2019";
     $getYear = date("Y");
 ?>
 
@@ -71,7 +72,7 @@
 <!-- Copyright-->
 <div class='container-fluid'>
     <p class='text-center m-0 py-1'>
-        © <?php echo $getYear; ?> Copyright <a href='index.php' class='text-white'>Kerry's K9's</a>
+        © <?php echo $startYear, $getYear; ?> Copyright <a href='index.php' class='text-white'>Kerry's K9's</a>
     </p>
 </div>
 <!-- Copyright -->
