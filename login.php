@@ -26,6 +26,10 @@
                 <label for="password">Account Password</label>
                 <input type="password" class="form-control" placeholder="Password" name="password" style="width: 145px;">
             </div>
+
+            <div class="form-group">
+                <input type="submit" placeholder="Login">
+            </div>
         </form>
     </center>
 </div>
