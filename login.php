@@ -12,7 +12,7 @@
   </head>
   <body>
   <?php include "inc/header.php"; ?>
-  <div class="wrapper fadeInDown">
+
 <div class="container">
     <center>
         <h2 class="mb-42">Kerry's K9 - Account Login</h2>
@@ -36,7 +36,7 @@
         </form>
     </center>
 </div>
-</div>
+
 
 
 <?php include "inc/footer.php"; ?>
