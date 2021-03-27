@@ -7,21 +7,11 @@
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
    	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
      <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700' rel='stylesheet' type='text/css' />
-
-     <style>
-.loginCenter {
-  position: absolute;
-  top: 35%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-</style>
-
   </head>
   <body>
   <?php include "inc/header.php"; ?>
-
-<div class="loginCenter">
+    <div class="container-fluid">
+  <div class="d-flex justify-content-center">
     <center>
         <h2 class="mb-42">Kerry's K9's - Account Login</h2>
 
@@ -43,6 +33,7 @@
             </div>
         </form>
     </center>
+</div>
 </div>
 
 <?php include "inc/footer.php"; ?>

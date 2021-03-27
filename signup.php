@@ -13,19 +13,12 @@
         {
             width:25%;
         }
-        
-.signupCenter {
-  position: absolute;
-  top: 45%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
         </style>
   </head>
   <body>
   <?php include "inc/header.php"; ?>
-<div class="signupCenter">
+  <div class="container-fluid">
+  <div class="d-flex justify-content-center">
     <center>
     
         <h2 class="mb-42">Kerry's K9's - Account Signup</h2>
@@ -88,6 +81,7 @@
         </form>
     </center>
 </div>
+    </div>
 
 
 

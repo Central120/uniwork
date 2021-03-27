@@ -25,7 +25,7 @@
 <body>
     <?php include "inc/header.php"; ?>
     <div class="container-fluid">
-    <div class="formCenter">
+    <div class="d-flex justify-content-center">
         <center>
     <h2 class="mb-42">Request a booking</h2>
     
