@@ -31,33 +31,33 @@
 <form>
   <div class="form-row">
     <div class="form-group col-md-6">
-      <label for="inputEmail4">Email</label>
-      <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+      <label for="inputEmail4">Timeslot Preference One</label>
+      <input type="email" class="form-control" id="inputEmail4" placeholder="Enter first timeslot preference">
     </div>
     <div class="form-group col-md-6">
-      <label for="inputPassword4">Password</label>
-      <input type="password" class="form-control" id="inputPassword4" placeholder="Password">
+      <label for="inputPassword4">Timeslot Preference Two</label>
+      <input type="password" class="form-control" id="inputPassword4" placeholder="Enter second timeslot preference">
     </div>
   </div>
   <div class="form-group">
-    <label for="inputAddress">Address</label>
-    <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+    <label for="inputAddress">Pet Name</label>
+    <input type="text" class="form-control" id="inputAddress" placeholder="Enter Pet Name">
   </div>
   <div class="form-group row">
-    <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
+    <label for="inputEmail3" class="col-sm-2 col-form-label">Emergency Contact 1</label>
     <div class="col-sm-10">
-      <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+      <input type="email" class="form-control" id="inputEmail3" placeholder="Enter an emergency contact">
     </div>
   </div>
   <div class="form-group row">
-    <label for="inputPassword3" class="col-sm-2 col-form-label">Password</label>
+    <label for="inputPassword3" class="col-sm-2 col-form-label">Emergency Contact 2</label>
     <div class="col-sm-10">
-      <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+      <input type="password" class="form-control" id="inputPassword3" placeholder="Enter a 2nd emergency contact">
     </div>
   </div>
   <div class="form-group">
-    <label for="inputAddress">Address</label>
-    <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+    <label for="inputAddress">Additional Information</label>
+    <input type="text" class="form-control" id="inputAddress" placeholder="Pet behaviours, lead/no lead etc...">
   </div>
   <div class="form-group row">
     <div class="col-sm-10">
