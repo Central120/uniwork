@@ -10,7 +10,7 @@
 
      <style>
 .loginCenter {
-  position: fixed;
+  position: absolute;
   top: 35%;
   left: 50%;
   transform: translate(-50%, -50%);

@@ -15,8 +15,8 @@
         }
         
 .signupCenter {
-  position: fixed;
-  top: 35%;
+  position: absolute;
+  top: 45%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
