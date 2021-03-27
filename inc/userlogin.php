@@ -19,7 +19,9 @@ if ($countfindaccount != 0)
     if ($usertype == '0')
     {
         $_SESSION['suspended'] = $username;
-        echo "Unfortunately, your account has been suspended. Please email customer support quoting: 'My account has been suspended'";
+        echo "<div class='alert alert-danger alert-dismissable fade show' role='alert'><strong>An error occured.</strong> Unfortunately, your account has been suspended. Please email customer support quoting: 'My account has been suspended' <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+        <span aria-hidden='true'>&times;</span>
+      </button></div>";
     }
     else if ($usertype == '1')
     {
@@ -35,12 +37,16 @@ if ($countfindaccount != 0)
     }
     else
     {
-        echo "An error occured. Please email customer support quoting: 'My user type is wrong'";
+        echo "<div class='alert alert-danger alert-dismissable fade show' role='alert'><strong>An error occured.</strong> Please email customer support quoting: 'My user type is wrong' <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+        <span aria-hidden='true'>&times;</span>
+      </button></div>";
     }
 }
 else
 {
-    echo "Your details were incorrect. Please try again.";
+    echo "<div class='alert alert-danger alert-dismissable fade show' role='alert'><strong>An error occured.</strong> The details you provided were incorrect. <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+        <span aria-hidden='true'>&times;</span>
+      </button></div>";
 }
 
 ?>
