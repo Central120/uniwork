@@ -25,11 +25,13 @@ if ($countfindaccount != 0)
     {
         $_SESSION['user'] = $username; 
         echo "Welcome to Kerrys K9s $username!";
+        echo "<script>window.location.replace('../index');</script>";
     }
     else if ($usertype == '2')
     {
         $_SESSION['admin'] = $username; 
         echo "Welcome $username! - You are an admin";
+        echo "<script>window.location.replace('../index');</script>";
     }
     else
     {

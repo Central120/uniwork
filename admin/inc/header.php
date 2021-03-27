@@ -70,19 +70,39 @@ $url = 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI'];
           Account
         </a>
         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+        <?php 
+          if (isset($_SESSION['user']) || isset($_SESSION['admin']))
+          {
+            ?>
+            
+            <a class="dropdown-item <?php if (strpos($url,'settings') !== false) {
+              echo 'active';
+          } ?>" href="#">Account Settings</a>
+                    <a class="dropdown-item" href="inc/logout">Logout</a>
+<?php 
+          }
+          else
+          {
+            ?>
           <a class="dropdown-item <?php if (strpos($url,'login') !== false) {
     echo 'active';
-} ?>" href="../login">Login</a>
+} ?>" href="login">Login</a>
           <a class="dropdown-item <?php if (strpos($url,'signup') !== false) {
     echo 'active';
-} ?>" href="../signup">Sign up</a>
-          <a class="dropdown-item <?php if (strpos($url,'settings') !== false) {
-    echo 'active';
-} ?>" href="#">Account Settings</a>
-          <a class="dropdown-item" href="#">Logout</a>
+} ?>" href="#">Sign up</a>
+          <?php 
+          }
+
+          if (isset($_SESSION['admin']))
+          {
+            ?>
           <a class="dropdown-item <?php if (strpos($url,'adminlogin') !== false) {
     echo 'active';
 } ?>" href="#">Admin</a>
+          <?php 
+          }
+          ?>
+
       </li>
       
     </ul>
