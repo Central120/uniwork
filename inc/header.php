@@ -78,7 +78,7 @@ $url = 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI'];
             <a class="dropdown-item <?php if (strpos($url,'settings') !== false) {
               echo 'active';
           } ?>" href="#">Account Settings</a>
-                    <a class="dropdown-item" href="#">Logout</a>
+                    <a class="dropdown-item" href="inc/logout">Logout</a>
 <?php 
           }
           else
@@ -102,7 +102,7 @@ $url = 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI'];
           <?php 
           }
           ?>
-          
+
       </li>
       
     </ul>
