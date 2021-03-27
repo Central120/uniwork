@@ -11,10 +11,20 @@
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
    	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
      <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700' rel='stylesheet' type='text/css' />
+     <style>
+         .formCenter 
+         {
+            position: absolute;
+            top: 35%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+         }
+     </style>
 </head>
 <body>
     <?php include "inc/header.php"; ?>
     <h2 class="mb-42">Request a booking</h2>
+    <div class="formCenter">
 <form>
   <div class="form-row">
     <div class="form-group col-md-6">
@@ -51,6 +61,7 @@
       <button type="submit" class="btn btn-success">Request Booking</button>
     </div>
   </div>
+</div>
 </form>
 
     <?php include "inc/footer.php"; ?>
