@@ -13,7 +13,7 @@
   <body>
   <?php include "inc/header.php"; ?>
 
-<div class="container">
+<div class="loginCenter">
     <center>
         <h2 class="mb-42">Kerry's K9 - Account Login</h2>
 
