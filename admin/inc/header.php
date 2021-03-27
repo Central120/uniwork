@@ -89,7 +89,7 @@ $url = 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI'];
 } ?>" href="login">Login</a>
           <a class="dropdown-item <?php if (strpos($url,'signup') !== false) {
     echo 'active';
-} ?>" href="#">Sign up</a>
+} ?>" href="../signup">Sign up</a>
           <?php 
           }
 
