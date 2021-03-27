@@ -27,10 +27,10 @@ $url = 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI'];
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <a class="dropdown-item <?php if (strpos($url,'requestbooking') !== false) {
     echo 'active';
-} ?>" href="#">Request a booking</a>
+} ?>" href="new-booking">Request a booking</a>
           <a class="dropdown-item <?php if (strpos($url,'currentbookings') !== false) {
     echo 'active';
-} ?>" href="#">View current bookings</a>
+} ?>" href="current-bookings">View current bookings</a>
       </li>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
