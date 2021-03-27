@@ -18,13 +18,16 @@
             top: 35%;
             left: 50%;
             transform: translate(-50%, -50%);
+            width:50%;
          }
      </style>
 </head>
 <body>
     <?php include "inc/header.php"; ?>
-    <h2 class="mb-42">Request a booking</h2>
     <div class="formCenter">
+        <center>
+    <h2 class="mb-42">Request a booking</h2>
+    
 <form>
   <div class="form-row">
     <div class="form-group col-md-6">
@@ -61,6 +64,7 @@
       <button type="submit" class="btn btn-success">Request Booking</button>
     </div>
   </div>
+        </center>
 </div>
 </form>
 
