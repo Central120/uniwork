@@ -3,8 +3,7 @@
   position: fixed;
   top: 50%;
   left: 50%;
-  margin-top: -50px;
-  margin-left: -100px;
+  transform: translate(-50%, -50%);
 }
 </style>
 
