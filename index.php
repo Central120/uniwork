@@ -12,12 +12,13 @@
   </head>
   <body>
   <?php include "inc/header.php"; ?>
+  <div class="container-fluid">
   <h2 class="mb-4">Welcome to Kerry's K9's!</h2>
   <p>Below are the most recent announcements.</p>
   <br>
   <p>We currently discounts on the following items: </p>
 
-
+</div>
 
 <?php include "inc/footer.php"; ?>
 </body>
