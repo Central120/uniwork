@@ -28,7 +28,7 @@
 <div class="signupCenter">
     <center>
     
-        <h2 class="mb-42">Kerry's K9 - Account Signup</h2>
+        <h2 class="mb-42">Kerry's K9's - Account Signup</h2>
 
         <div id='server-results'></div>
 
