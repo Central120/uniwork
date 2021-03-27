@@ -15,7 +15,9 @@ $checkforuser = mysqli_query($conn, "SELECT * FROM `accounts` WHERE `username` =
 $countcheckuser = mysqli_num_rows($checkforuser);
 if ($countcheckuser != 0)
 {
-    echo "The username you have selected already exists. Please try again later.";
+    echo "<div class='alert alert-danger alert-dismissable fade show' role='alert'><strong>An error occured.</strong> The username you have selected already exists. <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+    <span aria-hidden='true'>&times;</span>
+  </button></div>";
 }
 else
 {
@@ -24,11 +26,14 @@ else
     $inserttodb = mysqli_query($conn, "INSERT INTO `accounts` VALUES (DEFAULT, '$username', '$hashpw', '$secq1','$secq2', '$sa1','$sa2', '1')");
     if ($inserttodb)
     {
-        echo "Account has been created";
+        echo "<script>window.location.replace('../login');</script>";
     }
     else
     {
-        echo "An error occured when trying to create your account.";
+        echo "<div class='alert alert-danger alert-dismissable fade show' role='alert'><strong>An error occured.</strong> Your account could not be created. <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+        <span aria-hidden='true'>&times;</span>
+      </button></div>";
+        
     }
 }
 
