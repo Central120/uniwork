@@ -14,7 +14,7 @@
   <?php include "inc/header.php"; ?>
   <div class="container">
     <div class="row">
-    	<div class="col-md-4 col-md-offset-4">
+    	<div class="col-md-4 col-md-offset-2">
 <div class="container">
     <center>
         <h2 class="mb-42">Kerry's K9 - Account Login</h2>
