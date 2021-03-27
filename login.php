@@ -12,9 +12,7 @@
   </head>
   <body>
   <?php include "inc/header.php"; ?>
-  <div class="limiter">
-		<div class="container-login100">
-			<div class="wrap-login100 p-t-50 p-b-90">
+
 <div class="container">
     <center>
         <h2 class="mb-42">Kerry's K9 - Account Login</h2>
@@ -38,9 +36,7 @@
         </form>
     </center>
 </div>
-</div>
-</div>
-</div>
+
 <?php include "inc/footer.php"; ?>
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
