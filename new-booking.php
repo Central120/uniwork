@@ -24,6 +24,7 @@
 </head>
 <body>
     <?php include "inc/header.php"; ?>
+    <div class="container-fluid">
     <div class="formCenter">
         <center>
     <h2 class="mb-42">Request a booking</h2>
@@ -62,6 +63,7 @@
   </div>
         </center>
 </div>
+        </div>
 </form>
 
     <?php include "inc/footer.php"; ?>
