@@ -13,11 +13,19 @@
         {
             width:25%;
         }
+        
+.signupCenter {
+  position: fixed;
+  top: 35%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
         </style>
   </head>
   <body>
   <?php include "inc/header.php"; ?>
-<div class="loginCenter">
+<div class="signupCenter">
     <center>
     
         <h2 class="mb-42">Kerry's K9 - Account Signup</h2>
