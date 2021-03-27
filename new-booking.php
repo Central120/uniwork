@@ -43,17 +43,13 @@
     <label for="inputAddress">Pet Name</label>
     <input type="text" class="form-control" id="inputAddress" placeholder="Enter Pet Name">
   </div>
-  <div class="form-group row">
-    <label for="inputEmail3" class="col-sm-2 col-form-label">Emergency Contact 1</label>
-    <div class="col-sm-10">
+  <div class="form-group">
+    <label for="inputEmail3">Emergency Contact 1</label>
       <input type="email" class="form-control" id="inputEmail3" placeholder="Enter an emergency contact">
-    </div>
   </div>
-  <div class="form-group row">
-    <label for="inputPassword3" class="col-sm-2 col-form-label">Emergency Contact 2</label>
-    <div class="col-sm-10">
+  <div class="form-group">
+    <label for="inputPassword3">Emergency Contact 2</label>
       <input type="password" class="form-control" id="inputPassword3" placeholder="Enter a 2nd emergency contact">
-    </div>
   </div>
   <div class="form-group">
     <label for="inputAddress">Additional Information</label>
