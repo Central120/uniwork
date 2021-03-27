@@ -57,6 +57,21 @@ else
     color: #FFF;
   }  
 
+  .card-counter.photos{
+    background-color: #faa125;
+    color: #FFF;
+  }
+
+  .card-counter.reviews{
+    background-color: #b10fbd;
+    color: #FFF;
+  }
+
+  .card-counter.news{
+    background-color: #2bedcd;
+    color: #FFF;
+  }
+
   .card-counter i{
     font-size: 5em;
     opacity: 0.2;
@@ -135,7 +150,7 @@ else
 
     <div class='col-md-3'>
     <a href='users' style='color: white' title='Click here to view Photo Options'>
-      <div class='card-counter info'>
+      <div class='card-counter photos'>
         <i class='fa fa-picture-o'></i>
         <span class='count-numbers'>Amount</span>
         <span class='count-name'>Photos</span>
@@ -146,7 +161,7 @@ else
 
     <div class='col-md-3'>
     <a href='users' style='color: white' title='Click here to view Reviews'>
-      <div class='card-counter info'>
+      <div class='card-counter reviews'>
         <i class='fa fa-pencil-square-o'></i>
         <span class='count-numbers'>Amount</span>
         <span class='count-name'>Reviews</span>
@@ -157,7 +172,7 @@ else
 
     <div class='col-md-3'>
     <a href='users' style='color: white' title='Click here to view News and Announcements'>
-      <div class='card-counter info'>
+      <div class='card-counter news'>
         <i class='fa fa-newspaper-o'></i>
         <span class='count-numbers'>Amount</span>
         <span class='count-name'>News Posts</span>
@@ -172,6 +187,7 @@ else
     	?>
       
     </div>
+    <?php include "inc/footer.php"; ?>
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
