@@ -1,4 +1,4 @@
-<footer class='footer bg-dark text-white' style='bottom:0;padding-top: 0px;left:0;margin-top:50%;width:100%;position:relative;'>
+<footer class='footer bg-dark text-white' style='bottom:0;padding-top: 0px;left:0;margin-top:50%;width:100%;position:fixed;'>
 
 <?php
     $startYear = "2019";
