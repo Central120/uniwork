@@ -37,6 +37,7 @@ else
     <div class="container-fluid">
     <div class="d-flex justify-content-center">
         <center>
+        <div id="server-results"></div>
     <h2 class="mb-42">Update your schedule</h2>
     
   <div class="form-row">
