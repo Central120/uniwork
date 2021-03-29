@@ -18,8 +18,8 @@ if ($countcheckforschedule != 0)
 {
     $start_date = mysqli_real_escape_string($conn, $_POST['start']);
     $end_date = mysqli_real_escape_string($conn, $_POST['end']);
-    $start_time = mysqli_real_escape_string($conn, "start_time");
-    $end_time = mysqli_real_escape_string($conn, "end_time");
+    $start_time = mysqli_real_escape_string($conn, $_POST['start_time']);
+    $end_time = mysqli_real_escape_string($conn, $_POST['end_time']);
 
     if ($start_date == $end_date)
     {
@@ -53,8 +53,8 @@ else
 {
     $start_date = mysqli_real_escape_string($conn, $_POST['start']);
     $end_date = mysqli_real_escape_string($conn, $_POST['end']);
-    $start_time = mysqli_real_escape_string($conn, "start_time");
-    $end_time = mysqli_real_escape_string($conn, "end_time");
+    $start_time = mysqli_real_escape_string($conn, $_POST['start_time']);
+    $end_time = mysqli_real_escape_string($conn, $_POST['end_time']);
     if ($start_date == $end_date)
     {
         echo "<div class='alert alert-danger alert-dismissable fade show' role='alert'><strong>An error occured.</strong> Please ensure the values you have entered are not the same. <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
