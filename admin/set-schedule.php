@@ -68,19 +68,19 @@ else
     <div class="form-group col-md-6">
       <label for="inputPassword4">Start Time</label>
       <select class="form-control" name="start">
-      <?php for($i=0;$i<=24;$i++)
+      <?php for($s=0;$s<=24;$s++)
     {
-        if ($i >= '13')
+        if ($s >= '13')
         {
-            $i = $i - 12;
-            $m = "pm";
+            $s = $s - 12;
+            $am = "pm";
         }
         else
         {
-            $i = $i;
-            $m = "am";
+            $s = $s;
+            $am = "am";
         }
-        echo "<option value='$i $m'>$i $m</option>";
+        echo "<option value='$s $am'>$s $am</option>";
     }
     ?>
     </select>
