@@ -15,7 +15,7 @@ else
 <!doctype html>
 <html lang="en">
   <head>
-  	<title>Kerry's K9's - New Booking</title>
+  	<title>Kerry's K9's - Set Schedule</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
@@ -84,17 +84,29 @@ else
     ?>
     </select>
     </div>
-  </div>
-  <div class="form-group">
+    <div class="form-group col-md-6">
     <label for="inputAddress">End Time</label>
     <select class="form-control" name='end'>
-    
+    <?php
+       for($s=0;$s<24;$s++)
+        {
+            if ($s < '10')
+            {
+                $t = "0$s";
+            }
+            else
+            {
+                $t = "$s";
+            }
+        echo "<option value='$s'>$t:00 </option>";
+        }
+    ?>
     </select>
   </div>
-  
+  </div>
   <div class="form-group row">
     <div class="col-sm-10">
-      <button type="submit" class="btn btn-success">Request Booking</button>
+      <button type="submit" class="btn btn-success">Set Schedule</button>
     </div>
   </div>
         </center>
