@@ -39,9 +39,9 @@ else
         <center>
     <h2 class="mb-42">Update your schedule</h2>
     
-<form>
   <div class="form-row">
     <div class="form-group col-md-6">
+    <form action='schedule-update.php' method='post' role='form' id='Form1'>
       <label for="inputEmail4">Start Day</label>
       <select class="form-control" name='start'>
          <option value='monday'>Monday</option>
@@ -55,7 +55,7 @@ else
     </div>
     <div class="form-group col-md-6">
       <label for="inputEmail4">End Day</label>
-      <select class="form-control" name='start'>
+      <select class="form-control" name='end'>
          <option value='monday'>Monday</option>
          <option value='tuesday'>Tuesday</option>
          <option value='wednesday'>Wednesday</option>
@@ -67,7 +67,7 @@ else
     </div>
     <div class="form-group col-md-6">
       <label for="inputPassword4">Start Time</label>
-      <select class="form-control" name="start">
+      <select class="form-control" name="start_time">
       <?php
        for($s=0;$s<24;$s++)
         {
@@ -86,7 +86,7 @@ else
     </div>
     <div class="form-group col-md-6">
     <label for="inputAddress">End Time</label>
-    <select class="form-control" name='end'>
+    <select class="form-control" name='end_time'>
     <?php
        for($s=0;$s<24;$s++)
         {
@@ -118,7 +118,7 @@ else
 </body>
 <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
   <script type='text/javascript'>
-    $('#LoginForm').submit(function(event) {
+    $('#Form1').submit(function(event) {
       event.preventDefault(); //prevent default action
       var post_url = $(this).attr('action'); //get form action url
       var form_data = $(this).serialize(); //Encode form elements for submission
