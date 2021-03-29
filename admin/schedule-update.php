@@ -21,17 +21,26 @@ if ($countcheckforschedule != 0)
     $start_time = mysqli_real_escape_string($conn, "start_time");
     $end_time = mysqli_real_escape_string($conn, "end_time");
 
-    $sqlupdate = mysqli_query($conn, "UPDATE `staff_availability` SET `start_time` = '$start_time',`end_time` = '$end_time', `first_date` = '$start_date', `last_date` = '$end_date' WHERE `staff_name` = '$session_usern'");
-    if ($sqlupdate)
+    if ($start_date == $end_date || $start_time == $end_time)
     {
-        echo "<script>window.location.replace('index')</script>";
+        echo "<div class='alert alert-danger alert-dismissable fade show' role='alert'><strong>An error occured.</strong> Please ensure the values you have entered are not the same. <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+        <span aria-hidden='true'>&times;</span>
+      </button></div>";
     }
     else
     {
-        echo "<div class='alert alert-danger alert-dismissable fade show' role='alert'><strong>An error occured.</strong> Your schedule has not been updated. <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
-        <span aria-hidden='true'>&times;</span>
-      </button></div>";
-        
+        $sqlupdate = mysqli_query($conn, "UPDATE `staff_availability` SET `start_time` = '$start_time',`end_time` = '$end_time', `first_date` = '$start_date', `last_date` = '$end_date' WHERE `staff_name` = '$session_usern'");
+        if ($sqlupdate)
+        {
+            echo "<script>window.location.replace('index')</script>";
+        }
+        else
+        {
+            echo "<div class='alert alert-danger alert-dismissable fade show' role='alert'><strong>An error occured.</strong> Your schedule has not been updated. <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+            <span aria-hidden='true'>&times;</span>
+        </button></div>";
+            
+        }
     }
 }
 else
@@ -40,18 +49,26 @@ else
     $end_date = mysqli_real_escape_string($conn, $_POST['end']);
     $start_time = mysqli_real_escape_string($conn, "start_time");
     $end_time = mysqli_real_escape_string($conn, "end_time");
-
-    $sqlupdate = mysqli_query($conn, "INSERT INTO `staff_availability` VALUES (DEFAULT,'$session_usern','$start_time','$end_time','$start_date','$end_date'");
-    if ($sqlupdate)
+    if ($start_date == $end_date || $start_time == $end_time)
     {
-        echo "<script>window.location.replace('index')</script>";
+        echo "<div class='alert alert-danger alert-dismissable fade show' role='alert'><strong>An error occured.</strong> Please ensure the values you have entered are not the same. <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+        <span aria-hidden='true'>&times;</span>
+      </button></div>";
     }
     else
     {
-        echo "<div class='alert alert-danger alert-dismissable fade show' role='alert'><strong>An error occured.</strong> Your schedule has not been updated. <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
-        <span aria-hidden='true'>&times;</span>
-      </button></div>";
-        
+        $sqlupdate = mysqli_query($conn, "INSERT INTO `staff_availability` VALUES (DEFAULT,'$session_usern','$start_time','$end_time','$start_date','$end_date'");
+        if ($sqlupdate)
+        {
+            echo "<script>window.location.replace('index')</script>";
+        }
+        else
+        {
+            echo "<div class='alert alert-danger alert-dismissable fade show' role='alert'><strong>An error occured.</strong> Your schedule has not been updated. <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+            <span aria-hidden='true'>&times;</span>
+        </button></div>";
+            
+        }
     }
 }
 
