@@ -68,8 +68,9 @@ else
     <div class="form-group col-md-6">
       <label for="inputPassword4">Start Time</label>
       <select class="form-control" name="start">
-      <?php for($s=0;$s<=24;$s++)
-    {
+      <?php
+       for($s=0;$s<=24;$s++)
+        {
         if ($s >= '13')
         {
             $s = $s - 12;
@@ -81,7 +82,7 @@ else
             $am = "am";
         }
         echo "<option value='$s $am'>$s $am</option>";
-    }
+        }
     ?>
     </select>
     </div>
@@ -89,21 +90,7 @@ else
   <div class="form-group">
     <label for="inputAddress">End Time</label>
     <select class="form-control" name='end'>
-    <?php for($i=0;$i<=24;$i++)
-    {
-        if ($i >= '13')
-        {
-            $i = $i - 12;
-            $m = "pm";
-        }
-        else
-        {
-            $i = $i;
-            $m = "am";
-        }
-        echo "<option value='$i $m'>$i $m</option>";
-    }
-    ?>
+    
     </select>
   </div>
   
