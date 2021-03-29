@@ -80,7 +80,7 @@ else
             {
                 $t = "$s";
             }
-        echo "<option value='$s'>$t:00 </option>";
+        echo "<option value='$t:00:00'>$t:00 </option>";
         }
     ?>
     </select>
@@ -99,7 +99,7 @@ else
             {
                 $t = "$s";
             }
-        echo "<option value='$s'>$t:00 </option>";
+        echo "<option value='$t:00:00'>$t:00 </option>";
         }
     ?>
     </select>
