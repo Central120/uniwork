@@ -69,7 +69,7 @@ else
       <label for="inputPassword4">Start Time</label>
       <select class="form-control" name="start">
       <?php
-       for($s=0;$s<=24;$s++)
+       for($s=0;$s<24;$s++)
         {
         if ($s >= '13')
         {
