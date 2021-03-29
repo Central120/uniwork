@@ -71,16 +71,7 @@ else
       <?php
        for($s=0;$s<24;$s++)
         {
-        if ($s >= '13')
-        {
-            $s = $s - 12;
-            $am = "pm";
-        }
-        else
-        {
-            $s = $s;
-            $am = "am";
-        }
+        
         echo "<option value='$s $am'>$s $am</option>";
         }
     ?>
