@@ -71,8 +71,11 @@ else
       <?php
        for($s=0;$s<24;$s++)
         {
-            
-        echo "<option value='$s'>$s:00 </option>";
+            if ($s < '10')
+            {
+                $t = "0";
+            }
+        echo "<option value='$s'>$t$s:00 </option>";
         }
     ?>
     </select>
