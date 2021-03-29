@@ -57,7 +57,7 @@ else
     }
     else
     {
-        $sqlupdate = mysqli_query($conn, "INSERT INTO `staff_availability` VALUES (DEFAULT,'$session_usern','$start_time','$end_time','$start_date','$end_date'");
+        $sqlupdate = mysqli_query($conn, "INSERT INTO `staff_availability` VALUES (DEFAULT,'$session_usern','$start_time','$end_time','$start_date','$end_date')");
         if ($sqlupdate)
         {
             echo "<script>window.location.replace('index')</script>";
