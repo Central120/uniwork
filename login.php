@@ -13,7 +13,7 @@
     <div class="container-fluid">
   <div class="d-flex justify-content-center">
     <center>
-        <h2 class="mb-42">Kerry's K9's - Login to your Account</h2>
+        <h2 class="mb-42">Kerry's K9's - Account Login</h2>
 
    
         <div id='server-results'></div>
