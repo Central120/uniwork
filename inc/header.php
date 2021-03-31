@@ -76,7 +76,7 @@ else if(isset($_SESSION['user']))
           }
           else
           {
-            echo "Account1";
+            echo "Account";
           }
           ?>
         </a>
