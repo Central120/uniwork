@@ -4,7 +4,16 @@
 $url = 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI'];
 ?>
 
-
+<?php
+if(isset($_SESSION['admin']))
+{
+  $accountUser = $_SESSION['admin'];
+}
+else if(isset($_SESSION['user']))
+{
+  $accountUser = $_SESSION['user'];
+}
+?>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 <a class="navbar-brand" href="index">
     <img src="images/logo.png" width="64" height="64" alt="">
@@ -60,7 +69,16 @@ $url = 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI'];
       <ul class="navbar-nav">
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Account
+          <?php 
+          if (isset($_SESSION['user']) || isset($_SESSION['admin']))
+          {
+              echo $accountUser, "'s Account";
+          }
+          else
+          {
+            echo "Account";
+          }
+          ?>
         </a>
         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
           <?php 
