@@ -20,6 +20,18 @@ $staff_name = mysqli_real_escape_string($conn, $_POST['staff']);
 
 $findavail = mysqli_query($conn, "SELECT * FROM `staff_availability` WHERE `staff_name` = '$staff_name'");
 $countfindavail = mysqli_num_rows($findavail);
+$rowfindavail = mysqli_fetch_assoc($findavail);
+$first_day = $rowfindavail['first_date'];
+$last_day = $rowfindavail['last_date'];
+$first_time = $rowfindavail['start_time'];
+$last_time = $rowfindavail['end_time'];
+
+$findfdate = strtotime("this $first_day");
+$findldate = strtotime("this $last_day");
+$fdate = date('l jS \of F Y', $findfdate);
+$ldate = date('l jS \of F Y', $findldate);
+
+
 
 
 if ($countfindavail == 0)
@@ -72,7 +84,7 @@ if ($countfindavail == 0)
   <div class="form-row">
     <div class="form-group col-md-6">
       <label for="inputEmail4">Preference One - Date</label>
-      <input type="email" class="form-control" name="day1" id="timeslot1" placeholder="Enter preference one date">
+      <input type="text" class="form-control" name="day1" id="timeslot1" value='<?php echo $fdate; ?>' placeholder="Enter preference one date">
     </div>
     <div class="form-group col-md-6">
       <label for="inputPassword4">Preference One - Time</label>
@@ -82,7 +94,7 @@ if ($countfindavail == 0)
   <div class="form-row">
     <div class="form-group col-md-6">
       <label for="inputEmail4">Preference Two - Date</label>
-      <input type="email" class="form-control" name="day2" id="timeslot3" placeholder="Enter preference two date">
+      <input type="text" class="form-control" name="day2" id="timeslot3" value='<?php echo $fdate; ?> placeholder="Enter preference two date">
     </div>
     <div class="form-group col-md-6">
       <label for="inputPassword4">Preference Two - Time</label>
