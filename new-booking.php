@@ -109,18 +109,19 @@ if ($countfindavail == 0)
       <select class="form-control" name="">
       <?php
         $today = strtotime('now');
-        if ($findfdate < $today)
-        {
-          $date = $today;
-        }
-        else
-        {
-          $date = $findfdate;
-        }
+      
 
         
         
         while ($date <= $findldate) {
+          if ($findfdate < $today)
+          {
+            $date = $today;
+          }
+          else
+          {
+            $date = $findfdate;
+          }
           $prdate = date('l (j-n-Y)',$date);
           
           echo "<option value=''>$prdate</option>";
