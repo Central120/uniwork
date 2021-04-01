@@ -34,34 +34,10 @@ $fdate = date('l jS \of F Y', $findfdate);
 $ldate = date('l jS \of F Y', $findldate);
 
 
-
-// function list_days($findfdate,$findldate){
-//     $arr_days = array();
-//     $day_passed = ($findldate - $findfdate); //seconds
-//     $day_passed = ($day_passed/86400); //days
-
-//     $counter = 1;
-//     $day_to_display = $findfdate;
-//     while($counter < $day_passed){
-//         $day_to_display += 86400;
-//         //echo date("F j, Y \n", $day_to_display);
-//         $arr_days[] = date('l jS \of F Y',$day_to_display);
-//         $counter++;
-//     }
-
-//     return $arr_days;
-// }
-
-
-
-
-
 if ($countfindavail == 0)
 {
-  $msg = "<br><br><h2 style='margin-left:25%'>$staff_name is currently unavailable - Please try again later.</h2>";
-  
+  $msg = "<br><br><h2 style='margin-left:25%'>$staff_name is currently unavailable - Please try again later.</h2>"; 
 }
-
 ?>
 <!doctype html>
 <html lang="en">
@@ -110,8 +86,7 @@ if ($countfindavail == 0)
       <?php
         $today = strtotime('now');
       
-        $date = strtotime("now");
-        
+    
         while ($date <= $findldate) {
           
           $prdate = date('l (j-n-Y)',$date);
