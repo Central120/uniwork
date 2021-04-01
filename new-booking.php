@@ -110,7 +110,9 @@ if ($countfindavail == 0)
       <?php
         $date = $findfdate;
         while ($date <= $findldate) {
-          echo date('l (n-j-Y)',$date).PHP_EOL;
+          $prdate = date('l (n-j-Y)',$date);
+          
+          echo "<option value=''>$prdate</option>";
           $date = strtotime('+1 day',$date);
         }
       ?>
