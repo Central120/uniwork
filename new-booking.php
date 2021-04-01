@@ -142,15 +142,13 @@ if ($countfindavail == 0)
      <select class="form-control" name="">
      <?php
      $today = strtotime('now');
-     if ($findfdate < $today)
-     {
-       $date1 = $findfdate;
-     }
-     else
-     {
-       $date1 = $today;
-     }
+     if ($today >= $findldate)
+        {
+          $findfdate = strtotime("next week $last_day");
+          $findldate = strtotime("next week $last_day");
+        }
       while ($date1 <= $findldate) {
+        
         
         $prdate1 = date('l (j-n-Y)',$date1);
         
