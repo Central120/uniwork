@@ -17,6 +17,20 @@ else
 }
 
 $staff_name = mysqli_real_escape_string($conn, $_POST['staff']);
+$dateentry = mysqli_real_escape_string($conn, $_POST['date']);
+
+if ($dateentry == 'week')
+{
+  $timer = "this week";
+}
+else if ($dateentry == 'next')
+{
+  $timer = "next week";
+}
+else
+{
+  echo "This date entry is not available: $dateentry. ";
+}
 
 $findavail = mysqli_query($conn, "SELECT * FROM `staff_availability` WHERE `staff_name` = '$staff_name'");
 $countfindavail = mysqli_num_rows($findavail);
@@ -26,8 +40,10 @@ $last_day = $rowfindavail['last_date'];
 $first_time = $rowfindavail['start_time'];
 $last_time = $rowfindavail['end_time'];
 
-$findfdate = strtotime("this week $first_day");
-$findldate = strtotime("this week $last_day");
+
+
+$findfdate = strtotime("$timer $first_day");
+$findldate = strtotime("$timer $last_day");
 
 
 $fdate = date('l jS \of F Y', $findfdate);
@@ -84,7 +100,7 @@ if ($countfindavail == 0)
       <label for="inputEmail4">Preference One - Date</label>
       <select class="form-control" name="">
       <?php
-        $today = strtotime('next monday');
+        $today = strtotime('today');
       
     
         while ($date <= $findldate) {

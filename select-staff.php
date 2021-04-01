@@ -47,6 +47,7 @@ $findstaff = mysqli_query($conn, "SELECT * FROM `accounts` WHERE `admin_id` = '2
     <div id="server-results"></div>
 <form action='new-booking.php' method='post' role='form' id="Form1">
   <div class="form-row">
+  <label for='staff'>Choose a staff member:</label>
   <select class="form-control" name='staff'>
   <?php
     while ($rowfindstaff = mysqli_fetch_assoc($findstaff))
@@ -58,6 +59,13 @@ $findstaff = mysqli_query($conn, "SELECT * FROM `accounts` WHERE `admin_id` = '2
   
   </select>
   
+  </div>
+  <div class="form-row">
+  <label for='date'>When would you like your booking for?</label>
+  <select class="form-control" name='date'>
+  <option value='week'>This week</option>
+  <option value='next'>Next week</option>
+  </select>
   </div>
   <div class="form-group row">
     <div class="col-sm-10"><br>
