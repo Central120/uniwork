@@ -44,6 +44,8 @@ $last_time = $rowfindavail['end_time'];
 
 $findfdate = strtotime("$timer $first_day");
 $findldate = strtotime("$timer $last_day");
+$findftime = strtotime("$first_time");
+$findltime = strtotime("$last_time");
 
 
 
@@ -95,7 +97,7 @@ if ($countfindavail == 0)
   <div class="form-row">
     <div class="form-group col-md-6">
       <label for="inputEmail4">Preference One - Date</label>
-      <select class="form-control" name="">
+      <select class="form-control" name="day1">
       <?php
         $today = strtotime('today');
         if ($findfdate >= $today)
@@ -121,13 +123,37 @@ if ($countfindavail == 0)
       </div>
     <div class="form-group col-md-6">
       <label for="inputPassword4">Preference One - Time</label>
-      <input type="password" class="form-control" name="time1" id="timeslot2" placeholder="Enter preference one time">
+      <select class="form-control" name="day1">
+      <?php
+         
+         $time = strtotime('now');
+
+         if ($findftime >= $time)
+         {
+           $timey = $findftime;
+         }
+         else
+         {
+           $timey = $time;
+         }
+        
+        while ($timey <= $findltime) {
+          
+          $prtime = date('g:i a',$timey);
+          
+          echo "<option value=''>$prtime</option>";
+          $datey = strtotime('+1 hour',$timey);
+        }
+        
+      ?>
+      
+      </select>
     </div>
   </div>
   <div class="form-row">
     <div class="form-group col-md-6">
       <label for="inputEmail4">Preference Two - Date</label>
-     <select class="form-control" name="">
+     <select class="form-control" name="day2">
      <?php
      if ($findfdate >= $today)
      {
