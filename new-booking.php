@@ -111,11 +111,11 @@ if ($countfindavail == 0)
         $today = strtotime('now');
         if ($findfdate < $today)
         {
-          $date = $findfdate;
+          $date = $today;
         }
         else
         {
-          $date = $today;
+          $date = $findfdate;
         }
 
         
