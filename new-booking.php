@@ -24,7 +24,7 @@ $countfindavail = mysqli_num_rows($findavail);
 
 if ($countfindavail == 0)
 {
-  $msg = "<br><br>$staff_name is currently unavailable";
+  $msg = "<br><br><h2 style='margin-left:45%'>$staff_name is currently unavailable - Please try again later.</h2>";
   
 }
 
