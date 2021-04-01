@@ -140,11 +140,11 @@ if ($countfindavail == 0)
       <label for="inputEmail4">Preference Two - Date</label>
      <select>
      <?php
-      while ($date <= $findldate) {
-        $prdate = date('l (j-n-Y)',$date);
+      while ($date1 <= $findldate) {
+        $prdate1 = date('l (j-n-Y)',$date1);
         
-        echo "<option value=''>$prdate</option>";
-        $date = strtotime('+1 day',$date);
+        echo "<option value=''>$prdate1</option>";
+        $date1 = strtotime('+1 day',$date1);
       }
      ?>
      </select>
