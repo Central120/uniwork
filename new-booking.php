@@ -25,7 +25,7 @@ $countfindavail = mysqli_num_rows($findavail);
 if ($countfindavail == 0)
 {
   $msg = "<br><br>This staff member is currently unavailable";
-  $hide = "<style>.container-fluid { display:none } </style>";
+  
 }
 
 ?>
@@ -38,7 +38,19 @@ if ($countfindavail == 0)
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
    	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
      <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700' rel='stylesheet' type='text/css' />
-     <?php echo $hide; ?>
+     <?php 
+     if ($countfindavail != 0)
+     {
+       echo "<style>
+       .container-fluid
+       {
+        display: none; 
+       }
+       
+       "; 
+     }
+     
+     ?>
 </head>
 <body>
     <?php include "inc/header.php"; ?>
