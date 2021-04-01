@@ -121,7 +121,7 @@ if ($countfindavail == 0)
         
         
         while ($date <= $findldate) {
-          $prdate = date('l (n-j-Y)',$date);
+          $prdate = date('l (j-n-Y)',$date);
           
           echo "<option value=''>$prdate</option>";
           $date = strtotime('+1 day',$date);
@@ -138,7 +138,16 @@ if ($countfindavail == 0)
   <div class="form-row">
     <div class="form-group col-md-6">
       <label for="inputEmail4">Preference Two - Date</label>
-      <input type="text" class="form-control" name="day2" id="timeslot3" value='<?php echo $ldate; ?>' placeholder="Enter preference two date">
+     <select>
+     <?php
+      while ($date <= $findldate) {
+        $prdate = date('l (j-n-Y)',$date);
+        
+        echo "<option value=''>$prdate</option>";
+        $date = strtotime('+1 day',$date);
+      }
+     ?>
+     </select>
     </div>
     <div class="form-group col-md-6">
       <label for="inputPassword4">Preference Two - Time</label>
