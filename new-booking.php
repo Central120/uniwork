@@ -46,9 +46,6 @@ $findfdate = strtotime("$timer $first_day");
 $findldate = strtotime("$timer $last_day");
 
 
-$fdate = date('l jS \of F Y', $findfdate);
-$ldate = date('l jS \of F Y', $findldate);
-
 
 if ($countfindavail == 0)
 {
@@ -112,7 +109,7 @@ if ($countfindavail == 0)
     
         while ($date <= $findldate) {
           
-          $prdate = date('l (j-n-Y)',$date);
+          $prdate = date('l jS \of F',$date);
           
           echo "<option value=''>$prdate</option>";
           $date = strtotime('+1 day',$date);
@@ -142,7 +139,7 @@ if ($countfindavail == 0)
      }
     
       while ($date1 <= $findldate) {
-        $prdate1 = date('l (j-n-Y)',$date1);
+        $prdate1 = date('l jS \of F',$date1);
         echo "<option value=''>$prdate1</option>";
         $date1 = strtotime('+1 day',$date1);
       }
