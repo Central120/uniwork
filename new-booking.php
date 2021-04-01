@@ -21,12 +21,12 @@ $staff_name = mysqli_real_escape_string($conn, $_POST['staff']);
 $findavail = mysqli_query($conn, "SELECT * FROM `staff_availability` WHERE `staff_name` = '$staff_name'");
 $countfindavail = mysqli_num_rows($findavail);
 
+
 if ($countfindavail == 0)
 {
-  echo "This staff member is currently unavailable";
+  $msg = "<br><br>This staff member is currently unavailable";
+  $hide = "<style>.container-fluid { display:none } </style>";
 }
-else
-{
 
 ?>
 <!doctype html>
@@ -38,14 +38,15 @@ else
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
    	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
      <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700' rel='stylesheet' type='text/css' />
-     
+     <?php echo $hide; ?>
 </head>
 <body>
     <?php include "inc/header.php"; ?>
+    <?php echo $msg; ?>
     <div class="container-fluid">
     <div class="d-flex justify-content-center">
         <center>
-    <h2 class="mb-42">Request a booking</h2>
+    <h2 class="mb-42">Request a booking with <?php echo $staff_name; ?></h2>
     <div id="server-results"></div>
 <form action='request-booking.php' method='post' role='form' id="Form1">
   <div class="form-row">
