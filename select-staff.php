@@ -58,7 +58,6 @@ $findstaff = mysqli_query($conn, "SELECT * FROM `accounts` WHERE `admin_id` = '2
   ?>
   
   </select>
-  
   </div>
   <div class="form-row">
   <label for='date'>When would you like your booking for?</label>
