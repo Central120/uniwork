@@ -46,7 +46,7 @@ if ($countfindavail == 0)
        {
         display: none; 
        }
-       
+       </style>
        "; 
      }
      
