@@ -16,7 +16,9 @@ else
     echo "<script>window.location.replace('../index');</script>";
 }
 
-$findavail = mysqli_query($conn, "SELECT * FROM `staff_availability`");
+
+$findstaff = mysqli_query($conn, "SELECT * FROM `accounts` WHERE `admin_id` = '2'");
+
 
 ?>
 <!doctype html>
@@ -39,52 +41,25 @@ $findavail = mysqli_query($conn, "SELECT * FROM `staff_availability`");
     <div id="server-results"></div>
 <form action='request-booking.php' method='post' role='form' id="Form1">
   <div class="form-row">
-    <div class="form-group col-md-6">
-      <label for="inputEmail4">Preference One - Date</label>
-      <input type="email" class="form-control" name="day1" id="timeslot1" placeholder="Enter preference one date">
-    </div>
-    <div class="form-group col-md-6">
-      <label for="inputPassword4">Preference One - Time</label>
-      <input type="password" class="form-control" name="time1" id="timeslot2" placeholder="Enter preference one time">
-    </div>
-  </div>
-  <div class="form-row">
-    <div class="form-group col-md-6">
-      <label for="inputEmail4">Preference Two - Date</label>
-      <input type="email" class="form-control" name="day2" id="timeslot3" placeholder="Enter preference two date">
-    </div>
-    <div class="form-group col-md-6">
-      <label for="inputPassword4">Preference Two - Time</label>
-      <input type="password" class="form-control" name="time2" id="timeslot4" placeholder="Enter preference two time">
-    </div>
-  </div>
-  <div class="form-group">
-    <label for="inputAddress">Pet Name</label>
-    <input type="text" class="form-control" name="petname" id="petname" placeholder="Enter Pet Name">
-  </div>
-  <div class="form-group">
-    <label for="inputEmail3">Emergency Contact 1</label>
-      <input type="email" class="form-control" name="emergency1" id="emergency1" placeholder="Enter an emergency contact">
-  </div>
-  <div class="form-group">
-    <label for="inputPassword3">Emergency Contact 2</label>
-      <input type="password" class="form-control" name="emergency2" id="emergency2" placeholder="Enter a 2nd emergency contact">
-  </div>
-  <div class="form-group">
-    <label for="inputAddress">Additional Information</label>
-    <input type="text" class="form-control" name="additional" id="additional" placeholder="Pet behaviours, lead/no lead etc...">
+  <select class="form-control">
+  <?php
+    while ($rowfindstaff = mysqli_fetch_assoc($findstaff))
+    {
+        $usern = $rowfindstaff['username'];
+        echo "<option value='$usern'>$usern</option>";
+    }
+  ?>
+  
+  </select>
+  
   </div>
   <div class="form-group row">
     <div class="col-sm-10">
       <button type="submit" class="btn btn-success">Request Booking</button>
     </div>
-  </div>
-        </center>
-</div>
-        </div>
-</form>
-
-    <?php include "inc/footer.php"; ?>
+  </div></form>
+  
+  <?php include "inc/footer.php"; ?>
 </body>
 <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
   <script type='text/javascript'>
