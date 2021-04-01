@@ -100,7 +100,7 @@ if ($countfindavail == 0)
         <center>
     <h2 class="mb-42">Request a booking with <?php echo $staff_name; ?></h2>
     <div id="server-results"></div>
-<form action='request-booking.php' method='post' role='form' id="Form1">
+<form action='php/request-booking.php' method='post' role='form' id="Form1">
   <div class="form-row">
     <div class="form-group col-md-6">
       <label for="inputEmail4">Preference One - Date</label>
