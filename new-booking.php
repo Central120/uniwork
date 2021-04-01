@@ -26,8 +26,8 @@ $last_day = $rowfindavail['last_date'];
 $first_time = $rowfindavail['start_time'];
 $last_time = $rowfindavail['end_time'];
 
-$findfdate = strtotime("this $first_day");
-$findldate = strtotime("this $last_day");
+$findfdate = strtotime("next $first_day");
+$findldate = strtotime("next $last_day");
 $fdate = date('l jS \of F Y', $findfdate);
 $ldate = date('l jS \of F Y', $findldate);
 
