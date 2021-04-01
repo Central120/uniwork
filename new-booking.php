@@ -33,6 +33,26 @@ $ldate = date('l jS \of F Y', $findldate);
 
 
 
+function list_days($findfdate,$findldate){
+    $arr_days = array();
+    $day_passed = ($findldate - $findfdate); //seconds
+    $day_passed = ($day_passed/86400); //days
+
+    $counter = 1;
+    $day_to_display = $findfdate;
+    while($counter < $day_passed){
+        $day_to_display += 86400;
+        //echo date("F j, Y \n", $day_to_display);
+        $arr_days[] = date('l jS \of F Y',$day_to_display);
+        $counter++;
+    }
+
+    return $arr_days;
+}
+
+$dates = print_r(list_days($date_from,$date_to));
+
+
 
 if ($countfindavail == 0)
 {
@@ -84,7 +104,7 @@ if ($countfindavail == 0)
   <div class="form-row">
     <div class="form-group col-md-6">
       <label for="inputEmail4">Preference One - Date</label>
-      <input type="text" class="form-control" name="day1" id="timeslot1" value='<?php echo $fdate; ?>' placeholder="Enter preference one date">
+      <input type="text" class="form-control" name="day1" id="timeslot1" value='<?php echo $dates; ?>' placeholder="Enter preference one date">
     </div>
     <div class="form-group col-md-6">
       <label for="inputPassword4">Preference One - Time</label>
