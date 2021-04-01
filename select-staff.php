@@ -58,6 +58,8 @@ $findstaff = mysqli_query($conn, "SELECT * FROM `accounts` WHERE `admin_id` = '2
       <button type="submit" class="btn btn-success">Request Booking</button>
     </div>
   </div></form>
+  </div>
+  </div>
   
   <?php include "inc/footer.php"; ?>
 </body>
