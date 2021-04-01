@@ -1,4 +1,20 @@
 <?php
+include_once '../inc/dbconnect.php';
+session_start();
+
+
+if (isset($_SESSION['user']))
+{
+    $session_usern = $_SESSION['user'];
+}
+else if(isset($_SESSION['admin']))
+{
+    $session_usern = $_SESSION['admin'];
+}
+else
+{
+    echo "<script>window.location.replace('../index');</script>";
+}
 
 
 ?>
@@ -29,32 +45,42 @@
         <center>
     <h2 class="mb-42">Request a booking</h2>
     
-<form>
+<form action='request-booking.php' method='post' role='form'>
   <div class="form-row">
     <div class="form-group col-md-6">
-      <label for="inputEmail4">Timeslot Preference One</label>
-      <input type="email" class="form-control" id="inputEmail4" placeholder="Enter first timeslot preference">
+      <label for="inputEmail4">Preference One - Date</label>
+      <input type="email" class="form-control" name="day1" id="timeslot1" placeholder="Enter preference one date">
     </div>
     <div class="form-group col-md-6">
-      <label for="inputPassword4">Timeslot Preference Two</label>
-      <input type="password" class="form-control" id="inputPassword4" placeholder="Enter second timeslot preference">
+      <label for="inputPassword4">Preference One - Time</label>
+      <input type="password" class="form-control" name="time1" id="timeslot2" placeholder="Enter preference one time">
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="inputEmail4">Preference Two - Date</label>
+      <input type="email" class="form-control" name="day2" id="timeslot3" placeholder="Enter preference two date">
+    </div>
+    <div class="form-group col-md-6">
+      <label for="inputPassword4">Preference Two - Time</label>
+      <input type="password" class="form-control" name="time2" id="timeslot4" placeholder="Enter preference two time">
     </div>
   </div>
   <div class="form-group">
     <label for="inputAddress">Pet Name</label>
-    <input type="text" class="form-control" id="inputAddress" placeholder="Enter Pet Name">
+    <input type="text" class="form-control" name="petname" id="petname" placeholder="Enter Pet Name">
   </div>
   <div class="form-group">
     <label for="inputEmail3">Emergency Contact 1</label>
-      <input type="email" class="form-control" id="inputEmail3" placeholder="Enter an emergency contact">
+      <input type="email" class="form-control" name="emergency1" id="emergency1" placeholder="Enter an emergency contact">
   </div>
   <div class="form-group">
     <label for="inputPassword3">Emergency Contact 2</label>
-      <input type="password" class="form-control" id="inputPassword3" placeholder="Enter a 2nd emergency contact">
+      <input type="password" class="form-control" name="emergency2" id="emergency2" placeholder="Enter a 2nd emergency contact">
   </div>
   <div class="form-group">
     <label for="inputAddress">Additional Information</label>
-    <input type="text" class="form-control" id="inputAddress" placeholder="Pet behaviours, lead/no lead etc...">
+    <input type="text" class="form-control" name="additional" id="additional" placeholder="Pet behaviours, lead/no lead etc...">
   </div>
   <div class="form-group row">
     <div class="col-sm-10">
