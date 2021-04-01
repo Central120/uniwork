@@ -50,6 +50,10 @@ if ($countfindavail == 0)
        {
         margin-top: 20% !important;
        }
+       html
+       {
+         height: 100%;
+       }
        </style>
        "; 
      }
