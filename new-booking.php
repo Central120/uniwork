@@ -110,18 +110,18 @@ if ($countfindavail == 0)
       <?php
         $today = strtotime('now');
       
-
+        if ($findfdate < $today)
+        {
+          $findfdate = $today;
+        }
+        else
+        {
+          $findfdate = $findfdate;
+        }
         
         
         while ($date <= $findldate) {
-          if ($findfdate < $today)
-          {
-            $date = $today;
-          }
-          else
-          {
-            $date = $findfdate;
-          }
+          
           $prdate = date('l (j-n-Y)',$date);
           
           echo "<option value=''>$prdate</option>";
