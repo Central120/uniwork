@@ -42,7 +42,7 @@ else
     
   <div class="form-row">
     <div class="form-group col-md-6">
-    <form action='schedule-update.php' method='post' role='form' id='Form1'>
+    <form action='php/schedule-update.php' method='post' role='form' id='Form1'>
       <label for="inputEmail4">Start Day</label>
       <select class="form-control" name='start'>
          <option value='monday'>Monday</option>
