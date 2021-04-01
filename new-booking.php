@@ -35,22 +35,22 @@ $ldate = date('l jS \of F Y', $findldate);
 
 
 
-function list_days($findfdate,$findldate){
-    $arr_days = array();
-    $day_passed = ($findldate - $findfdate); //seconds
-    $day_passed = ($day_passed/86400); //days
+// function list_days($findfdate,$findldate){
+//     $arr_days = array();
+//     $day_passed = ($findldate - $findfdate); //seconds
+//     $day_passed = ($day_passed/86400); //days
 
-    $counter = 1;
-    $day_to_display = $findfdate;
-    while($counter < $day_passed){
-        $day_to_display += 86400;
-        //echo date("F j, Y \n", $day_to_display);
-        $arr_days[] = date('l jS \of F Y',$day_to_display);
-        $counter++;
-    }
+//     $counter = 1;
+//     $day_to_display = $findfdate;
+//     while($counter < $day_passed){
+//         $day_to_display += 86400;
+//         //echo date("F j, Y \n", $day_to_display);
+//         $arr_days[] = date('l jS \of F Y',$day_to_display);
+//         $counter++;
+//     }
 
-    return $arr_days;
-}
+//     return $arr_days;
+// }
 
 
 
