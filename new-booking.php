@@ -40,20 +40,6 @@ if ($countfindavail == 0)
   
 }
 
-$period = new DatePeriod(
-  new DateTime($fdate),
-  new DateInterval('P1D'),
-  new DateTime($ldate)
-);
-
-//Which should get you an array with DateTime objects. 
-
-//To iterate
-
-foreach ($period as $key => $value) {
- $value->format('Y-m-d');       
-}
-
 ?>
 <!doctype html>
 <html lang="en">
@@ -92,7 +78,7 @@ foreach ($period as $key => $value) {
     <div class="container-fluid">
     <div class="d-flex justify-content-center">
         <center>
-    <h2 class="mb-42">Request a booking with <?php echo $staff_name; return $value;?></h2>
+    <h2 class="mb-42">Request a booking with <?php echo $staff_name; ?></h2>
     <div id="server-results"></div>
 <form action='request-booking.php' method='post' role='form' id="Form1">
   <div class="form-row">
