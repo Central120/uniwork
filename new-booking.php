@@ -99,7 +99,7 @@ if ($countfindavail == 0)
       <label for="inputEmail4">Preference One - Date</label>
       <select class="form-control" name="day1">
       <?php
-        $today = strtotime('today');
+        $today = strtotime('today GMT');
         if ($findfdate >= $today)
         {
           $date = $findfdate;
