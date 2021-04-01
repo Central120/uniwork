@@ -142,7 +142,7 @@ if ($countfindavail == 0)
      <select class="form-control" name="">
      <?php
      $today = strtotime('now');
-     if ($findfdate > $today)
+     if ($findfdate < $today)
      {
        $date1 = $today;
      }
