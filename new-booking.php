@@ -16,7 +16,17 @@ else
     echo "<script>window.location.replace('../index');</script>";
 }
 
-$findavail = mysqli_query($conn, "SELECT * FROM `staff_availability`");
+$staff_name = mysqli_real_escape_string($conn, $_POST['staff']);
+
+$findavail = mysqli_query($conn, "SELECT * FROM `staff_availability` WHERE `staff_name` = '$staff_name'");
+$countfindavail = mysqli_num_rows($findavail);
+
+if ($countfindavail == 0)
+{
+  echo "This staff member is currently unavailable";
+}
+else
+{
 
 ?>
 <!doctype html>
@@ -108,3 +118,8 @@ $findavail = mysqli_query($conn, "SELECT * FROM `staff_availability`");
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 </html>
+<?php 
+
+  }
+
+  ?>

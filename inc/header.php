@@ -34,7 +34,7 @@ else if(isset($_SESSION['user']))
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <a class="dropdown-item <?php if (strpos($url,'requestbooking') !== false) {
     echo 'active';
-} ?>" href="new-booking">Request a booking</a>
+} ?>" href="select-staff">Request a booking</a>
           <a class="dropdown-item <?php if (strpos($url,'currentbookings') !== false) {
     echo 'active';
 } ?>" href="current-bookings">View current bookings</a>

@@ -41,7 +41,7 @@ $findstaff = mysqli_query($conn, "SELECT * FROM `accounts` WHERE `admin_id` = '2
     <div id="server-results"></div>
 <form action='new-booking.php' method='post' role='form' id="Form1">
   <div class="form-row">
-  <select class="form-control">
+  <select class="form-control" name='staff'>
   <?php
     while ($rowfindstaff = mysqli_fetch_assoc($findstaff))
     {
