@@ -3,7 +3,6 @@ include_once 'inc/dbconnect.php';
 session_start();
 $current_timestamp = date('Y-m-d H:i:s');
 
-echo $current_timestamp; //checking the current timestamp.
 
 if (isset($_SESSION['user']))
 {
