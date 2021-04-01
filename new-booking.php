@@ -108,7 +108,7 @@ if ($countfindavail == 0)
       <label for="inputEmail4">Preference One - Date</label>
       <select class="form-control" name="">
       <?php
-        $today = strtotime('today');
+        $today = strtotime('now');
         if ($findfdate < $today)
         {
           $date = $findfdate;
@@ -117,6 +117,8 @@ if ($countfindavail == 0)
         {
           $date = $today;
         }
+
+        
         
         while ($date <= $findldate) {
           $prdate = date('l (n-j-Y)',$date);
