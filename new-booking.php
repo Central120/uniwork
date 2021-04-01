@@ -112,6 +112,7 @@ if ($countfindavail == 0)
         while ($date <= $findldate) {
           echo date('l (n-j-Y)',$date).PHP_EOL;
           $date = strtotime('+1 day',$date);
+        }
       ?>
       
       </select>
@@ -181,5 +182,3 @@ if ($countfindavail == 0)
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 </html>
-
-  
