@@ -65,7 +65,7 @@ $findstaff = mysqli_query($conn, "SELECT * FROM `accounts` WHERE `admin_id` = '2
   <option value='week'>This week</option>
   <option value='next'>Next week</option>
   </select>
-  </div>s
+  </div>
   <div class="form-group row">
     <div class="col-sm-10"><br>
       <button type="submit" class="btn btn-success">Request Booking</button>
