@@ -44,8 +44,8 @@ else
     <div class="d-flex justify-content-center">
         <center>
     <h2 class="mb-42">Request a booking</h2>
-    
-<form action='request-booking.php' method='post' role='form'>
+    <div id="server-results"></div>
+<form action='request-booking.php' method='post' role='form' id="Form1">
   <div class="form-row">
     <div class="form-group col-md-6">
       <label for="inputEmail4">Preference One - Date</label>
@@ -96,7 +96,7 @@ else
 </body>
 <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
   <script type='text/javascript'>
-    $('#LoginForm').submit(function(event) {
+    $('#Form1').submit(function(event) {
       event.preventDefault(); //prevent default action
       var post_url = $(this).attr('action'); //get form action url
       var form_data = $(this).serialize(); //Encode form elements for submission
