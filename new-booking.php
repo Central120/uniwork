@@ -144,7 +144,7 @@ if ($countfindavail == 0)
      $today = strtotime('now');
      if ($findfdate > $today)
      {
-       $findfdate = $today;
+       $date1 = $today;
      }
       while ($date1 <= $findldate) {
         
