@@ -110,7 +110,7 @@ if ($countfindavail == 0)
       <?php
         $today = strtotime('now');
       
-        
+        $date = strtotime("now");
         
         while ($date <= $findldate) {
           
@@ -135,7 +135,7 @@ if ($countfindavail == 0)
      <select class="form-control" name="">
      <?php
      $today = strtotime('now');
-     
+     $date1 = strtotime("now");
       while ($date1 <= $findldate) {
         
         
