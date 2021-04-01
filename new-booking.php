@@ -84,7 +84,7 @@ if ($countfindavail == 0)
       <label for="inputEmail4">Preference One - Date</label>
       <select class="form-control" name="">
       <?php
-        $today = strtotime('saturday');
+        $today = strtotime('next monday');
       
     
         while ($date <= $findldate) {
