@@ -24,7 +24,7 @@ $countfindavail = mysqli_num_rows($findavail);
 
 if ($countfindavail == 0)
 {
-  $msg = "<br><br>This staff member is currently unavailable";
+  $msg = "<br><br>$staff_name is currently unavailable";
   
 }
 
@@ -39,7 +39,7 @@ if ($countfindavail == 0)
    	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
      <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700' rel='stylesheet' type='text/css' />
      <?php 
-     if ($countfindavail != 0)
+     if ($countfindavail == 0)
      {
        echo "<style>
        .container-fluid
