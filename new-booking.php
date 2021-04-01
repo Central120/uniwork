@@ -104,7 +104,7 @@ if ($countfindavail == 0)
   <div class="form-row">
     <div class="form-group col-md-6">
       <label for="inputEmail4">Preference One - Date</label>
-      <input type="text" class="form-control" name="day1" id="timeslot1" value='<?php print_r(list_days($date_from,$date_to)); ?>' placeholder="Enter preference one date">
+      <input type="text" class="form-control" name="day1" id="timeslot1" value='<?php print_r(list_days($findldate,$findfdate)); ?>' placeholder="Enter preference one date">
     </div>
     <div class="form-group col-md-6">
       <label for="inputPassword4">Preference One - Time</label>
