@@ -39,7 +39,7 @@ $findstaff = mysqli_query($conn, "SELECT * FROM `accounts` WHERE `admin_id` = '2
         <center>
     <h2 class="mb-42">Request a booking</h2>
     <div id="server-results"></div>
-<form action='request-booking.php' method='post' role='form' id="Form1">
+<form action='new-booking.php' method='post' role='form' id="Form1">
   <div class="form-row">
   <select class="form-control">
   <?php
