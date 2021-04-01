@@ -26,8 +26,10 @@ $last_day = $rowfindavail['last_date'];
 $first_time = $rowfindavail['start_time'];
 $last_time = $rowfindavail['end_time'];
 
-$findfdate = strtotime("next $first_day");
-$findldate = strtotime("next $last_day");
+$findfdate = strtotime("this week $first_day");
+$findldate = strtotime("this week $last_day");
+
+
 $fdate = date('l jS \of F Y', $findfdate);
 $ldate = date('l jS \of F Y', $findldate);
 
@@ -104,8 +106,16 @@ if ($countfindavail == 0)
   <div class="form-row">
     <div class="form-group col-md-6">
       <label for="inputEmail4">Preference One - Date</label>
-      <input type="text" class="form-control" name="day1" id="timeslot1" value='<?php print_r(list_days($findldate,$findfdate)); ?>' placeholder="Enter preference one date">
-    </div>
+      <select class="form-control" name="">
+      <?php
+        $date = $findfdate;
+        while ($date <= $findldate) {
+          echo date('l (n-j-Y)',$date).PHP_EOL;
+          $date = strtotime('+1 day',$date);
+      ?>
+      
+      </select>
+      </div>
     <div class="form-group col-md-6">
       <label for="inputPassword4">Preference One - Time</label>
       <input type="password" class="form-control" name="time1" id="timeslot2" placeholder="Enter preference one time">
