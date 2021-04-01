@@ -46,6 +46,10 @@ if ($countfindavail == 0)
        {
         display: none; 
        }
+       .footer
+       {
+        margin-top: 20% !important;
+       }
        </style>
        "; 
      }
