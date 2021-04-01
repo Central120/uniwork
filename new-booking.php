@@ -94,7 +94,7 @@ if ($countfindavail == 0)
   <div class="form-row">
     <div class="form-group col-md-6">
       <label for="inputEmail4">Preference Two - Date</label>
-      <input type="text" class="form-control" name="day2" id="timeslot3" value='<?php echo $fdate; ?> placeholder="Enter preference two date">
+      <input type="text" class="form-control" name="day2" id="timeslot3" value='<?php echo $ldate; ?>' placeholder="Enter preference two date">
     </div>
     <div class="form-group col-md-6">
       <label for="inputPassword4">Preference Two - Time</label>
