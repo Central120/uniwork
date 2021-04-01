@@ -111,13 +111,13 @@ if ($countfindavail == 0)
      <?php
      if ($findfdate > $today)
      {
-       $date1 = $today;
+       $date1 = $findfdate;
      }
      else
      {
-       $date1 = $findfdate;
+       $date1 = $today;
      }
-      while ($date1 <= $findldate) {
+      while ($date1 < $findldate) {
         
         
         $prdate1 = date('l (j-n-Y)',$date1);
