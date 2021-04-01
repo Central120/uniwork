@@ -101,7 +101,14 @@ if ($countfindavail == 0)
       <select class="form-control" name="">
       <?php
         $today = strtotime('today');
-      
+        if ($findfdate >= $today)
+        {
+          $date = $findfdate;
+        }
+        else
+        {
+          $date = $today;
+        }
     
         while ($date <= $findldate) {
           
