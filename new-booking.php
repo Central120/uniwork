@@ -2,7 +2,7 @@
 include_once 'inc/dbconnect.php';
 session_start();
 $current_timestamp = date('Y-m-d H:i:s');
-echo $current_timestamp; //checking the current timestamp.
+
 
 
 if (isset($_SESSION['user']))
@@ -170,7 +170,25 @@ if ($countfindavail == 0)
     </div>
     <div class="form-group col-md-6">
       <label for="inputPassword4">Preference Two - Time</label>
-      <input type="password" class="form-control" name="time2" id="timeslot4" placeholder="Enter preference two time">
+      <select class="form-control" name="time1">
+      <?php
+         
+         $time2 = strtotime('now');
+
+         
+           $timey2 = $findftime;
+         
+        while ($timey2 <= $findltime) {
+          
+          $prtime2 = date('g:i a',$timey2);
+          
+          echo "<option value=''>$prtime2</option>";
+          $timey2 = strtotime('+1 hour',$timey2);
+        }
+        
+      ?>
+      
+      </select>
     </div>
   </div>
   <div class="form-group">
