@@ -25,7 +25,7 @@ $findstaff = mysqli_query($conn, "SELECT * FROM `accounts` WHERE `admin_id` = '2
 <!doctype html>
 <html lang="en">
   <head>
-  	<title>Kerry's K9's - New Booking</title>
+  	<title>Kerry's K9's - Staff Member Selection</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
