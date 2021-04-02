@@ -33,11 +33,13 @@ while($row = mysqli_fetch_assoc($sql))
     $price = $row['price'];
     $discount = $row['discount'];
     $stock = $row['stock'];
+    $image = $row['image'];
 
     echo "<table>";
     echo "<tr>";
     echo "<td>$productName</td>";
     echo "<td>£$price</td>";
+    echo "<td>$image</td>";
     echo "</tr>";
     echo "</table>";
 }
