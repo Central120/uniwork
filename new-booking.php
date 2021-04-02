@@ -111,7 +111,7 @@ if ($countfindavail == 0)
           $date = $today;
         }
     
-        while ($date <= $findldate) {
+        while ($date < $findldate) {
           
           $prdate = date('l jS \of F',$date);
           
