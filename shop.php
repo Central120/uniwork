@@ -26,7 +26,7 @@ session_start();
   <?php 
 $sql = mysqli_query($conn, "SELECT * FROM products");
 
-while($row = mysqli->assoc($sql))
+while($row = mysqli_fetch_assoc($sql))
 {
     $productName = $row['product_name'];
     $category = $row['category'];
