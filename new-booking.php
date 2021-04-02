@@ -113,7 +113,7 @@ if ($countfindavail == 0)
     
         while ($date <= $findldate) {
           
-          if ($today == $findldate)
+          if ($today == $date)
           {
             $prdate = "Cannot book for today.";
           }
