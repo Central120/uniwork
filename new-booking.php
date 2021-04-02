@@ -138,7 +138,7 @@ if ($countfindavail == 0)
            {
            $timey = $findftime;
            }
-           
+
         while ($timey <= $findltime) {
           
           $prtime = date('g:i a',$timey);
@@ -182,7 +182,15 @@ if ($countfindavail == 0)
          $time2 = strtotime('now');
 
          
+
+           if ($time2 > $findftime)
+           {
+             $timey2 = strtotime('+1 hour',$findftime);
+           }
+           else
+           {
            $timey2 = $findftime;
+           }
          
         while ($timey2 <= $findltime) {
           
