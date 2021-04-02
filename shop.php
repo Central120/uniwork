@@ -39,7 +39,7 @@ while($row = mysqli_fetch_assoc($sql))
     echo "<tr>";
     echo "<td>$productName</td>";
     echo "<td>£$price</td>";
-    echo "<td>$image</td>";
+    echo "<td><img src='$image'></td>";
     echo "</tr>";
     echo "</table>";
 }
