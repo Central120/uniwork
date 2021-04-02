@@ -140,7 +140,7 @@ if ($countfindavail == 0)
          }
 
         while ($timey <= $findltime) {
-          if ($time > $findltime)
+          if ($timey > $findltime)
           {
            $prtime = "No times available.";
           }
