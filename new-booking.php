@@ -238,11 +238,11 @@ if ($countfindavail == 0)
   </div>
   <div class="form-group">
     <label for="emergency1">Emergency Contact 1</label>
-      <input type="text" maxlength='11' class="form-control" name="emergency1" id="emergency1" placeholder="Enter an emergency contact">
+      <input type="tel" pattern="[0]{1}[0-9]{10}" maxlength='11' class="form-control" name="emergency1" id="emergency1" placeholder="Enter an emergency contact (Format: 0**********)">
   </div>
   <div class="form-group">
     <label for="emergency2">Emergency Contact 2</label>
-      <input type="text" maxlength='11' class="form-control" name="emergency2" id="emergency2" placeholder="Enter a 2nd emergency contact">
+      <input type="tel" pattern="[0]{1}[0-9]{10}" maxlength='11' class="form-control" name="emergency2" id="emergency2" placeholder="Enter a 2nd emergency contact (Format: 0**********)">
   </div>
   <div class="form-group">
     <label for="additional">Additional Information</label>
