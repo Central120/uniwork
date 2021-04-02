@@ -135,20 +135,26 @@ if ($countfindavail == 0)
       </div>
     <div class="form-group col-md-6">
       <label for="inputPassword4">Preference One - Time</label>
+      
       <select class="form-control" name="time1">
       <?php
-      
-        while ($timey <= $findltime) {
-          if ($timey >= $findltime)
-          {
-           $prtime = "No times available.";
-          }
-          else
-          {
-          $prtime = date('g:i a',$timey);
-          }
+         
+         $time = strtotime('now');
 
+         
+
+           if ($time > $findftime)
+           {
+             $timey = strtotime('+1 hour',$findftime);
+           }
+           else
+           {
+           $timey = $findftime;
+           }
+         
+        while ($timey <= $findltime) {
           
+          $prtime = date('g:i a',$timey);
           
           echo "<option value=''>$prtime</option>";
           $timey = strtotime('+1 hour',$timey);
