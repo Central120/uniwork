@@ -130,18 +130,20 @@ if ($countfindavail == 0)
          
          $time = strtotime('now');
 
-           if ($time > $findftime)
-           {
-             $timey = strtotime('+1 hour',$findftime);
-           }
-           else
-           {
-           $timey = $findftime;
-           }
+          
 
         while ($timey <= $findltime) {
+          if ($time > $findltime)
+          {
+           $prtime = "No times available.";
+          }
+          else
+          {
           
           $prtime = date('g:i a',$timey);
+          }
+
+          
           
           echo "<option value=''>$prtime</option>";
           $timey = strtotime('+1 hour',$timey);
