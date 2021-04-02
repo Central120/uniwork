@@ -116,13 +116,16 @@ if ($countfindavail == 0)
           if ($today == $date)
           {
             $prdate = "Cannot book for today.";
+            $disabled = "disabled";
           }
           else
           { 
           $prdate = date('l jS \of F',$date);
+          $datestamp = date('Y-m-d', $date);
+          $disabled = "";
           }
 
-          echo "<option value=''>$prdate</option>";
+          echo "<option value='$datestamp' $disabled>$prdate</option>";
           $date = strtotime('+1 day',$date);
         }
         
@@ -170,11 +173,23 @@ if ($countfindavail == 0)
        $date1 = $today;
      }
     
-      while ($date1 <= $findldate) {
-        $prdate1 = date('l jS \of F',$date1);
-        echo "<option value=''>$prdate1</option>";
-        $date1 = strtotime('+1 day',$date1);
+     while ($date1 <= $findldate) {
+          
+      if ($today == $date1)
+      {
+        $prdate1 = "Cannot book for today.";
+        $disabled = "disabled";
       }
+      else
+      { 
+      $prdate1 = date('l jS \of F',$date1);
+      $datestamp1 = date('Y-m-d', $date1);
+      $disabled = "";
+      }
+
+      echo "<option value='$datestamp1' $disabled>$prdate1</option>";
+      $date1 = strtotime('+1 day',$date1);
+    }
      ?>
      </select>
     </div>
