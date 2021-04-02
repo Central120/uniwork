@@ -59,7 +59,7 @@ if ($countfindavail == 0)
 <!doctype html>
 <html lang="en">
   <head>
-  	<title>Kerry's K9's - New Booking</title>
+  	<title>Kerry's K9's - New Booking with <?php echo $staff_name; ?></title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
@@ -155,8 +155,9 @@ if ($countfindavail == 0)
         while ($timey <= $findltime) {
           
           $prtime = date('g:i a',$timey);
+          $timestamper = date('H:i:s', $timey); 
           
-          echo "<option value=''>$prtime</option>";
+          echo "<option value='$timestamper'>$prtime</option>";
           $timey = strtotime('+1 hour',$timey);
         }
         
@@ -201,7 +202,7 @@ if ($countfindavail == 0)
     </div>
     <div class="form-group col-md-6">
       <label for="inputPassword4">Preference Two - Time</label>
-      <select class="form-control" name="time1">
+      <select class="form-control" name="time2">
       <?php
          
          $time2 = strtotime('now');
@@ -220,8 +221,9 @@ if ($countfindavail == 0)
         while ($timey2 <= $findltime) {
           
           $prtime2 = date('g:i a',$timey2);
+          $timestamper2 = date('H:i:s', $timey2); 
           
-          echo "<option value=''>$prtime2</option>";
+          echo "<option value='$timestamper2'>$prtime2</option>";
           $timey2 = strtotime('+1 hour',$timey2);
         }
         
