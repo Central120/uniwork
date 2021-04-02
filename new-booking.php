@@ -129,11 +129,8 @@ if ($countfindavail == 0)
       <?php
          
          $time = strtotime('now');
-
-         
-
         while ($timey <= $findltime) {
-          if ($time > $timey)
+          if ($timey >= $findltime)
           {
            $prtime = "No times available.";
           }
