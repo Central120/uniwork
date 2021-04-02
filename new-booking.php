@@ -130,14 +130,7 @@ if ($countfindavail == 0)
          
          $time = strtotime('now');
 
-         if ($findftime >= $time)
-         {
-           $timey = $findftime;
-         }
-         else
-         {
-           $timey = $time;
-         }
+         
         
         while ($timey <= $findltime) {
           
