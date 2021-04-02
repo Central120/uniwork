@@ -127,8 +127,7 @@ if ($countfindavail == 0)
       <label for="inputPassword4">Preference One - Time</label>
       <select class="form-control" name="time1">
       <?php
-         
-         $time = strtotime('now');
+      
         while ($timey <= $findltime) {
           if ($timey >= $findltime)
           {
