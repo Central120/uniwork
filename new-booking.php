@@ -117,7 +117,10 @@ if ($countfindavail == 0)
           {
             $prdate = "Cannot book for today.";
           }
+          else
+          { 
           $prdate = date('l jS \of F',$date);
+          }
           
           echo "<option value=''>$prdate</option>";
           $date = strtotime('+1 day',$date);
