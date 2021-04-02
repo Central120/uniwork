@@ -24,9 +24,9 @@ session_start();
   <p>Store Page</p>
   <br>
   <?php 
-$sql = mysqli_query($conn, “SELECT * FROM products”);
+$sql = mysqli_query($conn, "SELECT * FROM products");
 
-while($row = mysqli->assoc($sql))
+while($row = mysqli_fetch_assoc($sql))
 {
     $productName = $row['product_name'];
     $category = $row['category'];
@@ -34,12 +34,12 @@ while($row = mysqli->assoc($sql))
     $discount = $row['discount'];
     $stock = $row['stock'];
 
-    echo “<table>”;
-    echo “<tr>”;
-    echo “<td>$productName</td>”;
-    echo “<td>£$price</td>”;
-    echo “</tr>”;
-    echo “</table>”;
+    echo "<table>";
+    echo "<tr>";
+    echo "<td>$productName</td>";
+    echo "<td>£$price</td>";
+    echo "</tr>";
+    echo "</table>";
 }
 ?>
 
