@@ -131,7 +131,8 @@ if ($countfindavail == 0)
          $time = strtotime('now');
 
          
-        
+           $timey = $findftime;
+         
         while ($timey <= $findltime) {
           
           $prtime = date('g:i a',$timey);
