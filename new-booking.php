@@ -125,7 +125,7 @@ if ($countfindavail == 0)
       </div>
     <div class="form-group col-md-6">
       <label for="inputPassword4">Preference One - Time</label>
-      <select class="form-control" name="day1">
+      <select class="form-control" name="time1">
       <?php
          
          $time = strtotime('now');
@@ -144,7 +144,7 @@ if ($countfindavail == 0)
           $prtime = date('g:i a',$timey);
           
           echo "<option value=''>$prtime</option>";
-          $datey = strtotime('+1 hour',$timey);
+          $timey = strtotime('+1 hour',$timey);
         }
         
       ?>
