@@ -35,6 +35,13 @@ $findcurrentbookings = mysqli_query($conn, "SELECT * FROM `bookings` WHERE `user
     {
         margin-top:10% !important;
     }
+
+    .center {
+  margin: auto;
+  width: 60%;
+  border: 3px solid #73AD21;
+  padding: 10px;
+}
      </style>
 </head>
 <body>
@@ -43,7 +50,7 @@ $findcurrentbookings = mysqli_query($conn, "SELECT * FROM `bookings` WHERE `user
     <center>
     <div class="row">
       <!-- Gallery item -->
-      <div class="col-xl-1 col-lg-2 col-md-3 mb-2">
+      <div class="col-xl-3 col-lg-4 col-md-6 mb-4">
         <div class="bg-white rounded shadow-sm"><img src="https://res.cloudinary.com/mhmd/image/upload/v1556294929/matthew-hamilton-351641-unsplash_zmvozs.jpg" alt="" class="img-fluid card-img-top">
           <div class="p-4">
             <h5> <a href="#" class="text-dark">Red paint cup</a></h5>
