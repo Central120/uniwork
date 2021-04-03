@@ -74,7 +74,7 @@ $findpending = mysqli_query($conn, "SELECT * FROM `bookings` WHERE `approver` = 
         echo "<tr>
         <td>$username</td>
         <td>$pet_name</td>
-        <td>Timeslot 1: <p>$ts1</p><br>Timeslot 2: <p>$ts2</p></td>
+        <td>Timeslot 1: <p>$ts1d</p><br>Timeslot 2: <p>$ts2d</p></td>
         <td>Emergency 1: $ec1 <br> Emergency 2: $ec2</td>
         <td>$info</td>
         <td><input type='button' data-toggle='modal' id='continue_btn' data-target='#manage{$booking_id}' class='btn btn-warning' value='Manage' /></td>
