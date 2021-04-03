@@ -72,7 +72,7 @@ $findstaff = mysqli_query($conn, "SELECT * FROM `accounts` WHERE `admin_id` = '2
     <?php 
     if ($session_usern == 'Guest')
     {
-      echo "<div class='alert alert-danger alert-dismissable fade show' role='alert'><strong>Hey there!</strong>We noticed you weren't signed in. You must be signed in to place a booking.<button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+      echo "<div class='alert alert-danger alert-dismissable fade show' role='alert'><strong>Hey there!</strong><br>We noticed you weren't signed in. You must be signed in to place a booking.<button type='button' class='close' data-dismiss='alert' aria-label='Close'>
       <span aria-hidden='true'>&times;</span>
     </button></div>";
     }
