@@ -93,7 +93,7 @@ else
     <div class='container'>
     <div class='row'>
     <div class='col-md-3'>
-    <a href='bookings' style='color: white' title='Click here to set your schedule'>
+    <a href='set-schedule' style='color: white' title='Click here to set your schedule'>
       <div class='card-counter primary'>
         <i class='fa fa-calendar-o'></i>
       
@@ -103,7 +103,7 @@ else
       </div>
 
     <div class='col-md-3'>
-    <a href='products' style='color: white' title='Click here to view pending bookings'>
+    <a href='pending-bookings' style='color: white' title='Click here to view pending bookings'>
       <div class='card-counter info'>
         <i class='fa fa-book'></i>
         <span class='count-name'>Pending Bookings</span>
@@ -112,7 +112,7 @@ else
     </div>
 
     <div class='col-md-3'>
-    <a href='cart' style='color: white' title='Click here to view oncoming bookings'>
+    <a href='oncoming-bookings' style='color: white' title='Click here to view oncoming bookings'>
       <div class='card-counter success'>
         <i class='fa fa-check'></i>
         <span class='count-name'>Oncoming Bookings</span>
@@ -121,7 +121,7 @@ else
     </div>
 
     <div class='col-md-3'>
-    <a href='users' style='color: white' title='Click here to view cancelled bookings'>
+    <a href='cancelled-bookings' style='color: white' title='Click here to view cancelled bookings'>
       <div class='card-counter danger'>
         <i class='fa fa-ban'></i>
         <span class='count-name'>Cancelled Bookings</span>
