@@ -49,110 +49,40 @@ $findcurrentbookings = mysqli_query($conn, "SELECT * FROM `bookings` WHERE `user
     <br><br><br>
     <center>
     <div class="row">
-      <!-- Gallery item -->
-      <div class="col-xl-3 col-lg-4 col-md-6 mb-4">
-        <div class="bg-dark rounded shadow-sm"><img src="https://res.cloudinary.com/mhmd/image/upload/v1556294929/matthew-hamilton-351641-unsplash_zmvozs.jpg" alt="" class="img-fluid card-img-top">
-          <div class="p-4">
-            <h5> <a href="#" class="text-white">Red paint cup</a></h5>
-            <p class="small text-muted mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
-            <div class="d-flex align-items-center justify-content-between rounded-pill bg-light px-3 py-2 mt-4">
-              <p class="small mb-0"><i class="fa fa-user-o mr-2"></i><span class="font-weight-bold">Author</span></p>
-              <div class="badge badge-danger px-3 rounded-pill font-weight-normal">New</div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- End -->
 
-      <!-- Gallery item -->
-      <div class="col-xl-3 col-lg-4 col-md-6 mb-4">
-        <div class="bg-dark rounded shadow-sm"><img src="https://res.cloudinary.com/mhmd/image/upload/v1556294927/cody-davis-253928-unsplash_vfcdcl.jpg" alt="" class="img-fluid card-img-top">
-          <div class="p-4">
-            <h5> <a href="#" class="text-white">Blorange</a></h5>
-            <p class="small text-muted mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
-            <div class="d-flex align-items-center justify-content-between rounded-pill bg-light px-3 py-2 mt-4">
-              <p class="small mb-0"><i class="fa fa-user-o mr-2"></i><span class="font-weight-bold">Author</span></p>
-              <div class="badge badge-primary px-3 rounded-pill font-weight-normal">Trend</div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- End -->
+      <?php
 
-      <!-- Gallery item -->
-      <div class="col-xl-3 col-lg-4 col-md-6 mb-4">
-        <div class="bg-dark rounded shadow-sm"><img src="https://res.cloudinary.com/mhmd/image/upload/v1556294928/nicole-honeywill-546848-unsplash_ymprvp.jpg" alt="" class="img-fluid card-img-top">
-          <div class="p-4">
-            <h5> <a href="#" class="text-white">And She Realized</a></h5>
-            <p class="small text-muted mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
-            <div class="d-flex align-items-center justify-content-between rounded-pill bg-light px-3 py-2 mt-4">
-              <p class="small mb-0"><i class="fa fa-user-o mr-2"></i><span class="font-weight-bold">Author</span></p>
-              <div class="badge badge-warning px-3 rounded-pill font-weight-normal text-white">Featured</div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- End -->
+      $imageQuery = $mysqli_query($conn, "SELECT * FROM products WHERE approver != 'Pending'");
+      
+      while($row = mysqli_fetch_array($imageQuery))
+      {
+          $author = $row['username'];
+          $productName = $row['product_name'];
+          $caption = $row['caption'];
+          $imageTimestamp = $row['timestamp'];
+          $pLocation = $row['p_location'];
+          ?>
+      
 
-      <!-- Gallery item -->
       <div class="col-xl-3 col-lg-4 col-md-6 mb-4">
-        <div class="bg-dark rounded shadow-sm"><img src="https://res.cloudinary.com/mhmd/image/upload/v1556294927/dose-juice-1184444-unsplash_bmbutn.jpg" alt="" class="img-fluid card-img-top">
+        <div class="bg-dark rounded shadow-sm"><img src="<?php echo $pLocation; ?> alt="" class="img-fluid card-img-top">
           <div class="p-4">
-            <h5> <a href="#" class="text-white">DOSE Juice</a></h5>
-            <p class="small text-muted mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
+            <h5> <a href="#" class="text-white"><?php echo $productName; ?></a></h5>
+            <p class="small text-white mb-0"><?php echo $caption; ?></p>
             <div class="d-flex align-items-center justify-content-between rounded-pill bg-light px-3 py-2 mt-4">
-              <p class="small mb-0"><i class="fa fa-user-o mr-2"></i><span class="font-weight-bold">Author</span></p>
-              <div class="badge badge-success px-3 rounded-pill font-weight-normal">Hot</div>
+              <p class="small mb-0"><i class="fa fa-user-o mr-2"></i><span class="font-weight-bold"><?php echo $author; ?></span></p>
+              <div class="badge badge-danger px-3 rounded-pill font-weight-normal"><?php echo $imageTimestamp; ?></div>
             </div>
           </div>
         </div>
       </div>
-      <!-- End -->
 
-      <!-- Gallery item -->
-      <div class="col-xl-3 col-lg-4 col-md-6 mb-4">
-        <div class="bg-dark rounded shadow-sm"><img src="https://res.cloudinary.com/mhmd/image/upload/v1556294926/cody-davis-253925-unsplash_hsetv7.jpg" alt="" class="img-fluid card-img-top">
-          <div class="p-4">
-            <h5> <a href="#" class="text-white">Pineapple</a></h5>
-            <p class="small text-muted mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
-            <div class="d-flex align-items-center justify-content-between rounded-pill bg-light px-3 py-2 mt-4">
-              <p class="small mb-0"><i class="fa fa-user-o mr-2"></i><span class="font-weight-bold">Author</span></p>
-              <div class="badge badge-primary px-3 rounded-pill font-weight-normal">New</div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- End -->
+      <?php
+      }
+      ?>
+      
 
-      <!-- Gallery item -->
-      <div class="col-xl-3 col-lg-4 col-md-6 mb-4">
-        <div class="bg-dark rounded shadow-sm"><img src="https://res.cloudinary.com/mhmd/image/upload/v1556294928/tim-foster-734470-unsplash_xqde00.jpg" alt="" class="img-fluid card-img-top">
-          <div class="p-4">
-            <h5> <a href="#" class="text-white">Yellow banana</a></h5>
-            <p class="small text-muted mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
-            <div class="d-flex align-items-center justify-content-between rounded-pill bg-light px-3 py-2 mt-4">
-              <p class="small mb-0"><i class="fa fa-user-o mr-2"></i><span class="font-weight-bold">Author</span></p>
-              <div class="badge badge-warning px-3 rounded-pill font-weight-normal text-white">Featured</div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- End -->
-
-      <!-- Gallery item -->
-      <div class="col-xl-3 col-lg-4 col-md-6 mb-4">
-        <div class="bg-dark rounded shadow-sm"><img src="https://res.cloudinary.com/mhmd/image/upload/v1556294927/mike-meyers-737494-unsplash_yd11yq.jpg" alt="" class="img-fluid card-img-top">
-          <div class="p-4">
-            <h5> <a href="#" class="text-white">Teal Gameboy</a></h5>
-            <p class="small text-muted mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
-            <div class="d-flex align-items-center justify-content-between rounded-pill bg-light px-3 py-2 mt-4">
-              <p class="small mb-0"><i class="fa fa-user-o mr-2"></i><span class="font-weight-bold">Author</span></p>
-              <div class="badge badge-info px-3 rounded-pill font-weight-normal">Hot</div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- End -->
+      
 
      </center>
   <?php include "inc/footer.php"; ?>
