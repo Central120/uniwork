@@ -109,7 +109,7 @@ $findcurrentbookings = mysqli_query($conn, "SELECT * FROM `bookings` WHERE `user
         <td>Emergency 1: $ec1 <br> Emergency 2: $ec2</td>
         <td>$info</td>
         <td>$approved</td>
-        <td><form action='php/cancel-booking.php' method='post' role='form'><input type='hidden' value='$booking_id' name='id'><input type='submit' class='btn btn-danger' value='Cancel Booking' /></form></td>
+        <td><form action='php/cancel-booking.php' id='Form1' method='post' role='form'><input type='hidden' value='$booking_id' name='id'><input type='submit' class='btn btn-danger' value='Cancel Booking' /></form></td>
         </tr>
         ";
 
@@ -130,7 +130,23 @@ $findcurrentbookings = mysqli_query($conn, "SELECT * FROM `bookings` WHERE `user
 </div>
   <?php include "inc/footer.php"; ?>
 </body>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <script type='text/javascript'>
+    $('#Form1').submit(function(event) {
+      event.preventDefault(); //prevent default action
+      var post_url = $(this).attr('action'); //get form action url
+      var form_data = $(this).serialize(); //Encode form elements for submission
 
+      $.ajax({
+        url: post_url,
+        type: 'post',
+        data: form_data
+      }).done(function(response) { //
+        $('#server-results').html(response);
+
+      });
+    });
+  </script>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
