@@ -109,8 +109,7 @@ $findcurrentbookings = mysqli_query($conn, "SELECT * FROM `bookings` WHERE `user
           </div>
           <div class="form-group">
             <label for="message-text" class="col-form-label">Upload Photo:</label>
-            <input type="file" class="custom-file-input" id="customFile" name="fileUpload">
-            <label class="custom-file-label" for="customFile">Choose file</label>
+            <input type="file" class="form-control-file" name="fileUpload" id="exampleFormControlFile1">
           </div>
         
       </div>
