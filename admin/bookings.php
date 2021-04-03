@@ -109,7 +109,7 @@ else
     <div class='col-md-3'>
     <a href='cart' style='color: white' title='Click here to view oncoming bookings'>
       <div class='card-counter success'>
-        <i class='fa fa-shopping-check'></i>
+        <i class='fa fa-check'></i>
         <span class='count-name'>Oncoming Bookings</span>
       </div>
       </a>
