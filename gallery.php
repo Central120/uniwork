@@ -105,11 +105,11 @@ $findcurrentbookings = mysqli_query($conn, "SELECT * FROM `bookings` WHERE `user
       <form id="Form1" action="inc/submit-photo" method="post">
           <div class="form-group">
             <label for="recipient-name" class="col-form-label">Image Title</label>
-            <input type="text" class="form-control" name="title" id="image-title">
+            <input type="text" class="form-control" name="title" id="image-title" placeholder="E.g. Dog Biscuits">
           </div>
           <div class="form-group">
             <label for="message-text" class="col-form-label">Image Description:</label>
-            <input type="text" class="form-control" name="caption" id="image-description">
+            <input type="text" class="form-control" name="caption" id="image-description" placeholder="E.g. My little border collie enjoyed them!">
           </div>
           <div class="form-group">
             <label for="message-text" class="col-form-label">Upload Photo:</label>
