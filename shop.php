@@ -8,7 +8,7 @@ session_start();
 <!doctype html>
 <html lang="en">
   <head>
-  	<title>Shop</title>
+  	<title>Kerry's K9's - Shop</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
@@ -20,10 +20,30 @@ session_start();
   <body>
   <?php include "inc/header.php"; ?>
   <div class="container-fluid" style='min-height:40vh'>
-  <h2 class="mb-4">Welcome to Kerry's K9's!</h2>
-  <p>Below are the most recent announcements.</p>
+  <h2 class="mb-4">Welcome to Kerry's K9's shop!</h2>
+  <p>Store Page</p>
   <br>
-  <p>We currently discounts on the following items: </p>
+  <?php 
+$sql = mysqli_query($conn, "SELECT * FROM products");
+
+while($row = mysqli_fetch_assoc($sql))
+{
+    $productName = $row['product_name'];
+    $category = $row['category'];
+    $price = $row['price'];
+    $discount = $row['discount'];
+    $stock = $row['stock'];
+    $image = $row['image'];
+
+    echo "<table>";
+    echo "<tr>";
+    echo "<td>$productName</td>";
+    echo "<td>£$price</td>";
+    echo "<td><img src='$image'></td>";
+    echo "</tr>";
+    echo "</table>";
+}
+?>
 
 </div>
 
