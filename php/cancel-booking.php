@@ -48,9 +48,15 @@ if ($countfindbooking != 0)
     if ($movebookingtocancelled)
     {
         $deletefrombookings = mysqli_query($conn, "DELETE FROM `bookings` WHERE `id` = '$booking_id'");
-        if ($deletedfrombookings)
+        if ($deletefrombookings)
         {
-            echo "<script>console.log('JS is working...');</script>";
+            echo "<script>window.location.replace('../current-bookings');</script>";
+        }
+        else
+        {
+            echo "<div class='alert alert-danger alert-dismissable fade show' role='alert'><strong>An error occured.</strong> Your booking did not get cancelled. <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+            <span aria-hidden='true'>&times;</span>
+          </button></div>";
         }
     }   
     else
