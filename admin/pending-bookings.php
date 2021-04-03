@@ -66,7 +66,8 @@ $findpending = mysqli_query($conn, "SELECT * FROM `bookings` WHERE `approver` = 
         $ec2 = $rowfindbooking['ec2'];
         $info = $rowfindbooking['info'];
 
-
+        $ts1d = date("l jS \of F @ g:i a", $ts1);
+        $ts2d = date("l jS \of F @ g:i a", $ts2);
         echo "<tr>
         <td>$username</td>
         <td>$pet_name</td>
@@ -87,7 +88,7 @@ $findpending = mysqli_query($conn, "SELECT * FROM `bookings` WHERE `approver` = 
               </button>
             </div>
             <div class='modal-body'>
-            <p>Reminder: Timeslot 1 is $ts1 and Timeslot 2 is $ts2.
+            <p>Reminder: <br>Timeslot 1: <b>$ts1d</b> <br>Timeslot 2: <b>$ts2d</b>
             </div>
             <div class='modal-footer'>
             ";
