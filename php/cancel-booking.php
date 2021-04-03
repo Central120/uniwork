@@ -37,7 +37,7 @@ if ($countfindbooking != 0)
     $handler = $rowfindbooking['approver'];
     if ($handler == '')
     {
-        $handlerstr = "None allocated";
+        $handlerstr = "$session_usern";
     }
     else
     {
