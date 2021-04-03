@@ -92,17 +92,32 @@ $findcurrentbookings = mysqli_query($conn, "SELECT * FROM `bookings` WHERE `user
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalCenterTitle">Modal title</h5>
+        <h5 class="modal-title" id="exampleModalCenterTitle">Upload your image!</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
-        ...
+      <form id="Form1" action="inc/submit-photo" method="post">
+          <div class="form-group">
+            <label for="recipient-name" class="col-form-label">Image Title</label>
+            <input type="text" class="form-control" name="title" id="image-title">
+          </div>
+          <div class="form-group">
+            <label for="message-text" class="col-form-label">Image Description:</label>
+            <input type="text" class="form-control" name="caption" id="image-description">
+          </div>
+          <div class="form-group">
+            <label for="message-text" class="col-form-label">Upload Photo:</label>
+            <input type="file" class="custom-file-input" id="customFile" name="fileUpload">
+            <label class="custom-file-label" for="customFile">Choose file</label>
+          </div>
+        
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="submit" class="btn btn-success">Upload</button>
+        </form>
       </div>
     </div>
   </div>
