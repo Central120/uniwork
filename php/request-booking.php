@@ -29,7 +29,7 @@ $additional = mysqli_real_escape_string($conn, $_POST['additional']);
 $tz1 = "$day1 $time1";
 $tz2 = "$day2 $time2";
 
-$addtobookings = mysqli_query($conn, "INSERT INTO `bookings` VALUES (DEFAULT,'$session_usern','$tz1','$tz2','$petname','$em1','$em2','$additional','$current_timestamp')");
+$addtobookings = mysqli_query($conn, "INSERT INTO `bookings` VALUES (DEFAULT,'$session_usern','$tz1','$tz2','$petname','$em1','$em2','$additional','$current_timestamp', '', '')");
 if ($addtobookings)
 {
     echo "<script>window.location.replace('../new-booking');</script>";
