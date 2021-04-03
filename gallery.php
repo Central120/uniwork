@@ -36,7 +36,7 @@ $findcurrentbookings = mysqli_query($conn, "SELECT * FROM `bookings` WHERE `user
         margin-top:10% !important;
     }
 
-    .center {
+    .imageCenter {
   margin: auto;
   width: 60%;
   padding: 10px;
@@ -46,7 +46,7 @@ $findcurrentbookings = mysqli_query($conn, "SELECT * FROM `bookings` WHERE `user
 <body>
     <?php include "inc/header.php"; ?>
     <br><br><br>
-    <div class="center">
+    <div class="imageCenter">
     <div class="row">
 
       <?php
