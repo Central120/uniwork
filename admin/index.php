@@ -108,6 +108,14 @@ else
 $sqlcountbookings = "select count(*) as totalbookings FROM `bookings`";
 $resultcountbookings = mysqli_query($conn,$sqlcountbookings);
 $rowcountbookings = mysqli_fetch_array($resultcountbookings);
+  if ($rowcountbookings['totalbookings'] == '0')
+  {
+    $bookingtxt = "Booking";
+  }
+  else
+  {
+    $bookingtxt = "Bookings";
+  }
 
         echo "
     <div class='container'>
@@ -117,7 +125,7 @@ $rowcountbookings = mysqli_fetch_array($resultcountbookings);
       <div class='card-counter primary'>
         <i class='fa fa-book'></i>
         <span class='count-numbers'>{$rowcountbookings['totalbookings']}</span>
-        <span class='count-name'>Bookings</span>
+        <span class='count-name'>$bookingtxt</span>
       </div>
     </a>
       </div>
