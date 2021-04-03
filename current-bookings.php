@@ -99,7 +99,7 @@ $findcurrentbookings = mysqli_query($conn, "SELECT * FROM `bookings` WHERE `user
 
         echo "<tr>
         <td>$pet_name</td>
-        <td>Timeslot 1: <p style='color:$color'>$ts1</p><br>Timeslot 2: <p style='color:$color2'>$ts2</p></td>
+        <td>Timeslot 1: <p style='color:$color1'>$ts1</p><br>Timeslot 2: <p style='color:$color2'>$ts2</p></td>
         <td>Emergency 1: $ec1 <br> Emergency 2: $ec2</td>
         <td>$info</td>
         <td>$approved</td>
