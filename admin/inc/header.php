@@ -89,7 +89,7 @@ $url = 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI'];
             ?>
           <a class="dropdown-item <?php if (strpos($url,'adminlogin') !== false) {
     echo 'active';
-} ?>" href="#">Admin</a>
+} ?>" href="index">Admin</a>
           <?php 
           }
           ?>
