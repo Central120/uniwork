@@ -66,8 +66,9 @@ $findpending = mysqli_query($conn, "SELECT * FROM `bookings` WHERE `approver` = 
         $ec2 = $rowfindbooking['ec2'];
         $info = $rowfindbooking['info'];
 
-        $ts1d = date("l jS \of F @ g:i a", $ts1);
-        $ts2d = date("l jS \of F @ g:i a", $ts2);
+        $ts1d = date("l jS \of F, g:i a", $ts1);
+        $ts2d = date("l jS \of F, g:i a", $ts2);
+
         echo "<tr>
         <td>$username</td>
         <td>$pet_name</td>
