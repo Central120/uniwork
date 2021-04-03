@@ -108,7 +108,7 @@ else
 $sqlcountbookings = "select count(*) as totalbookings FROM `bookings`";
 $resultcountbookings = mysqli_query($conn,$sqlcountbookings);
 $rowcountbookings = mysqli_fetch_array($resultcountbookings);
-  if ($rowcountbookings['totalbookings'] == '0')
+  if ($rowcountbookings['totalbookings'] == '1')
   {
     $bookingtxt = "Booking";
   }
