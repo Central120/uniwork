@@ -44,7 +44,7 @@ if ($countfindbooking != 0)
         $handlerstr = $handler;
     }
 
-    $movebookingtocancelled = mysqli_query($conn, "INSERT INTO `cancelled_bookings` VALUES (DEFAULT, '$session_usern', '$tsc', '$handlerstr', '$current_timestamp'");
+    $movebookingtocancelled = mysqli_query($conn, "INSERT INTO `cancelled_bookings` VALUES (DEFAULT, '$session_usern', '$tsc', '$handlerstr', '$current_timestamp')");
     if ($movebookingtocancelled)
     {
         $deletefrombookings = mysqli_query($conn, "DELETE FROM `bookings` WHERE `id` = '$booking_id'");
