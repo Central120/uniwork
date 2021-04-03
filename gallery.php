@@ -38,7 +38,7 @@ $findcurrentbookings = mysqli_query($conn, "SELECT * FROM `bookings` WHERE `user
 
     .imageCenter {
   margin: auto;
-  width: 60%;
+
   padding: 10px;
 }
      </style>
