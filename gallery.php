@@ -99,9 +99,9 @@ $findcurrentbookings = mysqli_query($conn, "SELECT * FROM `bookings` WHERE `user
         </button>
         
       </div>
-      <small>Your image will be put as pending whilst our team approves your submission.</small>
+      
       <div class="modal-body">
-
+      <small>Your image will be put as pending whilst our team approves your submission.</small>
       <form id="Form1" action="inc/submit-photo" method="post">
           <div class="form-group">
             <label for="recipient-name" class="col-form-label">Image Title</label>
