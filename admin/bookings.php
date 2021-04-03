@@ -47,6 +47,11 @@ else
     color: #FFF;
   }  
 
+  .card-counter.info{
+    background-color: #26c6da;
+    color: #FFF;
+  }  
+
   .card-counter.success{
     background-color: #66bb6a;
     color: #FFF;
