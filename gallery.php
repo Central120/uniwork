@@ -93,11 +93,12 @@ $findcurrentbookings = mysqli_query($conn, "SELECT * FROM `bookings` WHERE `user
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalCenterTitle">Upload your image!</h5>
-        <br>
-        <small>Your image will be put as pending whilst our team approves your submission.</small>
+        
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
+<br>
+        <small>Your image will be put as pending whilst our team approves your submission.</small>
       </div>
       <div class="modal-body">
       <form id="Form1" action="inc/submit-photo" method="post">
