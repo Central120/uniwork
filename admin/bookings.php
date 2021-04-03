@@ -81,6 +81,11 @@ else
     display: block;
     font-size: 18px;
   }
+
+  .footer 
+  {
+    margin-top:20% !important; 
+  }
 </style>		
   </head>
   <body>
