@@ -52,7 +52,7 @@ $findcurrentbookings = mysqli_query($conn, "SELECT * FROM `bookings` WHERE `user
 
       <?php
 
-      $imageQuery = $mysqli_query($conn, "SELECT * FROM products WHERE approver != 'pending'");
+      $imageQuery = $mysqli_query($conn, "SELECT * FROM photo_sharing WHERE approver != 'pending'");
       
       while($row = mysqli_fetch_array($imageQuery))
       {
