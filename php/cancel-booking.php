@@ -26,7 +26,7 @@ if ($countfindbooking != 0)
     $rowfindbooking = mysqli_fetch_assoc($findbooking);
     $username = $rowfindbooking['username'];
     $tscancelled = $rowfindbooking['approved_timestamp'];
-    if ($tscancelled == '')
+    if ($tscancelled == '0000-00-00 00:00:00')
     {
         $tsc = "None allocated";
     }
@@ -44,7 +44,7 @@ if ($countfindbooking != 0)
         $handlerstr = $handler;
     }
 
-    $movebookingtocancelled = mysqli_query($conn, "INSERT INTO `cancelled_bookings` VALUES (DEFAULT, '$session_usern', '$tsc', '$handlerstr', '$current_timestamp')");
+    $movebookingtocancelled = mysqli_query($conn, "INSERT INTO `cancelled_bookings` VALUES (DEFAULT, '$session_usern', '$tsc', '$handlerstr', '$current_timestamp', 'Cancelled')");
     if ($movebookingtocancelled)
     {
         $deletefrombookings = mysqli_query($conn, "DELETE FROM `bookings` WHERE `id` = '$booking_id'");

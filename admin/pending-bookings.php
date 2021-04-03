@@ -97,19 +97,19 @@ $findpending = mysqli_query($conn, "SELECT * FROM `bookings` WHERE `approver` = 
             ";
             
 
-              echo "<form action='approve-booking.php' method='post' role='form'><input type='hidden' value='$booking_id' name='id' />
-              <input type='hidden' value='$ts1' name='ts1'>
+              echo "<form action='php/approve-booking.php' method='post' role='form'><input type='hidden' value='$booking_id' name='id' />
+              <input type='hidden' value='$ts1' name='ts'>
               <button type='submit' class='btn btn-success'>Approve Timeslot 1</button>
             </form>";
 
-            echo "<form action='approve-booking.php' method='post' role='form'><input type='hidden' value='$booking_id' name='id' />
-            <input type='hidden' value='$ts2' name='ts2'>
+            echo "<form action='php/approve-booking.php' method='post' role='form'><input type='hidden' value='$booking_id' name='id' />
+            <input type='hidden' value='$ts2' name='ts'>
             <button type='submit' class='btn btn-outline-success'>Approve Timeslot 2</button>
           </form>";
             
            echo "
-            <form action='approve-booking.php' method='post' role='form'>
-            <input type='hidden' value='$booking_id' name='id' /><input type='hidden' value='none' name='none'>
+            <form action='php/approve-booking.php' method='post' role='form'>
+            <input type='hidden' value='$booking_id' name='id' /><input type='hidden' value='none' name='ts'>
               <button type='submit' class='btn btn-danger'>Deny both timeslots</button>
             </form>
               <button type='button' class='btn btn-secondary' data-dismiss='modal'>Close</button>
