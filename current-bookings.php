@@ -109,7 +109,7 @@ $findcurrentbookings = mysqli_query($conn, "SELECT * FROM `bookings` WHERE `user
         <td>Emergency 1: $ec1 <br> Emergency 2: $ec2</td>
         <td>$info</td>
         <td>$approved</td>
-        <td><form action='php/cancel-booking.php' id='Form1' method='post' role='form'><input type='hidden' value='$booking_id' name='id'><input type='submit' class='btn btn-danger' value='Cancel Booking' /></form></td>
+        <td><form action='php/cancel-booking.php' id='Form1' method='post' role='form'><input type='hidden' value='$booking_id' name='id'><input type='submit' class='btn btn-danger' value='Cancel Booking'></form></td>
         </tr>
         ";
 
