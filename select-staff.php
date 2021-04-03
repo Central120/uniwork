@@ -14,7 +14,7 @@ else if(isset($_SESSION['admin']))
 }
 else
 {
-    echo "<script>window.location.replace('../index');</script>";
+  $session_usern = "Guest";
 }
 
 
@@ -69,7 +69,18 @@ $findstaff = mysqli_query($conn, "SELECT * FROM `accounts` WHERE `admin_id` = '2
   </div>
   <div class="form-group row">
     <div class="col-sm-10"><br>
-      <button type="submit" class="btn btn-success">Request Booking</button>
+    <?php 
+    if ($session_usern == 'Guest')
+    {
+      echo "<div class='alert alert-danger alert-dismissable fade show' role='alert'><strong>Hey there!</strong>We noticed you weren't signed in. You must be signed in to place a booking.<button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+      <span aria-hidden='true'>&times;</span>
+    </button></div>";
+    }
+    else
+    {
+     echo "<button type='submit' class='btn btn-success'>Request Booking</button>";
+    }
+      ?>
     </div>
   </div></form>
   </div>
