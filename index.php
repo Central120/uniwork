@@ -15,7 +15,12 @@ session_start();
    	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
      <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700' rel='stylesheet' type='text/css' />
 
-		
+		<style>
+  .footer 
+  {
+    margin-top: 10% !important; 
+  }
+    </style>
   </head>
   <body>
   <?php include "inc/header.php"; ?>
