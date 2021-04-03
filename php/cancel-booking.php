@@ -50,7 +50,7 @@ if ($countfindbooking != 0)
         $deletefrombookings = mysqli_query($conn, "DELETE FROM `bookings` WHERE `id` = '$booking_id'");
         if ($deletedfrombookings)
         {
-            header("Location: ../current-booking");
+            echo "<script>console.log('JS is working...');</script>";
         }
     }   
     else
