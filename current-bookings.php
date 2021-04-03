@@ -95,6 +95,7 @@ $findcurrentbookings = mysqli_query($conn, "SELECT * FROM `bookings` WHERE `user
         <td>$info</td>
         <td>$approved</td>
         <td><form action='cancel-booking.php' method='post' role='form'><input type='hidden' value='$booking_id' name='id'><input type='submit' class='btn btn-danger' value='Cancel Booking' /></form></td>
+        </tr>
         ";
 
         
@@ -103,6 +104,15 @@ $findcurrentbookings = mysqli_query($conn, "SELECT * FROM `bookings` WHERE `user
 
 
 ?>
+ </tbody>
+                </table>
+            </div>
+        </div>
+        </div>
+            </div>
+        </div>
+    </div>
+</div>
   <?php include "inc/footer.php"; ?>
 </body>
 
