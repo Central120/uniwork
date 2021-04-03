@@ -51,8 +51,8 @@ $findcurrentbookings = mysqli_query($conn, "SELECT * FROM `bookings` WHERE `user
                             <th scope="col">Pet Name</th>
                             <th scope="col">Timeslots</th>
                             <th scope="col">Emergency Contacts</th>
-                            <th scope="col" class="text-center">Additional Info</th>
-                            <th scope="col" class="text-right">Status</th>
+                            <th scope="col">Additional Info</th>
+                            <th scope="col">Status</th>
                             <th>Manage</th>
                         </tr>
                     </thead>
