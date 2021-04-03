@@ -33,7 +33,7 @@ $findcurrentbookings = mysqli_query($conn, "SELECT * FROM `bookings` WHERE `user
      <style>
     .footer 
     {
-        margin-top:20% !important;
+        margin-top:10% !important;
     }
      </style>
 </head>
