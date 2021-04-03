@@ -79,18 +79,27 @@ $findcurrentbookings = mysqli_query($conn, "SELECT * FROM `bookings` WHERE `user
             $approved = "Approved by $approver";
         }
 
-        if ($approved_timestamp == $ts1 || $approved_timestamp == $ts2)
+        if ($approved_timestamp == $ts1)
         {
-            $color = "green";
+            $color1 = "green";
         }
         else
         {
-            $color = "red";
+            $color1 = "red";
+        }
+
+        if ($approved_timestamp == $ts2)
+        {
+            $color2 = "green";
+        }
+        else
+        {
+            $color2 = "red";
         }
 
         echo "<tr>
         <td>$pet_name</td>
-        <td>Timeslot 1: <p style='color:$color'>$ts1</p><br>Timeslot 2: <p style='color:$color'>$ts2</p></td>
+        <td>Timeslot 1: <p style='color:$color'>$ts1</p><br>Timeslot 2: <p style='color:$color2'>$ts2</p></td>
         <td>Emergency 1: $ec1 <br> Emergency 2: $ec2</td>
         <td>$info</td>
         <td>$approved</td>
