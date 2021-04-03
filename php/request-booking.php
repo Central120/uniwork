@@ -2,7 +2,7 @@
 include_once '../inc/dbconnect.php';
 session_start();
 $current_timestamp = date('Y-m-d H:i:s');
-ini_set('display_errors', 1);
+
 
 if (isset($_SESSION['user']))
 {
