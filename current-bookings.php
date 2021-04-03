@@ -122,6 +122,119 @@ $findcurrentbookings = mysqli_query($conn, "SELECT * FROM `bookings` WHERE `user
  </tbody>
                 </table>
             </div>
+            <br>
+            <h2 class="mb-42">Cancelled / Denied Bookings</h2>
+    <div class="table-responsive">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th scope="col">Timeslot</th>
+                            <th scope="col">Handled by</th>
+                            <th scope="col">Time</th>
+                            <th scope="col">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+  <?php
+  $sqlfindrejected = mysqli_query($conn, "SELECT * FROM `cancelled_bookings` WHERE `username` = '$session_usern'");
+    while ($rowfindrejected = $sqlfindrejected->fetch_assoc())
+    {
+        $tsc = $rowfindrejected['timeslot_cancelled'];
+        $handler = $rowfindrejected['booking_handler'];
+        $tc = $rowfindrejected['time_cancelled'];
+        $action = $rowfindrejected['action'];
+
+        // find difference between next promotion and current timestamp
+        $date1 = strtotime($current_timestamp);
+        $date2 = strtotime($tc);
+        $diff = abs($date2- $date1);
+
+        $years = floor($diff / (365*60*60*24));
+        $months = floor(($diff - $years * 365*60*60*24) / (30*60*60*24));
+        $days = floor(($diff - $years * 365*60*60*24 - $months*30*60*60*24)/ (60*60*24));
+        $hours = floor(($diff - $years * 365*60*60*24 - $months*30*60*60*24 - $days*60*60*24) / (60*60));
+        $minutes = floor(($diff - $years * 365*60*60*24 - $months*30*60*60*24 - $days*60*60*24 - $hours*60*60)/ 60);
+
+        if ($years == 0 && $months == 0 && $days == 0 && $hours == 0)
+        {
+        // prints minutes
+        $msg = "$minutes minutes ago";
+        }
+        else if ($years == 0 && $months == 0 && $days == 0)
+        {
+        // prints hours
+        $msg = "$hours hours and $minutes minutes ago";
+        }
+        else if ($years == 0 && $months == 0 && $hours)
+        {
+        // prints days
+        $msg = "$days days, $hours hours and $minutes minutes ago";
+        }
+        else if ($years == 0)
+        {
+        // prints months
+        $msg = "$months months, $days days, $hours hours and $minutes minutes ago";
+        }
+        else
+        {
+        // prints years
+        $msg = "$years years, $months months, $days days, $hours hours and $minutes minutes ago";
+        }
+
+        $badge = "<span class='badge badge-danger'>$action</span>";
+
+        
+        
+        if ($approver == "")
+        {
+            $approved = "Booking Pending";
+        }
+        else
+        {
+            $approved = "Booking will be handled by: <p style='color:green'>$approver</p>";
+        }
+
+        if ($approved_timestamp == $ts1)
+        {
+            $color1 = "green";
+        }
+        else
+        {
+            $color1 = "red";
+        }
+
+        if ($approved_timestamp == $ts2)
+        {
+            $color2 = "green";
+        }
+        else
+        {
+            $color2 = "red";
+        }
+
+        $strtsc = strtotime("$tsc");
+       
+
+        $tscd = date("l jS \of F, g:i a", $strtsc);
+        
+
+        echo "<tr>
+        <td>$tscd</td>
+        <td>$handler</td>
+        <td>$msg</td>
+        <td>$action</td>
+        </tr>
+        ";
+
+        
+
+    }
+
+
+?>
+ </tbody>
+                </table>
+            </div>
         </div>
         </div>
             </div>
