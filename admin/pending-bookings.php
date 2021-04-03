@@ -79,7 +79,7 @@ $findpending = mysqli_query($conn, "SELECT * FROM `bookings` WHERE `approver` = 
 
         echo "<div class='modal fade' id='manage{$booking_id}' tabindex='-1' role='dialog' aria-labelledby='manage{$booking_id}' aria-hidden='true'>
         <div class='modal-dialog' role='document'>
-          <div class='modal-content'>
+          <div class='modal-content' style='width:150%;left:-10%;'>
             <div class='modal-header'>
               <h5 class='modal-title'>What would you like to do with $username's booking?</h5>
               <button type='button' class='close' data-dismiss='modal' aria-label='Close'>
@@ -95,12 +95,12 @@ $findpending = mysqli_query($conn, "SELECT * FROM `bookings` WHERE `approver` = 
 
               echo "<form action='approve-booking.php' method='post' role='form'><input type='hidden' value='$booking_id' name='id' />
               <input type='hidden' value='$ts1' name='ts1'>
-              <button type='submit' class='btn btn-info'>Approve Timeslot 1</button>
+              <button type='submit' class='btn btn-success'>Approve Timeslot 1</button>
             </form>";
 
             echo "<form action='approve-booking.php' method='post' role='form'><input type='hidden' value='$booking_id' name='id' />
             <input type='hidden' value='$ts2' name='ts2'>
-            <button type='submit' class='btn btn-info'>Approve Timeslot 2</button>
+            <button type='submit' class='btn btn-outline-success'>Approve Timeslot 2</button>
           </form>";
             
            echo "
