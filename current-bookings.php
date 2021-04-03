@@ -76,7 +76,7 @@ $findcurrentbookings = mysqli_query($conn, "SELECT * FROM `bookings` WHERE `user
         }
         else
         {
-            $approved = "Booking will be handled by:<br> $approver";
+            $approved = "Booking will be handled by: <p color='green'>$approver</p>";
         }
 
         if ($approved_timestamp == $ts1)
