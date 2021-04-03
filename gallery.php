@@ -48,7 +48,9 @@ $findcurrentbookings = mysqli_query($conn, "SELECT * FROM `bookings` WHERE `user
     <br><br><br>
     <div class="imageCenter">
     <div class="row">
-
+<center>
+    <a href="upload-photo" class="btn btn-primary">Upload your photo!</a>
+</center>
       <?php
 
       $imageQuery = mysqli_query($conn, "SELECT * FROM photo_sharing WHERE approver != 'pending'");
