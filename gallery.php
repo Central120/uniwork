@@ -56,7 +56,7 @@ $findcurrentbookings = mysqli_query($conn, "SELECT * FROM `bookings` WHERE `user
             <h5> <a href="#" class="text-white">Red paint cup</a></h5>
             <p class="small text-muted mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
             <div class="d-flex align-items-center justify-content-between rounded-pill bg-light px-3 py-2 mt-4">
-              <p class="small mb-0"><i class="fa fa-picture-o mr-2"></i><span class="font-weight-bold">JPG</span></p>
+              <p class="small mb-0"><i class="fa fa-user-o mr-2"></i><span class="font-weight-bold">Author</span></p>
               <div class="badge badge-danger px-3 rounded-pill font-weight-normal">New</div>
             </div>
           </div>
@@ -71,7 +71,7 @@ $findcurrentbookings = mysqli_query($conn, "SELECT * FROM `bookings` WHERE `user
             <h5> <a href="#" class="text-white">Blorange</a></h5>
             <p class="small text-muted mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
             <div class="d-flex align-items-center justify-content-between rounded-pill bg-light px-3 py-2 mt-4">
-              <p class="small mb-0"><i class="fa fa-picture-o mr-2"></i><span class="font-weight-bold">PNG</span></p>
+              <p class="small mb-0"><i class="fa fa-user-o mr-2"></i><span class="font-weight-bold">Author</span></p>
               <div class="badge badge-primary px-3 rounded-pill font-weight-normal">Trend</div>
             </div>
           </div>
@@ -86,7 +86,7 @@ $findcurrentbookings = mysqli_query($conn, "SELECT * FROM `bookings` WHERE `user
             <h5> <a href="#" class="text-white">And She Realized</a></h5>
             <p class="small text-muted mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
             <div class="d-flex align-items-center justify-content-between rounded-pill bg-light px-3 py-2 mt-4">
-              <p class="small mb-0"><i class="fa fa-picture-o mr-2"></i><span class="font-weight-bold">JPG</span></p>
+              <p class="small mb-0"><i class="fa fa-user-o mr-2"></i><span class="font-weight-bold">Author</span></p>
               <div class="badge badge-warning px-3 rounded-pill font-weight-normal text-white">Featured</div>
             </div>
           </div>
@@ -101,7 +101,7 @@ $findcurrentbookings = mysqli_query($conn, "SELECT * FROM `bookings` WHERE `user
             <h5> <a href="#" class="text-white">DOSE Juice</a></h5>
             <p class="small text-muted mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
             <div class="d-flex align-items-center justify-content-between rounded-pill bg-light px-3 py-2 mt-4">
-              <p class="small mb-0"><i class="fa fa-picture-o mr-2"></i><span class="font-weight-bold">JPEG</span></p>
+              <p class="small mb-0"><i class="fa fa-user-o mr-2"></i><span class="font-weight-bold">Author</span></p>
               <div class="badge badge-success px-3 rounded-pill font-weight-normal">Hot</div>
             </div>
           </div>
@@ -111,12 +111,12 @@ $findcurrentbookings = mysqli_query($conn, "SELECT * FROM `bookings` WHERE `user
 
       <!-- Gallery item -->
       <div class="col-xl-3 col-lg-4 col-md-6 mb-4">
-        <div class="bg-dark# rounded shadow-sm"><img src="https://res.cloudinary.com/mhmd/image/upload/v1556294926/cody-davis-253925-unsplash_hsetv7.jpg" alt="" class="img-fluid card-img-top">
+        <div class="bg-dark rounded shadow-sm"><img src="https://res.cloudinary.com/mhmd/image/upload/v1556294926/cody-davis-253925-unsplash_hsetv7.jpg" alt="" class="img-fluid card-img-top">
           <div class="p-4">
             <h5> <a href="#" class="text-white">Pineapple</a></h5>
             <p class="small text-muted mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
             <div class="d-flex align-items-center justify-content-between rounded-pill bg-light px-3 py-2 mt-4">
-              <p class="small mb-0"><i class="fa fa-picture-o mr-2"></i><span class="font-weight-bold">PNG</span></p>
+              <p class="small mb-0"><i class="fa fa-user-o mr-2"></i><span class="font-weight-bold">Author</span></p>
               <div class="badge badge-primary px-3 rounded-pill font-weight-normal">New</div>
             </div>
           </div>
@@ -131,7 +131,7 @@ $findcurrentbookings = mysqli_query($conn, "SELECT * FROM `bookings` WHERE `user
             <h5> <a href="#" class="text-white">Yellow banana</a></h5>
             <p class="small text-muted mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
             <div class="d-flex align-items-center justify-content-between rounded-pill bg-light px-3 py-2 mt-4">
-              <p class="small mb-0"><i class="fa fa-picture-o mr-2"></i><span class="font-weight-bold">JPG</span></p>
+              <p class="small mb-0"><i class="fa fa-user-o mr-2"></i><span class="font-weight-bold">Author</span></p>
               <div class="badge badge-warning px-3 rounded-pill font-weight-normal text-white">Featured</div>
             </div>
           </div>
@@ -146,7 +146,7 @@ $findcurrentbookings = mysqli_query($conn, "SELECT * FROM `bookings` WHERE `user
             <h5> <a href="#" class="text-white">Teal Gameboy</a></h5>
             <p class="small text-muted mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
             <div class="d-flex align-items-center justify-content-between rounded-pill bg-light px-3 py-2 mt-4">
-              <p class="small mb-0"><i class="fa fa-picture-o mr-2"></i><span class="font-weight-bold">JPEG</span></p>
+              <p class="small mb-0"><i class="fa fa-user-o mr-2"></i><span class="font-weight-bold">Author</span></p>
               <div class="badge badge-info px-3 rounded-pill font-weight-normal">Hot</div>
             </div>
           </div>
