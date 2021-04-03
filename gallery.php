@@ -56,7 +56,7 @@ $findcurrentbookings = mysqli_query($conn, "SELECT * FROM `bookings` WHERE `user
             <h5> <a href="#" class="text-white">Red paint cup</a></h5>
             <p class="small text-muted mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
             <div class="d-flex align-items-center justify-content-between rounded-pill bg-light px-3 py-2 mt-4">
-              <p class="small mb-0"><i class="fa fa-picture-o mr-2"></i><span class="font-weight-bold">JPG</span></p>
+              <p class="small mb-0"><i class="fa fa-user-o mr-2"></i><span class="font-weight-bold">JPG</span></p>
               <div class="badge badge-danger px-3 rounded-pill font-weight-normal">New</div>
             </div>
           </div>
