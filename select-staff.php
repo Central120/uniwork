@@ -74,7 +74,7 @@ $findstaff = mysqli_query($conn, "SELECT * FROM `accounts` WHERE `admin_id` = '2
     {
       echo "<div class='alert alert-danger alert-dismissable fade show' role='alert'><button type='button' class='close' data-dismiss='alert' aria-label='Close'>
       <span aria-hidden='true'>&times;</span>
-    </button><br><strong>Hey there!</strong><br>We noticed you weren't signed in. You must be signed in to place a booking.</div>";
+    </button><strong>Hey there!</strong><br>We noticed you weren't signed in. You must be signed in to place a booking.</div>";
     }
     else
     {
