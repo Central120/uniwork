@@ -112,7 +112,7 @@ $findcurrentbookings = mysqli_query($conn, "SELECT * FROM `bookings` WHERE `user
             <input type="text" class="form-control" name="caption" id="image-description" placeholder="E.g. My little border collie enjoyed them!">
           </div>
           <div class="form-group">
-            <label for="message-text" class="col-form-label">Upload Photo:</label> <small><a href="#" data-toggle="tooltip" data-placement="top" title="Tooltip on top"><i class="fa fa-question"></i></a></small>
+            <label for="message-text" class="col-form-label">Upload Photo:</label>
             <input type="file" class="form-control-file" name="fileUpload" id="exampleFormControlFile1" accept="image/*">
           </div>
         
@@ -126,12 +126,7 @@ $findcurrentbookings = mysqli_query($conn, "SELECT * FROM `bookings` WHERE `user
   </div>
 </div>
 
-<div class="tooltip bs-tooltip-top" role="tooltip">
-  <div class="arrow"></div>
-  <div class="tooltip-inner">
-    Some tooltip text!
-  </div>
-</div>
+
   <?php include "inc/footer.php"; ?>
 </body>
 <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
