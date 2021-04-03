@@ -50,7 +50,7 @@ if ($countfindbooking != 0)
         $deletefrombookings = mysqli_query($conn, "DELETE FROM `bookings` WHERE `id` = '$booking_id'");
         if ($deletedfrombookings)
         {
-            echo "<script>location.replace('../index');</script>";
+            header("Location: ../current-booking");
         }
     }   
     else
