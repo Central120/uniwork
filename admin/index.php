@@ -104,6 +104,11 @@ else
         <h3 class="display-4 text-center">Admin Panel</h3>
         <hr class="bg-dark mb-4 w-25">
 <?php
+// sql for counting bookings
+$sqlcountbookings = "select count(*) as totalbookings FROM `bookings`";
+$resultcountbookings = mysqli_query($conn,$sqlcountbookings);
+$rowcountbookings = mysqli_fetch_array($resultcountbookings);
+
         echo "
     <div class='container'>
     <div class='row'>
@@ -111,7 +116,7 @@ else
     <a href='bookings' style='color: white' title='Click here to view Bookings'>
       <div class='card-counter primary'>
         <i class='fa fa-book'></i>
-        <span class='count-numbers'>Amount</span>
+        <span class='count-numbers'>{$rowcountbookings['totalbookings']}</span>
         <span class='count-name'>Bookings</span>
       </div>
     </a>
