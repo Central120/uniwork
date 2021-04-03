@@ -111,7 +111,7 @@ $findcurrentbookings = mysqli_query($conn, "SELECT * FROM `bookings` WHERE `user
 
       <!-- Gallery item -->
       <div class="col-xl-3 col-lg-4 col-md-6 mb-4">
-        <div class="bg-dark# rounded shadow-sm"><img src="https://res.cloudinary.com/mhmd/image/upload/v1556294926/cody-davis-253925-unsplash_hsetv7.jpg" alt="" class="img-fluid card-img-top">
+        <div class="bg-dark rounded shadow-sm"><img src="https://res.cloudinary.com/mhmd/image/upload/v1556294926/cody-davis-253925-unsplash_hsetv7.jpg" alt="" class="img-fluid card-img-top">
           <div class="p-4">
             <h5> <a href="#" class="text-white">Pineapple</a></h5>
             <p class="small text-muted mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
