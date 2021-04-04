@@ -36,6 +36,10 @@ $findcurrentbookings = mysqli_query($conn, "SELECT * FROM `bookings` WHERE `user
         margin-top:10% !important;
     }
 
+    .table-responsive .table {
+    max-width: none;
+}
+
      </style>
 </head>
 <body>
