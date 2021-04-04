@@ -131,7 +131,7 @@ $findcurrentbookings = mysqli_query($conn, "SELECT * FROM `bookings` WHERE `user
             </div>
             <br>
             <h2 class="mb-42">Cancelled / Denied Bookings</h2>
-    <div style="overflow-x:auto;" class="table-responsive table-responsive-sm table-responsive-md table-responsive-lg table-responsive-xl">
+    <div class="table-responsive-xl">
                 <table class="table table-striped">
                     <thead>
                         <tr>
