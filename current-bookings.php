@@ -35,6 +35,13 @@ $findcurrentbookings = mysqli_query($conn, "SELECT * FROM `bookings` WHERE `user
     {
         margin-top:10% !important;
     }
+
+    table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+ 
+}
      </style>
 </head>
 <body>
