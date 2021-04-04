@@ -49,6 +49,7 @@ $findcurrentbookings = mysqli_query($conn, "SELECT * FROM `bookings` WHERE `user
         <center>
     <h2 class="mb-42">My Bookings</h2>
     <div id="server-results"></div>
+    <div class="container-fluid">
     <div class="table-responsive">
                 <table class="table table-striped">
                     <thead>
@@ -241,7 +242,8 @@ $findcurrentbookings = mysqli_query($conn, "SELECT * FROM `bookings` WHERE `user
  </tbody>
                 </table>
             </div>
-           
+        </div>
+                       
   <?php include "inc/footer.php"; ?>
 </body>
 <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
