@@ -49,7 +49,7 @@ $findcurrentbookings = mysqli_query($conn, "SELECT * FROM `bookings` WHERE `user
         <center>
     <h2 class="mb-42">My Bookings</h2>
     <div id="server-results"></div>
-    <div class="container-fluid">
+    <div class="d-flex justify-content-center">
     <div class="table-responsive">
                 <table class="table table-striped">
                     <thead>
