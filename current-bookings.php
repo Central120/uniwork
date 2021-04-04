@@ -36,10 +36,6 @@ $findcurrentbookings = mysqli_query($conn, "SELECT * FROM `bookings` WHERE `user
         margin-top:10% !important;
     }
 
-    .table-responsive 
-    {
-        -webkit-overflow-scrolling: touch;
-    }
     .table-responsive .table {
     max-width: none;
     
@@ -247,10 +243,7 @@ $findcurrentbookings = mysqli_query($conn, "SELECT * FROM `bookings` WHERE `user
             </div>
         </div>
         </div>
-            </div>
-        </div>
-    </div>
-</div>
+           
   <?php include "inc/footer.php"; ?>
 </body>
 <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
