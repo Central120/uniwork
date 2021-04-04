@@ -245,6 +245,7 @@ $findcurrentbookings = mysqli_query($conn, "SELECT * FROM `bookings` WHERE `user
             <div>
         </div>
         </div>
+        </div>
            
   <?php include "inc/footer.php"; ?>
 </body>
