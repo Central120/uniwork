@@ -127,7 +127,7 @@ $findpending = mysqli_query($conn, "SELECT * FROM `bookings` WHERE `approver` = 
                 </table>
             </div>
         </div>
-        
+        </div>
   <?php include "inc/footer.php"; ?>
 </body>
 
