@@ -78,7 +78,7 @@ $disabled = "";
 else if ($stock == '0')
 {
 $stockmsg = "<p style ='color:red'> Sorry, this item is out of stock </p>";
-$disable = "disabled";
+$disabled = "disabled";
 }
 else
 {

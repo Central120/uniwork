@@ -35,7 +35,7 @@ $finalprice = $price - $calcy;
 $discountmsg ="($discount% off!)";
 $fp = number_format((float)$finalprice, 2, '.', '');
 }
-if ($stock <= '5' || $stock != '0')
+if ($stock <= '5' && $stock != '0')
 {
 $stockmsg = "<p style ='color:red'> Hurry, there is only $stock of this item left.</p>";
 $disabled = "";
@@ -43,7 +43,7 @@ $disabled = "";
 else if ($stock == '0')
 {
 $stockmsg = "<p style ='color:red'> Sorry, this item is out of stock </p>";
-$disable = "disabled";
+$disabled = "disabled";
 }
 else
 {
