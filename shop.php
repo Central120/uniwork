@@ -109,7 +109,16 @@ $disabled = "";
     echo "<form action='php/addtocart.php' method='post' role='form'>
     <input type='hidden' name='id' value='$itemid'>
   <p class='card-text'>£$fp $discountmsg</p>
-<p><input type='submit' $disabled class='btn btn-success' value='Add to cart'></p>$stockmsg</form>
+  <select name ='quantity' class = 'form-control'>
+  ";
+  for($i=0;$i<=$stock;$i++){
+    echo "<option value = '$i'>$i</option>";
+  }
+
+
+
+
+echo "</select><p><input type='submit' $disabled class='btn btn-success' value='Add to cart'></p>$stockmsg</form>
 </div></div></div>";
 
   }

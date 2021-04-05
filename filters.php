@@ -65,16 +65,25 @@ else
 $stockmsg = "<p style ='color:red'> There are $stock of this item left.</p>";
 $disabled = "";
 }
-    echo "<div class='col-md-11 col-lg-2 col-sm-5' style='margin-right:10px;margin-bottom: 10px;'>
-    <div class='card'>
-    <img src='$image' class='card-img-top' alt='$productName' style='margin-top:10px'>
-    <div class='card-body'>
-    <h5 class='card-title'>$productName</h5>
-    ";
-    echo "<form action='php/addtocart.php' method='post' role='form'>
-    <input type='hidden' name='id' value='$itemid'>
-  <p class='card-text'>£$fp $discountmsg</p>
-<p><input type='submit' $disabled class='btn btn-success' value='Add to cart'></p>$stockmsg</form>
+echo "<div class='col-md-11 col-lg-2 col-sm-5' style='margin-right:10px;margin-bottom: 10px;'>
+<div class='card'>
+<img src='$image' class='card-img-top' alt='$productName' style='margin-top:10px'>
+<div class='card-body'>
+<h5 class='card-title'>$productName</h5>
+";
+echo "<form action='php/addtocart.php' method='post' role='form'>
+<input type='hidden' name='id' value='$itemid'>
+<p class='card-text'>£$fp $discountmsg</p>
+<select name ='quantity' class = 'form-control'>
+";
+for($i=0;$i<=$stock;$i++){
+echo "<option value = '$i'>$i</option>";
+}
+
+
+
+
+echo "</select><p><input type='submit' $disabled class='btn btn-success' value='Add to cart'></p>$stockmsg</form>
 </div></div></div>";
 
 }
