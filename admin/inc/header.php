@@ -58,7 +58,16 @@ $url = 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI'];
       <ul class="navbar-nav">
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Account
+        <?php 
+          if (isset($_SESSION['user']) || isset($_SESSION['admin']))
+          {
+              echo $accountUser, "'s Account";
+          }
+          else
+          {
+            echo "Account";
+          }
+          ?>
         </a>
         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
         <?php 
