@@ -52,7 +52,7 @@ $findcurrentbookings = mysqli_query($conn, "SELECT * FROM `bookings` WHERE `user
     <div class="container">
     <div id="server-results"></div>
         <h5 class="mb-42">Change Account Password</h5>
-            <form class='php/change-password.php' method='post' id='Form1'>
+            <form action='php/change-password.php' method='post' id='Form1'>
             <div class="form-group">
             <label for='pw-change'>New Password</label>
             <input type="password" style='width:50%' class="form-control" placeholder="Password" name="password">
@@ -68,7 +68,7 @@ $findcurrentbookings = mysqli_query($conn, "SELECT * FROM `bookings` WHERE `user
             <br><br>
             <h5 class="mb-42">Change Security Details</h5>
             <div id="server-results2"></div>
-            <form class='php/change-answers.php' method='post' id='Form2'>
+            <form action='php/change-answers.php' method='post' id='Form2'>
             <div class="row">
 				<div class="col-xs-12 col-sm-6 col-md-6">
                     <div class="form-group">
