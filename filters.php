@@ -6,7 +6,7 @@ if ($category1 == "all")
     $cat = "SELECT * FROM `products`";
 } 
 else {
-    $cat = "SELECT * FROM `products` WHERE `category1` = '$category1'";
+    $cat = "SELECT * FROM `products` WHERE `category` = '$category1'";
 }
 // find the items in the category.
 
