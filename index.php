@@ -24,8 +24,8 @@ session_start();
   </head>
   <body>
   <?php include "inc/header.php"; ?>
-  <div class="container-fluid" style='min-height:40vh'>
-  <div class="justify-content-center">
+  <div class="container" style='min-height:40vh'>
+  <div class="d-flex justify-content-center">
   <h2 class="mb-4">Welcome to Kerry's K9's!</h2>
   <p>Below are the most recent announcements.</p>
   <br>
