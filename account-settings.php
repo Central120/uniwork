@@ -79,7 +79,7 @@ $findcurrentbookings = mysqli_query($conn, "SELECT * FROM `bookings` WHERE `user
             }
             else
             {
-                echo "<option value='$secq1'>$secq1</option>";
+                echo "<option value='$possible1'>$possible1</option>";
             }
             if ($secq1 == $possible2)
             {
@@ -87,7 +87,7 @@ $findcurrentbookings = mysqli_query($conn, "SELECT * FROM `bookings` WHERE `user
             }
             else
             {
-                echo "<option value='$secq1'>$secq1</option>";
+                echo "<option value='$possible2'>$possible1</option>";
             }
             if ($secq1 == $possible3)
             {
@@ -95,7 +95,7 @@ $findcurrentbookings = mysqli_query($conn, "SELECT * FROM `bookings` WHERE `user
             }
             else
             {
-                echo "<option value='$secq1'>$secq1</option>";
+                echo "<option value='$possible3'>$possible3</option>";
             }
             if ($secq1 == $possible4)
             {
@@ -103,7 +103,7 @@ $findcurrentbookings = mysqli_query($conn, "SELECT * FROM `bookings` WHERE `user
             }
             else
             {
-                echo "<option value='$secq1'>$secq1</option>";
+                echo "<option value='$possible4'>$possible4</option>";
             }
             if ($secq1 == $possible5)
             {
@@ -111,7 +111,7 @@ $findcurrentbookings = mysqli_query($conn, "SELECT * FROM `bookings` WHERE `user
             }
             else
             {
-                echo "<option value='$secq1'>$secq1</option>";
+                echo "<option value='$possible5'>$possible5</option>";
             }
         }
             ?>
