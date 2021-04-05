@@ -141,7 +141,7 @@ $findoncoming = mysqli_query($conn, "SELECT * FROM `bookings` WHERE `approver` !
             </form>
             <form action='php/complete-booking.php' method='post' role='form'>
             <input type='hidden' value='$booking_id' name='id' />
-              <button type='submit' class='btn btn-danger'>Mark as complete</button>
+              <button type='submit' class='btn btn-success'>Mark as complete</button>
             </form>
               <button type='button' class='btn btn-secondary' data-dismiss='modal'>Close</button>
             </div>
