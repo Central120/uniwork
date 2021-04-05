@@ -141,7 +141,7 @@ $findcurrentbookings = mysqli_query($conn, "SELECT * FROM `bookings` WHERE `user
                         <tr>
                             <th scope="col">Timeslot</th>
                             <th scope="col">Handled by</th>
-                            <th scope="col">Time</th>
+                            <th scope="col">Time since action taken</th>
                             <th scope="col">Action</th>
                         </tr>
                     </thead>
@@ -155,7 +155,7 @@ $findcurrentbookings = mysqli_query($conn, "SELECT * FROM `bookings` WHERE `user
         $tc = $rowfindrejected['time_cancelled'];
         $action = $rowfindrejected['action'];
 
-        // find difference between next promotion and current timestamp
+        // find difference between next booking and current timestamp
         $date1 = strtotime($current_timestamp);
         $date2 = strtotime($tc);
         $diff = abs($date2- $date1);
@@ -233,7 +233,7 @@ $findcurrentbookings = mysqli_query($conn, "SELECT * FROM `bookings` WHERE `user
         <td>$tscd</td>
         <td>$handler</td>
         <td>$msg</td>
-        <td>$action</td>
+        <td>$badge</td>
         </tr>
         ";
 
