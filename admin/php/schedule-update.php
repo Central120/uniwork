@@ -28,7 +28,7 @@ if ($countcheckforschedule != 0)
 
     if ($start_date == $end_date || $start_time == $end_time || $sd < $ed)
     {
-        echo "<div class='alert alert-danger alert-dismissable fade show' role='alert'><strong>An error occured.</strong> Please ensure the values you have entered are not the same. <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+        echo "<div class='alert alert-danger alert-dismissable fade show' role='alert'><strong>An error occured.</strong> Please ensure the values you have entered are valid. <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
         <span aria-hidden='true'>&times;</span>
       </button></div>";
     }
