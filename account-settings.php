@@ -87,7 +87,7 @@ $findcurrentbookings = mysqli_query($conn, "SELECT * FROM `bookings` WHERE `user
             }
             else
             {
-                echo "<option value='$possible2'>$possible1</option>";
+                echo "<option value='$possible2'>$possible2</option>";
             }
             if ($secq1 == $possible3)
             {
