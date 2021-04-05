@@ -115,7 +115,7 @@ $findoncoming = mysqli_query($conn, "SELECT * FROM `bookings` WHERE `approver` !
         <td>Emergency 1: $ec1 <br> Emergency 2: $ec2</td>
         <td>$info</td>
         <td>$approver</td>
-        <td><input type='button' data-toggle='modal' id='cancel_btn' data-target='#manage{$booking_id}' class='btn btn-warning' value='Cancel Booking' /></td>
+        <td><input type='button' data-toggle='modal' id='cancel_btn' data-target='#manage{$booking_id}' class='btn btn-warning' value='Manage Booking' /></td>
         </tr>
         ";
 
@@ -123,7 +123,7 @@ $findoncoming = mysqli_query($conn, "SELECT * FROM `bookings` WHERE `approver` !
         <div class='modal-dialog' role='document'>
           <div class='modal-content' style='width:150%;left:-10%;'>
             <div class='modal-header'>
-              <h5 class='modal-title'>Are you sure you want to cancel $username's booking?</h5>
+              <h5 class='modal-title'>What would you like to do with $username's booking?</h5>
               <button type='button' class='close' data-dismiss='modal' aria-label='Close'>
                 <span aria-hidden='true'>&times;</span>
               </button>
@@ -138,6 +138,10 @@ $findoncoming = mysqli_query($conn, "SELECT * FROM `bookings` WHERE `approver` !
             <form action='php/cancel-booking.php' method='post' role='form'>
             <input type='hidden' value='$booking_id' name='id' />
               <button type='submit' class='btn btn-danger'>Confirm Cancellation</button>
+            </form>
+            <form action='php/complete-booking.php' method='post' role='form'>
+            <input type='hidden' value='$booking_id' name='id' />
+              <button type='submit' class='btn btn-danger'>Mark as complete</button>
             </form>
               <button type='button' class='btn btn-secondary' data-dismiss='modal'>Close</button>
             </div>

@@ -44,7 +44,7 @@ if ($countfindbooking != 0)
         $handlerstr = $handler;
     }
 
-    $movebookingtocancelled = mysqli_query($conn, "INSERT INTO `cancelled_bookings` VALUES (DEFAULT, '$session_usern', '$tsc', '$handlerstr', '$current_timestamp', 'Completed')");
+    $movebookingtocancelled = mysqli_query($conn, "INSERT INTO `cancelled_bookings` VALUES (DEFAULT, '$session_usern', '$tsc', '$handlerstr', '$current_timestamp', 'Cancelled')");
     if ($movebookingtocancelled)
     {
         $deletefrombookings = mysqli_query($conn, "DELETE FROM `bookings` WHERE `id` = '$booking_id'");
@@ -54,14 +54,14 @@ if ($countfindbooking != 0)
         }
         else
         {
-            echo "<div class='alert alert-danger alert-dismissable fade show' role='alert'><strong>An error occured.</strong> The booking did not get completed. <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+            echo "<div class='alert alert-danger alert-dismissable fade show' role='alert'><strong>An error occured.</strong> The booking did not get cancelled. <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
             <span aria-hidden='true'>&times;</span>
           </button></div>";
         }
     }   
     else
     {
-        echo "<div class='alert alert-danger alert-dismissable fade show' role='alert'><strong>An error occured.</strong> The booking did not get completed. <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+        echo "<div class='alert alert-danger alert-dismissable fade show' role='alert'><strong>An error occured.</strong> The booking did not get cancelled. <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
     <span aria-hidden='true'>&times;</span>
   </button></div>";
     }
