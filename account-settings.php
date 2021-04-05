@@ -50,19 +50,27 @@ $findcurrentbookings = mysqli_query($conn, "SELECT * FROM `bookings` WHERE `user
     <h2 class="mb-42">Account Settings</h2>
     <div id="server-results"></div>
     <div class="container">
-    <div class="d-flex justify-content-center">
+    
         <h5 class="mb-42">Change Account Password</h5>
             <form class='change-password.php' method='post' id='Form1'>
+            <div class="form-group">
             <label for='pw-change'>New Password</label>
             <input type="password" class="form-control" placeholder="Password" name="password">
-            <br>
+            </div><br>
+            <div class="form-group">
             <label for='conf-change'>Confirm new password</label>
             <input type="password" class="form-control" placeholder="Password" name="conf_pw">
+            </div>
+            <div class="form-group">
             <input type='submit' value='Change password' class='btn btn-success'>
+            </div>  
             </form>
             <br><br>
             <h5 class="mb-42">Change Security Details</h5>
             <form class='change-answers.php' method='post' id='Form2'>
+            <div class="row">
+				<div class="col-xs-12 col-sm-6 col-md-6">
+                    <div class="form-group">
             <label for='secq'>Security Question 1</label>
             <select class='form-control' name='SecQ1'>
             <?php
@@ -119,10 +127,19 @@ $findcurrentbookings = mysqli_query($conn, "SELECT * FROM `bookings` WHERE `user
         }
             ?>
 
-            </select>
+            </select></div></div>
+          
+				<div class="col-xs-12 col-sm-6 col-md-6">
+                    <div class="form-group">
             <label for='seca1'>Security Answer 1</label>
-            <input type='password' name='password' class='form-control'>
+            <input type='password' name='seca1' class='form-control'>
+            </div> 
+            </div>
+            </div>
             <br>
+            <div class="row">
+				<div class="col-xs-12 col-sm-6 col-md-6">
+					<div class="form-group">
             <label for='secq2'>Security Question 2</label>
             <select class='form-control' name='SecQ1'>
             <?php
@@ -179,11 +196,17 @@ $findcurrentbookings = mysqli_query($conn, "SELECT * FROM `bookings` WHERE `user
         }
             ?>
 
-            </select>
+            </select></div></div>
             <br>
+            
+				<div class="col-xs-12 col-sm-6 col-md-6">
+					<div class="form-group">
             <label for='seca2'>Security Answer 2</label>
             <input type='password' name='seca2' class='form-control'>
+        </div></div></div>
+        <div class="form-group">
             <input type='submit' value='Change Security Details' class='btn btn-success'>
+        </div>
             </form>
                         </div>
             </div>
