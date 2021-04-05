@@ -192,7 +192,15 @@ $findcurrentbookings = mysqli_query($conn, "SELECT * FROM `bookings` WHERE `user
         $msg = "$years years, $months months, $days days, $hours hours and $minutes minutes ago";
         }
 
-        $badge = "<span class='badge badge-danger'>$action</span>";
+        if ($action == 'Completed')
+        {
+            $badge = "<span class='badge badge-success'>$action</span>";
+        }
+        else
+        {
+            $badge = "<span class='badge badge-danger'>$action</span>";
+        }
+        
 
         
         
