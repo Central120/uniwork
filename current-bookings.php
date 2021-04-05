@@ -235,7 +235,7 @@ $findcurrentbookings = mysqli_query($conn, "SELECT * FROM `bookings` WHERE `user
         {
             $tscd = "None allocated";
         }
-        else if ($tsc == "None accepted")
+        if ($tsc == "None accepted")
         {
             $tscd = "None accepted";
         }
