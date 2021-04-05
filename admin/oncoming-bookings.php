@@ -72,7 +72,7 @@ $findoncoming = mysqli_query($conn, "SELECT * FROM `bookings` WHERE `approver` !
         
         // find difference between next booking and current timestamp
         $date1 = strtotime($current_timestamp);
-        $date2 = strtotime($app_ts2);
+        $date2 = strtotime($app_ts);
         $diff = abs($date2 - $date1);
         $appstr = date("l jS \of F, g:i a", $date2);
 
