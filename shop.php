@@ -23,6 +23,7 @@ session_start();
   <h2 class="mb-4">Welcome to Kerry's K9's shop!</h2>
   <p>Store Page</p>
   <br>
+  <div class = 'btn-group' role = 'group'>
   <?php
   // find categories
   $categories = "SELECT DISTINCT `category` FROM `products`";
@@ -36,6 +37,7 @@ session_start();
     </form>";
   }
   ?>
+  </div>
   <div class="container-fluid">
   <div class="row">
   <?php 
