@@ -64,7 +64,8 @@ $findcurrentbookings = mysqli_query($conn, "SELECT * FROM `bookings` WHERE `user
             <select class='form-control' name='SecQ1'>
             <?php
             $findsecq1 = mysqli_query($conn, "SELECT * FROM `accounts` WHERE `username` = '$session_usern'");
-            $rowfindsecq1 = mysqli_fetch_assoc($findsecq1);
+            while ($rowfindsecq1 = $findsecq1->fetch_assoc())
+            {
             $secq1 = $rowfindsecq1['secq1'];
             $possible1 = "What was your mothers maiden name?";
             $possible2 = "What was the name of your first pet?";
@@ -96,7 +97,7 @@ $findcurrentbookings = mysqli_query($conn, "SELECT * FROM `bookings` WHERE `user
             {
                 echo "<option value='$secq1'>$secq1</option>";
             }
-            
+        }
             ?>
 
             </select>
