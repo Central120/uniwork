@@ -2,7 +2,6 @@
 include_once 'inc/dbconnect.php';
 session_start();
 $current_timestamp = date('Y-m-d H:i:s');
-ini_set('display_errors', 1);
 
 if(isset($_SESSION['admin']))
 {
@@ -112,7 +111,7 @@ $findoncoming = mysqli_query($conn, "SELECT * FROM `bookings` WHERE `approver` !
         echo "<tr>
         <td>$username</td>
         <td>$pet_name</td>
-        <td>$appstr<br>Time until this booking: $msg</td>
+        <td>$appstr<br>Time until this booking: <b>$msg</b></td>
         <td>Emergency 1: $ec1 <br> Emergency 2: $ec2</td>
         <td>$info</td>
         <td>$approver</td>
