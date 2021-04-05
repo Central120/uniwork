@@ -111,9 +111,9 @@ else
             $badge = "<span class='badge badge-danger'>$action</span>";
         }
 
-        if ($tsc == "None allocated")
+        if ($tsc == "None allocated" || $tsc == "None accepted")
         {
-            $tscd = "None allocated";
+            $tscd = $tsc;
         }
         else
         {
