@@ -23,6 +23,19 @@ session_start();
   <h2 class="mb-4">Welcome to Kerry's K9's shop!</h2>
   <p>Store Page</p>
   <br>
+  <?php
+  // find categories
+  $categories = "SELECT DISTINCT `category` FROM `products`";
+  $findcategories = mysqli_query($conn, $categories);
+  while ($rowcategories = $findcategories->fetch_assoc())
+  {
+    $cat = $rowcategories['category'];
+    echo "<form action='filters.php' method='post' id='filterfrm'>
+    <input type='hidden' value='$cat' name='category'>
+    <input type='submit' value='$cat' class='btn btn-success'>
+    </form>";
+  }
+  ?>
   <div class="container-fluid">
   <div class="row">
   <?php 
