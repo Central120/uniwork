@@ -56,16 +56,16 @@ $findoncoming = mysqli_query($conn, "SELECT * FROM `bookings` WHERE `approver` !
                     </thead>
                     <tbody>
   <?php
-    while ($rowfindbooking = $findpending->fetch_assoc())
+    while ($rowfindoncoming = $findoncoming->fetch_assoc())
     {
-        $booking_id = $rowfindbooking['id'];
-        $username = $rowfindbooking['username'];
-        $approver = $rowfindbooking['approver'];
-        $app_ts = $rowfindbooking['approved_timestamp'];
-        $pet_name = $rowfindbooking['pet_name'];
-        $ec1 = $rowfindbooking['ec1'];
-        $ec2 = $rowfindbooking['ec2'];
-        $info = $rowfindbooking['info'];
+        $booking_id = $rowfindoncoming['id'];
+        $username = $rowfindoncoming['username'];
+        $approver = $rowfindoncoming['approver'];
+        $app_ts = $rowfindoncoming['approved_timestamp'];
+        $pet_name = $rowfindoncoming['pet_name'];
+        $ec1 = $rowfindoncoming['ec1'];
+        $ec2 = $rowfindoncoming['ec2'];
+        $info = $rowfindoncoming['info'];
 
         $appstr = date("l jS \of F, g:i a", $app_ts);
         // find difference between next booking and current timestamp
@@ -109,7 +109,7 @@ $findoncoming = mysqli_query($conn, "SELECT * FROM `bookings` WHERE `approver` !
         echo "<tr>
         <td>$username</td>
         <td>$pet_name</td>
-        <td>$appstr</td>
+        <td>$appstr<br>Time until this booking: $msg</td>
         <td>Emergency 1: $ec1 <br> Emergency 2: $ec2</td>
         <td>$info</td>
         <td>$approver</td>
