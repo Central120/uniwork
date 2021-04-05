@@ -30,7 +30,7 @@ $discountmsg ="";
 else
 {
 $calcy = $price / 100 * $discount; 
-$finalprice - $price - $calcy;
+$finalprice = $price - $calcy;
 $discountmsg ="($discount% off!)";
 }
 
