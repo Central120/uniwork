@@ -31,6 +31,7 @@ else
             margin-top:5%;
          }
      </style>
+    
 </head>
 <body>
     <?php include "inc/header.php"; ?>
@@ -39,7 +40,6 @@ else
         <center>
         <br><div id="server-results"></div>
     <h2 class="mb-42">Update your schedule</h2>
-    
   <div class="form-row">
     <div class="form-group col-md-6">
     <form action='php/schedule-update.php' method='post' role='form' id='Form1'>
