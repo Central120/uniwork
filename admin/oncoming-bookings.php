@@ -84,27 +84,27 @@ $findoncoming = mysqli_query($conn, "SELECT * FROM `bookings` WHERE `approver` !
         if ($years == 0 && $months == 0 && $days == 0 && $hours == 0)
         {
         // prints minutes
-        $msg = "$minutes minutes ago";
+        $msg = "$minutes minutes to go";
         }
         else if ($years == 0 && $months == 0 && $days == 0)
         {
         // prints hours
-        $msg = "$hours hours and $minutes minutes ago";
+        $msg = "$hours hours and $minutes minutes to go";
         }
         else if ($years == 0 && $months == 0 && $hours)
         {
         // prints days
-        $msg = "$days days, $hours hours and $minutes minutes ago";
+        $msg = "$days days, $hours hours and $minutes minutes to go";
         }
         else if ($years == 0)
         {
         // prints months
-        $msg = "$months months, $days days, $hours hours and $minutes minutes ago";
+        $msg = "$months months, $days days, $hours hours and $minutes minutes to go";
         }
         else
         {
         // prints years
-        $msg = "$years years, $months months, $days days, $hours hours and $minutes minutes ago";
+        $msg = "$years years, $months months, $days days, $hours hours and $minutes minutes to go";
         }
 
         
