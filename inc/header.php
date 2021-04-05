@@ -86,7 +86,7 @@ else if(isset($_SESSION['user']))
             
             <a class="dropdown-item <?php if (strpos($url,'settings') !== false) {
               echo 'active';
-          } ?>" href="#">Account Settings</a>
+          } ?>" href="account-settings">Account Settings</a>
                     <a class="dropdown-item" href="inc/logout.php">Logout</a>
 <?php 
           }
