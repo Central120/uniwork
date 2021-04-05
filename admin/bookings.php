@@ -126,10 +126,10 @@ else
     </div>
 
     <div class='col-md-3'>
-    <a href='cancelled-bookings' style='color: white' title='Click here to view cancelled bookings'>
+    <a href='past-bookings' style='color: white' title='Click here to view past bookings'>
       <div class='card-counter danger'>
-        <i class='fa fa-ban'></i>
-        <span class='count-name'>Cancelled Bookings</span>
+        <i class='fa fa-lock'></i>
+        <span class='count-name'>Past Bookings</span>
 
     
       </div>
