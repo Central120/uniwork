@@ -73,7 +73,7 @@ $findcurrentbookings = mysqli_query($conn, "SELECT * FROM `bookings` WHERE `user
 				<div class="col-xs-12 col-sm-6 col-md-6">
                     <div class="form-group">
             <label for='secq'>Security Question 1</label>
-            <select class='form-control' name='SecQ1'>
+            <select class='form-control' name='secq1'>
             <?php
             $findsecq1 = mysqli_query($conn, "SELECT * FROM `accounts` WHERE `username` = '$session_usern'");
             while ($rowfindsecq1 = $findsecq1->fetch_assoc())
@@ -142,7 +142,7 @@ $findcurrentbookings = mysqli_query($conn, "SELECT * FROM `bookings` WHERE `user
 				<div class="col-xs-12 col-sm-6 col-md-6">
 					<div class="form-group">
             <label for='secq2'>Security Question 2</label>
-            <select class='form-control' name='SecQ1'>
+            <select class='form-control' name='secq2'>
             <?php
             $findsecq2 = mysqli_query($conn, "SELECT * FROM `accounts` WHERE `username` = '$session_usern'");
             while ($rowfindsecq2 = $findsecq2->fetch_assoc())
