@@ -23,11 +23,14 @@ session_start();
   <h2 class="mb-4">Welcome to Kerry's K9's shop!</h2>
   <p>Store Page</p>
   <br>
+  <div class="container-fluid">
+  <div class="row">
   <?php 
 $sql = mysqli_query($conn, "SELECT * FROM products");
 
 while($row = mysqli_fetch_assoc($sql))
 {
+    $itemID = $row['id'];
     $productName = $row['product_name'];
     $category = $row['category'];
     $price = $row['price'];
@@ -35,16 +38,23 @@ while($row = mysqli_fetch_assoc($sql))
     $stock = $row['stock'];
     $image = $row['Image'];
 
-    echo "<table>";
-    echo "<tr>";
-    echo "<td>$productName</td>";
-    echo "<td>£$price</td>";
-    echo "<td><img src='$image'></td>";
-    echo "</tr>";
-    echo "</table>";
-}
+    echo "<div class='col-md-11 col-lg-2 col-sm-5' style='margin-right:10px;margin-bottom: 10px;'>
+    <div class='card'>
+    <img src='$image' class='card-img-top' alt='$productName' style='margin-top:10px'>
+    <div class='card-body'>
+    <h5 class='card-title'>$productName</h5>
+    ";
+    echo "<form action='php/addtocart.php' method='post' role='form'>
+    <input type='hidden' name='id' value='$itemid'>
+  <p class='card-text'>£$price</p>
+<p><input type='submit' class='btn btn-success' value='Add to cart'></p></form>
+</div></div></div>";
+
+  }
 ?>
 
+</div>
+</div>
 </div>
 
 <?php include "inc/footer.php"; ?>
