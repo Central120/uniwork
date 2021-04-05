@@ -24,7 +24,7 @@ session_start();
   <p>Store Page</p>
   <br>
   <div class = 'btn-group' role = 'group'>
-  <form action='filters.php' method='post' id='filterfrm'>
+  <form action='filters.php' method='post' class='filterfrm'>
     <input type='hidden' value='all' name='category'>
     <input type='submit' value='all' class='btn btn-success'>
     </form>
@@ -35,7 +35,7 @@ session_start();
   while ($rowcategories = $findcategories->fetch_assoc())
   {
     $cat = $rowcategories['category'];
-    echo "<form action='filters.php' method='post' id='filterfrm'>
+    echo "<form action='filters.php' method='post' class='filterfrm'>
     <input type='hidden' value='$cat' name='category'>
     <input type='submit' value='$cat' class='btn btn-success'>
     </form>";
@@ -81,7 +81,7 @@ while($row = mysqli_fetch_assoc($sql))
 </body>
 <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
   <script type='text/javascript'>
-    $('#filterfrm').submit(function(event) {
+    $('.filterfrm').submit(function(event) {
       event.preventDefault(); //prevent default action
       var post_url = $(this).attr('action'); //get form action url
       var form_data = $(this).serialize(); //Encode form elements for submission
