@@ -40,7 +40,7 @@ $findoncoming = mysqli_query($conn, "SELECT * FROM `bookings` WHERE `approver` !
         <center>
     <h2 class="mb-42">My Bookings</h2>
     <div id="server-results"></div>
-    <div class="container-fluid" style='margin-bottom: 30%'>
+    <div class="container" style='margin-bottom: 30%'>
     <div class="d-flex justify-content-center">
     <div class="table-responsive">
                 <table class="table table-striped">
