@@ -22,6 +22,17 @@ while ($rowcat = $findcat->fetch_assoc())
     $discount = $rowcat['discount'];
     $stock = $rowcat['stock'];
     $image = $rowcat['Image'];
+    if ($discount == '0')
+{
+$finalprice = $price;
+$discountmsg ="";
+}
+else
+{
+$calcy = $price / 100 * $discount; 
+$finalprice - $price - $calcy;
+$discountmsg ="($discount% off!)";
+}
 
     echo "<div class='col-md-11 col-lg-2 col-sm-5' style='margin-right:10px;margin-bottom: 10px;'>
     <div class='card'>
@@ -31,7 +42,7 @@ while ($rowcat = $findcat->fetch_assoc())
     ";
     echo "<form action='php/addtocart.php' method='post' role='form'>
     <input type='hidden' name='id' value='$itemid'>
-  <p class='card-text'>£$price</p>
+  <p class='card-text'>£$finalprice $discountmsg</p>
 <p><input type='submit' class='btn btn-success' value='Add to cart'></p></form>
 </div></div></div>";
 
