@@ -26,7 +26,7 @@ if ($countcheckforschedule != 0)
 
     
 
-    if ($start_date == $end_date || $start_time == $end_time || $sd < $ed)
+    if ($start_date == $end_date || $start_time == $end_time || $sd > $ed)
     {
         $strsd = date('Y:m:d', $sd);
         $stred = date('Y:m:d', $ed);
