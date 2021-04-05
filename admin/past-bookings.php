@@ -42,7 +42,7 @@ else
     <?php include "inc/header.php"; ?>
     
         <center>
-       <h2 class="mb-42">Past Bookings (inc. cancelled / denied bookings)</h2>
+       <h2 class="mb-42">Past Bookings</h2>
             <div class="container">
             <div class="d-flex justify-content-center">
     <div class="table-responsive">
