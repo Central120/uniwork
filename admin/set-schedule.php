@@ -30,7 +30,13 @@ else
             transform: translate(-50%, -50%);
             margin-top:5%;
          }
+
+         .footer
+         {
+           margin-top:20% !important;
+         }
      </style>
+    
 </head>
 <body>
     <?php include "inc/header.php"; ?>
@@ -39,7 +45,6 @@ else
         <center>
         <br><div id="server-results"></div>
     <h2 class="mb-42">Update your schedule</h2>
-    
   <div class="form-row">
     <div class="form-group col-md-6">
     <form action='php/schedule-update.php' method='post' role='form' id='Form1'>

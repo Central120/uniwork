@@ -15,7 +15,7 @@ else
 <!doctype html>
 <html lang="en">
     <head>
-  	<title>Kerry's K9's - Admin Homepage</title>
+  	<title>Kerry's K9's - Bookings Panel</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
@@ -47,30 +47,15 @@ else
     color: #FFF;
   }  
 
-  .card-counter.success{
-    background-color: #66bb6a;
-    color: #FFF;
-  }  
-
   .card-counter.info{
     background-color: #26c6da;
     color: #FFF;
   }  
 
-  .card-counter.photos{
-    background-color: #faa125;
+  .card-counter.success{
+    background-color: #66bb6a;
     color: #FFF;
-  }
-
-  .card-counter.reviews{
-    background-color: #b10fbd;
-    color: #FFF;
-  }
-
-  .card-counter.news{
-    background-color: #2bedcd;
-    color: #FFF;
-  }
+  }  
 
   .card-counter i{
     font-size: 5em;
@@ -106,94 +91,46 @@ else
   <body>
   <?php include "inc/header.php"; ?> 
 <div class="container container mt-4 mb-5">
-        <h3 class="display-4 text-center">Admin Panel</h3>
+        <h3 class="display-4 text-center">Bookings Panel</h3>
         <hr class="bg-dark mb-4 w-25">
 <?php
-// sql for counting bookings
-$sqlcountbookings = "select count(*) as totalbookings FROM `bookings`";
-$resultcountbookings = mysqli_query($conn,$sqlcountbookings);
-$rowcountbookings = mysqli_fetch_array($resultcountbookings);
-  if ($rowcountbookings['totalbookings'] == '1')
-  {
-    $bookingtxt = "Booking";
-  }
-  else
-  {
-    $bookingtxt = "Bookings";
-  }
-
         echo "
     <div class='container'>
     <div class='row'>
     <div class='col-md-3'>
-    <a href='bookings' style='color: white' title='Click here to view Bookings'>
+    <a href='set-schedule' style='color: white' title='Click here to set your schedule'>
       <div class='card-counter primary'>
-        <i class='fa fa-book'></i>
-        <span class='count-numbers'>{$rowcountbookings['totalbookings']}</span>
-        <span class='count-name'>$bookingtxt</span>
+        <i class='fa fa-calendar-o'></i>
+      
+        <span class='count-name'>Set Schedule</span>
       </div>
     </a>
       </div>
 
     <div class='col-md-3'>
-    <a href='products' style='color: white' title='Click here to view Product Options'>
-      <div class='card-counter danger'>
-        <i class='fa fa-tags'></i>
-        <span class='count-numbers'>Amount</span>
-        <span class='count-name'>Products</span>
-      </div>
-      </a>
-    </div>
-
-    <div class='col-md-3'>
-    <a href='cart' style='color: white' title='Click here to view Cart Options'>
-      <div class='card-counter success'>
-        <i class='fa fa-shopping-basket'></i>
-        <span class='count-numbers'>Amount</span>
-        <span class='count-name'>Cart Items</span>
-      </div>
-      </a>
-    </div>
-
-    <div class='col-md-3'>
-    <a href='users' style='color: white' title='Click here to view User Options'>
+    <a href='pending-bookings' style='color: white' title='Click here to view pending bookings'>
       <div class='card-counter info'>
-        <i class='fa fa-users'></i>
-        <span class='count-numbers'>Amount</span>
-        <span class='count-name'>Users</span>
-    
+        <i class='fa fa-book'></i>
+        <span class='count-name'>Pending Bookings</span>
       </div>
       </a>
     </div>
 
     <div class='col-md-3'>
-    <a href='users' style='color: white' title='Click here to view Photo Options'>
-      <div class='card-counter photos'>
-        <i class='fa fa-picture-o'></i>
-        <span class='count-numbers'>Amount</span>
-        <span class='count-name'>Photos</span>
-    
+    <a href='oncoming-bookings' style='color: white' title='Click here to view oncoming bookings'>
+      <div class='card-counter success'>
+        <i class='fa fa-check'></i>
+        <span class='count-name'>Oncoming Bookings</span>
       </div>
       </a>
     </div>
 
     <div class='col-md-3'>
-    <a href='users' style='color: white' title='Click here to view Reviews'>
-      <div class='card-counter reviews'>
-        <i class='fa fa-pencil-square-o'></i>
-        <span class='count-numbers'>Amount</span>
-        <span class='count-name'>Reviews</span>
-    
-      </div>
-      </a>
-    </div>
+    <a href='past-bookings' style='color: white' title='Click here to view past bookings'>
+      <div class='card-counter danger'>
+        <i class='fa fa-lock'></i>
+        <span class='count-name'>Past Bookings</span>
 
-    <div class='col-md-3'>
-    <a href='users' style='color: white' title='Click here to view News and Announcements'>
-      <div class='card-counter news'>
-        <i class='fa fa-newspaper-o'></i>
-        <span class='count-numbers'>Amount</span>
-        <span class='count-name'>News Posts</span>
     
       </div>
       </a>

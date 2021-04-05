@@ -21,9 +21,16 @@ if ($countcheckforschedule != 0)
     $start_time = mysqli_real_escape_string($conn, $_POST['start_time']);
     $end_time = mysqli_real_escape_string($conn, $_POST['end_time']);
 
-    if ($start_date == $end_date || $start_time == $end_time)
+    $sd = strtotime("this $start_date");
+    $ed = strtotime("this $end_date");
+
+    
+
+    if ($start_date == $end_date || $start_time == $end_time || $sd > $ed)
     {
-        echo "<div class='alert alert-danger alert-dismissable fade show' role='alert'><strong>An error occured.</strong> Please ensure the values you have entered are not the same. <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+        $strsd = date('Y:m:d', $sd);
+        $stred = date('Y:m:d', $ed);
+        echo "<div class='alert alert-danger alert-dismissable fade show' role='alert'><strong>An error occured.</strong> Please ensure the values you have entered are valid. $sd - $ed <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
         <span aria-hidden='true'>&times;</span>
       </button></div>";
     }

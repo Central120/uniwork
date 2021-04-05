@@ -15,17 +15,22 @@ session_start();
    	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
      <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700' rel='stylesheet' type='text/css' />
 
-		
+		<style>
+  .footer 
+  {
+    margin-top: 20% !important; 
+  }
+    </style>
   </head>
   <body>
   <?php include "inc/header.php"; ?>
-  <div class="container-fluid" style='min-height:40vh'>
-  <h2 class="mb-4">Welcome to Kerry's K9's!</h2>
+<center>
+  <h2 class="mb-4">Welcome to Kerry's K9's!</h2><br>
   <p>Below are the most recent announcements.</p>
   <br>
   <p>We currently discounts on the following items: </p>
+</center>
 
-</div>
 
 <?php include "inc/footer.php"; ?>
 </body>

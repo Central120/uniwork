@@ -99,7 +99,7 @@ if ($countfindavail == 0)
   <div class="form-row">
     <div class="form-group col-md-6">
       <label for="day1">Preference One - Date</label>
-      <select class="form-control" name="day1">
+      <select class="form-control" required name="day1">
       <?php
         $today = strtotime('today');
         if ($findfdate >= $today)
@@ -136,7 +136,7 @@ if ($countfindavail == 0)
     <div class="form-group col-md-6">
       <label for="time1">Preference One - Time</label>
       
-      <select class="form-control" name="time1">
+      <select class="form-control" required name="time1">
       <?php
          
          $time = strtotime('now');
@@ -169,7 +169,7 @@ if ($countfindavail == 0)
   <div class="form-row">
     <div class="form-group col-md-6">
       <label for="day2">Preference Two - Date</label>
-     <select class="form-control" name="day2">
+     <select class="form-control" required name="day2">
      <?php
      if ($findfdate >= $today)
      {
@@ -202,7 +202,7 @@ if ($countfindavail == 0)
     </div>
     <div class="form-group col-md-6">
       <label for="time2">Preference Two - Time</label>
-      <select class="form-control" name="time2">
+      <select class="form-control" required name="time2">
       <?php
          
          $time2 = strtotime('now');
@@ -234,19 +234,19 @@ if ($countfindavail == 0)
   </div>
   <div class="form-group">
     <label for="petname">Pet Name</label>
-    <input type="text" class="form-control" name="petname" id="petname" placeholder="Enter Pet Name">
+    <input type="text" class="form-control" required name="petname" id="petname" placeholder="Enter Pet Name">
   </div>
   <div class="form-group">
     <label for="emergency1">Emergency Contact 1</label>
-      <input type="tel" pattern="[0]{1}[0-9]{10}" maxlength='11' class="form-control" name="emergency1" id="emergency1" placeholder="Enter an emergency contact (Format: 0**********)">
+      <input type="tel" pattern="[0]{1}[0-9]{10}" required maxlength='11' class="form-control" name="emergency1" id="emergency1" placeholder="Enter an emergency contact (Format: 0**********)">
   </div>
   <div class="form-group">
     <label for="emergency2">Emergency Contact 2</label>
-      <input type="tel" pattern="[0]{1}[0-9]{10}" maxlength='11' class="form-control" name="emergency2" id="emergency2" placeholder="Enter a 2nd emergency contact (Format: 0**********)">
+      <input type="tel" pattern="[0]{1}[0-9]{10}" required maxlength='11' class="form-control" name="emergency2" id="emergency2" placeholder="Enter a 2nd emergency contact (Format: 0**********)">
   </div>
   <div class="form-group">
     <label for="additional">Additional Information</label>
-    <input type="text" class="form-control" name="additional" id="additional" placeholder="Pet behaviours, lead/no lead etc...">
+    <input type="text" class="form-control" required name="additional" id="additional" placeholder="Pet behaviours, lead/no lead etc...">
   </div>
   <div class="form-group row">
     <div class="col-sm-10">

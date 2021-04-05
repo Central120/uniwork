@@ -15,7 +15,7 @@
             <div class='col-md-6 col-lg-5 text-right'>
                 <a><i class='fa fa-facebook white-text mr-lg-4 fa-2x'> </i></a>
                 <a><i class='fa fa-twitter white-text mr-lg-4 fa-2x'> </i></a>
-                <a><i class='fa fa-google-plus white-text mr-lg-4 fa-2x'> </i></a>
+                <a><i class='fa fa-reddit white-text mr-lg-4 fa-2x'> </i></a>
                 <a><i class='fa fa-linkedin white-text mr-lg-4 fa-2x'> </i></a>
                 <a><i class='fa fa-instagram white-text mr-lg-4 fa-2x'> </i></a>
             </div>
@@ -48,19 +48,19 @@
         <div class='col-md-3 col-lg-2 col-xl-2 mx-auto'>
             <h4>Links</h4>
             <hr class='bg-white mb-2 mt-0 d-inline-block mx-auto w-25'>
-            <p><a href='#' class='text-white'>#</a></p>
-            <p><a href='#' class='text-white'>#</a></p>
-            <p><a href='#' class='text-white'>#</a></p>
-            <p><a href='#' class='text-white'>#</a></p>
+            <p><a href='login' class='text-white'>Login</a></p>
+            <p><a href='signup' class='text-white'>Sign up</a></p>
+            <p><a href='select-staff' class='text-white'>Create a booking</a></p>
+            <p><a href='shop' class='text-white'>Store</a></p>
         </div>
 
         <div class='col-md-4 col-lg-3 col-xl-3'>
             <h4>Contact</h4>
             <hr class='bg-white mb-2 mt-0 d-inline-block mx-auto w-25'>
-            <p><i class='fa fa-home mr-3'></i> #</p>
+            <p><i class='fa fa-home mr-3'></i> Tynemouth Road, Wallsend</p>
             <p><i class='fa fa-envelope mr-3'></i>support@kerrysk9.xyz</p>
-            <p><i class='fa fa-phone mr-3'></i> #</p>
-            <p><i class='fa fa-print mr-3'></i> #</p>
+            <p><i class='fa fa-phone mr-3'></i> 01913983948</p>
+            <p><i class='fa fa-print mr-3'></i> +44 8431 411 039</p>
         </div>
 
     </div>
