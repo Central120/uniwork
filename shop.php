@@ -33,7 +33,7 @@ while($row = mysqli_fetch_assoc($sql))
     $price = $row['price'];
     $discount = $row['discount'];
     $stock = $row['stock'];
-    $image = $row['image'];
+    $image = $row['Image'];
 
     echo "<table>";
     echo "<tr>";
