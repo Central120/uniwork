@@ -231,13 +231,9 @@ $findcurrentbookings = mysqli_query($conn, "SELECT * FROM `bookings` WHERE `user
             $color2 = "red";
         }
 
-        if ($tsc == "None allocated")
+        if ($tsc == "None allocated" || $tsc == "None accepted")
         {
-            $tscd = "None allocated";
-        }
-        if ($tsc == "None accepted")
-        {
-            $tscd = "None accepted";
+            $tscd = $tsc;
         }
         else
         {
