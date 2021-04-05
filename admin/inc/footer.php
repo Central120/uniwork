@@ -15,7 +15,7 @@
             <div class='col-md-6 col-lg-5 text-right'>
                 <a><i class='fa fa-facebook white-text mr-lg-4 fa-2x'> </i></a>
                 <a><i class='fa fa-twitter white-text mr-lg-4 fa-2x'> </i></a>
-                <a><i class='fa fa-google-plus white-text mr-lg-4 fa-2x'> </i></a>
+                <a><i class='fa fa-reddit white-text mr-lg-4 fa-2x'> </i></a>
                 <a><i class='fa fa-linkedin white-text mr-lg-4 fa-2x'> </i></a>
                 <a><i class='fa fa-instagram white-text mr-lg-4 fa-2x'> </i></a>
             </div>
