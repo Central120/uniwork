@@ -17,6 +17,7 @@ else
 }
 
 $itemid = mysqli_real_escape_string($conn, $_POST['id']);
+$quantity = mysqli_real_escape_string($conn, $_POST['quantity']);
 $fitem = "SELECT * FROM `products` WHERE `id` = '$itemid'";
 $finditem = mysqli_query($conn,$fitem);
 $countitem = mysqli_num_rows($finditem);
@@ -25,6 +26,7 @@ if($countitem != 0){
     $product = $rowfinditem['product_name'];
     $ogprice = $rowfinditem['price'];
     $discount = $rowfinditem['discount'];
+    $ogstock - $rowfinditem['stock'];
     if ($discount == '0')
     {
     $finalprice = $price;
@@ -33,6 +35,22 @@ if($countitem != 0){
     {
     $calcy = $price / 100 * $discount; 
     $finalprice = $price - $calcy;
+    }
+    if($quantity > $ogstock) {
+        echo "an error has occured, there is insuffient stock for your requested quantity";
+    }
+    else {
+        $chkitem = "SELECT * FROM `cart` WHERE `product` = '$product'";
+        $checkitem = mysqli_query($conn, $chkitem);
+        $countcheckitem = mysqli_num_rows($checkitem);
+        if ($countcheckitem != 0)
+        {
+            $rowcheckitem = mysqli_fetch_assoc($checkitem);
+            $cartid = $rowcheckitem['id'];
+            $currentq = $rowcheckitem['quantity'];
+            $tempq = $currentq + $quantity;
+        
+        }
     }
 }
 ?>
