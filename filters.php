@@ -35,7 +35,21 @@ $finalprice = $price - $calcy;
 $discountmsg ="($discount% off!)";
 $fp = number_format((float)$finalprice, 2, '.', '');
 }
-
+if ($stock <= '5')
+{
+$stockmsg = "<p style ='color:red'> Hurry, there is only $stock of this item left.</p>";
+$disabled = "";
+}
+else if ($stock == '0')
+{
+$stockmsg = "<p style ='color:red'> Sorry, this item is out of stock </p>";
+$disable = "disabled";
+}
+else
+{
+$stockmsg = "<p style ='color:red'> There are $stock of this item left.</p>";
+$disabled = "";
+}
     echo "<div class='col-md-11 col-lg-2 col-sm-5' style='margin-right:10px;margin-bottom: 10px;'>
     <div class='card'>
     <img src='$image' class='card-img-top' alt='$productName' style='margin-top:10px'>
@@ -45,7 +59,7 @@ $fp = number_format((float)$finalprice, 2, '.', '');
     echo "<form action='php/addtocart.php' method='post' role='form'>
     <input type='hidden' name='id' value='$itemid'>
   <p class='card-text'>£$fp $discountmsg</p>
-<p><input type='submit' class='btn btn-success' value='Add to cart'></p></form>
+<p><input type='submit' $disabled class='btn btn-success' value='Add to cart'></p>$stockmsg</form>
 </div></div></div>";
 
 }
