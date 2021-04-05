@@ -231,10 +231,16 @@ $findcurrentbookings = mysqli_query($conn, "SELECT * FROM `bookings` WHERE `user
             $color2 = "red";
         }
 
-        $strtsc = strtotime("$tsc");
-       
-
-        $tscd = date("l jS \of F, g:i a", $strtsc);
+        if ($tsc == "None allocated")
+        {
+            $tscd = "None allocated";
+        }
+        else
+        {
+            $strtsc = strtotime("$tsc");
+            $tscd = date("l jS \of F, g:i a", $strtsc);
+        }
+        
         
 
         echo "<tr>

@@ -111,8 +111,15 @@ else
             $badge = "<span class='badge badge-danger'>$action</span>";
         }
 
-       $strtsc = strtotime("$tsc");
-       $tscd = date("l jS \of F, g:i a", $strtsc);
+        if ($tsc == "None allocated")
+        {
+            $tscd = "None allocated";
+        }
+        else
+        {
+            $strtsc = strtotime("$tsc");
+            $tscd = date("l jS \of F, g:i a", $strtsc);
+        }
         
 
         echo "<tr>
