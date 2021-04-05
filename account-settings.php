@@ -51,16 +51,19 @@ $findcurrentbookings = mysqli_query($conn, "SELECT * FROM `bookings` WHERE `user
     <div id="server-results"></div>
     <div class="container">
     <div class="d-flex justify-content-center">
+        <h5 class="mb-42">Change Account Password</h5>
             <form class='change-password.php' method='post' id='Form1'>
-            <label for='pw-change'>Change Password</label>
+            <label for='pw-change'>New Password</label>
             <input type="password" class="form-control" placeholder="Password" name="password">
             <br>
             <label for='conf-change'>Confirm new password</label>
             <input type="password" class="form-control" placeholder="Password" name="conf_pw">
-                   
+            <input type='submit' value='Change password' class='btn btn-success'>
             </form>
             <br><br>
-            <label for='secq'>Security Questions</label>
+            <h5 class="mb-42">Change Security Details</h5>
+            <form class='change-answers.php' method='post' id='Form2'>
+            <label for='secq'>Security Question 1</label>
             <select class='form-control' name='SecQ1'>
             <?php
             $findsecq1 = mysqli_query($conn, "SELECT * FROM `accounts` WHERE `username` = '$session_usern'");
@@ -117,7 +120,72 @@ $findcurrentbookings = mysqli_query($conn, "SELECT * FROM `bookings` WHERE `user
             ?>
 
             </select>
-            </div>
+            <label for='seca1'>Security Answer 1</label>
+            <input type='password' name='password' class='form-control'>
+            <br>
+            <label for='secq2'>Security Question 2</label>
+            <select class='form-control' name='SecQ1'>
+            <?php
+            $findsecq2 = mysqli_query($conn, "SELECT * FROM `accounts` WHERE `username` = '$session_usern'");
+            while ($rowfindsecq2 = $findsecq2->fetch_assoc())
+            {
+            $secq2 = $rowfindsecq2['secq2'];
+            $possibleq1 = "Where did you go on your first holiday?";
+            $possibleq2 = "What is the name of your favourite uncle?";
+            $possibleq3 = "What was the name of your primary school?";
+            $possibleq4 = "What was the house number and street name you lived in as a child?";
+            $possibleq5 = "What is the name of your favourite musician or band?";
+            
+            if ($secq1 == $possibleq1)
+            {
+                echo "<option value='$secq2' selected>$secq2</option>";
+            }
+            else
+            {
+                echo "<option value='$possibleq1'>$possibleq1</option>";
+            }
+            if ($secq1 == $possibleq2)
+            {
+                echo "<option value='$secq2' selected>$secq2</option>";
+            }
+            else
+            {
+                echo "<option value='$possibleq2'>$possibleq2</option>";
+            }
+            if ($secq1 == $possibleq3)
+            {
+                echo "<option value='$secq2' selected>$secq2</option>";
+            }
+            else
+            {
+                echo "<option value='$possibleq3'>$possibleq3</option>";
+            }
+            if ($secq1 == $possibleq4)
+            {
+                echo "<option value='$secq2' selected>$secq2</option>";
+            }
+            else
+            {
+                echo "<option value='$possibleq4'>$possibleq4</option>";
+            }
+            if ($secq1 == $possibleq5)
+            {
+                echo "<option value='$secq2' selected>$secq2</option>";
+            }
+            else
+            {
+                echo "<option value='$possibleq5'>$possibleq5</option>";
+            }
+        }
+            ?>
+
+            </select>
+            <br>
+            <label for='seca2'>Security Answer 2</label>
+            <input type='password' name='seca2' class='form-control'>
+            <input type='submit' value='Change Security Details' class='btn btn-success'>
+            </form>
+                        </div>
             </div>
                                   
   <?php include "inc/footer.php"; ?>
@@ -139,7 +207,22 @@ $findcurrentbookings = mysqli_query($conn, "SELECT * FROM `bookings` WHERE `user
       });
     });
   </script>
+<script type='text/javascript'>
+    $('#Form2').submit(function(event) {
+      event.preventDefault(); //prevent default action
+      var post_url = $(this).attr('action'); //get form action url
+      var form_data = $(this).serialize(); //Encode form elements for submission
 
+      $.ajax({
+        url: post_url,
+        type: 'post',
+        data: form_data
+      }).done(function(response) { //
+        $('#server-results').html(response);
+
+      });
+    });
+  </script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
