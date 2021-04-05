@@ -15,13 +15,13 @@ echo "<div class='container-fluid'>
 <div class='row'>";
 while ($rowcat = $findcat->fetch_assoc())
 {
-    $itemID = $row['id'];
-    $productName = $row['product_name'];
-    $category = $row['category'];
-    $price = $row['price'];
-    $discount = $row['discount'];
-    $stock = $row['stock'];
-    $image = $row['Image'];
+    $itemID = $rowcat['id'];
+    $productName = $rowcat['product_name'];
+    $category = $rowcat['category'];
+    $price = $rowcat['price'];
+    $discount = $rowcat['discount'];
+    $stock = $rowcat['stock'];
+    $image = $rowcat['Image'];
 
     echo "<div class='col-md-11 col-lg-2 col-sm-5' style='margin-right:10px;margin-bottom: 10px;'>
     <div class='card'>
