@@ -30,6 +30,11 @@ else
             transform: translate(-50%, -50%);
             margin-top:5%;
          }
+
+         .footer
+         {
+           margin-top:20% !important;
+         }
      </style>
     
 </head>
