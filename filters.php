@@ -26,12 +26,14 @@ while ($rowcat = $findcat->fetch_assoc())
 {
 $finalprice = $price;
 $discountmsg ="";
+$fp = number_format((float)$finalprice, 2, '.', '');
 }
 else
 {
 $calcy = $price / 100 * $discount; 
 $finalprice = $price - $calcy;
 $discountmsg ="($discount% off!)";
+$fp = number_format((float)$finalprice, 2, '.', '');
 }
 
     echo "<div class='col-md-11 col-lg-2 col-sm-5' style='margin-right:10px;margin-bottom: 10px;'>
@@ -42,7 +44,7 @@ $discountmsg ="($discount% off!)";
     ";
     echo "<form action='php/addtocart.php' method='post' role='form'>
     <input type='hidden' name='id' value='$itemid'>
-  <p class='card-text'>£$finalprice $discountmsg</p>
+  <p class='card-text'>£$fp $discountmsg</p>
 <p><input type='submit' class='btn btn-success' value='Add to cart'></p></form>
 </div></div></div>";
 
