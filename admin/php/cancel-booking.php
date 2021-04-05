@@ -50,25 +50,25 @@ if ($countfindbooking != 0)
         $deletefrombookings = mysqli_query($conn, "DELETE FROM `bookings` WHERE `id` = '$booking_id'");
         if ($deletefrombookings)
         {
-            echo "<script>window.location.replace('../current-bookings');</script>";
+            echo "<script>window.location.replace('../pending-bookings');</script>";
         }
         else
         {
-            echo "<div class='alert alert-danger alert-dismissable fade show' role='alert'><strong>An error occured.</strong> Your booking did not get cancelled. <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+            echo "<div class='alert alert-danger alert-dismissable fade show' role='alert'><strong>An error occured.</strong> The booking did not get cancelled. <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
             <span aria-hidden='true'>&times;</span>
           </button></div>";
         }
     }   
     else
     {
-        echo "<div class='alert alert-danger alert-dismissable fade show' role='alert'><strong>An error occured.</strong> Your booking did not get cancelled. <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+        echo "<div class='alert alert-danger alert-dismissable fade show' role='alert'><strong>An error occured.</strong> The booking did not get cancelled. <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
     <span aria-hidden='true'>&times;</span>
   </button></div>";
     }
 }
 else
 {
-    echo "<div class='alert alert-danger alert-dismissable fade show' role='alert'><strong>An error occured.</strong> Your booking could not be found. <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+    echo "<div class='alert alert-danger alert-dismissable fade show' role='alert'><strong>An error occured.</strong> The booking could not be found. <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
     <span aria-hidden='true'>&times;</span>
   </button></div>";
 }
