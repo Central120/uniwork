@@ -47,10 +47,14 @@ else if(isset($_SESSION['user']))
           <a class="dropdown-item <?php if (strpos($url,'cart') !== false) {
     echo 'active';
 } ?>" href="#">Cart</a>
-      </li>
+      <a class="dropdown-item <?php if (strpos($url,'shop') !== false) {
+    echo 'active';
+} ?>" href="shop">View Store</a>
+    </li>
       <li class="nav-item <?php if (strpos($url,'news') !== false) {
     echo 'active';
 } ?>">
+
         <a class="nav-link" href="#">News</a>
       </li>
       <li class="nav-item <?php if (strpos($url,'images') !== false) {
