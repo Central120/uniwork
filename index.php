@@ -18,7 +18,7 @@ session_start();
 		<style>
   .footer 
   {
-    margin-top: 10% !important; 
+    margin-top: 20% !important; 
   }
     </style>
   </head>
