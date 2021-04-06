@@ -14,7 +14,7 @@ $countfinduser = mysqli_num_rows($finduser);
 if ($countfinduser != 0)
 {
     
-  $msg = "<div class='alert alert-success alert-dismissable fade show' role='alert'><strong>Security Answers Correct.</strong> Please enter your new password. SELECT * FROM `accounts` WHERE `username` = '$username' AND `seca1` = '$sa1' AND `seca2` = '$sa2'<button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+  $msg = "<div class='alert alert-success alert-dismissable fade show' role='alert'><strong>Security Answers Correct.</strong> Please enter your new password. <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
   <span aria-hidden='true'>&times;</span>
 </button></div>";
 $content = "<div class='form-group'>
@@ -32,7 +32,7 @@ $input = "<input type='hidden' name='usern' value='$username2'>
 }
 else
 {
-    $msg = "<div class='alert alert-danger alert-dismissable fade show' role='alert'><strong>Security Answers Incorrect</strong> Please retry. <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+    $msg = "<div class='alert alert-danger alert-dismissable fade show' role='alert'><strong>Security Answers Incorrect</strong> Please enter your new password SELECT * FROM `accounts` WHERE `username` = '$username' AND `seca1` = '$sa1' AND `seca2` = '$sa2'<button type='button' class='close' data-dismiss='alert' aria-label='Close'>
     <span aria-hidden='true'>&times;</span>
   </button></div>";
   $content = "";
