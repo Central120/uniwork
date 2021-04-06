@@ -1,5 +1,5 @@
 <?php
-include_once 'inc/dbconnect.php';
+include_once '../inc/dbconnect.php';
 session_start();
 $current_timestamp = date('Y-m-d H:i:s');
 
