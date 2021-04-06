@@ -205,7 +205,7 @@ $findcurrentbookings = mysqli_query($conn, "SELECT * FROM `bookings` WHERE `user
             <label for='seca2'>Security Answer 2</label>
             <input type='password' name='seca2' class='form-control'>
         </div></div></div>
-        <div class="form-group">#
+        <div class="form-group">
         <input type='button' data-toggle='modal' id='continue_btn' data-target='confirm' class='btn btn-success' value='Continue' />
         </div>
 
