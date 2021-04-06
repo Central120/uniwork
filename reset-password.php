@@ -19,14 +19,14 @@ if ($countfinduser != 0)
 </button></div>";
 $content = "<div class='form-group'>
 <label for='newpw'>New Password</label>
-<input type='password' class='form-control' placeholder='Enter new password' name='newpw' style='width: 145px;'>
+<input type='password' class='form-control' placeholder='Enter new password' name='newpw'>
 </div><br>
 <div class='form-group'>
 <label for='newpw'>Repeat Password</label>
-<input type='password' class='form-control' placeholder='Repeat new password' name='r_newpw' style='width: 145px;''>
+<input type='password' class='form-control' placeholder='Repeat new password' name='r_newpw'>
 </div>";
 
-$input = "<input type='hidden' name='usern' value='$username2'>
+$input = "<input type='hidden' name='usern' value='$username'>
               <button type='submit' class='btn btn-primary'>Reset Password</button>
 ";
 }
@@ -63,7 +63,7 @@ else
         <form action="php/reset-password.php" method="POST">
             <div class="form-group">
                 <label for="username">Account Username</label>
-                <input type="text" disabled class="form-control" value="<?php echo $username2; ?>" name="username" style="width: 145px;">
+                <input type="text" disabled class="form-control" value="<?php echo $username; ?>" name="username" style="width: 145px;">
             </div>
 
 <?php echo $content; ?>
