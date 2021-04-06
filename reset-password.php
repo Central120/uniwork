@@ -54,7 +54,7 @@ else
 				<div class="col-xs-12 col-sm-6 col-md-6">
 					<div class="form-group">
 						<label for="SecQ1">Security Question 1</label>
-						<select disabled class="form-control">
+						<select class="form-control">
                         <option><?php echo $secq1; ?></option>     
     </select>
 					</div>
@@ -71,7 +71,7 @@ else
 				<div class="col-xs-12 col-sm-6 col-md-6">
 					<div class="form-group">
 						<label for="SecQ1">Security Question 2</label>
-						<select disabled class="form-control">
+						<select class="form-control">
                         <option><?php echo $secq2; ?></option>     
     </select>
 					</div>
