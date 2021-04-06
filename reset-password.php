@@ -19,11 +19,11 @@ if ($countfinduser != 0)
 </button></div>";
 $content = "<div class='form-group'>
 <label for='newpw'>New Password</label>
-<input type='password' class='form-control' placeholder='Enter new password' name='newpw'>
+<input type='password' class='form-control' placeholder='Enter new password' style='width:50%' name='newpw'>
 </div><br>
 <div class='form-group'>
 <label for='newpw'>Repeat Password</label>
-<input type='password' class='form-control' placeholder='Repeat new password' name='r_newpw'>
+<input type='password' class='form-control' placeholder='Repeat new password' style='width:50%' name='r_newpw'>
 </div>";
 
 $input = "<input type='hidden' name='usern' value='$username'>
