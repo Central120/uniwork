@@ -34,7 +34,7 @@
             </div>
 
             <div class="form-group">
-              <label for="signup">Already have an account?</label>
+              <label for="signup">Haven't yet signed up?</label>
               <button type='button' id='signup' class='btn btn-warning'>Sign up</button>
             </div>
         </form>
