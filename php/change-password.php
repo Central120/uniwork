@@ -32,7 +32,7 @@ if ($countfindaccount != 0)
 {
     if ($npw == $cnpw)
     {
-        $updatepw = mysqli_query($conn, "UPDATE `accounts` SET `password` = 'npw' WHERE `username` = '$session_usern'");
+        $updatepw = mysqli_query($conn, "UPDATE `accounts` SET `password` = '$npw' WHERE `username` = '$session_usern'");
         if ($updatepw)
         {
             echo "<script>window.location.replace('../account-settings');</script>";
