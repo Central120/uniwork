@@ -8,7 +8,7 @@ $countfinduser = mysqli_num_rows($finduser);
 
 if ($countfinduser != 0)
 {
-    $msg = "<div class='alert alert-sucess alert-dismissable fade show' role='alert'><strong>Account found!</strong> Please enter your security answers. <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+    $msg = "<div class='alert alert-success alert-dismissable fade show' role='alert'><strong>Account found!</strong> Please enter your security answers. <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
     <span aria-hidden='true'>&times;</span>
   </button></div>";
 
