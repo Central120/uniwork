@@ -62,9 +62,9 @@ $findcurrentbookings = mysqli_query($conn, "SELECT * FROM `bookings` WHERE `user
             <input type="password" style='width:50%' class="form-control" placeholder="Password" name="conf_pw">
             </div>
             <div class="form-group">
-            <input type='submit' value='Change password' class='btn btn-success'>
+            <input type='button' data-toggle='modal' id='continue_btn' data-target='#prev_pw' class='btn btn-primary' value='Continue' />
             </div>  
-            <div class='modal fade' id='confirm' tabindex='-1' role='dialog' aria-labelledby='confirm' aria-hidden='true'>
+            <div class='modal fade' id='prev_pw' tabindex='-1' role='dialog' aria-labelledby='prev_pw' aria-hidden='true'>
         <div class='modal-dialog' role='document'>
           <div class='modal-content'>
             <div class='modal-header'>
@@ -227,7 +227,7 @@ $findcurrentbookings = mysqli_query($conn, "SELECT * FROM `bookings` WHERE `user
             <input type='password' name='seca2' class='form-control'>
         </div></div></div>
         <div class="form-group">
-        <input type='button' data-toggle='modal' id='continue_btn' data-target='#confirm' class='btn btn-success' value='Continue' />
+        <input type='button' data-toggle='modal' id='continue_btn' data-target='#confirm' class='btn btn-primary' value='Continue' />
         </div>
          
                         </div>
