@@ -271,7 +271,7 @@ $findcurrentbookings = mysqli_query($conn, "SELECT * FROM `bookings` WHERE `user
         data: form_data
       }).done(function(response) { //
         $('#server-results').html(response);
-
+        $('#prev_pw').modal('hide');
       });
     });
   </script>
@@ -287,7 +287,7 @@ $findcurrentbookings = mysqli_query($conn, "SELECT * FROM `bookings` WHERE `user
         data: form_data
       }).done(function(response) { //
         $('#server-results2').html(response);
-
+        $('#confirm').modal('hide');
       });
     });
   </script>
