@@ -175,15 +175,15 @@ $findcurrentbookings = mysqli_query($conn, "SELECT * FROM `bookings` WHERE `user
             $possibleq4 = "What was the house number and street name you lived in as a child?";
             $possibleq5 = "What is the name of your favourite musician or band?";
             
-            if ($secq1 == $possibleq1)
+            if ($secq2 == $possibleq1)
             {
-                echo "<option value='$secq2' selected>$secq2</option>";
+                echo "<option value='$secq2' selected>$secq1</option>";
             }
             else
             {
                 echo "<option value='$possibleq1'>$possibleq1</option>";
             }
-            if ($secq1 == $possibleq2)
+            if ($secq2 == $possibleq2)
             {
                 echo "<option value='$secq2' selected>$secq2</option>";
             }
@@ -191,7 +191,7 @@ $findcurrentbookings = mysqli_query($conn, "SELECT * FROM `bookings` WHERE `user
             {
                 echo "<option value='$possibleq2'>$possibleq2</option>";
             }
-            if ($secq1 == $possibleq3)
+            if ($secq2 == $possibleq3)
             {
                 echo "<option value='$secq2' selected>$secq2</option>";
             }
@@ -199,7 +199,7 @@ $findcurrentbookings = mysqli_query($conn, "SELECT * FROM `bookings` WHERE `user
             {
                 echo "<option value='$possibleq3'>$possibleq3</option>";
             }
-            if ($secq1 == $possibleq4)
+            if ($secq2 == $possibleq4)
             {
                 echo "<option value='$secq2' selected>$secq2</option>";
             }
@@ -207,7 +207,7 @@ $findcurrentbookings = mysqli_query($conn, "SELECT * FROM `bookings` WHERE `user
             {
                 echo "<option value='$possibleq4'>$possibleq4</option>";
             }
-            if ($secq1 == $possibleq5)
+            if ($secq2 == $possibleq5)
             {
                 echo "<option value='$secq2' selected>$secq2</option>";
             }
