@@ -14,7 +14,7 @@
   <div class="d-flex justify-content-center">
     <center>
         <h2 class="mb-42">Kerry's K9's - Reset Password Stage 1</h2>
-        <form action="reset-password.php" method="POST">
+        <form action="answer-questions.php" method="POST">
             <div class="form-group">
                 <label for="username">Account Username</label>
                 <input type="text" class="form-control" placeholder="Username" name="username" style="width: 145px;">
