@@ -13,29 +13,30 @@ $countfinduser = mysqli_num_rows($finduser);
 
 if ($countfinduser != 0)
 {
-    $msg = "<div class='alert alert-success alert-dismissable fade show' role='alert'><strong>Security Answers Correct</strong> Please enter your new password <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+    
+  $msg = "<div class='alert alert-success alert-dismissable fade show' role='alert'><strong>Security Answers Correct.</strong> Please enter your new password. <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+  <span aria-hidden='true'>&times;</span>
+</button></div>";
+$content = "<div class='form-group'>
+<label for='newpw'>New Password</label>
+<input type='password' class='form-control' placeholder='Enter new password' name='newpw' style='width: 145px;'>
+</div><br>
+<div class='form-group'>
+<label for='newpw'>Repeat Password</label>
+<input type='password' class='form-control' placeholder='Repeat new password' name='r_newpw' style='width: 145px;''>
+</div>";
+
+$input = "<input type='hidden' name='usern' value='$username2'>
+              <button type='submit' class='btn btn-primary'>Reset Password</button>
+";
+}
+else
+{
+    $msg = "<div class='alert alert-danger alert-dismissable fade show' role='alert'><strong>Security Answers Incorrect</strong> Please retry. <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
     <span aria-hidden='true'>&times;</span>
   </button></div>";
   $content = "";
   $input = "";
-}
-else
-{
-    $msg = "<div class='alert alert-danger alert-dismissable fade show' role='alert'><strong>An error occured.</strong> Your answers were incorrect. <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
-    <span aria-hidden='true'>&times;</span>
-  </button></div>";
-  $content = "<div class='form-group'>
-  <label for='newpw'>New Password</label>
-  <input type='password' class='form-control' placeholder='Enter new password' name='newpw' style='width: 145px;'>
-</div><br>
-<div class='form-group'>
-  <label for='newpw'>Repeat Password</label>
-  <input type='password' class='form-control' placeholder='Repeat new password' name='r_newpw' style='width: 145px;''>
-</div>";
-
-  $input = "<input type='hidden' name='usern' value='$username2'>
-                <button type='submit' class='btn btn-primary'>Reset Password</button>
-";
 }
 
 ?>
