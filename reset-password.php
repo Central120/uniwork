@@ -41,7 +41,7 @@ else
   <?php include "inc/header.php"; ?>
  
     <div class="container">
-  <div class="d-flex justify-content-center">
+  
     <center><br>
     <?php echo $msg; ?>
         <h2 class="mb-42">Kerry's K9's - Reset Password Stage 2</h2>
@@ -90,7 +90,7 @@ else
         </form>
     </center>
 </div>
-</div>
+
 
 <?php include "inc/footer.php"; ?>
 </body>
