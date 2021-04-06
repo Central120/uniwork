@@ -208,8 +208,10 @@ $findcurrentbookings = mysqli_query($conn, "SELECT * FROM `bookings` WHERE `user
         <div class="form-group">
         <input type='button' data-toggle='modal' id='continue_btn' data-target='confirm' class='btn btn-success' value='Continue' />
         </div>
-
-        <div class='modal fade' id='confirm' tabindex='-1' role='dialog' aria-labelledby='confirm' aria-hidden='true'>
+         
+                        </div>
+            </div>
+            <div class='modal fade' id='confirm' tabindex='-1' role='dialog' aria-labelledby='confirm' aria-hidden='true'>
         <div class='modal-dialog' role='document'>
           <div class='modal-content' style='width:150%;left:-10%;'>
             <div class='modal-header'>
@@ -225,17 +227,13 @@ $findcurrentbookings = mysqli_query($conn, "SELECT * FROM `bookings` WHERE `user
             <div class='modal-footer'>
             
               <button type='submit' class='btn btn-success'>Change Security Details</button>
-            
+                </form> 
               <button type='button' class='btn btn-secondary' data-dismiss='modal'>Close</button>
             </div>
           </div>
         </div>
       </div>
 
-    
-            </form>
-                        </div>
-            </div>
                                   
   <?php include "inc/footer.php"; ?>
 </body>
