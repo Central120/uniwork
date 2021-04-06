@@ -65,6 +65,7 @@ else
 						<input type="text" name="SecA1" style='width:100% !important' id="SecA1" class="form-control" required placeholder="Security Answer 1" tabindex="1">
 					</div>
 				</div>
+            </div>
                 <br>
                 <div class="row">
 				<div class="col-xs-12 col-sm-6 col-md-6">
@@ -81,6 +82,7 @@ else
 						<input type="text" name="SecA2" style='width:100% !important' id="SecA2" class="form-control" required placeholder="Security Answer 2" tabindex="2">
 					</div>
 				</div>
+            </div>
             <div class="form-group">
                 <button type='submit' class="btn btn-primary">Next Stage</button>
                 <button id='login' type="button" class="btn btn-info">Login</button>
