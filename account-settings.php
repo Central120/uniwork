@@ -64,7 +64,28 @@ $findcurrentbookings = mysqli_query($conn, "SELECT * FROM `bookings` WHERE `user
             <div class="form-group">
             <input type='submit' value='Change password' class='btn btn-success'>
             </div>  
-            </form>
+            <div class='modal fade' id='confirm' tabindex='-1' role='dialog' aria-labelledby='confirm' aria-hidden='true'>
+        <div class='modal-dialog' role='document'>
+          <div class='modal-content'>
+            <div class='modal-header'>
+              <h5 class='modal-title'>Please confirm your previous password</h5>
+              <button type='button' class='close' data-dismiss='modal' aria-label='Close'>
+                <span aria-hidden='true'>&times;</span>
+              </button>
+            </div>
+            <div class='modal-body'>
+            <label for='conf_pw'>Previous Password:</label>
+            <input type='password' name='prev_pw' class='form-control'>
+            </div>
+            <div class='modal-footer'>
+            
+              <button type='submit' class='btn btn-success'>Change Password</button>
+                </form> 
+              <button type='button' class='btn btn-secondary' data-dismiss='modal'>Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
             <br><br>
             <h5 class="mb-42">Change Security Details</h5>
             <div id="server-results2"></div>
