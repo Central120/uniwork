@@ -42,7 +42,7 @@ else
  
     <div class="container-fluid">
   <div class="d-flex justify-content-center">
-    <center>
+    <center><br>
     <?php echo $msg; ?>
         <h2 class="mb-42">Kerry's K9's - Reset Password Stage 2</h2>
         <form action="reset-password.php" method="POST">
