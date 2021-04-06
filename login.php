@@ -32,6 +32,11 @@
                 <button type='button' id='forgot' class="btn btn-info">Forgotten password</button>
                 <button type="submit" class="btn btn-primary">Login</button>
             </div>
+
+            <div class="form-group">
+              <label for="signup">Already have an account?</label>
+              <button type='button' id='signup' class='btn btn-warning'>Sign up</button>
+            </div>
         </form>
     </center>
 </div>
@@ -61,6 +66,9 @@ $('#forgot').click(function(){
 window.location.replace('forgot-password');
 });
 
+$('#signup').click(function() {
+window.location.replace('signup');
+});
   </script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
