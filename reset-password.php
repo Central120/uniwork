@@ -40,7 +40,7 @@ else
   <body>
   <?php include "inc/header.php"; ?>
  
-    <div class="container-fluid">
+    <div class="container">
   <div class="d-flex justify-content-center">
     <center><br>
     <?php echo $msg; ?>
