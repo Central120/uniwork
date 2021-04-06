@@ -84,6 +84,7 @@ else
 				</div>
             </div>
             <div class="form-group">
+              <input type='hidden' name='usern' value='$username2'>
                 <button type='submit' class="btn btn-primary">Next Stage</button>
                 <button id='login' type="button" class="btn btn-info">Login</button>
             </div>
