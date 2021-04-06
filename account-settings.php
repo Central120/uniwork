@@ -205,9 +205,34 @@ $findcurrentbookings = mysqli_query($conn, "SELECT * FROM `bookings` WHERE `user
             <label for='seca2'>Security Answer 2</label>
             <input type='password' name='seca2' class='form-control'>
         </div></div></div>
-        <div class="form-group">
-            <input type='submit' value='Change Security Details' class='btn btn-success'>
+        <div class="form-group">#
+        <input type='button' data-toggle='modal' id='continue_btn' data-target='confirm' class='btn btn-success' value='Continue' />
         </div>
+
+        <div class='modal fade' id='confirm' tabindex='-1' role='dialog' aria-labelledby='confirm' aria-hidden='true'>
+        <div class='modal-dialog' role='document'>
+          <div class='modal-content' style='width:150%;left:-10%;'>
+            <div class='modal-header'>
+              <h5 class='modal-title'>Please confirm your password first</h5>
+              <button type='button' class='close' data-dismiss='modal' aria-label='Close'>
+                <span aria-hidden='true'>&times;</span>
+              </button>
+            </div>
+            <div class='modal-body'>
+            <label for='conf_pw'>Confirm Password:</label>
+            <input type='password' name='conf_pw' class='form-control'>
+            </div>
+            <div class='modal-footer'>
+            
+              <button type='submit' class='btn btn-success'>Change Security Details</button>
+            
+              <button type='button' class='btn btn-secondary' data-dismiss='modal'>Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    
             </form>
                         </div>
             </div>
