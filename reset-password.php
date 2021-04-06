@@ -59,7 +59,7 @@ else
   
     <center><br>
     <?php echo $msg; ?>
-        <h2 class="mb-42">Kerry's K9's - Reset Password Stage 2</h2>
+        <h2 class="mb-42">Kerry's K9's - Reset Password Stage 3</h2>
         <form action="php/reset-password.php" method="POST">
             <div class="form-group">
                 <label for="username">Account Username</label>
