@@ -111,9 +111,15 @@ $disabled = "";
   <p class='card-text'>£$fp $discountmsg</p>
   <select name ='quantity' class = 'form-control'>
   ";
-  for($i=1;$i<=$stock;$i++){
+  for($i=0;$i<=$stock;$i++)
+  {
+    if($i==0){
+      echo "<option disabled> Out Of Stock </option>";
+    }
+    else {
     echo "<option value = '$i'>$i</option>";
   }
+}
 
 
 
