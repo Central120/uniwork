@@ -52,12 +52,12 @@ $findltime = strtotime("$last_time");
 $ts = strtotime($current_timestamp);
 if ($findfdate < $ts && $findldate < $ts)
 {
-  $msg = "<br><br><h2 style='margin-left:25%'>$staff_name has no more available days this week. Please book for next week if you want to book with this staff member.</h2>";
+  $msg = "<br><br><h2 style='margin-left:10%'>$staff_name has no more available days this week. Please book for next week if you want to book with this staff member.</h2>";
 }
 
 if ($countfindavail == 0)
 {
-  $msg = "<br><br><h2 style='margin-left:10%'>$staff_name is currently unavailable - Please try again later.</h2>"; 
+  $msg = "<br><br><h2 style='margin-left:25%'>$staff_name is currently unavailable - Please try again later.</h2>"; 
 }
 ?>
 <!doctype html>
