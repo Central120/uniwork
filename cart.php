@@ -34,13 +34,41 @@ else
   <body>
   <?php include "inc/header.php"; ?>
   <div class="container-fluid" style='min-height:40vh'>
+  <center>
   <h2 class="mb-4">Cart</h2>
   <p>
   <h2 class="mb-4">This is your shopping bag</h2>
   </p>
+  <div class="row">
+ <div class="col-12">
+ <div class="table-responsive">
+ <table class="table table-striped">
+ <thead>
+<tr>
+ <th scope="col">Image</th>
+ <th scope="col">Product</th>
+ <th scope="col">Price</th>
+ <th scope="col">Quantity</th>
+ <th>Manage</th>
+</tr>
+</thead>
+<tbody>
+<?php
+$sqlfindcart = "SELECT cart.product, cart.price, cart.quantity, products.Image FROM `cart` LEFT JOIN `products` ON cart.product = products.product_name WHERE `username` = '$session_username'";
+$findcart = mysqli_query($conn,$sqlfindcart);
+while($rowfindcart = $findcart->fetch_assoc())
+{
+    $image = $rowfindcart['Image'];
+    $product = $rowfindcart['product'];
+    $price = $rowfindcart['price'];
+    $quantity = $rowfindcart['quantity'];
+    $price1 = number_format((float)$price, 2, '.','');
+}
 
 
 
+?>
+</center>
   </div>
 <?php include "inc/footer.php"; ?>
 </body>
