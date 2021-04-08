@@ -111,7 +111,7 @@ $disabled = "";
   <p class='card-text'>£$fp $discountmsg</p>
   <select name ='quantity' class = 'form-control'>
   ";
-  for($i=0;$i<=$stock;$i++){
+  for($i=1;$i<=$stock;$i++){
     echo "<option value = '$i'>$i</option>";
   }
 
