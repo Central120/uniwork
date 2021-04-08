@@ -27,10 +27,10 @@ if($countitem != 0){
     $product = $rowfinditem['product_name'];
     $ogprice = $rowfinditem['price'];
     $discount = $rowfinditem['discount'];
-    $ogstock - $rowfinditem['stock'];
+    $ogstock = $rowfinditem['stock'];
     if ($discount == '0')
     {
-    $finalprice = $price;
+    $finalprice = $ogprice;
     }
     else
     {
