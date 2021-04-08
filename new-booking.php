@@ -57,7 +57,7 @@ if ($findfdate < $ts)
 
 if ($countfindavail == 0)
 {
-  $msg = "<br><br><h2 style='margin-left:25%'>$staff_name is currently unavailable - Please try again later.</h2>"; 
+  $msg = "<br><br><h2 style='margin-left:10%'>$staff_name is currently unavailable - Please try again later.</h2>"; 
 }
 ?>
 <!doctype html>
