@@ -116,6 +116,9 @@ $disabled = "";
     if($i==0){
       echo "<option disabled selected> Out Of Stock </option>";
     }
+    else if ($i==1) {
+    echo "<option value = '$i' selected>$i</option>";  
+    }
     else {
     echo "<option value = '$i'>$i</option>";
   }
