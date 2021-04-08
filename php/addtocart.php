@@ -19,6 +19,11 @@ else
 
 $itemid = mysqli_real_escape_string($conn, $_POST['id']);
 $quantity = mysqli_real_escape_string($conn, $_POST['quantity']);
+if ($quantity < "1"){
+    echo "Your Quantity Cannot Be 0";
+}
+else {
+
 $fitem = "SELECT * FROM `products` WHERE `id` = '$itemid'";
 $finditem = mysqli_query($conn,$fitem);
 $countitem = mysqli_num_rows($finditem);
@@ -93,5 +98,6 @@ if($countitem != 0){
 else
 {
     echo "Item not found, please try again.";
+}
 }
 ?>
