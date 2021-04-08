@@ -49,7 +49,11 @@ $findldate = strtotime("$timer $last_day");
 $findftime = strtotime("$first_time");
 $findltime = strtotime("$last_time");
 
-
+$ts = strtotime($current_timestamp);
+if ($findfdate < $ts && $findldate < $ts)
+{
+  $msg = "<br><br><h2 style='margin-left:10%'>$staff_name has no more available days this week. Please book for next week if you want to book with this staff member.</h2>";
+}
 
 if ($countfindavail == 0)
 {
@@ -66,7 +70,7 @@ if ($countfindavail == 0)
    	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
      <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700' rel='stylesheet' type='text/css' />
      <?php 
-     if ($countfindavail == 0)
+     if ($countfindavail == 0 || $findfdate < $ts && $findldate < $ts)
      {
        echo "<style>
        .container-fluid

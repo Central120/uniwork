@@ -62,9 +62,30 @@ $findcurrentbookings = mysqli_query($conn, "SELECT * FROM `bookings` WHERE `user
             <input type="password" style='width:50%' class="form-control" placeholder="Password" name="conf_pw">
             </div>
             <div class="form-group">
-            <input type='submit' value='Change password' class='btn btn-success'>
+            <input type='button' data-toggle='modal' id='continue_btn' data-target='#prev_pw' class='btn btn-primary' value='Continue' />
             </div>  
-            </form>
+            <div class='modal fade' id='prev_pw' tabindex='-1' role='dialog' aria-labelledby='prev_pw' aria-hidden='true'>
+        <div class='modal-dialog' role='document'>
+          <div class='modal-content'>
+            <div class='modal-header'>
+              <h5 class='modal-title'>Please confirm your previous password</h5>
+              <button type='button' class='close' data-dismiss='modal' aria-label='Close'>
+                <span aria-hidden='true'>&times;</span>
+              </button>
+            </div>
+            <div class='modal-body'>
+            <label for='conf_pw'>Previous Password:</label>
+            <input type='password' name='prev_pw' class='form-control'>
+            </div>
+            <div class='modal-footer'>
+            
+              <button type='submit' class='btn btn-success'>Change Password</button>
+                </form> 
+              <button type='button' class='btn btn-secondary' data-dismiss='modal'>Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
             <br><br>
             <h5 class="mb-42">Change Security Details</h5>
             <div id="server-results2"></div>
@@ -73,7 +94,7 @@ $findcurrentbookings = mysqli_query($conn, "SELECT * FROM `bookings` WHERE `user
 				<div class="col-xs-12 col-sm-6 col-md-6">
                     <div class="form-group">
             <label for='secq'>Security Question 1</label>
-            <select class='form-control' name='SecQ1'>
+            <select class='form-control' name='secq1'>
             <?php
             $findsecq1 = mysqli_query($conn, "SELECT * FROM `accounts` WHERE `username` = '$session_usern'");
             while ($rowfindsecq1 = $findsecq1->fetch_assoc())
@@ -142,7 +163,7 @@ $findcurrentbookings = mysqli_query($conn, "SELECT * FROM `bookings` WHERE `user
 				<div class="col-xs-12 col-sm-6 col-md-6">
 					<div class="form-group">
             <label for='secq2'>Security Question 2</label>
-            <select class='form-control' name='SecQ1'>
+            <select class='form-control' name='secq2'>
             <?php
             $findsecq2 = mysqli_query($conn, "SELECT * FROM `accounts` WHERE `username` = '$session_usern'");
             while ($rowfindsecq2 = $findsecq2->fetch_assoc())
@@ -154,7 +175,7 @@ $findcurrentbookings = mysqli_query($conn, "SELECT * FROM `bookings` WHERE `user
             $possibleq4 = "What was the house number and street name you lived in as a child?";
             $possibleq5 = "What is the name of your favourite musician or band?";
             
-            if ($secq1 == $possibleq1)
+            if ($secq2 == $possibleq1)
             {
                 echo "<option value='$secq2' selected>$secq2</option>";
             }
@@ -162,7 +183,7 @@ $findcurrentbookings = mysqli_query($conn, "SELECT * FROM `bookings` WHERE `user
             {
                 echo "<option value='$possibleq1'>$possibleq1</option>";
             }
-            if ($secq1 == $possibleq2)
+            if ($secq2 == $possibleq2)
             {
                 echo "<option value='$secq2' selected>$secq2</option>";
             }
@@ -170,7 +191,7 @@ $findcurrentbookings = mysqli_query($conn, "SELECT * FROM `bookings` WHERE `user
             {
                 echo "<option value='$possibleq2'>$possibleq2</option>";
             }
-            if ($secq1 == $possibleq3)
+            if ($secq2 == $possibleq3)
             {
                 echo "<option value='$secq2' selected>$secq2</option>";
             }
@@ -178,7 +199,7 @@ $findcurrentbookings = mysqli_query($conn, "SELECT * FROM `bookings` WHERE `user
             {
                 echo "<option value='$possibleq3'>$possibleq3</option>";
             }
-            if ($secq1 == $possibleq4)
+            if ($secq2 == $possibleq4)
             {
                 echo "<option value='$secq2' selected>$secq2</option>";
             }
@@ -186,7 +207,7 @@ $findcurrentbookings = mysqli_query($conn, "SELECT * FROM `bookings` WHERE `user
             {
                 echo "<option value='$possibleq4'>$possibleq4</option>";
             }
-            if ($secq1 == $possibleq5)
+            if ($secq2 == $possibleq5)
             {
                 echo "<option value='$secq2' selected>$secq2</option>";
             }
@@ -206,11 +227,34 @@ $findcurrentbookings = mysqli_query($conn, "SELECT * FROM `bookings` WHERE `user
             <input type='password' name='seca2' class='form-control'>
         </div></div></div>
         <div class="form-group">
-            <input type='submit' value='Change Security Details' class='btn btn-success'>
+        <input type='button' data-toggle='modal' id='continue_btn' data-target='#confirm' class='btn btn-primary' value='Continue' />
         </div>
-            </form>
+         
                         </div>
             </div>
+            <div class='modal fade' id='confirm' tabindex='-1' role='dialog' aria-labelledby='confirm' aria-hidden='true'>
+        <div class='modal-dialog' role='document'>
+          <div class='modal-content'>
+            <div class='modal-header'>
+              <h5 class='modal-title'>Please confirm your password first</h5>
+              <button type='button' class='close' data-dismiss='modal' aria-label='Close'>
+                <span aria-hidden='true'>&times;</span>
+              </button>
+            </div>
+            <div class='modal-body'>
+            <label for='conf_pw'>Confirm Password:</label>
+            <input type='password' name='conf_pw' class='form-control'>
+            </div>
+            <div class='modal-footer'>
+            
+              <button type='submit' class='btn btn-success'>Change Security Details</button>
+                </form> 
+              <button type='button' class='btn btn-secondary' data-dismiss='modal'>Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
                                   
   <?php include "inc/footer.php"; ?>
 </body>
@@ -227,7 +271,7 @@ $findcurrentbookings = mysqli_query($conn, "SELECT * FROM `bookings` WHERE `user
         data: form_data
       }).done(function(response) { //
         $('#server-results').html(response);
-
+        $('#prev_pw').modal('hide');
       });
     });
   </script>
@@ -243,7 +287,7 @@ $findcurrentbookings = mysqli_query($conn, "SELECT * FROM `bookings` WHERE `user
         data: form_data
       }).done(function(response) { //
         $('#server-results2').html(response);
-
+        $('#confirm').modal('hide');
       });
     });
   </script>
