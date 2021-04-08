@@ -49,8 +49,48 @@ if($countitem != 0){
             $cartid = $rowcheckitem['id'];
             $currentq = $rowcheckitem['quantity'];
             $tempq = $currentq + $quantity;
-        
+            
+            if ($tempq <= $ogstock)
+            {
+                $tempstock = $ogstock - $tempq;
+            }
+
+            $updateamountssql = "UPDATE `cart` SET `quantity` = '$tempq' WHERE `id` = '$cartid'";
+            $updatestocksql = "UPDATE `products` SET `stock` = '$tempstock' WHERE `id` = '$itemid'";
+            $updateamounts = mysqli_query($conn, $updateamountssql);
+            $updatestock = mysqli_query($conn, $updatestocksql);
+
+            if($updateamounts && $updatestock)
+            {
+                echo "<script>window.location.replace('../cart');</script>";
+            }
+            else
+            {
+                echo "There was an error updating your quantity.";
+            }
+        }
+        else
+        {
+            $newstock = $ogstock - $quantity;
+            $insertitemsql = "INSERT INTO `cart` VALUES (DEFAULT, '$session_usern', '$product', '$finalprice', '$quantity','no')";
+            $updatestocksql = "UPDATE `products` SET `stock` = '$newstock' WHERE `id` = '$itemid'";
+            $insertitemtocart = mysqli_query($conn, $insertitemsql);
+            $updatestock = mysqli_query($conn, $updatestocksql);
+              
+            if ($insertitemtocart && $updatestock)
+            {
+                echo "<script>window.location.replace('../cart');</script>";
+            }
+            else
+            {
+                echo "There was an error adding your item to the cart.";
+               
+            }
         }
     }
+}
+else
+{
+    echo "Item not found, please try again.";
 }
 ?>
