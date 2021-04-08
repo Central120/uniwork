@@ -35,6 +35,9 @@ else
   <?php include "inc/header.php"; ?>
   <div class="container-fluid" style='min-height:40vh'>
   <h2 class="mb-4">Cart</h2>
+  <p>
+  This is your shopping bag
+  </p>
 
 
 
