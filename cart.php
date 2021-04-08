@@ -84,7 +84,7 @@ while($rowfindcart = $findcart->fetch_assoc())
 <td></td>
 <td></td>
 <td><strong>Total</strong></td>
-<td class="text-right" id='Fin_Tota'><strong>£<?php if ($total == '') {echo "0"; } else {echo $total1; } ?></strong></td>
+<td class="text-right" id='Fin_Tota'><strong>£<?php if ($total1 == '') {echo "0"; } else {echo $total1; } ?></strong></td>
 </tr>
 
 </tbody>
