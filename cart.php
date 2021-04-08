@@ -36,7 +36,7 @@ else
   <div class="container-fluid" style='min-height:40vh'>
   <h2 class="mb-4">Cart</h2>
   <p>
-  This is your shopping bag
+  <h2 class="mb-3">This is your shopping bag</h2>
   </p>
 
 
