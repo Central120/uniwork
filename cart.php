@@ -69,7 +69,7 @@ while($rowfindcart = $findcart->fetch_assoc())
     $total1 = number_format((float)$total1, 2, '.','');
     echo "
 <tr>
-<td><img src='$image'></td>
+<td><img src='$image' style = 'height:100px; width:100px;'></td>
 <td>$product</td>
 <td>$finalprice</td>
 <td>$quantity</td>
