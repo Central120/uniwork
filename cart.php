@@ -65,7 +65,7 @@ while($rowfindcart = $findcart->fetch_assoc())
     $finalprice1 = $price * $quantity; 
     $finalprice = number_format((float)$finalprice1, 2, '.','');
 
-    $total = $finalprice + $total;
+    $total = $finalprice1 + $total;
     $total1 = number_format((float)$total1, 2, '.','');
     echo "
 <tr>
