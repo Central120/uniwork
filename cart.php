@@ -33,7 +33,7 @@ else
   </head>
   <body>
   <?php include "inc/header.php"; ?>
-  <div class="container-fluid" style='min-height:40vh'>
+  <div class="container" style='min-height:40vh'>
   <center>
   <h2 class="mb-4">Cart</h2>
   <p>
