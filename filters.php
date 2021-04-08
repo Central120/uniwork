@@ -76,8 +76,17 @@ echo "<form action='php/addtocart.php' method='post' role='form'>
 <p class='card-text'>£$fp $discountmsg</p>
 <select name ='quantity' class = 'form-control'>
 ";
-for($i=1;$i<=$stock;$i++){
-echo "<option value = '$i'>$i</option>";
+for($i=0;$i<=$stock;$i++)
+{
+  if($i==0){
+    echo "<option disabled selected> Out Of Stock </option>";
+  }
+  else if ($i==1) {
+  echo "<option value = '$i' selected>$i</option>";  
+  }
+  else {
+  echo "<option value = '$i'>$i</option>";
+}
 }
 
 
