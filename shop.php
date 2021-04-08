@@ -107,7 +107,7 @@ $disabled = "";
     <h5 class='card-title'>$productName</h5>
     ";
     echo "<form action='php/addtocart.php' method='post' role='form'>
-    <input type='hidden' name='id' value='$itemid'>
+    <input type='hidden' name='id' value='$itemID'>
   <p class='card-text'>£$fp $discountmsg</p>
   <select name ='quantity' class = 'form-control'>
   ";
