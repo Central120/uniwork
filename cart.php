@@ -62,15 +62,49 @@ while($rowfindcart = $findcart->fetch_assoc())
     $product = $rowfindcart['product'];
     $price = $rowfindcart['price'];
     $quantity = $rowfindcart['quantity'];
-    $price1 = number_format((float)$price, 2, '.','');
+    $finalprice1 = $price * $quantity; 
+    $finalprice = number_format((float)$finalprice1, 2, '.','');
+
+    $total = $finalprice + $total;
+    $total1 = number_format((float)$total1, 2, '.','');
+    echo "
+<tr>
+<td><img src='$image'></td>
+<td>$product</td>
+<td>$finalprice</td>
+<td>$quantity</td>
+<td></td>
+</tr>
+"; 
 }
+?>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><strong>Total</strong></td>
+<td class="text-right" id='Fin_Tota'><strong>£<?php if ($total == '') {echo "0"; } else {echo $total1; } ?></strong></td>
+</tr>
 
-
-
+</tbody>
+</table>
+</div>
+</div>
+<div class="col mb-2">
+<div class="row">
+<div class="col-sm-12  col-md-6">
+<button id='continue' class="btn btn-lg btn-block btn-info">Continue Shopping</button>
+</div>
+<div class="col-sm-12 col-md-6 text-right">
+<button class="btn btn-lg btn-block btn-success text-uppercase">Checkout</button>
+</div>
+</div>
+</div>
+</div>
+</div>
 ?>
 </center>
-  </div>
-  </div>
   </div>
 <?php include "inc/footer.php"; ?>
 </body>
