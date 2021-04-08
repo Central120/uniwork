@@ -49,7 +49,11 @@ $findldate = strtotime("$timer $last_day");
 $findftime = strtotime("$first_time");
 $findltime = strtotime("$last_time");
 
-
+$ts = strtotime($current_timestamp);
+if ($findfdate < $ts)
+{
+  $msg = "<br><br><h2 style='margin-left:25%'>$staff_name has no more available days this week. Please book for next week if you want to book with this staff member.";
+}
 
 if ($countfindavail == 0)
 {
