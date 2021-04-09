@@ -61,6 +61,7 @@ $total1 = $total1 + $total;
       <div style="text-align: center;">
         <div style="margin-bottom: 1.25rem;">
           <p></p>
+          Total:
           <select id="item-options"><option value="<?php echo $total1;?>" price="<?php echo $total1;?>">£<?php echo $total1;?> -  GBP</option></select>
           <select style="visibility: hidden" id="quantitySelect"></select>
         </div>
