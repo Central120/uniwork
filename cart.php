@@ -75,7 +75,7 @@ while($rowfindcart = $findcart->fetch_assoc())
 <td><img src='$image' style = 'height:100px; width:100px;'></td>
 <td>$product</td>
 <td>£$finalprice</td>";
-echo "<form action = 'modify-quantity.php' method = 'post' class = 'modify_form'><td><select name = 'quantity' class = 'form-control'>";
+echo "<form action = 'php/modify-quantity.php' method = 'post' class = 'modify_form'><td><select name = 'quantity' class = 'form-control'>";
 for($i=0;$i<=$stock;$i++){
     if($i==$quantity){
         echo "<option value = '$i' selected> $i</option>";
@@ -109,7 +109,7 @@ echo " <input type='hidden' value='$id' name='id' />
 <button type='submit' class='btn btn-info'>Update Quantities</button>
 </form>";
 echo "
-<form action='delete-item.php' class='modify_form' method='post' role='form'>
+<form action='php/delete-item.php' class='modify_form' method='post' role='form'>
 <input type='hidden' value='$id' name='id' />
   <button type='submit' class='btn btn-danger'>Remove from Cart</button>
 </form>
