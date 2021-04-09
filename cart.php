@@ -65,8 +65,8 @@ while($rowfindcart = $findcart->fetch_assoc())
     $finalprice1 = $price * $quantity; 
     $finalprice = number_format((float)$finalprice1, 2, '.','');
 
-    $total = $finalprice1 + $total;
-    $total1 = number_format((float)$total1, 2, '.','');
+    $total1 = $finalprice1 + $total;
+    $total = number_format((float)$total1, 2, '.','');
     echo "
 <tr>
 <td><img src='$image' style = 'height:100px; width:100px;'></td>
