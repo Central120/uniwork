@@ -20,6 +20,9 @@ if ($category1 == "all")
 {
     $cat = "SELECT * FROM `products`";
 } 
+else if($category1 == "discount"){
+    $cat = "SELECT * FROM `products` WHERE `discount` !='0'";
+}
 else {
     $cat = "SELECT * FROM `products` WHERE `category` = '$category1'";
 }

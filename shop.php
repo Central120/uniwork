@@ -42,6 +42,10 @@ else
     <input type='hidden' value='all' name='category'>
     <input type='submit' value='all' class='btn btn-success'>
     </form>
+    <form action='filters.php' method='post' class='filterfrm'>
+    <input type='hidden' value='discount' name='category'>
+    <input type='submit' value='discount' class='btn btn-success'>
+    </form>
   <?php
   // find categories
   $categories = "SELECT DISTINCT `category` FROM `products`";
