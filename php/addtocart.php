@@ -89,7 +89,7 @@ if($countitem != 0){
             }
             else
             {
-                echo "There was an error adding your item to the cart.$insertitemsql";
+                echo "There was an error adding your item to the cart.";
                
             }
         }
