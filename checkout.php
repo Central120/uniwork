@@ -67,7 +67,7 @@ $product1 = $rowfindcart1['product'];
 $image1 = $rowfindcart1['Image'];
 $total2 = $price1 * $quantity1;
 $total1 = $total1 + $total2;
-echo "<img src='$image' style='height: 100px; width: 100px;'/><h5 style='display:list-item;'>$product1 - $quantity1 x £$price1</h5><br>";
+echo "<img src='$image1' style='height: 100px; width: 100px;'/><h5 style='display:list-item;'>$product1 - $quantity1 x £$price1</h5><br>";
     }
 } 
 
