@@ -30,4 +30,14 @@ session_start();
   <h2 class="mb-4">Fill in your details to finalise the order</h2><br>
   <p></p>
   <br>
-  <p><?php
+  <p>
+  <?php
+?>
+      
+</div>
+<?php include "inc/footer.php"; ?>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+</html>
