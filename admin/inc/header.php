@@ -57,10 +57,10 @@ else if(isset($_SESSION['user']))
 } ?>">
         <a class="nav-link" href="#">News</a>
       </li>
-      <li class="nav-item <?php if (strpos($url,'gallery') !== false) {
+      <li class="nav-item <?php if (strpos($url,'images') !== false) {
     echo 'active';
 } ?>">
-        <a class="nav-link" href="#">Gallery</a>
+        <a class="nav-link" href="#">Images</a>
       </li>
       <li class="nav-item <?php if (strpos($url,'reviews') !== false) {
     echo 'active';
