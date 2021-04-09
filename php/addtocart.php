@@ -39,8 +39,8 @@ if($countitem != 0){
     }
     else
     {
-    $calcy = $price / 100 * $discount; 
-    $finalprice = $price - $calcy;
+    $calcy = $ogprice / 100 * $discount; 
+    $finalprice = $ogprice - $calcy;
     }
     if($quantity > $ogstock) {
         echo "an error has occured, there is insuffient stock for your requested quantity";
