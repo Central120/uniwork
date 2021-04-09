@@ -51,7 +51,7 @@ $total1 = $total1 + $total;
 <center>
   <h2 class="mb-4">Secure Checkout</h2><br>
   <p></p>
-  <h2 class="mb-4">Fill in your details to finalise the order</h2><br>
+  <h2 class="mb-4">Choose one of the following to complete your order:</h2><br>
   <p></p>
   <br>
   <p>
