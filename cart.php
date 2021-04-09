@@ -89,7 +89,7 @@ echo"
 <td><input type='button' data-toggle='modal' id='manage' data-target='#quantity{$id}' class='btn btn-success' value='Manage' /></td>
 </tr>
 "; 
-echo "<div class='modal fade' id='manage' tabindex='-1' role='dialog' aria-labelledby='quantity{$id}' aria-hidden='true'>
+echo "<div class='modal fade' id='quantity{$id}' tabindex='-1' role='dialog' aria-labelledby='quantity{$id}' aria-hidden='true'>
 <div class='modal-dialog' role='document'>
 <div class='modal-content'>
 <div class='modal-header'>
