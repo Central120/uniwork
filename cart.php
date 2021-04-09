@@ -54,7 +54,7 @@ else
 </thead>
 <tbody>
 <?php
-$sqlfindcart = "SELECT cart.product, cart.price, cart.quantity, products.Image FROM `cart` LEFT JOIN `products` ON cart.product = products.product_name WHERE `username` = '$session_usern'";
+$sqlfindcart = "SELECT cart.product, cart.price, cart.quantity, products.Image, products.stock FROM `cart` LEFT JOIN `products` ON cart.product = products.product_name WHERE `username` = '$session_usern'";
 $findcart = mysqli_query($conn,$sqlfindcart);
 while($rowfindcart = $findcart->fetch_assoc())
 {
@@ -62,6 +62,7 @@ while($rowfindcart = $findcart->fetch_assoc())
     $product = $rowfindcart['product'];
     $price = $rowfindcart['price'];
     $quantity = $rowfindcart['quantity'];
+    $stock = $rowfindcart['stock'];
     $finalprice1 = $price * $quantity; 
     $finalprice = number_format((float)$finalprice1, 2, '.','');
 
@@ -71,8 +72,18 @@ while($rowfindcart = $findcart->fetch_assoc())
 <tr>
 <td><img src='$image' style = 'height:100px; width:100px;'></td>
 <td>$product</td>
-<td>$finalprice</td>
-<td>$quantity</td>
+<td>£$finalprice</td>";
+echo "<form action = 'modify-quantity.php' method = 'post' id = 'quantity'><td><select name = 'quantity' class = 'form-control'>";
+for($i=0;$i<=$stock;$i++){
+    if($i==$quantity){
+        echo "<option value = '$i' selected> $i</option>";
+    }
+    else {
+        echo "<option value = '$i'>$i</option>";
+    }
+}
+echo"
+<td></td>
 <td></td>
 </tr>
 "; 
