@@ -61,7 +61,7 @@ $total1 = $total1 + $total;
       <div style="text-align: center;">
         <div style="margin-bottom: 1.25rem;">
           <p></p>
-          <select id="item-options"><option value="" price="<?php echo $total1;?>">£ <?php echo $total1;?> -  GBP</option></select>
+          <select id="item-options"><option value="" price="<?php echo $total1;?>">£<?php echo $total1;?> -  GBP</option></select>
           <select style="visibility: hidden" id="quantitySelect"></select>
         </div>
       <div id="paypal-button-container"></div>
@@ -83,8 +83,8 @@ $total1 = $total1 + $total;
     }
     paypal.Buttons({
       style: {
-        shape: 'rect',
-        color: 'gold',
+        shape: 'pill',
+        color: 'black',
         layout: 'vertical',
         label: 'checkout',
         
