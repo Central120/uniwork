@@ -53,7 +53,7 @@ $discountcalc = $price / 100 * $discount;
 $new_price = $price - $discountcalc; 
 $formatting = number_format((float)$new_price, 2, '.','');
 
-$discount_style = "<h5 style='display:list-item;'>$product_name - FROM: £$price, NOW: £$formatting ($discount% off!)</h5>";
+$discount_style = "<img src='$image' style='height: 50px; width: 50px;'/><h5 style='display:list-item;'>$product_name - FROM: £$price, NOW: £$formatting ($discount% off!)</h5>";
 
 echo $discount_style; 
 }
