@@ -124,7 +124,12 @@ else
       </div>
       </a>
     </div>
-    
+
+    <div class='col-md-3'>
+    <a href='remove-discount' style='color: white' title='Click here to remove a discount'>
+      <div class='card-counter danger'>
+        <i class='fa fa-lock'></i>
+        <span class='count-name'>Remove a discount</span>
       </div>
       </a>
     </div>
