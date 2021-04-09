@@ -76,7 +76,7 @@ while($rowfindcart = $findcart->fetch_assoc())
 <td>$product</td>
 <td>£$finalprice</td>";
 echo "<form action = 'php/modify-quantity.php' method = 'post' class = 'modify_form'><td><select name = 'quantity' class = 'form-control'>";
-for($i=0;$i<=$stock;$i++){
+for($i=0;$i<=$quantity;$i++){
     if($i==$quantity){
         echo "<option value = '$i' selected> $i</option>";
     }
