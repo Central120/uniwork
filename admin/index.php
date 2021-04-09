@@ -121,6 +121,17 @@ $rowcountbookings = mysqli_fetch_array($resultcountbookings);
   {
     $bookingtxt = "Bookings";
   }
+  $sqlcountproducts = "select count(*) as totalproducts FROM `products`";
+$resultcountproducts = mysqli_query($conn,$sqlcountproducts);
+$rowcountproducts = mysqli_fetch_array($resultcountproducts);
+  if ($rowcountproducts['totalproducts'] == '1')
+  {
+    $producttxt = "Product";
+  }
+  else
+  {
+    $producttxt = "Products";
+  }
 
         echo "
     <div class='container'>
@@ -139,8 +150,8 @@ $rowcountbookings = mysqli_fetch_array($resultcountbookings);
     <a href='products' style='color: white' title='Click here to view Product Options'>
       <div class='card-counter danger'>
         <i class='fa fa-tags'></i>
-        <span class='count-numbers'>Amount</span>
-        <span class='count-name'>Products</span>
+        <span class='count-numbers'>{$rowcountproducts['totalproducts']}</span>
+        <span class='count-name'>$producttxt</span>
       </div>
       </a>
     </div>
