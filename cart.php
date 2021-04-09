@@ -156,7 +156,7 @@ $('#quantity{$id}').modal('hide');
 <button id='continue' class="btn btn-lg btn-block btn-info">Continue Shopping</button>
 </div>
 <div class="col-sm-12 col-md-6 text-right">
-<button class="btn btn-lg btn-block btn-success text-uppercase">Checkout</button>
+<button id='checkout' class="btn btn-lg btn-block btn-success text-uppercase">Checkout</button>
 </div>
 </div>
 </div>
@@ -171,6 +171,9 @@ $('#quantity{$id}').modal('hide');
 <script>
 $('#continue').click(function(){
     window.location.replace('shop');
+});
+$('#checkout').click(function(){
+    window.location.replace('checkout');
 });
 </script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
