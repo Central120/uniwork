@@ -168,7 +168,7 @@ $('#quantity{$id}').modal('hide');
 <?php include "inc/footer.php"; ?>
 </body>
 <script>
-$('#continue').click(function{
+$('#continue').click(function(){
     window.location.replace('shop');
 });
 </script>
