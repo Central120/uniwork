@@ -56,17 +56,18 @@ $total1 = $total1 + $total;
   <br>
   <h2 class="mb-4">Item(s) in your cart are:</h2><br>
   <?php
-$sqlfindcart1 = "SELECT * FROM `cart` WHERE `username` = '$session_usern'";
+$sqlfindcart1 = "SELECT cart.price, cart.quantity, cart.product, products.Image FROM `cart` LEFT JOIN `products` ON cart.product = products.product_name WHERE `username` = '$session_usern'";
 $findcart1 = mysqli_query($conn, $sqlfindcart1);
 $countfindcart1 = mysqli_num_rows($findcart1);
 if($countfindcart1 !=0){
     while($rowfindcart1 = $findcart1->fetch_assoc()){
 $price1 = $rowfindcart1['price'];
 $quantity1 = $rowfindcart1['quantity'];
-$product1 = $rowfindcart1['quantity'];
-$image1 = $rowfindcart1['quantity'];
+$product1 = $rowfindcart1['product'];
+$image1 = $rowfindcart1['Image'];
 $total2 = $price1 * $quantity1;
 $total1 = $total1 + $total2;
+echo "<img src='$image' style='height: 100px; width: 100px;'/><h5 style='display:list-item;'>$product1 - $quantity1 x £$price1</h5><br>";
     }
 } 
 
