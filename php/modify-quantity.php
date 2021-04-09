@@ -44,7 +44,7 @@ if($countfindcart !=0){
     }
     else{
         $sqlupdatecart = "UPDATE `cart` SET `quantity` = '$quantity' WHERE `id` = '$id'";
-        $sqlupdatestock = "UPDATE `product` SET `stock` = '$newstock' WHERE `id` = '$product_id'";
+        $sqlupdatestock = "UPDATE `products` SET `stock` = '$newstock' WHERE `id` = '$product_id'";
         $updatecart = mysqli_query($conn, $sqlupdatecart);
         $updatestock = mysqli_query($conn, $sqlupdatestock);
         if($updatecart && $updatestock){
