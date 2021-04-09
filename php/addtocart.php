@@ -46,7 +46,7 @@ if($countitem != 0){
         echo "an error has occured, there is insuffient stock for your requested quantity";
     }
     else {
-        $chkitem = "SELECT * FROM `cart` WHERE `product` = '$product'";
+        $chkitem = "SELECT * FROM `cart` WHERE `product` = '$product' AND `username` = '$session_usern'";
         $checkitem = mysqli_query($conn, $chkitem);
         $countcheckitem = mysqli_num_rows($checkitem);
         if ($countcheckitem != 0)
