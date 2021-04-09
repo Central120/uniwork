@@ -28,10 +28,10 @@ $quantity = $rowfindcart['quantity'];
 
 $sqlfinditem = "SELECT * FROM `products` WHERE `product_name` = '$product'";
 $finditem = mysqli_query($conn, $sqlfinditem);
-$countfinditem = mysqli_num_rows($finditem)
+$countfinditem = mysqli_num_rows($finditem);
 if ($countfinditem != 0)
 {
-$rowfinditem = mysqli_fetch_assoc($finditem)
+$rowfinditem = mysqli_fetch_assoc($finditem);
 $stock = $rowfinditem['stock'];
 $product_id = $rowfinditem['id'];
 $ns = $stock + $quantity;
