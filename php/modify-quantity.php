@@ -24,6 +24,7 @@ $findcart = mysqli_query($conn, $sqlfindcart);
 $countfindcart = mysqli_num_rows($findcart);
 
 if($countfindcart !=0){
+    
     $rowfindcart = mysqli_fetch_assoc($findcart);
     $product = $rowfindcart['product'];
     $currentquantity = $rowfindcart['quantity'];
@@ -43,6 +44,22 @@ if($countfindcart !=0){
 </button></div>";
     }
     else{
+        if($quantity == '0'){
+        $sqlupdatestock = "UPDATE `products` SET `stock` = '$newstock' WHERE `id` = '$product_id'";
+        $updatestock = mysqli_query($conn, $sqlupdatestock);
+        $sqldeletecart = "DELETE FROM `cart` WHERE `id` = '$id'";
+        $deletecart = mysqli_query($conn, $sqldeletecart);
+        if($deletecart && $updatestock){
+            echo "<script>window.location.replace('../cart');</script>";
+        }
+        else{
+            echo "<div class='alert alert-danger alert-dismissable fade show' role='alert'><strong>Error 404.</strong>The was an error deleting your cart. <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+<span aria-hidden='true'>&times;</span>
+</button></div>";
+        }
+        }
+        else{
+        
         $sqlupdatecart = "UPDATE `cart` SET `quantity` = '$quantity' WHERE `id` = '$id'";
         $sqlupdatestock = "UPDATE `products` SET `stock` = '$newstock' WHERE `id` = '$product_id'";
         $updatecart = mysqli_query($conn, $sqlupdatecart);
@@ -56,6 +73,7 @@ if($countfindcart !=0){
 </button></div>";
         }
     }
+}
 }
 else{
 echo "<div class='alert alert-danger alert-dismissable fade show' role='alert'><strong>Error 404.</strong>The product was not found. <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
