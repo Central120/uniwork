@@ -86,6 +86,7 @@ if($countitem != 0){
             if ($insertitemtocart && $updatestock)
             {
                 // echo "<script>window.location.replace('../cart');</script>";
+                echo $insertitemsql;
             }
             else
             {
