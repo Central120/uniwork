@@ -48,7 +48,7 @@ if($countfindcart !=0){
         $updatecart = mysqli_query($conn, $sqlupdatecart);
         $updatestock = mysqli_query($conn, $sqlupdatestock);
         if($updatecart && $updatestock){
-            echo "<script>window.location.replace('cart');</script>";
+            echo "<script>window.location.replace('../cart');</script>";
         }
         else{
             echo "<div class='alert alert-danger alert-dismissable fade show' role='alert'><strong>Error 404.</strong>The was an error updating your cart. <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
