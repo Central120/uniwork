@@ -1,8 +1,32 @@
 <?php
 include_once 'inc/dbconnect.php';
 session_start();
+$current_timestamp = date('Y-m-d H:i:s');
 
+if (isset($_SESSION['user']))
+{
+    $session_usern = $_SESSION['user'];
+}
+else if(isset($_SESSION['admin']))
+{
+    $session_usern = $_SESSION['admin'];
+}
+else
+{
+    echo "<script>window.location.replace('index');</script>";
+}
 
+$sqlfindcart = "SELECT * FROM `cart` WHERE `username` = '$session_usern'";
+$findcart = mysqli_query($conn, $sqlfindcart);
+$countfindcart = mysqli_num_rows($findcart);
+if($countfindcart !=0){
+    while($rowfindcart = $findcart->fetch_assoc()){
+$price = $rowfindcart['price'];
+$quantity = $rowfindcart['quantity'];
+$total = $price * $quantity;
+$total1 = $total1 + $total;
+    }
+} 
 ?>
 
 <!doctype html>
@@ -37,7 +61,7 @@ session_start();
       <div style="text-align: center;">
         <div style="margin-bottom: 1.25rem;">
           <p></p>
-          <select id="item-options"><option value="" price=""> -  GBP</option></select>
+          <select id="item-options"><option value="" price="<?php echo $total1;?>">£ <?php echo $total1;?> -  GBP</option></select>
           <select style="visibility: hidden" id="quantitySelect"></select>
         </div>
       <div id="paypal-button-container"></div>
