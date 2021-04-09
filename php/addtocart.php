@@ -58,7 +58,7 @@ if($countitem != 0){
             
             if ($tempq <= $ogstock)
             {
-                $tempstock = $ogstock - $tempq;
+                $tempstock = $ogstock - $quantity;
             }
 
             $updateamountssql = "UPDATE `cart` SET `quantity` = '$tempq' WHERE `id` = '$cartid'";
