@@ -28,7 +28,6 @@ session_start();
   <h2 class="mb-4">Welcome to Kerry's K9's!</h2><br>
   <p>Below are the most recent announcements.</p>
   <br>
-  <p>Below are the items currently on discount:</p>
   <p><?php
 $sqlfinddiscounts = "SELECT * FROM `products` WHERE `discount` != '0'";
 $finddiscount = mysqli_query($conn, $sqlfinddiscounts);
@@ -53,7 +52,7 @@ $discountcalc = $price / 100 * $discount;
 $new_price = $price - $discountcalc; 
 $formatting = number_format((float)$new_price, 2, '.','');
 
-$discount_style = "<h5 style='display:list-item;'>$item_name - FROM: £$price, NOW: £$formatting ($discount% off!)</h5>";
+$discount_style = "<h5 style='display:list-item;'>$product_name - FROM: £$price, NOW: £$formatting ($discount% off!)</h5>";
 
 echo $discount_style; 
 }
