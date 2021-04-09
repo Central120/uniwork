@@ -39,6 +39,7 @@ else
   <p>
   <h2 class="mb-4">This is your shopping bag</h2>
   </p>
+  <div id = "server-results"></div>
   <div class="row">
  <div class="col-12">
  <div class="table-responsive">
@@ -54,10 +55,11 @@ else
 </thead>
 <tbody>
 <?php
-$sqlfindcart = "SELECT cart.product, cart.price, cart.quantity, products.Image, products.stock FROM `cart` LEFT JOIN `products` ON cart.product = products.product_name WHERE `username` = '$session_usern'";
+$sqlfindcart = "SELECT cart.id, cart.product, cart.price, cart.quantity, products.Image, products.stock FROM `cart` LEFT JOIN `products` ON cart.product = products.product_name WHERE `username` = '$session_usern'";
 $findcart = mysqli_query($conn,$sqlfindcart);
 while($rowfindcart = $findcart->fetch_assoc())
 {
+    $id = $rowfindcart['id'];
     $image = $rowfindcart['Image'];
     $product = $rowfindcart['product'];
     $price = $rowfindcart['price'];
@@ -73,7 +75,7 @@ while($rowfindcart = $findcart->fetch_assoc())
 <td><img src='$image' style = 'height:100px; width:100px;'></td>
 <td>$product</td>
 <td>£$finalprice</td>";
-echo "<form action = 'modify-quantity.php' method = 'post' id = 'quantity'><td><select name = 'quantity' class = 'form-control'>";
+echo "<form action = 'modify-quantity.php' method = 'post' class = 'modify_form'><td><select name = 'quantity' class = 'form-control'>";
 for($i=0;$i<=$stock;$i++){
     if($i==$quantity){
         echo "<option value = '$i' selected> $i</option>";
@@ -83,14 +85,60 @@ for($i=0;$i<=$stock;$i++){
     }
 }
 echo"
-<td></td>
-<td></td>
+</select></td>
+<td><input type='button' data-toggle='modal' id='manage' data-target='#quantity{$id}' class='btn btn-success' value='Manage' /></td>
 </tr>
 "; 
+echo "<div class='modal fade' id='manage' tabindex='-1' role='dialog' aria-labelledby='quantity{$id}' aria-hidden='true'>
+<div class='modal-dialog' role='document'>
+<div class='modal-content'>
+<div class='modal-header'>
+<h5 class='modal-title'>How would you like to continue?</h5>
+<button type='button' class='close' data-dismiss='modal' aria-label='Close'>
+<span aria-hidden='true'>&times;</span>
+</button>
+</div>
+<div class='modal-body'>
+<p style='color: red'>Make sure that you update your quantity on the dropdown box before continuing.</p>
+</div>
+<div class='modal-footer'>
+";
+                        
+                     
+echo " <input type='hidden' value='$id' name='id' />
+<button type='submit' class='btn btn-info'>Update Quantities</button>
+</form>";
+echo "
+<form action='delete-item.php' class='modify_form' method='post' role='form'>
+<input type='hidden' value='$id' name='id' />
+  <button type='submit' class='btn btn-danger'>Remove from Cart</button>
+</form>
+  <button type='button' class='btn btn-secondary' data-dismiss='modal'>Close</button>
+</div>
+</div>
+</div>
+</div>";
+
+echo "<script type='text/javascript'>
+$('.modify_form').submit(function(event) {
+event.preventDefault(); //prevent default action
+var post_url = $(this).attr('action'); //get form action url
+var form_data = $(this).serialize(); //Encode form elements for submission
+
+$.ajax({
+url: post_url,
+type: 'post',
+data: form_data
+}).done(function(response) { //
+$('#server-results').html(response);
+$('#quantity{$id}').modal('hide');
+});
+});
+</script>";
 }
 ?>
 <tr>
-<td></td>
+
 <td></td>
 <td></td>
 <td></td>
