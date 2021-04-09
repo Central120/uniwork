@@ -44,6 +44,7 @@ $discount_message = "The products we currently have discounted are:<br>";
 echo $discount_message;
 while ($rowfinddiscount = $finddiscount->fetch_assoc())
 {
+$image =$rowfinddiscount['image'];
 $product_name = $rowfinddiscount['product_name'];
 $price = $rowfinddiscount['price'];
 $discount = $rowfinddiscount['discount'];
