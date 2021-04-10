@@ -94,7 +94,7 @@ else
   </div><br>
   <div class="form-group">
     <label for="stock">Stock</label>
-    <input type="number" min='0' onkeydown="if(event.key==='.'){event.preventDefault();}"  oninput="event.target.value = event.target.value.replace(/[^0-9]*/g,''); class="form-control" id="stock">
+    <input type="number" min='0' pattern="[0-9]" class="form-control" id="stock">
   </div><br>
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>
