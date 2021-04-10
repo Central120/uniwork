@@ -57,7 +57,8 @@ else
   <label class="custom-control-label" for="new_category">Create a new category</label>
 </div><br>
 <div style='display:none;' class="form-group" id="existing_input">
-<select class="form-control" name="existing">
+<label for='existing_select'>Choose a category</label>
+<select class="form-control" id='existing_select' name="existing">
 <?php 
 $sqlfindexisting = "SELECT DISTINCT `category` FROM `products`";
 $findexisting = mysqli_query($conn, $sqlfindexisting);
