@@ -130,6 +130,7 @@ else
     <label for="stock">Stock</label>
     <input type="number" min='0' pattern="[0-9]" name="stock" value=<?php echo $stock; ?> class="form-control" id="stock">
   </div><br>
+  <input type='hidden' value='<?php echo $product_id; ?>' name='id'>
   <button type="submit" class="btn btn-primary">Modify Product</button>
 </form>
 </div>
