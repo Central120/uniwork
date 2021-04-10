@@ -114,7 +114,7 @@ $(document).ready(function() {
         if (this.value == 'existing') {
             $('#new_category_input').css('display', 'none');
             $('#existing_input').css('display', '');
-            $('#new_cat').html('');
+            $('#new_cat').val('');
             console.log('existing');
         }
         else if (this.value == 'new') {
@@ -126,7 +126,7 @@ $(document).ready(function() {
         {
             $('#new_category_input').css('display', 'none');
             $('#existing_input').css('display', 'none');
-            $('#new_cat').html('');
+            $('#new_cat').val('');
             console.log('none');
         }
     });
