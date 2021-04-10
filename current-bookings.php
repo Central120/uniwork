@@ -89,23 +89,23 @@ $findcurrentbookings = mysqli_query($conn, "SELECT * FROM `bookings` WHERE `user
         if ($approved_timestamp == $ts1)
         {
             $color1 = "green";
-            $icon = "<i class='fa fa-check' style='color:green' aria-hidden='true'></i>";
+            $icon = "<i class='fa fa-check' title='Timeslot approved' style='color:green' aria-hidden='true'></i>";
         }
         else
         {
             $color1 = "red";
-            $icon = "<i class='fa fa-times' style='color:red' aria-hidden='true'></i>";
+            $icon = "<i class='fa fa-times' title='Timeslot not approved' style='color:red' aria-hidden='true'></i>";
         }
 
         if ($approved_timestamp == $ts2)
         {
             $color2 = "green";
-            $icon = "<i class='fa fa-check' style='color:green' aria-hidden='true'></i>";
+            $icon = "<i class='fa fa-check' title='Timeslot approved' style='color:green' aria-hidden='true'></i>";
         }
         else
         {
             $color2 = "red";
-            $icon = "<i class='fa fa-times' style='color:red' aria-hidden='true'></i>";
+            $icon = "<i class='fa fa-times' title='Timeslot not approved' style='color:red' aria-hidden='true'></i>";
         }
 
         $strts1 = strtotime("$ts1");
