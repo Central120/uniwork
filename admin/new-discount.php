@@ -83,7 +83,7 @@ else
          </div>
          <div class="form-group">
          <label for="discount">Discount</label>
-         <select name='discount' id='discount_sel' class='form-control'>
+         <select name='discount' style='width: 50%' id='discount_sel' class='form-control'>
         <?php 
         for ($i=1;$i<=100;$i++)
         {
@@ -93,11 +93,11 @@ else
          </select>
          </div>
          <div class="form-group">
-         <p><button id='calculate'>Calculate Final Amount</button></p>
+         <p><button id='calculate' class='btn btn-dark'>Calculate Final Amount</button></p>
          <br>
          <p>Final Amount: £<span id='final'></span></p>
          </div>
-  <div class="form-group row">
+  <div class="form-group">
     <div class="col-sm-10">
       <button type="submit" class="btn btn-success">Add Discount</button>
     </div>
