@@ -43,20 +43,21 @@ else
     <div class="custom-file" style='margin-bottom: 10px'>
     <input type="file" class="file-input" id="image">
     <label class="custom-file-label" for="image">Choose Image</label>
-    </div><br>
+    </div>
+    <p>
   <div class="form-group">
     <label for="product_name">Product Name</label>
     <input type="text" class="form-control" id="product_name" placeholder="Product Name">
   </div><br>
-  <div class="custom-control custom-radio custom-control-inline">
+  <div class="custom-control custom-radio custom-control-inline" style='margin-bottom:5px'>
   <input type="radio" id="existing_category" name="category" value='existing' class="custom-control-input">
   <label class="custom-control-label" for="existing_category">Use an existing category</label>
 </div>
-<div class="custom-control custom-radio custom-control-inline">
+<div class="custom-control custom-radio custom-control-inline" style='margin-bottom:5px'>
   <input type="radio" id="new_category" name="category" value='new' class="custom-control-input">
   <label class="custom-control-label" for="new_category">Create a new category</label>
 </div><br>
-<div style='display:none; margin-bottom:5px' class="form-group" id="existing_input">
+<div style='display:none;' class="form-group" id="existing_input">
 <label for='existing_select'>Choose a category</label>
 <select class="form-control" id='existing_select' name="existing">
 <?php 
