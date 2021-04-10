@@ -62,7 +62,7 @@ else
     <div id="server-results"></div>
     <div class="container">
     <div class="d-flex justify-content-center">
-    <form action='php/add-product.php' method='post' enctype="multipart/form-data">
+    <form action='php/modify-product.php' method='post' enctype="multipart/form-data">
     <h5 class="mb-5">Current Image:</h5>
     <div class="text-center">
     <img src="../../<?php echo $image; ?>" class="img-thumbnail" style="height:100px;width:100px;">
@@ -96,7 +96,6 @@ if ($countfindexisting != 0)
 {
     while ($rowfindexisting = $findexisting->fetch_assoc())
     {
-        
         $category1 = $rowfindexisting['category'];
         if ($category == $category1)
         {
