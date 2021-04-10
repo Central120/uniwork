@@ -83,7 +83,7 @@ else
   </div>
 <div class="form-group">
 <label for="price">Price</label>
-<input type="number" pattern="^\d+(\.|\,)\d{2}$" class="form-control">
+<input type="number" pattern="^\d+(\.|\,)\d{2}$" step="0.01" value="0.00" class="form-control">
 </div>
 <div class="form-group">
     <label for="discount">Discount</label>
