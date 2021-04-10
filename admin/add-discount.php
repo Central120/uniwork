@@ -72,7 +72,7 @@ $findproducts = mysqli_query($conn, $sqlfindproducts);
         }
         
         echo "<tr>
-        <td><img src='$image' style='height: 100px; width: 100px;'/></td>
+        <td><img src='../$image' style='height: 100px; width: 100px;'/></td>
         <td>$product</td>
         <td>$category</td>
         <td>$price</td>
