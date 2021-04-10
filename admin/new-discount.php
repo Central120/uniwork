@@ -101,6 +101,7 @@ else
          </div>
   <div class="form-group">
     <div class="col-sm-10">
+    <input type='hidden' value='<?php echo $product_id; ?>' name='id'>
       <button type="submit" class="btn btn-success">Add Discount</button>
     </div>
   </div>
