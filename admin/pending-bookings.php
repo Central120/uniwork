@@ -57,6 +57,7 @@ $findpending = mysqli_query($conn, "SELECT * FROM `bookings` WHERE `approver` = 
   <?php
     while ($rowfindbooking = $findpending->fetch_assoc())
     {
+        $countfindbooking = mysqli_num_rows($findpending);
         $booking_id = $rowfindbooking['id'];
         $username = $rowfindbooking['username'];
         $ts1 = $rowfindbooking['timeslot_1'];
@@ -72,6 +73,12 @@ $findpending = mysqli_query($conn, "SELECT * FROM `bookings` WHERE `approver` = 
         $ts1d = date("l jS \of F, g:i a", $strts1);
         $ts2d = date("l jS \of F, g:i a", $strts2);
 
+        if ($countfindbooking == 0)
+        {
+          echo "<tr><td>There are no pending bookings</td></tr>";
+        }
+        else
+        {
         echo "<tr>
         <td>$username</td>
         <td>$pet_name</td>
@@ -120,7 +127,7 @@ $findpending = mysqli_query($conn, "SELECT * FROM `bookings` WHERE `approver` = 
       </div>";
 
     }
-
+  }
 
 ?>
  </tbody>
