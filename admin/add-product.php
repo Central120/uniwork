@@ -35,15 +35,15 @@ else
     <?php include "inc/header.php"; ?>
   
         <center>
-    <h2 class="mb-42">Add a new product</h2>
+    <h2 class="mb-42">Add a new product</h2><br>
     <div id="server-results"></div>
     <div class="container">
     <div class="d-flex justify-content-center">
     <form action='php/add-product.php' method='post'>
-    <div class="custom-file">
+    <div class="custom-file" style='margin-bottom: 10px'>
     <input type="file" class="file-input" id="image">
     <label class="custom-file-label" for="image">Choose Image</label>
-    </div><br>
+    </div>
   <div class="form-group">
     <label for="product_name">Product Name</label>
     <input type="text" class="form-control" id="product_name" placeholder="Product Name">
@@ -51,7 +51,7 @@ else
   <div class="custom-control custom-radio custom-control-inline">
   <input type="radio" id="existing_category" name="category" value='existing' class="custom-control-input">
   <label class="custom-control-label" for="existing_category">Use an existing category</label>
-</div><br>
+</div>
 <div class="custom-control custom-radio custom-control-inline">
   <input type="radio" id="new_category" name="category" value='new' class="custom-control-input">
   <label class="custom-control-label" for="new_category">Create a new category</label>
