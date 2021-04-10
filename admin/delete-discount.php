@@ -77,7 +77,7 @@ $findproducts = mysqli_query($conn, $sqlfindproducts);
         <td>$category</td>
         <td>$price</td>
         <td>$discountmsg</td>
-        <td><input type='button' data-toggle='modal' id='cancel_btn' data-target='#discount{$productid}' class='btn btn-warning' value='Remove discount' /></td>
+        <td><input type='button' data-toggle='modal' id='cancel_btn' data-target='#discount{$productid}' class='btn btn-danger' value='Remove discount' /></td>
         </tr>
         ";
 
