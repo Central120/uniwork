@@ -95,7 +95,7 @@ if ($uploadOk == 0) {
 <!doctype html>
 <html lang="en">
   <head>
-  	<title>Kerry's K9's - Add a discount</title>
+  	<title>Kerry's K9's - Add a product</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
@@ -126,7 +126,7 @@ if ($uploadOk == 0) {
     <script>
 $('#retry').click(function()
 {
-window.location.replace('account-settings');
+window.location.replace('../add-product');
 });
 </script>
 </html>
