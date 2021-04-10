@@ -46,7 +46,7 @@ else if(isset($_SESSION['user']))
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <a class="dropdown-item <?php if (strpos($url,'cart') !== false) {
     echo 'active';
-} ?>" href="#">Cart</a>
+} ?>" href="../cart">Cart</a>
 <a class="dropdown-item <?php if (strpos($url,'shop') !== false) {
     echo 'active';
 } ?>" href="../shop">View Store</a>
@@ -60,7 +60,7 @@ else if(isset($_SESSION['user']))
       <li class="nav-item <?php if (strpos($url,'images') !== false) {
     echo 'active';
 } ?>">
-        <a class="nav-link" href="#">Images</a>
+        <a class="nav-link" href="../gallery">Gallery</a>
       </li>
       <li class="nav-item <?php if (strpos($url,'reviews') !== false) {
     echo 'active';
