@@ -39,10 +39,10 @@ else
     <div id="server-results"></div>
     <div class="container">
     <div class="d-flex justify-content-center">
-    <form action='php/add-product.php' method='post'>
+    <form action='php/add-product.php' method='post' enctype="multipart/form-data">
     <div class="custom-file" style='margin-bottom: 10px'>
     <input type="file" class="file-input" id="image">
-    <label class="custom-file-label" for="image">Choose Image</label>
+    <label class="custom-file-label" for="image" style='word-break:break-word'>Choose Image</label>
     </div>
     <p>
   <div class="form-group">
