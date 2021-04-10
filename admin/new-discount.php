@@ -45,7 +45,7 @@ else
          .formCenter 
          {
              <?php 
-            if ($countfindproduct == "")
+            if ($countfindproduct == "0")
             {
                 echo ".container-fluid
                 {
@@ -69,13 +69,14 @@ else
     
 </head>
 <body>
-<div><?php echo $error_message; ?></div>
+
     <?php include "inc/header.php"; ?>
     <div class="container-fluid">
     <div class="d-flex justify-content-center">
         <center>
         <br><div id="server-results"></div>
     <h2 class="mb-42">Add a discount to <?php echo $product; ?></h2>
+    <div><?php echo $error_message; ?></div>
     <form action='php/add-discount.php' method='post' id='discount'>
  <div class="form-group">
  <label for="price">Current Price</label>
