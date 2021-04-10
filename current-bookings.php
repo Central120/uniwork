@@ -89,19 +89,23 @@ $findcurrentbookings = mysqli_query($conn, "SELECT * FROM `bookings` WHERE `user
         if ($approved_timestamp == $ts1)
         {
             $color1 = "green";
+            $icon1 = "<i class='fa fa-check' title='Timeslot approved' style='color:green' aria-hidden='true'></i>";
         }
         else
         {
             $color1 = "red";
+            $icon1 = "<i class='fa fa-times' title='Timeslot not approved' style='color:red' aria-hidden='true'></i>";
         }
 
         if ($approved_timestamp == $ts2)
         {
             $color2 = "green";
+            $icon2 = "<i class='fa fa-check' title='Timeslot approved' style='color:green' aria-hidden='true'></i>";
         }
         else
         {
             $color2 = "red";
+            $icon2 = "<i class='fa fa-times' title='Timeslot not approved' style='color:red' aria-hidden='true'></i>";
         }
 
         $strts1 = strtotime("$ts1");
@@ -112,7 +116,7 @@ $findcurrentbookings = mysqli_query($conn, "SELECT * FROM `bookings` WHERE `user
 
         echo "<tr>
         <td>$pet_name</td>
-        <td>Timeslot 1: <p style='color:$color1'>$ts1d</p><br>Timeslot 2: <p style='color:$color2'>$ts2d</p></td>
+        <td>Timeslot 1: $icon1 <p style='color:$color1'>$ts1d</p><br>Timeslot 2: $icon2 <p style='color:$color2'>$ts2d</p></td>
         <td>Emergency 1: $ec1 <br> Emergency 2: $ec2</td>
         <td>$info</td>
         <td>$approved</td>
@@ -216,19 +220,23 @@ $findcurrentbookings = mysqli_query($conn, "SELECT * FROM `bookings` WHERE `user
         if ($approved_timestamp == $ts1)
         {
             $color1 = "green";
+           
         }
         else
         {
             $color1 = "red";
+           
         }
 
         if ($approved_timestamp == $ts2)
         {
             $color2 = "green";
+           
         }
         else
         {
             $color2 = "red";
+           
         }
 
         if ($tsc == "None allocated" || $tsc == "None accepted")

@@ -14,7 +14,7 @@ else
 
 
 $findpending = mysqli_query($conn, "SELECT * FROM `bookings` WHERE `approver` = ''");
-
+$countfindbooking = mysqli_num_rows($findpending);
 ?>
 <!doctype html>
 <html lang="en">
@@ -42,21 +42,28 @@ $findpending = mysqli_query($conn, "SELECT * FROM `bookings` WHERE `approver` = 
     <div class="container" style='margin-bottom: 30%'>
     <div class="d-flex justify-content-center">
     <div class="table-responsive">
-                <table class="table table-striped">
-                    <thead>
-                        <tr>
-                            <th scope="col">Username</th>
-                            <th scope="col">Pet Name</th>
-                            <th scope="col">Timeslots</th>
-                            <th scope="col">Emergency Contacts</th>
-                            <th scope="col">Additional Info</th>
-                            <th>Manage</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-  <?php
+    <?php
+    if ($countfindbooking == 0)
+    {
+      echo "<h5 class='mb-5'>There are no pending bookings</h5>";
+    }
+    else
+    {
+            echo "<table class='table table-striped'>
+            <thead>
+                <tr>
+                    <th scope='col'>Username</th>
+                    <th scope='col'>Pet Name</th>
+                    <th scope='col'>Timeslots</th>
+                    <th scope='col'>Emergency Contacts</th>
+                    <th scope='col'>Additional Info</th>
+                    <th>Manage</th>
+                </tr>
+            </thead>
+            <tbody>";
     while ($rowfindbooking = $findpending->fetch_assoc())
     {
+        
         $booking_id = $rowfindbooking['id'];
         $username = $rowfindbooking['username'];
         $ts1 = $rowfindbooking['timeslot_1'];
@@ -72,6 +79,7 @@ $findpending = mysqli_query($conn, "SELECT * FROM `bookings` WHERE `approver` = 
         $ts1d = date("l jS \of F, g:i a", $strts1);
         $ts2d = date("l jS \of F, g:i a", $strts2);
 
+        
         echo "<tr>
         <td>$username</td>
         <td>$pet_name</td>
@@ -120,7 +128,7 @@ $findpending = mysqli_query($conn, "SELECT * FROM `bookings` WHERE `approver` = 
       </div>";
 
     }
-
+    }
 
 ?>
  </tbody>
