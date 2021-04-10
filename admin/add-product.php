@@ -38,6 +38,7 @@ else
     <h2 class="mb-42">Add a new product</h2>
     <div id="server-results"></div>
     <div class="container">
+    <div class="d-flex justify-content-center">
     <form action='php/add-product.php' method='post'>
     <div class="custom-file">
     <input type="file" class="file-input" id="image">
@@ -96,7 +97,7 @@ else
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>
 </div>
-
+</div>
 <?php include "inc/footer.php"; ?>
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
