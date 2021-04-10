@@ -90,6 +90,9 @@ $findproducts = mysqli_query($conn, $sqlfindproducts);
                 <span aria-hidden='true'>&times;</span>
               </button>
             </div>
+            <div class='modal-body'>
+            <p>You may modify the current discount using this feature.</p>
+            </div>
             <div class='modal-footer'>
             ";
                    
@@ -98,10 +101,7 @@ $findproducts = mysqli_query($conn, $sqlfindproducts);
             <input type='hidden' value='$productid' name='id' />
               <button type='submit' class='btn btn-success'>Add a discount</button>
             </form>
-            <form action='modify-discount.php' method='post' role='form'>
-            <input type='hidden' value='$productid' name='id' />
-              <button type='submit' class='btn btn-warning'>Modify discount</button>
-            </form>
+            
               <button type='button' class='btn btn-secondary' data-dismiss='modal'>Close</button>
             </div>
           </div>

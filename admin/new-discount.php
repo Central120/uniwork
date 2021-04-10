@@ -22,6 +22,11 @@ if ($countfindproduct != 0)
     $product = $rowfindproduct['product_name'];
     $price = $rowfindproduct['price'];
     $error_message = "";
+    $discount = $rowfindproduct['discount'];
+    $calculation = $price / 100 * $discount;
+    $final_p = $price - $calculation; 
+    $final_p1 = number_format((float)$final_p, 2, '.','');
+
 }
 else
 {
@@ -97,7 +102,7 @@ else
          <div class="form-group">
          <p><input type='button' value='Calculate Final Amount' id='calculate' class='btn btn-dark'></p>
          <br>
-         <p>Final Amount: £<span id='final'></span></p>
+         <p>Final Amount: £<span id='final'><?php echo $final_p1; ?></span></p>
          </div>
   <div class="form-group">
     <div class="col-sm-10">
