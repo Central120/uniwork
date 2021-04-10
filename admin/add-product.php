@@ -117,12 +117,16 @@ $(document).ready(function() {
             $('#new_category_input').css('display', 'none');
             $('#existing_input').css('display', '');
             $('#new_cat').val('');
+            $('#new_category_input').attr('disabled', 'disabled');
+            $('#existing_input').attr('disabled', '');
             console.log('existing');
         }
         else if (this.value == 'new') {
             $('#existing_input').css('display', 'none');
             $('#new_category_input').css('display', '');
             console.log('new');
+            $('#existing_input').attr('disabled', 'disabled');
+            $('#new_category_input').attr('disabled', '');
         }
         else
         {
