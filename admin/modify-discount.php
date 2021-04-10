@@ -103,7 +103,7 @@ else
          </select>
          </div>
          <div class="form-group">
-         <p><button id='calculate' class='btn btn-dark'>Calculate Final Amount</button></p>
+         <p><input type='button' value='Calculate Final Amount' id='calculate' class='btn btn-dark'></p>
          <br>
          <p>Final Amount: £<span id='final'></span></p>
          </div>
