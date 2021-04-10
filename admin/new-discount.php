@@ -113,7 +113,7 @@ function updatevalue()
 }
 
 $(document).ready(function(){
-        setInterval(updatevalue, 2000);
+        setInterval(updatevalue(), 2000);
       });
 </script>
   <script type='text/javascript'>
