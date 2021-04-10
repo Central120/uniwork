@@ -43,19 +43,19 @@ else
     <div class="custom-file">
     <input type="file" class="file-input" id="image">
     <label class="custom-file-label" for="image">Choose Image</label>
-    </div>
+    </div><br>
   <div class="form-group">
     <label for="product_name">Product Name</label>
     <input type="text" class="form-control" id="product_name" placeholder="Product Name">
-  </div>
+  </div><br>
   <div class="custom-control custom-radio custom-control-inline">
   <input type="radio" id="existing_category" name="category" value='existing' class="custom-control-input">
   <label class="custom-control-label" for="existing_category">Use an existing category</label>
-</div>
+</div><br>
 <div class="custom-control custom-radio custom-control-inline">
   <input type="radio" id="new_category" name="category" value='new' class="custom-control-input">
   <label class="custom-control-label" for="new_category">Create a new category</label>
-</div>
+</div><br>
 <div style='display:none;' class="form-group" id="existing_input">
 <select class="form-control" name="existing">
 <?php 
@@ -77,23 +77,23 @@ else
 }
 ?>
 </select>
-</div>
+</div><br>
 <div style='display:none;' class="form-group" id="new_category_input">
     <label for="new_cat">New Category Name</label>
     <input type="text" class="form-control" id="new_cat" placeholder="Enter new category name">
-  </div>
+  </div><br>
 <div class="form-group">
 <label for="price">Price</label>
 <input type="number" pattern="^\d+(\.|\,)\d{2}$" step="0.01" value="0.00" min='0' class="form-control">
-</div>
+</div><br>
 <div class="form-group">
     <label for="discount">Discount</label>
     <input type="number" class="form-control" min='0' max='100' value='0' id="discount">
-  </div>
+  </div><br>
   <div class="form-group">
     <label for="stock">Stock</label>
     <input type="number" class="form-control" id="stock">
-  </div>
+  </div><br>
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>
 </div>
