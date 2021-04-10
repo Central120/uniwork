@@ -18,6 +18,25 @@ $new_category = mysqli_real_escape_string($conn, $_POST['new']);
 $price = mysqli_real_escape_string($conn, $_POST['price']);
 $discount = mysqli_real_escape_string($conn, $_POST['discount']);
 $stock = mysqli_real_escape_string($conn, $_POST['stock']);
+$product_id = mysqli_real_escape_string($conn, $_POST['id']);
+
+$sqlfindproduct = "SELECT * FROM `products` WHERE `id` = '$product_id'";
+$findproduct = mysqli_query($conn, $sqlfindproduct);
+$countfindproduct = mysqli_num_rows($findproduct);
+if ($countfindproduct != 0)
+{
+    $rowfindproduct = mysqli_fetch_assoc($findproduct);
+    $image = $rowfindproduct['Image'];
+    $target_dir1 = "../../images/";
+    $target_file1 = $target_dir1 . basename($image);
+    $error_message = "";
+}
+else
+{
+    $error_message = "<div class='alert alert-danger alert-dismissable fade show' role='alert'><strong>An error occured.</strong> The item could not be found. <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+    <span aria-hidden='true'>&times;</span>
+  </button></div>";
+}
 
 if ($existing_category == "")
 {
@@ -39,6 +58,23 @@ $file = "images/" . $_FILES["image_upload"]["name"];
 $target_file = $target_dir . basename($file);
 $uploadOk = 1;
 $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+
+if($target_file == $target_file1){
+    $msg1 = "<div class='alert alert-danger alert-dismissable fade show' role='alert'><strong>An error occured.</strong> The image you entered was the same. <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+    <span aria-hidden='true'>&times;</span>
+    </button></div>";
+}
+else{
+    if (file_exists($target_file1)) {
+        unlink($target_file1);
+        $newimage = $file;
+    }
+    else{
+        $msg1 = "<div class='alert alert-danger alert-dismissable fade show' role='alert'><strong>An error occured.</strong> There was an error finding the old image. <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+        <span aria-hidden='true'>&times;</span>
+        </button></div>";
+    }
+}
 
 // Check if image file is a actual image or fake image
 if(isset($_POST["submit"])) {
@@ -70,11 +106,12 @@ if ($uploadOk == 0) {
 // if everything is ok, try to upload file
 } else {
   if (move_uploaded_file($_FILES["image_upload"]["tmp_name"], $target_file)) {
+  
     if (file_exists($target_file)) {
     $msg1 = "The image ". htmlspecialchars( basename( $_FILES["image_upload"]["name"])). " has been uploaded.";
-    $sqlinsertproduct = "INSERT INTO `products` VALUES (DEFAULT, '$product_name', '$chosen_cat', '$final_price', '$final_discount', '$final_stock', '$file')";
-    $insertproduct = mysqli_query($conn, $sqlinsertproduct);
-    if ($insertproduct)
+    $sqlupdateproduct = "UPDATE `products` SET `product_name` = '$product_name', `category` = '$chosen_cat', `price` = '$final_price', `discount` = '$final_discount', `stock` = '$final_stock', `Image` = '$newimage'";
+    $updateproduct = mysqli_query($conn, $sqlupdateproduct);
+    if ($updateproduct)
     {
         $msg1 = "<script>window.location.replace('../modify-products');</script>";
     }
