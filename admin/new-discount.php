@@ -94,7 +94,15 @@ else
         <?php 
         for ($i=1;$i<=100;$i++)
         {
+          if ($discount == $i)
+          {
+            echo "<option value='$i' selected>$i%</option>";
+          }
+          else
+          {
             echo "<option value='$i'>$i%</option>";
+          }
+            
         }
         ?>
          </select>
