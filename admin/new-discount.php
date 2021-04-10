@@ -47,7 +47,7 @@ else
              <?php 
             if ($countfindproduct == "0")
             {
-                echo ".container-fluid
+                echo "#discount
                 {
                  display:none;    
                 }";
