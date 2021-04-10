@@ -115,16 +115,19 @@ $(document).ready(function() {
             $('#new_category').css('display', 'none');
             $('#existing_category').css('display', '');
             $('#new_cat').html('');
+            console.log('existing');
         }
         else if (this.value == 'new') {
             $('#existing_category').css('display', 'none');
             $('#new_category').css('display', '');
+            console.log('new');
         }
         else
         {
             $('#new_category').css('display', 'none');
             $('#existing_category').css('display', 'none');
             $('#new_cat').html('');
+            console.log('none');
         }
     });
 });
