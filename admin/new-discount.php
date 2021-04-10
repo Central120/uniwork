@@ -101,14 +101,19 @@ else
 
 <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 <script>
-$(document).ready(function(){
-        
-          var price = "<?php echo $price; ?>";
+
+function updatevalue()
+{
+    var price = "<?php echo $price; ?>";
           var discount = $('#discount_amount').val();
           var calculation = price / 100 * discount;
           var final = price - calculation;      
           var result = final.toFixed(2);
           $('#final_price').html(result);
+}
+
+$(document).ready(function(){
+        setInterval(updatevalue, 2000);
       });
 </script>
   <script type='text/javascript'>
