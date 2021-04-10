@@ -62,11 +62,11 @@ else
     <div id="server-results"></div>
     <div class="container">
     <div class="d-flex justify-content-center">
+    <form action='php/add-product.php' method='post' enctype="multipart/form-data">
     <h5 class="mb-5">Current Image:</h5>
     <div class="text-center">
     <img src="../../<?php echo $image; ?>" class="img-thumbnail" style="height:100px;width:100px;">
     </div>
-    <form action='php/add-product.php' method='post' enctype="multipart/form-data">
     <div class="custom-file" style='margin-bottom: 10px'>
     <input type="file" class="file-input" name="image_upload" id="image">
     <label class="custom-file-label" for="image" style='word-break:break-word'>Change Image</label>
