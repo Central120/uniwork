@@ -36,16 +36,9 @@
             </p>
         </div>
 
-        <div class='col-md-2 col-lg-2 col-xl-2 mx-auto'>
-            <h4>Popular Items</h4>
-            <hr class='bg-white mb-2 mt-0 d-inline-block mx-auto w-25'>
-            <p><a href='#' class='text-white'>#</a></p>
-            <p><a href='#' class='text-white'>#</a></p>
-            <p><a href='#' class='text-white'>#</a></p>
-            <p><a href='#' class='text-white'>#</a></p>
-        </div>
+       
 
-        <div class='col-md-3 col-lg-2 col-xl-2 mx-auto'>
+        <div class='col-md-2 col-lg-2 col-xl-2 mx-auto'>
             <h4>Links</h4>
             <hr class='bg-white mb-2 mt-0 d-inline-block mx-auto w-25'>
             <p><a href='../login' class='text-white'>Login</a></p>
@@ -54,7 +47,7 @@
             <p><a href='../shop' class='text-white'>Store</a></p>
         </div>
 
-        <div class='col-md-4 col-lg-3 col-xl-3'>
+        <div class='col-md-3 col-lg-3 col-xl-3'>
             <h4>Contact</h4>
             <hr class='bg-white mb-2 mt-0 d-inline-block mx-auto w-25'>
             <p><i class='fa fa-home mr-3'></i> Tynemouth Road, Wallsend</p>
