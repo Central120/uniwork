@@ -12,12 +12,35 @@ else
     echo "<script>window.location.replace('../index');</script>";
 }
 
+$product_id = mysqli_real_escape_string($conn, $_POST['id']);
+$sqlfindproduct = "SELECT * FROM `products` WHERE `id` = '$product_id'";
+$findproduct = mysqli_query($conn, $sqlfindproduct);
+$countfindproduct = mysqli_num_rows($findproduct);
+if ($countfindproduct != 0)
+{
+    $rowfindproduct = mysqli_fetch_assoc($findproduct);
+    $image = $rowfindproduct['Image'];
+    $product_name = $rowfindproduct['product_name'];
+    $price = $rowfindproduct['price'];
+    $discount = $rowfindproduct['discount'];
+    $stock = $rowfindproduct['stock'];
+    $category = $rowfindproduct['category'];
+    $error_message = "";
+}
+else
+{
+    $error_message = "<div class='alert alert-danger alert-dismissable fade show' role='alert'><strong>An error occured.</strong> The item could not be found. <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+    <span aria-hidden='true'>&times;</span>
+  </button></div>";
+}
+
+
 ?>
 
 <!doctype html>
 <html lang="en">
   <head>
-  	<title>Kerry's K9's - Add a product</title>
+  	<title>Kerry's K9's - Modify Product</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
@@ -35,29 +58,31 @@ else
     <?php include "inc/header.php"; ?>
   
         <center>
-    <h2 class="mb-42">Add a new product</h2><br>
+    <h2 class="mb-42">Modify Product</h2><br>
     <div id="server-results"></div>
     <div class="container">
     <div class="d-flex justify-content-center">
+    <h5 class="mb-5">Current Image:</h5>
+    <img src="../../<?php $image; ?>" style="height:100px;width:100px;"><br>
     <form action='php/add-product.php' method='post' enctype="multipart/form-data">
     <div class="custom-file" style='margin-bottom: 10px'>
     <input type="file" class="file-input" name="image_upload" id="image">
-    <label class="custom-file-label" for="image" style='word-break:break-word'>Choose Image</label>
+    <label class="custom-file-label" for="image" style='word-break:break-word'>Change Image</label>
     </div>
     <p>
   <div class="form-group">
     <label for="product_name">Product Name</label>
-    <input type="text" name="product_name" class="form-control" id="product_name" placeholder="Product Name">
+    <input type="text" value="<?php echo $product_name; ?>" name="product_name" class="form-control" id="product_name" placeholder="Product Name">
   </div><br>
   <div class="custom-control custom-radio custom-control-inline" style='margin-bottom:5px'>
-  <input type="radio" id="existing_category" name="category" value='existing' class="custom-control-input">
+  <input type="radio" selected id="existing_category" name="category" value='existing' class="custom-control-input">
   <label class="custom-control-label" for="existing_category">Use an existing category</label>
 </div>
 <div class="custom-control custom-radio custom-control-inline" style='margin-bottom:5px'>
   <input type="radio" id="new_category" name="category" value='new' class="custom-control-input">
   <label class="custom-control-label" for="new_category">Create a new category</label>
 </div><br>
-<div style='display:none;' class="form-group" id="existing_input">
+<div class="form-group" id="existing_input">
 <label for='existing_select'>Choose a category</label>
 <select class="form-control" id='existing_select' name="existing">
 <?php 
@@ -69,8 +94,16 @@ if ($countfindexisting != 0)
 {
     while ($rowfindexisting = $findexisting->fetch_assoc())
     {
-        $category = $rowfindexisting['category'];
-        echo "<option value='$category'>$category</option>";
+        
+        $category1 = $rowfindexisting['category'];
+        if ($category == $category1)
+        {
+            echo "<option value='$category' selected>$category</option>";
+        }
+        else
+        {
+            echo "<option value='$category'>$category</option>";
+        }
     }
 }
 else
@@ -86,17 +119,17 @@ else
   </div><br>
 <div class="form-group">
 <label for="price">Price</label>
-<input type="number" pattern="^\d+(\.|\,)\d{2}$" step="0.01" name="price" value="0.00" min='0' class="form-control">
+<input type="number" pattern="^\d+(\.|\,)\d{2}$" step="0.01" name="price" value="<?php echo $price; ?>" min='0' class="form-control">
 </div><br>
 <div class="form-group">
     <label for="discount">Discount</label>
-    <input type="number" class="form-control" min='0' max='100' name="discount" value='0' id="discount">
+    <input type="number" class="form-control" min='0' max='100' name="discount" value='<?php echo $discount; ?>' id="discount">
   </div><br>
   <div class="form-group">
     <label for="stock">Stock</label>
-    <input type="number" min='0' pattern="[0-9]" name="stock" class="form-control" id="stock">
+    <input type="number" min='0' pattern="[0-9]" name="stock" value=<?php echo $stock; ?> class="form-control" id="stock">
   </div><br>
-  <button type="submit" class="btn btn-primary">Submit</button>
+  <button type="submit" class="btn btn-primary">Modify Product</button>
 </form>
 </div>
 </div>
