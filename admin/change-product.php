@@ -100,11 +100,11 @@ if ($countfindexisting != 0)
         $category1 = $rowfindexisting['category'];
         if ($category == $category1)
         {
-            echo "<option value='$category' selected>$category</option>";
+            echo "<option value='$category1' selected>$category1</option>";
         }
         else
         {
-            echo "<option value='$category'>$category</option>";
+            echo "<option value='$category1'>$category1</option>";
         }
     }
 }
