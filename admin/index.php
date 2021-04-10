@@ -157,16 +157,6 @@ $rowcountproducts = mysqli_fetch_array($resultcountproducts);
     </div>
 
     <div class='col-md-3'>
-    <a href='cart' style='color: white' title='Click here to view Cart Options'>
-      <div class='card-counter success'>
-        <i class='fa fa-shopping-basket'></i>
-        <span class='count-numbers'>Amount</span>
-        <span class='count-name'>Cart Items</span>
-      </div>
-      </a>
-    </div>
-
-    <div class='col-md-3'>
     <a href='users' style='color: white' title='Click here to view User Options'>
       <div class='card-counter info'>
         <i class='fa fa-users'></i>
