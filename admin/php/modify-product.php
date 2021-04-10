@@ -109,15 +109,16 @@ if ($uploadOk == 0) {
   
     if (file_exists($target_file)) {
     $msg1 = "The image ". htmlspecialchars( basename( $_FILES["image_upload"]["name"])). " has been uploaded.";
-    $sqlupdateproduct = "UPDATE `products` SET `product_name` = '$product_name', `category` = '$chosen_cat', `price` = '$final_price', `discount` = '$final_discount', `stock` = '$final_stock', `Image` = '$newimage'";
-    $updateproduct = mysqli_query($conn, $sqlupdateproduct);
+    $sqlupdateproduct = "UPDATE `products` SET `product_name` = '$product_name', `category` = '$chosen_cat', `price` = '$final_price', `discount` = '$final_discount', `stock` = '$final_stock', `Image` = '$newimage' WHERE `id` = '$product_id'";
+// $updateproduct = mysqli_query($conn, $sqlupdateproduct);
     if ($updateproduct)
     {
-        $msg1 = "<script>window.location.replace('../modify-products');</script>";
+//    $msg1 = "<script>window.location.replace('../modify-products');</script>";
+echo $sqlupdateproduct;
     }
     else
     {
-        $msg1 = "<div class='alert alert-danger alert-dismissable fade show' role='alert'><strong>An error occured.</strong> Your product was not added. <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+        $msg1 = "<div class='alert alert-danger alert-dismissable fade show' role='alert'><strong>An error occured.</strong> Your product was not added. $sqlupdateproduct <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
         <span aria-hidden='true'>&times;</span>
         </button></div>";
     }
