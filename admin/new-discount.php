@@ -63,7 +63,7 @@ else
 
          .footer
          {
-           margin-top:10% !important;
+           margin-top:15% !important;
          }
      </style>
     
