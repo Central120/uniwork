@@ -46,7 +46,7 @@ if(isset($_POST["submit"])) {
   if($check !== false) {
     $uploadOk = 1;
   } else {
-    $msg = "<div class='alert alert-danger alert-dismissable fade show' role='alert'><strong>An error occured.</strong> The image you uploaded is not a real image. <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+    $msg1 = "<div class='alert alert-danger alert-dismissable fade show' role='alert'><strong>An error occured.</strong> The image you uploaded is not a real image. <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
         <span aria-hidden='true'>&times;</span>
         </button></div>";
     $uploadOk = 0;
@@ -56,7 +56,7 @@ if(isset($_POST["submit"])) {
 
 // Check file size
 if ($_FILES["image_upload"]["size"] > 500000) {
-    $msg = "<div class='alert alert-danger alert-dismissable fade show' role='alert'><strong>An error occured.</strong> The image you entered is too large. <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+    $msg1 = "<div class='alert alert-danger alert-dismissable fade show' role='alert'><strong>An error occured.</strong> The image you entered is too large. <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
     <span aria-hidden='true'>&times;</span>
     </button></div>";
   $uploadOk = 0;
@@ -64,7 +64,7 @@ if ($_FILES["image_upload"]["size"] > 500000) {
 
 // Allow certain file formats
 if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg") {
-    $msg = "<div class='alert alert-danger alert-dismissable fade show' role='alert'><strong>An error occured.</strong> Only JPG, JPEG or PNG images are allowed. <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+    $msg1 = "<div class='alert alert-danger alert-dismissable fade show' role='alert'><strong>An error occured.</strong> Only JPG, JPEG or PNG images are allowed. <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
         <span aria-hidden='true'>&times;</span>
         </button></div>";
   $uploadOk = 0;
@@ -79,21 +79,21 @@ if ($uploadOk == 0) {
 } else {
   if (move_uploaded_file($_FILES["image_upload"]["tmp_name"], $target_file)) {
     if (file_exists($target_file)) {
-    $msg = "The image ". htmlspecialchars( basename( $_FILES["image_upload"]["name"])). " has been uploaded.";
+    $msg1 = "The image ". htmlspecialchars( basename( $_FILES["image_upload"]["name"])). " has been uploaded.";
     $sqlinsertproduct = "INSERT INTO `products` VALUES (DEFAULT, '$product_name', '$chosen_cat', '$final_price', '$final_discount', '$final_stock', '$file')";
     $insertproduct = mysqli_query($conn, $sqlinsertproduct);
     if ($insertproduct)
     {
-        $msg = "<script>window.location.replace('../modify-products');</script>";
+        $msg1 = "<script>window.location.replace('../modify-products');</script>";
     }
     else
     {
-        $msg = "<div class='alert alert-danger alert-dismissable fade show' role='alert'><strong>An error occured.</strong> Your product was not added. <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+        $msg1 = "<div class='alert alert-danger alert-dismissable fade show' role='alert'><strong>An error occured.</strong> Your product was not added. <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
         <span aria-hidden='true'>&times;</span>
         </button></div>";
     }
   } else {
-    $msg = "<div class='alert alert-danger alert-dismissable fade show' role='alert'><strong>An error occured.</strong> There was an error uploading your image. <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+    $msg1 = "<div class='alert alert-danger alert-dismissable fade show' role='alert'><strong>An error occured.</strong> There was an error uploading your image. <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
     <span aria-hidden='true'>&times;</span>
     </button></div>";
   }
@@ -118,14 +118,15 @@ if ($uploadOk == 0) {
      </style>
 </head>
 <body>
-    <?php include "inc/header.php"; ?>
+    <?php include "../inc/header.php"; ?>
     <div class="container">
     <div class="d-flex justify-content-center">
     <?php echo $msg; ?><br>
+    <?php echo $msg1; ?><br>
     <button id='retry' class='btn btn-warning'>Try again</button>
     </div>
     </div>
-    <?php include "inc/footer.php"; ?>
+    <?php include "../inc/footer.php"; ?>
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
