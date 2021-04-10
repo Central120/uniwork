@@ -88,7 +88,7 @@ else
          <label for="discount">Discount</label>
          <select name='discount' style='width: 50%' id='discount_sel' class='form-control'>
         <?php 
-        for ($i=1;$i<=100;$i++)
+        for ($i=0;$i<=100;$i++)
         {
             if ($discount == $i)
             {
