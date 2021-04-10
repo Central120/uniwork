@@ -21,7 +21,7 @@ if ($countfindproduct != 0){
     $sqldeletediscount = "UPDATE `products` SET `discount` = '0' WHERE `id` = '$product_id'";
     $deletediscount = mysqli_query($conn, $sqldeletediscount);
     if ($deletediscount){
-        echo "<script>window.location.replace('modify-products');</script>";
+        echo "<script>window.location.replace('../modify-products');</script>";
     }
     else{
         echo "<div class='alert alert-danger alert-dismissable fade show' role='alert'><strong>An error occured.</strong> We could not delete the discount. <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
