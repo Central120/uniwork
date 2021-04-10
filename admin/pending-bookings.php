@@ -55,6 +55,12 @@ $countfindbooking = mysqli_num_rows($findpending);
                     </thead>
                     <tbody>
   <?php
+    if ($countfindbooking == 0)
+    {
+      echo "<tr><td>There are no pending bookings</td></tr>";
+    }
+    else
+    {
     while ($rowfindbooking = $findpending->fetch_assoc())
     {
         
@@ -73,12 +79,7 @@ $countfindbooking = mysqli_num_rows($findpending);
         $ts1d = date("l jS \of F, g:i a", $strts1);
         $ts2d = date("l jS \of F, g:i a", $strts2);
 
-        if ($countfindbooking == 0)
-        {
-          echo "<tr><td>There are no pending bookings</td></tr>";
-        }
-        else
-        {
+        
         echo "<tr>
         <td>$username</td>
         <td>$pet_name</td>
@@ -127,7 +128,7 @@ $countfindbooking = mysqli_num_rows($findpending);
       </div>";
 
     }
-  }
+    }
 
 ?>
  </tbody>
