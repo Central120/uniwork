@@ -83,11 +83,11 @@ else
   </div>
 <div class="form-group">
 <label for="price">Price</label>
-<input type="number" pattern="^\d+(\.|\,)\d{2}$" step="0.01" value="0.00" class="form-control">
+<input type="number" pattern="^\d+(\.|\,)\d{2}$" step="0.01" value="0.00" min='0' class="form-control">
 </div>
 <div class="form-group">
     <label for="discount">Discount</label>
-    <input type="number" class="form-control" min='0' max='100' id="discount">
+    <input type="number" class="form-control" min='0' max='100' value='0' id="discount">
   </div>
   <div class="form-group">
     <label for="stock">Stock</label>
