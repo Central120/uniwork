@@ -67,7 +67,7 @@ while($rowfindcart = $findcart->fetch_assoc())
     $stock = $rowfindcart['stock'];
     $finalprice1 = $price * $quantity; 
     $finalprice = number_format((float)$finalprice1, 2, '.','');
-
+    $accuratequant = $quantity + $stock;
     $total1 = $finalprice1 + $total;
     $total = number_format((float)$total1, 2, '.','');
     echo "
@@ -76,7 +76,7 @@ while($rowfindcart = $findcart->fetch_assoc())
 <td>$product</td>
 <td>£$finalprice</td>";
 echo "<form action = 'php/modify-quantity.php' method = 'post' class = 'modify_form'><td><select name = 'quantity' class = 'form-control'>";
-for($i=0;$i<=$quantity;$i++){
+for($i=0;$i<=$accuratequant;$i++){
     if($i==$quantity){
         echo "<option value = '$i' selected> $i</option>";
     }
