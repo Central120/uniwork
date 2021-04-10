@@ -83,10 +83,20 @@ else
          </div>
          <div class="form-group">
          <label for="discount">Discount</label>
-         <input type="number" id='discount_amount' min='1' max='100' name='discount' class='form-control'>
+         <select name='discount' id='discount_sel' class='form-control'>
+        <?php 
+        for ($i=1;$i<=100;$i++)
+        {
+            echo "<option value='$i'>$i</option>";
+        }
+        ?>
+         </select>
          </div>
          <div class="form-group">
-         <p>Final Price:£<span id='final_price'></span></p>
+         <p><button id='calculate'>Calculate Final Amount</button></p>
+         <br>
+         <p>Final Amount: £<span id='final'></span></p>
+         </div>
   <div class="form-group row">
     <div class="col-sm-10">
       <button type="submit" class="btn btn-success">Add Discount</button>
@@ -101,21 +111,22 @@ else
 
 <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 <script>
-
-function updatevalue()
-{
-    var price = "<?php echo $price; ?>";
-          var discount = $('#discount_amount').val();
+ $(document).ready(function(){
+        $('#calculate').click(function()
+        {
+          var price = "<?php echo $price; ?>";
+          var discount = $('#discount_sel option:selected').val();
           var calculation = price / 100 * discount;
-          var final = price - calculation;      
-          var result = final.toFixed(2);
-          $('#final_price').html(result);
-}
-
-$(document).ready(function(){
-        setInterval(updatevalue(), 2000);
+          var amount = price - calculation; 
+          var result = amount.toFixed(2);
+          $('#final').html(result);
+          
+        });
       });
+
+ 
 </script>
+
   <script type='text/javascript'>
     $('#discount').submit(function(event) {
       event.preventDefault(); //prevent default action
