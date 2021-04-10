@@ -65,13 +65,13 @@ if($target_file == $target_file1){
     <span aria-hidden='true'>&times;</span>
     </button></div>";
     $newimage = $image;
-    $imagesql = "";
+    
 }
 else{
     if (file_exists($target_file1)) {
         unlink($target_file1);
         $newimage = $file;
-        $imagesql = ", `Image` = '$newimage'";
+        
     }
     else{
         $msg1 = "<div class='alert alert-danger alert-dismissable fade show' role='alert'><strong>An error occured.</strong> There was an error finding the old image. <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
@@ -113,7 +113,7 @@ if ($uploadOk == 0) {
   
     if (file_exists($target_file)) {
     $msg1 = "The image ". htmlspecialchars( basename( $_FILES["image_upload"]["name"])). " has been uploaded.";
-    $sqlupdateproduct = "UPDATE `products` SET `product_name` = '$product_name', `category` = '$chosen_cat', `price` = '$final_price', `discount` = '$final_discount', `stock` = '$final_stock' $imagesql WHERE `id` = '$product_id'";
+    $sqlupdateproduct = "UPDATE `products` SET `product_name` = '$product_name', `category` = '$chosen_cat', `price` = '$final_price', `discount` = '$final_discount', `stock` = '$final_stock', `Image` = '$newimage'  WHERE `id` = '$product_id'";
 // $updateproduct = mysqli_query($conn, $sqlupdateproduct);
     if ($updateproduct)
     {
