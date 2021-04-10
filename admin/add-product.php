@@ -83,7 +83,7 @@ else
   </div>
 <div class="form-group">
 <label for="price">Price</label>
-<input type="number" pattern="(0\.((0[1-9]{1})|([1-9]{1}([0-9]{1})?)))|(([1-9]+[0-9]*)(\.([0-9]{1,2}))?)" class="form-control">
+<input type="number" pattern="^\d+(\.|\,)\d{2}$" class="form-control">
 </div>
 <div class="form-group">
     <label for="discount">Discount</label>
