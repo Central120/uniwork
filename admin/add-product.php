@@ -49,11 +49,11 @@ else
     <input type="text" class="form-control" id="product_name" placeholder="Product Name">
   </div>
   <div class="custom-control custom-radio custom-control-inline">
-  <input type="radio" id="existing_category" name="category" class="custom-control-input">
+  <input type="radio" id="existing_category" name="category" value='existing' class="custom-control-input">
   <label class="custom-control-label" for="existing_category">Use an existing category</label>
 </div>
 <div class="custom-control custom-radio custom-control-inline">
-  <input type="radio" id="new_category" name="category" class="custom-control-input">
+  <input type="radio" id="new_category" name="category" value='new' class="custom-control-input">
   <label class="custom-control-label" for="new_category">Create a new category</label>
 </div>
 <div style='display:none;' class="form-group" id="existing">
@@ -108,19 +108,25 @@ $(".file-input").on("change", function() {
   var fileName = $(this).val().split("\\").pop();
   $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
 });
-$('#existing_category').click(function() {
-   if($('#existing_category').is(':checked')) { 
-       $('#new_category').css('display', 'none');
-       $('#existing_category').css('display', '');
-       $('#new_cat').html('');
-}
-});
-$('#new_category').click(function() {
-   if($('#new_category').is(':checked')) { 
-       $('#existing_category').css('display', 'none');
-       $('#new_category').css('display', '');
-}
-});
 
+$(document).ready(function() {
+    $('input:radio[name=category]').change(function() {
+        if (this.value == 'existing') {
+            $('#new_category').css('display', 'none');
+            $('#existing_category').css('display', '');
+            $('#new_cat').html('');
+        }
+        else if (this.value == 'new') {
+            $('#existing_category').css('display', 'none');
+            $('#new_category').css('display', '');
+        }
+        else
+        {
+            $('#new_category').css('display', 'none');
+            $('#existing_category').css('display', 'none');
+            $('#new_cat').html('');
+        }
+    });
+});
 </script>
 </html>
