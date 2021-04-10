@@ -56,7 +56,7 @@ else
   <input type="radio" id="new_category" name="category" value='new' class="custom-control-input">
   <label class="custom-control-label" for="new_category">Create a new category</label>
 </div>
-<div style='display:none;' class="form-group" id="existing">
+<div style='display:none;' class="form-group" id="existing_input">
 <select class="form-control" name="existing">
 <?php 
 $sqlfindexisting = "SELECT DISTINCT `category` FROM `products`";
@@ -78,7 +78,7 @@ else
 ?>
 </select>
 </div>
-<div style='display:none;' class="form-group" id="new_category">
+<div style='display:none;' class="form-group" id="new_category_input">
     <label for="new_cat">New Category Name</label>
     <input type="text" class="form-control" id="new_cat" placeholder="Enter new category name">
   </div>
@@ -112,20 +112,20 @@ $(".file-input").on("change", function() {
 $(document).ready(function() {
     $('input:radio[name=category]').change(function() {
         if (this.value == 'existing') {
-            $('#new_category').css('display', 'none');
-            $('#existing_category').css('display', '');
+            $('#new_category_input').css('display', 'none');
+            $('#existing_input').css('display', '');
             $('#new_cat').html('');
             console.log('existing');
         }
         else if (this.value == 'new') {
-            $('#existing_category').css('display', 'none');
-            $('#new_category').css('display', '');
+            $('#existing_input').css('display', 'none');
+            $('#new_category_input').css('display', '');
             console.log('new');
         }
         else
         {
-            $('#new_category').css('display', 'none');
-            $('#existing_category').css('display', 'none');
+            $('#new_category_input').css('display', 'none');
+            $('#existing_input').css('display', 'none');
             $('#new_cat').html('');
             console.log('none');
         }
