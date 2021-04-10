@@ -66,7 +66,7 @@ else
     <h5 class="mb-5">Current Image:</h5>
     <div class="text-center">
     <img src="../../<?php echo $image; ?>" class="img-thumbnail" style="height:100px;width:100px;">
-    </div>
+    </div><br>
     <div class="custom-file" style='margin-bottom: 10px'>
     <input type="file" class="file-input" name="image_upload" id="image">
     <label class="custom-file-label" for="image" style='word-break:break-word'>Change Image</label>
