@@ -84,27 +84,65 @@ $findoncoming = mysqli_query($conn, "SELECT * FROM `bookings` WHERE `approver` !
         if ($years == 0 && $months == 0 && $days == 0 && $hours == 0)
         {
         // prints minutes
-        $msg = "$minutes minutes to go";
+          if ($date1 > $date2)
+          {
+            $msg = "$minutes minutes have passed";
+          }
+          else
+          {
+            $msg = "$minutes minutes to go";
+          }
         }
         else if ($years == 0 && $months == 0 && $days == 0)
         {
-        // prints hours
-        $msg = "$hours hours and $minutes minutes to go";
+          // prints hours
+            if ($date1 > $date2)
+          {
+            $msg = "$hours hours and $minutes minutes have passed";
+          }
+          else
+          {
+            $msg = "$hours hours and $minutes minutes to go";
+          }
+        
         }
         else if ($years == 0 && $months == 0 && $hours)
         {
         // prints days
-        $msg = "$days days, $hours hours and $minutes minutes to go";
+        if ($date1 > $date2)
+          {
+            $msg = "$days days, $hours hours and $minutes minutes have passed";
+          }
+          else
+          {
+            $msg = "$days days, $hours hours and $minutes minutes to go";
+          }
+        
         }
         else if ($years == 0)
         {
         // prints months
-        $msg = "$months months, $days days, $hours hours and $minutes minutes to go";
+        if ($date1 > $date2)
+          {
+            $msg = "$months months, $days days, $hours hours and $minutes minutes have passed";
+          }
+          else
+          {
+            $msg = "$months months, $days days, $hours hours and $minutes minutes to go";
+          }
+       
         }
         else
         {
         // prints years
-        $msg = "$years years, $months months, $days days, $hours hours and $minutes minutes to go";
+        if ($date1 > $date2)
+          {
+            $msg = "$years years, $months months, $days days, $hours hours and $minutes minutes have passed";
+          }
+          else
+          {
+            $msg = "$years years, $months months, $days days, $hours hours and $minutes minutes to go";
+          }
         }
 
         
