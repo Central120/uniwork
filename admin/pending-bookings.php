@@ -45,7 +45,7 @@ $countfindbooking = mysqli_num_rows($findpending);
     <?php
     if ($countfindbooking == 0)
     {
-      echo "<tr><td>There are no pending bookings</td></tr>";
+      echo "<h5 class='mb-5'>There are no pending bookings</h5>";
     }
     else
     {
