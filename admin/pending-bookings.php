@@ -42,25 +42,25 @@ $countfindbooking = mysqli_num_rows($findpending);
     <div class="container" style='margin-bottom: 30%'>
     <div class="d-flex justify-content-center">
     <div class="table-responsive">
-                <table class="table table-striped">
-                    <thead>
-                        <tr>
-                            <th scope="col">Username</th>
-                            <th scope="col">Pet Name</th>
-                            <th scope="col">Timeslots</th>
-                            <th scope="col">Emergency Contacts</th>
-                            <th scope="col">Additional Info</th>
-                            <th>Manage</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-  <?php
+    <?php
     if ($countfindbooking == 0)
     {
       echo "<tr><td>There are no pending bookings</td></tr>";
     }
     else
     {
+            echo "<table class='table table-striped'>
+            <thead>
+                <tr>
+                    <th scope='col'>Username</th>
+                    <th scope='col'>Pet Name</th>
+                    <th scope='col'>Timeslots</th>
+                    <th scope='col'>Emergency Contacts</th>
+                    <th scope='col'>Additional Info</th>
+                    <th>Manage</th>
+                </tr>
+            </thead>
+            <tbody>";
     while ($rowfindbooking = $findpending->fetch_assoc())
     {
         
