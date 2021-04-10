@@ -122,7 +122,7 @@ echo $sqlupdateproduct;
     }
     else
     {
-        $msg1 = "<div class='alert alert-danger alert-dismissable fade show' role='alert'><strong>An error occured.</strong> Your product was not added. $sqlupdateproduct <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+        $msg1 = "<div class='alert alert-danger alert-dismissable fade show' role='alert'><strong>An error occured.</strong> Your product was not added. $sqlupdateproduct <br> $targetfile <br> $targetfile1<button type='button' class='close' data-dismiss='alert' aria-label='Close'>
         <span aria-hidden='true'>&times;</span>
         </button></div>";
     }
