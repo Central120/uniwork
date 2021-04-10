@@ -48,14 +48,14 @@ else
     <input type="text" class="form-control" id="product_name" placeholder="Product Name">
   </div>
   <div class="custom-control custom-radio custom-control-inline">
-  <input type="radio" id="existing_category" name="existing_category" class="custom-control-input">
+  <input type="radio" id="existing_category" name="category" class="custom-control-input">
   <label class="custom-control-label" for="existing_category">Use an existing category</label>
 </div>
 <div class="custom-control custom-radio custom-control-inline">
-  <input type="radio" id="new_category" name="new_category" class="custom-control-input">
+  <input type="radio" id="new_category" name="category" class="custom-control-input">
   <label class="custom-control-label" for="new_category">Create a new category</label>
 </div>
-<div class="form-group" id="existing">
+<div style='display:none;' class="form-group" id="existing">
 <select class="form-control" name="existing">
 <?php 
 $sqlfindexisting = "SELECT DISTINCT `category` FROM `products`";
@@ -77,7 +77,7 @@ else
 ?>
 </select>
 </div>
-<div class="form-group" id="new_category">
+<div style='display:none;' class="form-group" id="new_category">
     <label for="new_cat">New Category Name</label>
     <input type="text" class="form-control" id="new_cat" placeholder="Enter new category name">
   </div>
@@ -95,7 +95,7 @@ else
   </div>
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>
-
+</div>
 
 <?php include "inc/footer.php"; ?>
 </body>
