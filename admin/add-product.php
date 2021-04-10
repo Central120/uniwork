@@ -41,13 +41,13 @@ else
     <div class="d-flex justify-content-center">
     <form action='php/add-product.php' method='post' enctype="multipart/form-data">
     <div class="custom-file" style='margin-bottom: 10px'>
-    <input type="file" class="file-input" id="image">
+    <input type="file" class="file-input" name="image_upload" id="image">
     <label class="custom-file-label" for="image" style='word-break:break-word'>Choose Image</label>
     </div>
     <p>
   <div class="form-group">
     <label for="product_name">Product Name</label>
-    <input type="text" class="form-control" id="product_name" placeholder="Product Name">
+    <input type="text" name="product_name" class="form-control" id="product_name" placeholder="Product Name">
   </div><br>
   <div class="custom-control custom-radio custom-control-inline" style='margin-bottom:5px'>
   <input type="radio" id="existing_category" name="category" value='existing' class="custom-control-input">
@@ -82,19 +82,19 @@ else
 </div><br>
 <div style='display:none;' class="form-group" id="new_category_input">
     <label for="new_cat">New Category Name</label>
-    <input type="text" class="form-control" id="new_cat" placeholder="Enter new category name">
+    <input type="text" class="form-control" id="new_cat" name="new" placeholder="Enter new category name">
   </div><br>
 <div class="form-group">
 <label for="price">Price</label>
-<input type="number" pattern="^\d+(\.|\,)\d{2}$" step="0.01" value="0.00" min='0' class="form-control">
+<input type="number" pattern="^\d+(\.|\,)\d{2}$" step="0.01" name="price" value="0.00" min='0' class="form-control">
 </div><br>
 <div class="form-group">
     <label for="discount">Discount</label>
-    <input type="number" class="form-control" min='0' max='100' value='0' id="discount">
+    <input type="number" class="form-control" min='0' max='100' name="discount" value='0' id="discount">
   </div><br>
   <div class="form-group">
     <label for="stock">Stock</label>
-    <input type="number" min='0' pattern="[0-9]" class="form-control" id="stock">
+    <input type="number" min='0' pattern="[0-9]" name="stock" class="form-control" id="stock">
   </div><br>
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>
