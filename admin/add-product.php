@@ -118,7 +118,7 @@ $(document).ready(function() {
             $('#existing_input').css('display', '');
             $('#new_cat').val('');
             $('#new_cat').attr('disabled', 'disabled');
-            $('#existing_select').attr('disabled', '');
+            $('#existing_select').removeAttr('disabled');
             console.log('existing');
         }
         else if (this.value == 'new') {
@@ -126,7 +126,7 @@ $(document).ready(function() {
             $('#new_category_input').css('display', '');
             console.log('new');
             $('#existing_select').attr('disabled', 'disabled');
-            $('#new_cat').attr('disabled', '');
+            $('#new_cat').removeAttr('disabled');
         }
         else
         {
