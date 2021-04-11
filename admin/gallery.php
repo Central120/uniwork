@@ -97,7 +97,7 @@ else
         echo "
     <div class='container'>
     <div class='row'>
-    <div class='col-md-1'>
+    <div class='col-md-3'>
     <a href='add-discount' style='color: white' title='Click here to add a discount'>
       <div class='card-counter primary'>
         <i class='fa fa-calendar-o'></i>
