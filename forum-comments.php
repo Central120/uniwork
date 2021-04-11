@@ -14,7 +14,7 @@ if ($ctposts != 0)
 $rowposts = mysqli_fetch_assoc($findposts);
 $posts_name = $rowposts['forum_post'];
 $status = $rowposts['status'];
-$sqlfindcomments = "SELECT * FROM `forum_comments` WHERE `post_id` = '$chosen_post' ORDER BY `timestamp` ASC";
+$sqlfindcomments = "SELECT * FROM `forum_comments` WHERE `post_id` = '$chosen_post' ORDER BY FIELD(`type`,'main'), `timestamp` ASC";
 $findcomments = mysqli_query($conn, $sqlfindcomments);
 $ctcomments = mysqli_num_rows($findcomments);
 }
