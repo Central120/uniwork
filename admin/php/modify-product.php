@@ -24,11 +24,12 @@ $product_id = mysqli_real_escape_string($conn, $_POST['id']);
 $sqlfindproduct = "SELECT * FROM `products` WHERE `id` = '$product_id'";
 $findproduct = mysqli_query($conn, $sqlfindproduct);
 $countfindproduct = mysqli_num_rows($findproduct);
+
+// current image details
 if ($countfindproduct != 0)
 {
     $rowfindproduct = mysqli_fetch_assoc($findproduct);
     $image = $rowfindproduct['Image'];
-    $target_dir1 = "../../images/";
     $target_dir2 = "../../";
     $target_file1 = $target_dir2 . basename($image);
     $error_message = "";
@@ -39,6 +40,8 @@ else
     <span aria-hidden='true'>&times;</span>
   </button></div>";
 }
+
+
 
 if ($existing_category == "")
 {
@@ -57,10 +60,10 @@ $final_stock = ceil($stock); // ensures the value is rounded to the nearest whol
 
 $target_dir = "../../images/";
 $file = "images/" . $_FILES["image_upload"]["name"];
-if (is_uploaded_file($_FILES['image_upload']['name'])) {
+if (is_uploaded_file($file) {
     $target_file = $target_dir . basename($file);
 } else {
-    $target_file = $image;
+    $target_file = $target_file1;
 }
 
 $uploadOk = 1;
@@ -74,8 +77,8 @@ if($target_file == $target_file1){
     
 }
 else{
-    if (file_exists($target_file1)) {
-        unlink($target_file1);
+    if (file_exists($target_file)) {
+        unlink($target_file);
         $newimage = $file;
         
     }
