@@ -15,7 +15,7 @@ else
 
 $imageid = mysqli_real_escape_string($conn, $_POST['imageid']);
 
-$approvesql = "UPDATE photo_staring SET approver='$session_usern' WHERE id='$imageid'";
+$approvesql = "UPDATE photo_sharing SET approver='$session_usern' WHERE id='$imageid'";
 
 if(mysqli_query($conn,$approvesql))
 {
@@ -25,7 +25,7 @@ if(mysqli_query($conn,$approvesql))
 }
 else
 {
-    echo "<div class='alert alert-danger alert-dismissable fade show' role='alert'><strong>An error occured.</strong> The image couldn't be approved. {$imageid} <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+    echo "<div class='alert alert-danger alert-dismissable fade show' role='alert'><strong>An error occured.</strong> The image couldn't be approved. <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
     <span aria-hidden='true'>&times;</span>
   </button></div>";
 }
