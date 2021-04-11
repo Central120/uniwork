@@ -23,7 +23,8 @@ $imageCaption = mysqli_real_escape_string($conn, $_POST['caption']);
 
 
 $target_dir = "../images/uploads/";
-$file = "images/uploads/" . $_FILES["image_upload"]["name"];
+$file1 = "images/uploads/" . $_FILES["image_upload"]["name"];
+$file = $_FILES["image_upload"]["name"];
 $target_file = $target_dir . basename($_FILES["image_upload"]["name"]);
 $uploadOk = 1;
 $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
@@ -67,7 +68,7 @@ if ($uploadOk == 0) {
 // if everything is ok, try to upload file
 } else {
   if (move_uploaded_file($_FILES["image_upload"]["tmp_name"], $target_file)) {
-    $uploadimagesql = "INSERT INTO photo_sharing VALUES(DEFAULT, '$session_usern', '$file', '$imageTitle', '$imageCaption', '$current_timestamp', 'pending')";
+    $uploadimagesql = "INSERT INTO photo_sharing VALUES(DEFAULT, '$session_usern', '$file1', '$imageTitle', '$imageCaption', '$current_timestamp', 'pending')";
     $imagerunsql = mysqli_query($conn, $uploadimagesql);
 
     if($imagerunsql)
