@@ -58,7 +58,7 @@ session_start();
 $imageQuery = mysqli_query($conn, "SELECT * FROM photo_sharing WHERE approver != 'pending' LIMIT 5");
 $row = mysqli_fetch_array($imageQuery);
 
-foreach ($result as $row)
+foreach ($row as $result)
 {
 		?>
 
