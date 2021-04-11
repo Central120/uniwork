@@ -102,11 +102,11 @@ $findreports = mysqli_query($conn, "SELECT * FROM `image_report`");
 
         echo "<tr>
         <td>$reporter</td>
-        <td><a href='../$p_location' target='_blank'>View Image</a></td>
         <td>$reporting</b></td>
         <td>$reportoption</td>
         <td>$reportinformation</td>
         <td>$outcomeofreport</td>
+        <td><a href='../$p_location' target='_blank'>View Image</a></td>
         <td>$statusofreport</td>
         
         
