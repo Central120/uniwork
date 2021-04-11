@@ -94,7 +94,7 @@ $findcurrentbookings = mysqli_query($conn, "SELECT * FROM `bookings` WHERE `user
       <div class="modal-body">
       <small>You're reporting: <?php echo $author; ?>.<br>Their image: <a href='/<?php echo $pLocation; ?>' target='_blank'>Click to view</a></small>
       <div id="report-results"></div>
-      <form id="FormReport" class="gallery" action="php/report-image" method="post">
+      <form id="FormReport(<?php echo $imageid; ?>)" class="gallery" action="php/report-image" method="post">
           <div class="form-group">
             <label for="recipient-name" class="col-form-label">Reason Option</label>
             <input type="hidden" name="reporter" value="<?php echo $session_usern; ?>">
@@ -124,6 +124,24 @@ $findcurrentbookings = mysqli_query($conn, "SELECT * FROM `bookings` WHERE `user
     </div>
   </div>
 </div>
+
+<script type='text/javascript'>
+    $('#FormReport(<?php echo $imageid; ?>)').submit(function(event) {
+      event.preventDefault(); //prevent default action
+      var post_url = $(this).attr('action'); //get form action url
+      var form_data = $(this).serialize(); //Encode form elements for submission
+
+      $.ajax({
+        url: post_url,
+        type: 'post',
+        data: form_data
+      }).done(function(response) { //
+        $('#report-results').html(response);
+
+      });
+    });
+  </script>
+
       <?php
       
       }
@@ -176,22 +194,7 @@ $findcurrentbookings = mysqli_query($conn, "SELECT * FROM `bookings` WHERE `user
   <?php include "inc/footer.php"; ?>
 </body>
 <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-  <script type='text/javascript'>
-    $('.gallery').submit(function(event) {
-      event.preventDefault(); //prevent default action
-      var post_url = $(this).attr('action'); //get form action url
-      var form_data = $(this).serialize(); //Encode form elements for submission
-
-      $.ajax({
-        url: post_url,
-        type: 'post',
-        data: form_data
-      }).done(function(response) { //
-        $('#report-results').html(response);
-
-      });
-    });
-  </script>
+  
 <script type="text/javascript">
 const myCarousel = document.querySelector('#myCarousel')
 const carousel = new mdb.Carousel(myCarousel)
