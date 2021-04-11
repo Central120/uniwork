@@ -66,7 +66,7 @@ $findimages = mysqli_query($conn, "SELECT * FROM `photo_sharing` WHERE `approver
         $imageTimestamp = $rowimages['timestamp'];
         $approver = $rowimages['approver'];
       
-        if($approver = "pending")
+        if($approver == "pending")
         {
           $approve1 = "Pending Approval";
         }
@@ -76,11 +76,11 @@ $findimages = mysqli_query($conn, "SELECT * FROM `photo_sharing` WHERE `approver
         }
 
         echo "<tr>
-        <td>$username</td>
+        <td>$imageUsername</td>
         <td><a href='../$p_location' target='_blank'>View Image</a></td>
         <td>$title</b></td>
         <td>$caption</td>
-        <td>$$imageTimestamp</td>
+        <td>$imageTimestamp</td>
         <td>$approve1</td>
         
         </tr>
