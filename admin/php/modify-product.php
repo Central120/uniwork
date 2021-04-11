@@ -130,6 +130,8 @@ else {
         </button></div>";
     }
 }
+echo $msg;
+echo $msg1; 
 ?>
 
 
