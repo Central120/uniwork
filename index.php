@@ -29,6 +29,15 @@ session_start();
 <center>
   <h2 class="mb-4">Welcome to Kerry's K9's!</h2><br>
   <p>
+
+  <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+  <ol class="carousel-indicators">
+    <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+    <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+    <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+  </ol>
+
+  
   <?php
 
 $imageQuery = mysqli_query($conn, "SELECT * FROM photo_sharing WHERE approver != 'pending' LIMIT 5");
@@ -43,12 +52,28 @@ while($row = mysqli_fetch_array($imageQuery))
     $pLocation = $row['p_location'];
     ?>
 
-
+<div class="carousel-inner">
+    <div class="carousel-item">
+      <img src="<?php echo $pLocation; ?>" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Third slide label</h5>
+        <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+      </div>
+    </div>
+  </div>
 <?php
 
 }
 ?>
- 
+ <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
     <?php
 $sqlfinddiscounts = "SELECT * FROM `products` WHERE `discount` != '0'";
 $finddiscount = mysqli_query($conn, $sqlfinddiscounts);
