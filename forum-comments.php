@@ -83,6 +83,18 @@ else
           $colour = "";
           $txt = "";
       }
+      if (isset($_SESSION['admin']))
+      {
+        $tools = "<i class='fa fa-trash' aria-hidden="true"></i>";
+      }
+      else if ($session_usern == $commenter)
+      {
+        $tools = "<i class='fa fa-trash' aria-hidden="true"></i>";
+      }
+      else
+      {
+        $tools = "";
+      }
 
       $date1 = strtotime($current_timestamp);
       $date2 = strtotime($timestamp);
@@ -125,7 +137,7 @@ else
       
         <div class='card $colour text-center' style='$txt margin-bottom: 5px'>
     <div class='card-header'>
-        $title from $commenter
+        $title from $commenter $tools
         
     </div>
     <div class='card-body'>
