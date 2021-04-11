@@ -20,7 +20,7 @@ $imageTitle = mysqli_real_escape_string($conn, $_POST['title']);
 $imageCaption = mysqli_real_escape_string($conn, $_POST['caption']);
 
 
-$target_dir = "../../images/uploads/";
+$target_dir = "../images/uploads/";
 $file1 = "images/uploads/" . $_FILES["image_upload"]["name"];
 $file = $_FILES["image_upload"]["name"];
 $target_file = $target_dir . basename($file);
