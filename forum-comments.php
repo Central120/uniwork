@@ -85,11 +85,11 @@ else
       }
       if (isset($_SESSION['admin']))
       {
-        $tools = "<i class='fa fa-trash' aria-hidden="true"></i>";
+        $tools = "<i class='fa fa-trash' aria-hidden='true'></i>";
       }
       else if ($session_usern == $commenter)
       {
-        $tools = "<i class='fa fa-trash' aria-hidden="true"></i>";
+        $tools = "<i class='fa fa-trash' aria-hidden='true'></i>";
       }
       else
       {
