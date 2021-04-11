@@ -101,7 +101,7 @@ if(isset($_POST["submit"])) {
 
 
 // Allow certain file formats
-if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg" && $newimage != $image)
+if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg" && $newimage != $image){
     $msg1 = "<div class='alert alert-danger alert-dismissable fade show' role='alert'><strong>An error occured.</strong> Only JPG, JPEG or PNG images are allowed. <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
         <span aria-hidden='true'>&times;</span>
         </button></div>";
