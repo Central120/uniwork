@@ -18,14 +18,14 @@ $handleoption = mysqli_real_escape_string($conn, $_POST['handle-option']);
 
 if($handleoption == "close")
 {
-    $reportsql = mysqli_query($conn, "UPDATE image_report SET outcome='Closed without action' AND status='closed' WHERE id='$reportid'");
+    $reportsql = mysqli_query($conn, "UPDATE image_report SET outcome='Closed without action', status='closed' WHERE id='$reportid'");
     echo "<div class='alert alert-success alert-dismissable fade show' role='alert'><strong>Closed!</strong> The report has been closed with no action taken. <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
     <span aria-hidden='true'>&times;</span>
     </button></div>";
 }
 else if($handleoption == "delete")
 {
-    $reportsql1 = mysqli_query($conn, "UPDATE image_report SET outcome='Closed & Deleted Image' AND status='closed' WHERE id='$reportid");
+    $reportsql1 = mysqli_query($conn, "UPDATE image_report SET outcome='Closed & Deleted Image', status='closed' WHERE id='$reportid");
     $imagesql = mysqli_query($conn, "DELETE FROM photo_sharing WHERE id='$imageid'");
     echo "<div class='alert alert-success alert-dismissable fade show' role='alert'><strong>Closed & Deleted!</strong> The report has been closed with the action of deleting the image! <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
     <span aria-hidden='true'>&times;</span>
