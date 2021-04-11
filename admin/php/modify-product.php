@@ -45,7 +45,7 @@ if ($countfindproduct != 0)
 {
     $rowfindproduct = mysqli_fetch_assoc($findproduct);
     $image = $rowfindproduct['Image'];
-    $target_dir2 = "../../";
+    $target_dir2 = "../../images/";
     $target_file1 = $target_dir2 . basename($image);
     $error_message = "";
 }
