@@ -2,7 +2,7 @@
 include_once 'inc/dbconnect.php';
 session_start();
 $current_timestamp = date('Y-m-d H:i:s');
-ini_set('display_errors', 1);
+
 
 if (isset($_SESSION['user']))
 {
@@ -59,8 +59,12 @@ else
 <center>
 <div class="container" style='min-height:40vh'>
   <h2 class="mb-4"><?php echo $category_name;?> posts:</h2><br>
-  <table class="table table-hover">
-    <thead class="thead-dark">
+  <?php 
+  if ($ctposts != 0)
+  {
+      echo "
+  <table class='table table-hover'>
+    <thead class='thead-dark'>
       <tr>
         <th>Post</th>
         <th>Author</th>
@@ -69,10 +73,8 @@ else
       </tr>
     </thead>
     <tbody>
-  <br>
-  <?php
-  if ($ctposts != 0)
-  {
+  <br>";
+  
     while ($rowctposts = $findposts->fetch_assoc())
     {
       $post_id = $rowctposts['id'];
