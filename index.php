@@ -60,7 +60,7 @@ $formatting = number_format((float)$new_price, 2, '.','');
   <img class="card-img-top" src="<?php echo $image; ?>" alt="Card image cap">
   <div class="card-body">
     <h5 class="card-title"><?php echo $product_name; ?></h5>
-    <p class="card-text"><s><?php echo "£".$price; ?></s> <?php echo "£" . $formatting; ?></p>
+    <p class="card-text"><s><?php echo "<font color='red'>£".$price."</font>"; ?></s> <?php echo "£" . $formatting; ?></p>
   </div>
 </div>
 <?php
