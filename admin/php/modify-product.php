@@ -62,7 +62,7 @@ $target_file = $target_dir . basename($file);
 $uploadOk = 1;
 $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
 
-if (is_uploaded_file($_FILES['image_upload']['name'])) {
+if (is_uploaded_file("images/" . $_FILES['image_upload']['name'])) {
      
 // Check if image file is a actual image or fake image
 if(isset($_POST["submit"])) {
