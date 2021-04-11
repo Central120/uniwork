@@ -11,6 +11,7 @@ else if(isset($_SESSION['admin']))
 {
     $session_usern = $_SESSION['admin'];
 }
+error_reporting(1);
 
 $reporting = mysqli_real_escape_string($conn, $_POST['reporting']);
 $reporter = mysqli_real_escape_string($conn, $_POST['reporter']);
