@@ -174,17 +174,17 @@ $rowcountbookings = mysqli_fetch_array($resultcountbookings);
     $reviewtxt = "Reviews";
   }
 
-  // sql for counting News Posts
-  $sqlcountnews = "SELECT count(*) as totalnews FROM `forum_posts`";
-  $resultcountnews = mysqli_query($conn, $sqlcountnews);
-  $rowcountnews = mysqli_fetch_array($resultcountnews);
-  if($rowcountnews['totalnews'] == '1')
+  // sql for counting Forums Posts
+  $sqlcountforums = "SELECT count(*) as totalforums FROM `forum_posts`";
+  $resultcountforums = mysqli_query($conn, $sqlcountforums);
+  $rowcountforums = mysqli_fetch_array($resultcountforums);
+  if($rowcountforums['totalforums'] == '1')
   {
-    $newstxt = "Forum Post";
+    $forumstxt = "Forum Post";
   }
   else
   {
-    $newstxt = "Forum Posts";
+    $forumstxt = "Forum Posts";
   }
 
   // sql for counting Image Reports
@@ -257,11 +257,11 @@ $rowcountbookings = mysqli_fetch_array($resultcountbookings);
     </div>
 
     <div class='col-md-3'>
-    <a href='forums' style='color: white' title='Click here to view News and Announcements'>
+    <a href='forums' style='color: white' title='Click here to view Forum Options'>
       <div class='card-counter news'>
         <i class='fa fa-newspaper-o'></i>
-        <span class='count-numbers'>{$rowcountnews['totalnews']}</span>
-        <span class='count-name'>{$newstxt}</span>
+        <span class='count-numbers'>{$rowcountforums['totalforums']}</span>
+        <span class='count-name'>{$forumstxt}</span>
     
       </div>
       </a>

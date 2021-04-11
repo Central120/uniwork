@@ -121,19 +121,12 @@ else
 
       if ($status == "closed")
       {
-        $msgstatus = "Closed";
-        if (isset($_SESSION['admin']))
-        {
-          $input = "<input type='hidden' value='$post_id' name='id'><input type='submit' value='View Post' class='btn btn-success'>";
-        }
-        else
-        {
-          $input = "";
-        }
+        $msgstatus = "Comments disabled";
+        $input = "<input type='hidden' value='$post_id' name='id'><input type='submit' value='View Post' class='btn btn-success'>";
       }
       else
       {
-        $msgstatus = "Open";
+        $msgstatus = "Comments Enabled";
         $input = "<input type='hidden' value='$post_id' name='id'><input type='submit' value='View Post' class='btn btn-success'>";
       }
 
