@@ -102,6 +102,7 @@ else
       // prints years
       $msg = "$years years, $months months, $days days, $hours hours and $minutes minutes ago";
       }
+      
 
       echo "
       <form action='forum-comments.php' method='post'>
@@ -125,8 +126,15 @@ else
     echo "<h5>There are no comments for this post yet.</h5>";
   }
   ?>
-   </tbody>
-</table>
+   
+   <form>
+  <div class="form-group">
+  <label for="exampleFormControlTextarea1">Example textarea</label>
+    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+  </div>
+  <input type="hidden" value="<?php echo $chosen_post_id; ?>" name='ido>d'
+  <button type="submit" value="Post Comment" class="btn btn-primary">
+  </form>
 </div>
 <?php include "inc/footer.php"; ?>
 </body>
