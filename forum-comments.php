@@ -73,10 +73,12 @@ else
       if ($type == "main")
       {
           $colour = "bg-secondary";
+          $txt = "color:white;";
       }
       else
       {
           $colour = "";
+          $txt = "";
       }
 
       $date1 = strtotime($current_timestamp);
@@ -118,7 +120,7 @@ else
 
       echo "
       <form action='forum-comments.php' method='post'>
-        <div class='card $colour text-center' style='margin-bottom: 5px'>
+        <div class='card $colour text-center' style='$txt margin-bottom: 5px'>
     <div class='card-header'>
         Comment from $commenter
     </div>
