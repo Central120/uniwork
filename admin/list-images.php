@@ -59,6 +59,10 @@ $findimages = mysqli_query($conn, "SELECT * FROM `photo_sharing` WHERE `approver
   <?php
     while ($rowimages = $findimages->fetch_assoc())
     {
+      $sqlcountphotos = "SELECT count(*) as totalphotos FROM `photo_sharing`";
+      $resultcountphotos = mysqli_query($conn, $sqlcountphotos);
+      $rowcountphotos = mysqli_fetch_array($resultcountphotos);
+
         $imageid = $rowimages['id'];
         $imageUsername = $rowimages['username'];
         $p_location = $rowimages['p_location'];
@@ -80,13 +84,21 @@ $findimages = mysqli_query($conn, "SELECT * FROM `photo_sharing` WHERE `approver
           $approve1 = $rowimages['approver'];
         }
 
-        echo "<tr>
+        echo "<tr>";
+        if($rowcountphotos['totalphotos'] == '0')
+        {
+          echo "<td>No photos have been submitted at this time.</td>";
+        }
+        else
+        {
+        echo "
         <td>$imageUsername</td>
         <td><a href='../$p_location' target='_blank'>View Image</a></td>
         <td>$title</b></td>
         <td>$caption</td>
         <td>$imageTimestamp</td>
         <td>$approve1</td>
+        
         <td><input type='button' data-toggle='modal' id='cancel_btn' data-target='#manage{$imageid}' class='btn btn-primary' value='Manage Image' /></td>
         
         </tr>
@@ -127,7 +139,7 @@ $findimages = mysqli_query($conn, "SELECT * FROM `photo_sharing` WHERE `approver
       </div>";
 
     }
-
+  }
 
 ?>
  </tbody>
