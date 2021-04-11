@@ -125,23 +125,24 @@ $findreports = mysqli_query($conn, "SELECT * FROM `image_report`");
               </button>
             </div>
             <div class='modal-body'>
-            <div id='manage-results'></div>
-            <div id='mark-results'></div>
-            <div id='delete-result'></div>
-            <p>Please note: Deleting the image cannot be reversed.</p>
+            <div id='report-results'></div>
+            <p>What would you like to do?</p>
+            <form id='HandleReport' action='php/handle-report' method='post'>
+            <input type='hidden' name='reportid' value='$reportid'>
+            <input type='hidden' name='imageid' value='$imageid'>
+            <select name='handle-option' class='form-control'>
+            <option value='close'>Close Report (No Rules Broken)</option>
+            <option value='delete'>Delete Image & Close Report</option>
+            </select>
+            <button type='submit' class='btn btn-secondary'>Handle</button>
+            </form>
+
+
             </div>
             <div class='modal-footer'>
             ";
                    
            echo "
-            <form id='DeleteImage1' action='php/close-report.php' method='post' role='form'>
-            <input type='hidden' value='$reportid' name='imageid' />
-              <button type='submit' class='btn btn-danger'>Close Report</button>
-            </form>
-            <form id='MarkImage' action='php/report-delete-image.php' method='post' role='form'>
-            <input type='hidden' value='$imageid' name='imageid' />
-              <button type='submit' class='btn btn-warning'>Delete Image</button>
-            </form>
             <a href='../$p_location' target='_blank' class='btn btn-primary'>View Image</a>
               <button type='button' class='btn btn-secondary' data-dismiss='modal'>Close</button>
             </div>
@@ -163,7 +164,7 @@ $findreports = mysqli_query($conn, "SELECT * FROM `image_report`");
 
 <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
   <script type='text/javascript'>
-    $('#ApproveImage').submit(function(event) {
+    $('#HandleReport').submit(function(event) {
       event.preventDefault(); //prevent default action
       var post_url = $(this).attr('action'); //get form action url
       var form_data = $(this).serialize(); //Encode form elements for submission
@@ -173,41 +174,7 @@ $findreports = mysqli_query($conn, "SELECT * FROM `image_report`");
         type: 'post',
         data: form_data
       }).done(function(response) { //
-        $('#approve-results').html(response);
-
-      });
-    });
-  </script>
-
-<script type='text/javascript'>
-    $('#MarkImage').submit(function(event) {
-      event.preventDefault(); //prevent default action
-      var post_url = $(this).attr('action'); //get form action url
-      var form_data = $(this).serialize(); //Encode form elements for submission
-
-      $.ajax({
-        url: post_url,
-        type: 'post',
-        data: form_data
-      }).done(function(response) { //
-        $('#mark-results').html(response);
-
-      });
-    });
-  </script>
-
-<script type='text/javascript'>
-    $('#DeleteImage1').submit(function(event) {
-      event.preventDefault(); //prevent default action
-      var post_url = $(this).attr('action'); //get form action url
-      var form_data = $(this).serialize(); //Encode form elements for submission
-
-      $.ajax({
-        url: post_url,
-        type: 'post',
-        data: form_data
-      }).done(function(response) { //
-        $('#delete-result').html(response);
+        $('#report-results').html(response);
 
       });
     });
