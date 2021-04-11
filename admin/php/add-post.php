@@ -38,7 +38,7 @@ else
             $ctsearchpost = mysqli_num_rows($searchpost);
             if ($ctsearchpost != 0)
             {
-                $rowsearchpost = mysqli_num_rows($searchpost);
+                $rowsearchpost = mysqli_fetch_assoc($searchpost);
                 $post_id = $rowsearchpost['id'];
                 $sqladdcontent = "INSERT INTO `forum_comments` VALUES (DEFAULT, '$post_id', '$content', '$session_usern', '$current_timestamp', 'main')";
                 $addcontent = mysqli_query($conn, $sqladdcontent);
