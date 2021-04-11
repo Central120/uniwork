@@ -93,10 +93,12 @@ $findcurrentbookings = mysqli_query($conn, "SELECT * FROM `bookings` WHERE `user
       
       <div class="modal-body">
       <small>You're reporting: <?php echo $author; ?>.<br>Their image: <a href='/<?php echo $pLocation; ?>' target='_blank'>Click to view</a></small>
-      <form action="php/report-photo" method="post" enctype='multipart/form-data'>
+      <div id="report-results"></div>
+      <form id="FormReport" action="php/report-photo" method="post" enctype='multipart/form-data'>
           <div class="form-group">
             <label for="recipient-name" class="col-form-label">Reason Option</label>
             <input type="hidden" name="reporter" value="<?php echo $session_usern; ?>">
+            <input type="hidden" name="reporting" value="<?php echo $author; ?>">
             <select name="report_option" class="form-control" required>
               <option selected disabled>Please select...</option>
               <option value="Harassment">Harassment</option>
@@ -109,7 +111,7 @@ $findcurrentbookings = mysqli_query($conn, "SELECT * FROM `bookings` WHERE `user
           </div>
           <div class="form-group">
             <label for="message-text" class="col-form-label">Report Information</label>
-            <input type="text" class="form-control" name="caption" id="image-description" placeholder="E.g. More information..." required>
+            <input type="text" class="form-control" name="report_information" id="image-description" placeholder="E.g. More information..." required>
           </div>
         
       </div>
@@ -178,7 +180,23 @@ $findcurrentbookings = mysqli_query($conn, "SELECT * FROM `bookings` WHERE `user
   <?php include "inc/footer.php"; ?>
 </body>
 <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <script type='text/javascript'>
+    $('#FormReport').submit(function(event) {
+      event.preventDefault(); //prevent default action
+      var post_url = $(this).attr('action'); //get form action url
+      var form_data = $(this).serialize(); //Encode form elements for submission
 
+      $.ajax({
+        url: post_url,
+        type: 'post',
+        data: form_data
+      }).done(function(response) { //
+        $('#report-results').html(response);
+
+      });
+    });
+  </script>
 <script type="text/javascript">
 const myCarousel = document.querySelector('#myCarousel')
 const carousel = new mdb.Carousel(myCarousel)
