@@ -92,7 +92,7 @@ $counter++;
     <span class="sr-only">Next</span>
   </a>
 </div>
-  
+  <br><br><br>
   </div>
     <?php
 $sqlfinddiscounts = "SELECT * FROM `products` WHERE `discount` != '0'";
