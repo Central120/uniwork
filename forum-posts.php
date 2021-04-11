@@ -119,7 +119,7 @@ else
       $msg = "$years years, $months months, $days days, $hours hours and $minutes minutes ago";
       }
 
-      if ($status == "open" || isset($_SESSION['admin'])))
+      if ($status == "open" || isset($_SESSION['admin']))
       {
         $input = "<input type='hidden' value='$post_id' name='id'><input type='submit' value='View Post' class='btn btn-success'>";
         if (isset($_SESSION['admin']))
