@@ -128,6 +128,7 @@ $findreports = mysqli_query($conn, "SELECT * FROM `image_report`");
             <div id='report-results'></div>
             <p>What would you like to do?</p>
             <form id='HandleReport' action='php/handle-report' method='post'>
+            <div class='form-group'>
             <input type='hidden' name='reportid' value='$reportid'>
             <input type='hidden' name='imageid' value='$imageid'>
             <select name='handle-option' class='form-control'>
@@ -135,6 +136,7 @@ $findreports = mysqli_query($conn, "SELECT * FROM `image_report`");
             <option value='delete'>Delete Image & Close Report</option>
             </select>
             <button type='submit' class='btn btn-secondary'>Handle</button>
+            </div>
             </form>
 
 
