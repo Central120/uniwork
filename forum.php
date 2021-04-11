@@ -42,7 +42,7 @@ $ctcat = mysqli_num_rows($findcategories);
   <body>
   <?php include "inc/header.php"; ?>
 <center>
-<div class="container-fluid" style='min-height:40vh'>
+<div class="container" style='min-height:40vh'>
   <h2 class="mb-4">Welcome to Kerry's K9's Forum</h2><br>
   <p>Below are the forum categories</p>
   <br>
