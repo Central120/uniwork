@@ -119,7 +119,7 @@ else
       $msg = "$years years, $months months, $days days, $hours hours and $minutes minutes ago";
       }
 
-      if ($status == "closed" || isset($_SESSION['admin']))
+      if ($status == "closed")
       {
         $msgstatus = "Closed";
         if (isset($_SESSION['admin']))
