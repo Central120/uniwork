@@ -102,7 +102,7 @@ $findcurrentbookings = mysqli_query($conn, "SELECT * FROM `bookings` WHERE `user
       
       <div class="modal-body">
       <small>Your image will be put as pending whilst our team approves your submission.</small>
-      <form id="Form1" action="inc/submit-photo" method="post">
+      <form action="php/upload-photo" method="post">
           <div class="form-group">
             <label for="recipient-name" class="col-form-label">Image Title</label>
             <input type="text" class="form-control" name="title" id="image-title" placeholder="E.g. Dog Biscuits">
@@ -113,7 +113,7 @@ $findcurrentbookings = mysqli_query($conn, "SELECT * FROM `bookings` WHERE `user
           </div>
           <div class="form-group">
             <label for="message-text" class="col-form-label">Upload Photo:</label>
-            <input type="file" class="form-control-file" name="fileUpload" id="exampleFormControlFile1" accept="image/*">
+            <input type="file" class="form-control-file" name="image_upload" id="exampleFormControlFile1" accept="image/*">
           </div>
         
       </div>
