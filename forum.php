@@ -54,10 +54,11 @@ $ctcat = mysqli_num_rows($findcategories);
       $cat_id = $rowctcat['id'];
       $category = $rowctcat['category'];
       $cat_desc = $rowctcat['category_desc'];
+      $colour = $rowctcat['colour'];
 
       echo "
       <form action='forum-posts.php' method='post'>
-      <div class='card'>
+      <div class='card bg-$colour'>
       <div class='card-body'>
         <h4 class='card-title'>$category</h4>
         <p class='card-text'>$cat_desc</p>
