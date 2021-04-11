@@ -29,50 +29,50 @@ session_start();
   <p>Below are the most recent announcements.</p>
   <br>
   <p>
-</center>
- 
 
+    <?php
+$sqlfinddiscounts = "SELECT * FROM `products` WHERE `discount` != '0'";
+$finddiscount = mysqli_query($conn, $sqlfinddiscounts);
+$countfinddiscount = mysqli_num_rows($finddiscount);
+
+if ($countfinddiscount == '0')
+{
+$discount_message = "We currently have no discounts on offer. Try again later!";
+$discount_style = "";
+}
+else
+{
+$discount_message = "The products we currently have discounted are:<br>";
+echo $discount_message;
+while ($rowfinddiscount = $finddiscount->fetch_assoc())
+{
+$image =$rowfinddiscount['Image'];
+$product_name = $rowfinddiscount['product_name'];
+$price = $rowfinddiscount['price'];
+$discount = $rowfinddiscount['discount'];
+
+$discountcalc = $price / 100 * $discount; 
+$new_price = $price - $discountcalc; 
+$formatting = number_format((float)$new_price, 2, '.','');
+
+?>
 <div class="card" style="width: 18rem;">
-  <img class="card-img-top" src=".../100px180/" alt="Card image cap">
+  <img class="card-img-top" src="<?php echo $image; ?>" alt="Card image cap">
   <div class="card-body">
-    <h5 class="card-title">Card title</h5>
+    <h5 class="card-title"><?php echo $product_name; ?></h5>
     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
   </div>
 </div>
-    
-    
-    
-    <?php
-#$sqlfinddiscounts = "SELECT * FROM `products` WHERE `discount` != '0'";
-#$finddiscount = mysqli_query($conn, $sqlfinddiscounts);
-#$countfinddiscount = mysqli_num_rows($finddiscount);
+<?php
 
-#if ($countfinddiscount == '0')
-#{
-#$discount_message = "We currently have no discounts on offer. Try again later!";
-#$discount_style = "";
-#}
-#else
-#{
-#$discount_message = "The products we currently have discounted are:<br>";
-#echo $discount_message;
-#while ($rowfinddiscount = $finddiscount->fetch_assoc())
-#{
-#$image =$rowfinddiscount['Image'];
-#$product_name = $rowfinddiscount['product_name'];
-#$price = $rowfinddiscount['price'];
-#$discount = $rowfinddiscount['discount'];
 
-#$discountcalc = $price / 100 * $discount; 
-#$new_price = $price - $discountcalc; 
-#$formatting = number_format((float)$new_price, 2, '.','');
 
 #$discount_style = "<img src='$image' style='height: 100px; width: 100px;'/><h5 style='display:list-item;'>$product_name - FROM: £$price, NOW: £$formatting ($discount% off!)</h5>";
 
 #echo $discount_style; 
-#}
-#}
-#echo "<br>";
+}
+}
+echo "<br>";
 ?>
 </p>
 </center>
