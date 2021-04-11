@@ -52,7 +52,7 @@ while($row = mysqli_fetch_array($imageQuery))
   </ol>
   <div class="carousel-inner">
     <div class="carousel-item">
-      <img class="d-block w-100" src="<?php echo $p_location; ?>" alt="First slide">
+      <img class="d-block w-100" src="<?php echo $pLocation; ?>" alt="First slide">
     </div>
  
   <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
