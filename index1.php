@@ -20,19 +20,14 @@ session_start();
   {
     margin-top: 20% !important; 
   }
-
-  .card {display:inline-block; margin-bottom: 10px; }
     </style>
   </head>
   <body>
   <?php include "inc/header.php"; ?>
 <center>
   <h2 class="mb-4">Welcome to Kerry's K9's!</h2><br>
-  <p>Below are the most recent announcements.</p>
-  <br>
-  <p>
-
-    <?php
+  
+  <p><?php
 $sqlfinddiscounts = "SELECT * FROM `products` WHERE `discount` != '0'";
 $finddiscount = mysqli_query($conn, $sqlfinddiscounts);
 $countfinddiscount = mysqli_num_rows($finddiscount);
@@ -57,21 +52,9 @@ $discountcalc = $price / 100 * $discount;
 $new_price = $price - $discountcalc; 
 $formatting = number_format((float)$new_price, 2, '.','');
 
-?>
-<div class="card" style="width: 18rem;">
-  <img class="card-img-top" src="<?php echo $image; ?>" alt="Card image cap">
-  <div class="card-body">
-    <h5 class="card-title"><?php echo $product_name; ?></h5>
-    <p class="card-text"><s><?php echo "£".$price; ?></s> <?php echo "£" . $formatting; ?></p>
-  </div>
-</div>
-<?php
+$discount_style = "<img src='$image' style='height: 100px; width: 100px;'/><h5 style='display:list-item;'>$product_name - FROM: £$price, NOW: £$formatting ($discount% off!)</h5>";
 
-
-
-#$discount_style = "<img src='$image' style='height: 100px; width: 100px;'/><h5 style='display:list-item;'>$product_name - FROM: £$price, NOW: £$formatting ($discount% off!)</h5>";
-
-#echo $discount_style; 
+echo $discount_style; 
 }
 }
 echo "<br>";
