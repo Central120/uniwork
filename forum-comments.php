@@ -57,7 +57,8 @@ else
   <?php include "inc/header.php"; ?>
 <center>
 <div class="container" style='min-height:40vh'>
-  <h2 class="mb-4"><?php echo $post_name;?> </h2><br>
+  <h2 class="mb-4"><?php echo $posts_name;?> </h2><br>
+  <div class="overflow-auto">
   <?php 
   if ($ctcomments != 0)
   {
@@ -71,7 +72,7 @@ else
 
       if ($type == "main")
       {
-          $colour = "bg-dark";
+          $colour = "bg-secondary";
       }
       else
       {
@@ -137,7 +138,7 @@ else
     echo "<h5>There are no comments for this post yet.</h5>";
   }
   ?>
-   
+   </div>
    <form>
   <div class="form-group">
   <label for="exampleFormControlTextarea1">Example textarea</label>
