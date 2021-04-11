@@ -12,12 +12,13 @@ else if(isset($_SESSION['admin']))
     $session_usern = $_SESSION['admin'];
 }
 
+$imageid = mysqli_real_escape_string($conn, $_POST['imageid']);
 $reporter = mysqli_real_escape_string($conn, $_POST['reporter']);
 $reporting = mysqli_real_escape_string($conn, $_POST['reporting']);
 $reportoption = mysqli_real_escape_string($conn, $_POST['reportoption']);
 $reportinformation = mysqli_real_escape_string($conn, $_POST['reportinformation']);
 
-$reportsql = "INSERT INTO image_report VALUES(DEFAULT, '$reporter', '$reporting', '$reportoption', '$reportinformation', 'pending', 'open')";
+$reportsql = "INSERT INTO image_report VALUES(DEFAULT, '$reporter', '$reporting', '$reportoption', '$reportinformation', 'pending', 'open', '$imageid')";
 
 if(mysqli_query($conn,$reportsql))
 {
@@ -31,7 +32,6 @@ else
     <span aria-hidden='true'>&times;</span>
     </button></div>";
 
-    echo("Error description: " . $mysqli->error);
 }
 
 

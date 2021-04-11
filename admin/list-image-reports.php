@@ -13,13 +13,13 @@ else
 }
 
 
-$findimages = mysqli_query($conn, "SELECT * FROM `photo_sharing` WHERE `approver` != ''");
+$findreports = mysqli_query($conn, "SELECT * FROM `image_report`");
 
 ?>
 <!doctype html>
 <html lang="en">
   <head>
-  	<title>Kerry's K9's - Submitted Photos</title>
+  	<title>Kerry's K9's - Image Reports</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
@@ -37,7 +37,7 @@ $findimages = mysqli_query($conn, "SELECT * FROM `photo_sharing` WHERE `approver
     <?php include "inc/header.php"; ?>
   
         <center>
-    <h2 class="mb-42">Submitted Photos</h2>
+    <h2 class="mb-42">Image Reports</h2>
     <div id="server-results"></div>
     <div class="container" style='margin-bottom: 30%'>
     <div class="d-flex justify-content-center">
@@ -46,7 +46,7 @@ $findimages = mysqli_query($conn, "SELECT * FROM `photo_sharing` WHERE `approver
                 <table class="table table-striped">
                     <thead>
                         <tr>
-                            <th scope="col">Username</th>
+                            <th scope="col">Reporter</th>
                             <th scope="col">Image<br><small>Click to view image</small></th>
                             <th scope="col">Image Title</th>
                             <th scope="col">Image Caption</th>
