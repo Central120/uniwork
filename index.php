@@ -56,24 +56,11 @@ session_start();
   <?php
 
 $imageQuery = mysqli_query($conn, "SELECT * FROM photo_sharing WHERE approver != 'pending' LIMIT 5");
+$row = mysqli_fetch_array($imageQuery);
 
-while($row = mysqli_fetch_array($imageQuery))
+foreach ($result as $row)
 {
-  $imageid = $row['id'];
-    $author = $row['username'];
-    $productName = $row['product_name'];
-    $caption = $row['caption'];
-    $imageTimestamp = $row['timestamp'];
-    $pLocation = $row['p_location'];
-
-   
-    ?>
-
-
-		@{int i = 0;}
-    @foreach (var item in Model) {
-      i++;
-      var active = i == 1 ? "active" : "";
+		?>
 
       <div class="carousel-inner" role="listbox">
     <div class="carousel-item active">
@@ -81,11 +68,8 @@ while($row = mysqli_fetch_array($imageQuery))
       <img src="<?php echo $pLocation; ?>" alt="First slide">
     </div>
   </div>
-    }	
-
-
-<?php
-
+  
+  <?php
 }
 ?>
 	<a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
