@@ -44,7 +44,7 @@ else
                 $addcontent = mysqli_query($conn, $sqladdcontent);
                 if ($addcontent)
                 {
-                    echo "<script>window.location.replace('../add-post');</script>";
+                   // echo "<script>window.location.replace('../add-post');</script>";
                 }
                 else
                 {
