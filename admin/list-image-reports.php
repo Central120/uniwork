@@ -110,16 +110,16 @@ $findreports = mysqli_query($conn, "SELECT * FROM `image_report`");
         <td>$statusofreport</td>
         
         
-        <td><input type='button' data-toggle='modal' id='cancel_btn' data-target='#manage{$imageid}' class='btn btn-primary' value='Manage Image' /></td>
+        <td><input type='button' data-toggle='modal' id='cancel_btn' data-target='#manage{$reportid}' class='btn btn-primary' value='Manage Report' /></td>
         
         </tr>
         ";
 
-        echo "<div class='modal fade' id='manage{$imageid}' tabindex='-1' role='dialog' aria-labelledby='manage{$imageid}' aria-hidden='true'>
+        echo "<div class='modal fade' id='manage{$reportid}' tabindex='-1' role='dialog' aria-labelledby='manage{$reportid}' aria-hidden='true'>
         <div class='modal-dialog' role='document'>
           <div class='modal-content' style='width:150%;left:-10%;'>
             <div class='modal-header'>
-              <h5 class='modal-title'>What would you like to do with $imageUsername's image?</h5>
+              <h5 class='modal-title'>What would you like to do with $reporter's report?</h5>
               <button type='button' class='close' data-dismiss='modal' aria-label='Close'>
                 <span aria-hidden='true'>&times;</span>
               </button>
@@ -134,13 +134,13 @@ $findreports = mysqli_query($conn, "SELECT * FROM `image_report`");
             ";
                    
            echo "
-            <form id='DeleteImage1' action='php/delete-image.php' method='post' role='form'>
-            <input type='hidden' value='$imageid' name='imageid' />
-              <button type='submit' class='btn btn-danger'>Delete Image</button>
+            <form id='DeleteImage1' action='php/close-report.php' method='post' role='form'>
+            <input type='hidden' value='$reportid' name='imageid' />
+              <button type='submit' class='btn btn-danger'>Close Report</button>
             </form>
-            <form id='MarkImage' action='php/mark-image.php' method='post' role='form'>
+            <form id='MarkImage' action='php/delete-image.php' method='post' role='form'>
             <input type='hidden' value='$imageid' name='imageid' />
-              <button type='submit' class='btn btn-warning'>Mark Image for Review</button>
+              <button type='submit' class='btn btn-warning'>Delete Image</button>
             </form>
             <a href='../$p_location' target='_blank' class='btn btn-primary'>View Image</a>
               <button type='button' class='btn btn-secondary' data-dismiss='modal'>Close</button>
