@@ -84,7 +84,7 @@ else{
     }
     else{
         $newimage = $file;
-        $msg1 = "<div class='alert alert-danger alert-dismissable fade show' role='alert'><strong>An error occured.</strong> There was an error finding the old image. <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+        $msg2 = "<div class='alert alert-danger alert-dismissable fade show' role='alert'><strong>An error occured.</strong> There was an error finding the old image. <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
         <span aria-hidden='true'>&times;</span>
         </button></div>";
     }
@@ -96,7 +96,7 @@ if(isset($_POST["submit"])) {
   if($check !== false) {
     $uploadOk = 1;
   } else {
-    $msg1 = "<div class='alert alert-danger alert-dismissable fade show' role='alert'><strong>An error occured.</strong> The image you uploaded is not a real image. <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+    $msg3 = "<div class='alert alert-danger alert-dismissable fade show' role='alert'><strong>An error occured.</strong> The image you uploaded is not a real image. <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
         <span aria-hidden='true'>&times;</span>
         </button></div>";
     $uploadOk = 0;
@@ -106,7 +106,7 @@ if(isset($_POST["submit"])) {
 
 // Allow certain file formats
 if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg" && $imageFileType != ""){
-    $msg1 = "<div class='alert alert-danger alert-dismissable fade show' role='alert'><strong>An error occured.</strong> Only JPG, JPEG or PNG images are allowed. <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+    $msg4 = "<div class='alert alert-danger alert-dismissable fade show' role='alert'><strong>An error occured.</strong> Only JPG, JPEG or PNG images are allowed. <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
         <span aria-hidden='true'>&times;</span>
         </button></div>";
   $uploadOk = 0;
@@ -114,7 +114,7 @@ if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg
 
 // Check if $uploadOk is set to 0 by an error
 if ($uploadOk == 0) {
-    $msg = "<div class='alert alert-danger alert-dismissable fade show' role='alert'><strong>An error occured.</strong> The image was not uploaded. <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+    $msg5 = "<div class='alert alert-danger alert-dismissable fade show' role='alert'><strong>An error occured.</strong> The image was not uploaded. <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
     <span aria-hidden='true'>&times;</span>
     </button></div>";
 // if everything is ok, try to upload file
@@ -127,17 +127,17 @@ if ($uploadOk == 0) {
      $updateproduct = mysqli_query($conn, $sqlupdateproduct);
     if ($updateproduct)
     {
-    $msg1 = "<script>window.location.replace('../modify-products');</script>";
+    $msg6 = "<script>window.location.replace('../modify-products');</script>";
 echo $sqlupdateproduct;
     }
     else
     {
-        $msg1 = "<div class='alert alert-danger alert-dismissable fade show' role='alert'><strong>An error occured.</strong> Your product was not added. $sqlupdateproduct <br> $target_file <br> $target_file1<button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+        $msg7 = "<div class='alert alert-danger alert-dismissable fade show' role='alert'><strong>An error occured.</strong> Your product was not added. $sqlupdateproduct <br> $target_file <br> $target_file1<button type='button' class='close' data-dismiss='alert' aria-label='Close'>
         <span aria-hidden='true'>&times;</span>
         </button></div>";
     }
   } else {
-    $msg1 = "<div class='alert alert-danger alert-dismissable fade show' role='alert'><strong>An error occured.</strong> There was an error uploading your image. <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+    $msg8 = "<div class='alert alert-danger alert-dismissable fade show' role='alert'><strong>An error occured.</strong> There was an error uploading your image. <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
     <span aria-hidden='true'>&times;</span>
     </button></div>";
   }
@@ -165,8 +165,14 @@ echo $sqlupdateproduct;
     <?php include "../inc/header.php"; ?>
     <div class="container">
     <div class="d-flex justify-content-center">
-    <?php echo $msg; ?><br>
     <?php echo $msg1; ?><br>
+    <?php echo $msg2; ?><br>
+    <?php echo $msg3; ?><br>
+    <?php echo $msg4; ?><br>
+    <?php echo $msg5; ?><br>
+    <?php echo $msg6; ?><br>
+    <?php echo $msg7; ?><br>
+    <?php echo $msg8; ?><br>
     <button id='retry' class='btn btn-warning'>Try again</button>
     </div>
     </div>
