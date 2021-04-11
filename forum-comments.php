@@ -25,14 +25,14 @@ $ctposts = mysqli_num_rows($findposts);
 if ($ctposts != 0)
 {
 $rowposts = mysqli_fetch_assoc($findposts);
-$posts_name = $rowposts['forum_posts'];
+$posts_name = $rowposts['forum_post'];
 $sqlfindcomments = "SELECT * FROM `forum_comments` WHERE `post_id` = '$chosen_post' ORDER BY `timestamp` DESC";
 $findcomments = mysqli_query($conn, $sqlfindcomments);
 $ctcomments = mysqli_num_rows($findcomments);
 }
 else
 {
-    echo "<h5>Category could not be found</h5>";
+    echo "<h5>Post could not be found</h5>";
 }
 ?>
 
