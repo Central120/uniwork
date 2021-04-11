@@ -125,22 +125,7 @@ $findcurrentbookings = mysqli_query($conn, "SELECT * FROM `bookings` WHERE `user
   </div>
 </div>
 
-<script type='text/javascript'>
-    $('#FormReport(<?php echo $imageid; ?>)').submit(function(event) {
-      event.preventDefault(); //prevent default action
-      var post_url = $(this).attr('action'); //get form action url
-      var form_data = $(this).serialize(); //Encode form elements for submission
 
-      $.ajax({
-        url: post_url,
-        type: 'post',
-        data: form_data
-      }).done(function(response) { //
-        $('#report-results').html(response);
-
-      });
-    });
-  </script>
 
       <?php
       
@@ -194,7 +179,22 @@ $findcurrentbookings = mysqli_query($conn, "SELECT * FROM `bookings` WHERE `user
   <?php include "inc/footer.php"; ?>
 </body>
 <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-  
+<script type='text/javascript'>
+    $('#FormReport(<?php echo $imageid; ?>)').submit(function(event) {
+      event.preventDefault(); //prevent default action
+      var post_url = $(this).attr('action'); //get form action url
+      var form_data = $(this).serialize(); //Encode form elements for submission
+
+      $.ajax({
+        url: post_url,
+        type: 'post',
+        data: form_data
+      }).done(function(response) { //
+        $('#report-results').html(response);
+
+      });
+    });
+  </script>
 <script type="text/javascript">
 const myCarousel = document.querySelector('#myCarousel')
 const carousel = new mdb.Carousel(myCarousel)
