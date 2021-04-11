@@ -30,28 +30,15 @@ session_start();
   <br>
   <p>
 </center>
-  <div class="block">
+ 
 
-<div class="top">
-  <ul>
-    <li><a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a></li>
-    <li><span class="converse">Converse</span></li>
-    <li><a href="#"><i class="fa fa-shopping-basket" aria-hidden="true"></i>
-</a></li>
-  </ul>
-</div>
-
-<div class="middle">
-  <img src="https://www.converse.com/on/demandware.static/-/Sites-ConverseMaster/default/dw33d36cdd/images/hi-res/654210C_standard.jpg?sw=580&sh=580&sm=fit" alt="pic" />
-</div>
-
-<div class="bottom">
-  <div class="heading">Chuck Taylor All Star Neon Floral Yth/Jr</div>
-  <div class="info">Neon converse edition</div>
-  <div class="style">Color: Black/White/Aegean Aqua / Style: 654210C</div>
-  <div class="price">$35.00 <span class="old-price">$45.00</span></div>
-</div>
-
+<div class="card" style="width: 18rem;">
+  <img class="card-img-top" src=".../100px180/" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title">Card title</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div>
 </div>
     
     
