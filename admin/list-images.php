@@ -42,6 +42,7 @@ $findimages = mysqli_query($conn, "SELECT * FROM `photo_sharing` WHERE `approver
     <div class="container" style='margin-bottom: 30%'>
     <div class="d-flex justify-content-center">
     <div class="table-responsive">
+      <div id="approve-results"></div>
                 <table class="table table-striped">
                     <thead>
                         <tr>
@@ -69,7 +70,7 @@ $findimages = mysqli_query($conn, "SELECT * FROM `photo_sharing` WHERE `approver
         if($approver == "pending")
         {
           $approve1 = "<form id='#ApproveImage' action='php/approve-image' method='post'>
-          <input type='hidden' value='$imageid'>
+          <input type='hidden' value='$imageid' name='imageid'>
           <button type='submit' class='btn btn-success'>Approve Image</button>
           </form>
           ";
@@ -133,6 +134,33 @@ $findimages = mysqli_query($conn, "SELECT * FROM `photo_sharing` WHERE `approver
         </div>
   <?php include "inc/footer.php"; ?>
 </body>
+
+<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <script type='text/javascript'>
+    $('#ApproveImage').submit(function(event) {
+      event.preventDefault(); //prevent default action
+      var post_url = $(this).attr('action'); //get form action url
+      var form_data = $(this).serialize(); //Encode form elements for submission
+
+      $.ajax({
+        url: post_url,
+        type: 'post',
+        data: form_data
+      }).done(function(response) { //
+        $('#approve-results').html(response);
+
+      });
+    });
+  </script>
+<script>
+$('#forgot').click(function(){
+window.location.replace('forgot-password');
+});
+
+$('#signup').click(function() {
+window.location.replace('signup');
+});
+  </script>
 
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
