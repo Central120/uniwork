@@ -115,7 +115,7 @@ $findimages = mysqli_query($conn, "SELECT * FROM `photo_sharing` WHERE `approver
             <input type='hidden' value='$imageid' name='id' />
               <button type='submit' class='btn btn-success'>Approve Image Submission</button>
             </form>
-            <a href='../$p_location' target='_blank' class='btn btn-primary' data-dismiss='modal'>View Image</a>
+            <a href='../$p_location' target='_blank' class='btn btn-primary'>View Image</a>
               <button type='button' class='btn btn-secondary' data-dismiss='modal'>Close</button>
             </div>
           </div>
