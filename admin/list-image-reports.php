@@ -138,7 +138,7 @@ $findreports = mysqli_query($conn, "SELECT * FROM `image_report`");
             <input type='hidden' value='$reportid' name='imageid' />
               <button type='submit' class='btn btn-danger'>Close Report</button>
             </form>
-            <form id='MarkImage' action='php/delete-image.php' method='post' role='form'>
+            <form id='MarkImage' action='php/report-delete-image.php' method='post' role='form'>
             <input type='hidden' value='$imageid' name='imageid' />
               <button type='submit' class='btn btn-warning'>Delete Image</button>
             </form>
