@@ -14,7 +14,7 @@ else if(isset($_SESSION['admin']))
 
 $reporter = mysqli_real_escape_string($conn, $_POST['reporter']);
 $reporting = mysqli_real_escape_string($conn, $_POST['reporting']);
-$reportoption = mysqli_real_escape_string($conn, $_POST['reportoption']);
+$reportoption = $_GET['reportoption'];
 $reportinformation = mysqli_real_escape_string($conn, $_POST['reportinformation']);
 
 $reportsql = "INSERT INTO image_report VALUES(DEFAULT, '$reporter', '$reporting', $reportoption', '$reportinformation', 'pending', 'pending')";
