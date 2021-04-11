@@ -111,7 +111,7 @@ $findimages = mysqli_query($conn, "SELECT * FROM `photo_sharing` WHERE `approver
             ";
                    
            echo "
-            <form id='MarkImage' action='php/delete-image.php' method='post' role='form'>
+            <form id='DeleteImage1' action='php/delete-image.php' method='post' role='form'>
             <input type='hidden' value='$imageid' name='imageid' />
               <button type='submit' class='btn btn-danger'>Delete Image</button>
             </form>
@@ -191,8 +191,9 @@ window.location.replace('signup');
 });
   </script>
 
+
 <script type='text/javascript'>
-    $('#DeleteImage').submit(function(event) {
+    $('#DeleteImage1').submit(function(event) {
       event.preventDefault(); //prevent default action
       var post_url = $(this).attr('action'); //get form action url
       var form_data = $(this).serialize(); //Encode form elements for submission
@@ -216,6 +217,7 @@ $('#signup').click(function() {
 window.location.replace('signup');
 });
   </script>
+
 
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
