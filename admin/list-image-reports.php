@@ -117,7 +117,7 @@ $findreports = mysqli_query($conn, "SELECT * FROM `image_report`");
 
         echo "<div class='modal fade' id='manage{$reportid}' tabindex='-1' role='dialog' aria-labelledby='manage{$reportid}' aria-hidden='true'>
         <div class='modal-dialog' role='document'>
-          <div class='modal-content' style='width:150%;left:-10%;'>
+          <div class='modal-content'>
             <div class='modal-header'>
               <h5 class='modal-title'>What would you like to do with $reporter's report?</h5>
               <button type='button' class='close' data-dismiss='modal' aria-label='Close'>
@@ -126,7 +126,6 @@ $findreports = mysqli_query($conn, "SELECT * FROM `image_report`");
             </div>
             <div class='modal-body'>
             <div id='report-results'></div>
-            <p>What would you like to do?</p>
             <form id='HandleReport' action='php/handle-report' method='post'>
             <div class='form-group'>
             <input type='hidden' name='reportid' value='$reportid'>
