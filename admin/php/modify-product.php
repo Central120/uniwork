@@ -101,6 +101,7 @@ if ($uploadOk == 0) {
     $updateproduct = mysqli_query($conn, $sqlupdateproduct);
     if ($updateproduct)
     {
+        $msg1 = "testyup";
       //  $msg1 = "<script>window.location.replace('../modify-products');</script>";
     }
     else
@@ -122,6 +123,7 @@ else {
     $updateproduct = mysqli_query($conn, $sqlupdateproduct);
     if ($updateproduct)
     {
+        $msg1 = "testy";
       //  $msg1 = "<script>window.location.replace('../modify-products');</script>";
     }
     else
