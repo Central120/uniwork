@@ -2,6 +2,7 @@
 include_once '../inc/dbconnect.php';
 session_start();
 $current_timestamp = date('Y-m-d H:i:s');
+ini_set('display_errors', 1);
 
 if(isset($_SESSION['admin']))
 {
@@ -18,7 +19,7 @@ $content = mysqli_real_escape_string($conn, $_POST['content']);
 
 $sqlfindcategory = "SELECT * FROM `forum_category` WHERE `id` = '$category'";
 $procfindcategory = mysqli_query($conn, $sqlfindcategory);
-$ctfindcategory = mysqli_num_rows($sqlfindcategory);
+$ctfindcategory = mysqli_num_rows($procfindcategory);
 
 if ($title == "")
 {
