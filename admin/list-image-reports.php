@@ -63,7 +63,7 @@ $findreports = mysqli_query($conn, "SELECT * FROM `image_report`");
       
         $reportid = $reportrow['id'];
         $reporter = $reportrow['reporter'];
-        $reportinng = $reportrow['reported'];
+        $reporting = $reportrow['reported'];
         $reportoption = $reportrow['reason_title'];
         $reportinformation = $reportrow['reason_description'];
         $reportoutcome = $reportrow['outcome'];
