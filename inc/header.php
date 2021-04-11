@@ -109,7 +109,7 @@ else if(isset($_SESSION['user']))
           if (isset($_SESSION['admin']))
           {
             ?>
-          <a class="dropdown-item <?php if (strpos($url,'adminlogin') !== false) {
+          <a class="dropdown-item <?php if (strpos($url,'admin/') !== false) {
     echo 'active';
 } ?>" href="admin/index">Admin</a>
           <?php 
