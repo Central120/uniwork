@@ -59,7 +59,7 @@ if ($uploadOk == 0) {
   if (move_uploaded_file($_FILES["image_upload"]["tmp_name"], $target_file)) {
     if (file_exists($target_file)) {
     $msg1 = "The image ". htmlspecialchars( basename( $_FILES["image_upload"]["name"])). " has been uploaded.";
-    $sqlinsertimage = "INSERT INTO photo_sharing VALUES(DEFAULT, '$file', '$imageTitle', '$imageCaption', '$current_timestamp', '$session_usern'";
+    $sqlinsertimage = "INSERT INTO photo_sharing VALUES(DEFAULT, '$file', '$imageTitle', '$imageCaption', '$current_timestamp', 'pending'";
     $insertimage = mysqli_query($conn, $sqlinsertimage);
     if ($insertimage)
     {
