@@ -51,7 +51,7 @@ else
      </div>
      <div class="form-group">
     <label for="post_content">Colour</label>
-    <select>
+    <select name="colour" class="form-control">
     <option value="green">Green</option>
     <option value="red">Red</option>
     <option value="yellow">Yellow</option>
