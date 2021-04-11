@@ -22,11 +22,11 @@ $reportresult = mysqli_query($conn, $reportsql);
 
 if($reportrow = mysqli_fetch_array($reportresult))
 {
-    echo "<div class='alert alert-success alert-dismissable fade show' role='alert'><strong>Done!</strong> Your report has been sent. Our moderation team has received the report and will handle the report. <button type='button' class='close' data-dismiss='alert' aria-label='Close'> <span aria-hidden='true'>&times;</span></button></div>"
+    echo "<div class='alert alert-success alert-dismissable fade show' role='alert'><strong>Done!</strong> Your report has been sent. Our moderation team has received the report and will handle the report. <button type='button' class='close' data-dismiss='alert' aria-label='Close'> <span aria-hidden='true'>&times;</span></button></div>";
 }
 else
 {
-    echo "<div class='alert alert-danger alert-dismissable fade show' role='alert'><strong>Uhh ohh.</strong> Somehow we couldn't process your report. Try again; if you continue to receive this error, please contact our team. <button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button></div>"
+    echo "<div class='alert alert-danger alert-dismissable fade show' role='alert'><strong>Uhh ohh.</strong> Somehow we couldn't process your report. Try again; if you continue to receive this error, please contact our team. <button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button></div>";
 }
 
 ?>
