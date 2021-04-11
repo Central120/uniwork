@@ -116,10 +116,11 @@ else
 
       echo "
       <form action='forum-comments.php' method='post'>
+      <tr>
       <td>$post_name</td>
       <td>$poster</td>
       <td title='$timestamp'>$msg</td>
-      <td><input type='hidden' value='$post_id' name='id'><input type='submit' value='View Post' class='btn btn-success'></td>
+      <td><input type='hidden' value='$post_id' name='id'><input type='submit' value='View Post' class='btn btn-success'></td></tr>
     </form>";
     }
   }
@@ -128,6 +129,8 @@ else
     echo "<h5>There are no posts for this category</h5>";
   }
   ?>
+   </tbody>
+</table>
 </div>
 <?php include "inc/footer.php"; ?>
 </body>
