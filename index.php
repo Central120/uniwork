@@ -30,14 +30,14 @@ session_start();
   <h2 class="mb-4">Welcome to Kerry's K9's!</h2><br>
   <p>
 
-  <div class="container">
-		<div class="carousel slide" id="main-carousel" data-ride="carousel">
-			<ol class="carousel-indicators">
-				<li data-target="#main-carousel" data-slide-to="0" class="active"></li>
-				<li data-target="#main-carousel" data-slide-to="1"></li>
-				<li data-target="#main-carousel" data-slide-to="2"></li>
-				<li data-target="#main-carousel" data-slide-to="3"></li>
-			</ol><!-- /.carousel-indicators -->
+  <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+  <ol class="carousel-indicators">
+    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+  </ol>
+  
+ 
 
   
   <?php
@@ -56,31 +56,35 @@ while($row = mysqli_fetch_array($imageQuery))
 
 
 			
-			<div class="carousel-inner">
-				<div class="carousel-item active">
-					<img class="d-block img-fluid" src="<?php echo $pLocation; ?>" alt="">
-					<div class="carousel-caption d-none d-md-block">
-						<h1>Mountain</h1>
-					</div>
-				</div>
-
-			</div><!-- /.carousel-inner -->
+<div class="carousel-inner" role="listbox">
+    <div class="carousel-item active">
+			<p class="carouselTitle">Arashiyama</p>
+      <img src="http://kclui.com/IVEST/ITP4208/images/BS4Carousel/carousel-1.jpg" alt="First slide">
+    </div>
+    <div class="carousel-item">
+			<p class="carouselTitle">Uji</p>
+      <img src="http://kclui.com/IVEST/ITP4208/images/BS4Carousel/carousel-2.jpg" alt="Second slide">
+    </div>
+    <div class="carousel-item">
+			<p class="carouselTitle">Kiyomizu-dera</p>
+      <img src="http://kclui.com/IVEST/ITP4208/images/BS4Carousel/carousel-3.jpg" alt="Third slide">
+    </div>
+  </div>
 		
 <?php
 
 }
 ?>
 	
-  <a href="#main-carousel" class="carousel-control-prev" data-slide="prev">
-				<span class="carousel-control-prev-icon"></span>
-				<span class="sr-only" aria-hidden="true">Prev</span>
-			</a>
-			<a href="#main-carousel" class="carousel-control-next" data-slide="next">
-				<span class="carousel-control-next-icon"></span>
-				<span class="sr-only" aria-hidden="true">Next</span>
-			</a>
-		</div><!-- /.carousel -->
-	</div><!-- /.container -->
+  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+    <span class="icon-prev" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+    <span class="icon-next" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+  </div>
     <?php
 $sqlfinddiscounts = "SELECT * FROM `products` WHERE `discount` != '0'";
 $finddiscount = mysqli_query($conn, $sqlfinddiscounts);
