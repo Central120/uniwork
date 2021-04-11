@@ -86,7 +86,7 @@ $findimages = mysqli_query($conn, "SELECT * FROM `photo_sharing` WHERE `approver
         <td>$caption</td>
         <td>$imageTimestamp</td>
         <td>$approve1</td>
-        <td><input type='button' data-toggle='modal' id='cancel_btn' data-target='#manage{$imageid}' class='btn btn-warning' value='Manage Image' /></td>
+        <td><input type='button' data-toggle='modal' id='cancel_btn' data-target='#manage{$imageid}' class='btn btn-primary' value='Manage Image' /></td>
         
         </tr>
         ";
@@ -113,7 +113,7 @@ $findimages = mysqli_query($conn, "SELECT * FROM `photo_sharing` WHERE `approver
             </form>
             <form action='php/mark-image.php' method='post' role='form'>
             <input type='hidden' value='$imageid' name='id' />
-              <button type='submit' class='btn btn-success'>Mark Image for Review</button>
+              <button type='submit' class='btn btn-warning'>Mark Image for Review</button>
             </form>
             <a href='../$p_location' target='_blank' class='btn btn-primary'>View Image</a>
               <button type='button' class='btn btn-secondary' data-dismiss='modal'>Close</button>
