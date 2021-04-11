@@ -65,16 +65,24 @@ while($row = mysqli_fetch_array($imageQuery))
     $caption = $row['caption'];
     $imageTimestamp = $row['timestamp'];
     $pLocation = $row['p_location'];
+
+   
     ?>
 
 
-			
-<div class="carousel-inner" role="listbox">
+		@{int i = 0;}
+    @foreach (var item in Model) {
+      i++;
+      var active = i == 1 ? "active" : "";
+
+      <div class="carousel-inner" role="listbox">
     <div class="carousel-item active">
 			<p class="carouselTitle">Arashiyama</p>
       <img src="<?php echo $pLocation; ?>" alt="First slide">
     </div>
   </div>
+    }	
+
 
 <?php
 
