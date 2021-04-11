@@ -19,13 +19,16 @@ $countfindproduct = mysqli_num_rows($findproduct);
 
 if ($countfindproduct != 0){
     $rowfindproduct = mysqli_fetch_assoc($findproduct);
+    $product_name = $rowfindproduct['product_name'];
     $image = $rowfindproduct['Image'];
     $file = "../../$image";
     if(file_exists($file)){
         unlink($file);
         $sqldeleteproduct = "DELETE FROM `products` WHERE `id` = '$product_id'";
+        $sqldeletefromcart = "DELETE FROM `cart` WHERE `product` = '$product_name'";
+        $deletefromcart = mysqli_query($conn, $sqldeletefromcart);
         $deleteproduct = mysqli_query($conn, $sqldeleteproduct);
-        if ($deleteproduct){
+        if ($deleteproduct && $deletefromcart){
             echo "<script>window.location.replace('../modify-products');</script>";
         }
         else{
