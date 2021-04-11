@@ -197,7 +197,7 @@ $rowcountbookings = mysqli_fetch_array($resultcountbookings);
   }
   else
   {
-    $imgreporttxt = "Image Reports"
+    $imgreporttxt = "Image Reports";
   }
 
         echo "
