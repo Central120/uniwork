@@ -57,7 +57,12 @@ $final_stock = ceil($stock); // ensures the value is rounded to the nearest whol
 
 $target_dir = "../../images/";
 $file = "images/" . $_FILES["image_upload"]["name"];
-$target_file = $target_dir . basename($file);
+if (is_uploaded_file($_FILES['image_upload']['name'])) {
+    $target_file = $target_dir . basename($file);
+} else {
+    $target_file = $target_file1;
+}
+
 $uploadOk = 1;
 $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
 
@@ -67,10 +72,6 @@ if($target_file == $target_file1){
     </button></div>";
     $newimage = $image;
     
-}
-else if ($file == "images/")
-{
-    $newimage = $image;
 }
 else{
     if (file_exists($target_file1)) {
