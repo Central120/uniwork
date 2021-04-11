@@ -67,6 +67,16 @@ else
       $comment = $rowctcomments['comment'];
       $commenter = $rowctcomments['commenter'];
       $timestamp = $rowctcomments['timestamp'];
+      $type = $rowctcomments['type'];
+
+      if ($type == "main")
+      {
+          $colour = "bg-dark";
+      }
+      else
+      {
+          $colour = "";
+      }
 
       $date1 = strtotime($current_timestamp);
       $date2 = strtotime($timestamp);
@@ -102,11 +112,12 @@ else
       // prints years
       $msg = "$years years, $months months, $days days, $hours hours and $minutes minutes ago";
       }
-      
+
+
 
       echo "
       <form action='forum-comments.php' method='post'>
-        <div class='card text-center'>
+        <div class='card $main text-center'>
     <div class='card-header'>
         Comment from $commenter
     </div>
@@ -132,7 +143,7 @@ else
   <label for="exampleFormControlTextarea1">Example textarea</label>
     <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
   </div>
-  <input type="hidden" value="<?php echo $chosen_post_id; ?>" name='ido>d'
+  <input type="hidden" value="<?php echo $chosen_post_id; ?>" name='id'>
   <button type="submit" value="Post Comment" class="btn btn-primary">
   </form>
 </div>
