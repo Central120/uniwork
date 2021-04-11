@@ -2,6 +2,7 @@
 include_once 'inc/dbconnect.php';
 session_start();
 $current_timestamp = date('Y-m-d H:i:s');
+ini_set('display_errors', 1);
 
 if (isset($_SESSION['user']))
 {
@@ -23,7 +24,7 @@ $ctcat = mysqli_num_rows($findcategories);
 
 if ($ctcat != 0)
 {
-    $rowcat = mysqli_fetch_assoc($rowcat);
+    $rowcat = mysqli_fetch_assoc($findcategories);
     $category_name = $rowcat['category'];
 
 $sqlfindposts = "SELECT * FROM `forum_posts` WHERE `category_id` = '$chosen_cat' ORDER BY `timestamp` DESC";
@@ -70,7 +71,7 @@ else
     <tbody>
   <br>
   <?php
-  if ($ctcat != 0)
+  if ($ctposts != 0)
   {
     while ($rowctposts = $findposts->fetch_assoc())
     {
@@ -115,10 +116,11 @@ else
 
       echo "
       <form action='forum-comments.php' method='post'>
+      <tr>
       <td>$post_name</td>
       <td>$poster</td>
       <td title='$timestamp'>$msg</td>
-      <td><input type='hidden' value='$post_id' name='id'><input type='submit' value='View Post' class='btn btn-success'></td>
+      <td><input type='hidden' value='$post_id' name='id'><input type='submit' value='View Post' class='btn btn-success'></td></tr>
     </form>";
     }
   }
@@ -127,6 +129,8 @@ else
     echo "<h5>There are no posts for this category</h5>";
   }
   ?>
+   </tbody>
+</table>
 </div>
 <?php include "inc/footer.php"; ?>
 </body>
