@@ -139,8 +139,7 @@ $formatting = number_format((float)$new_price, 2, '.','');
 }
 }
 echo "<br>";
-?>
-</p>
+?></p>
 </center>
 
 
