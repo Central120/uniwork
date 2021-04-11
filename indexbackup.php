@@ -29,7 +29,7 @@ session_start();
   <p>Below are the most recent announcements.</p>
   <br>
   <p>
-    
+</center>
   <div class="block">
 
 <div class="top">
