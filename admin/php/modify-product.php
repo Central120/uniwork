@@ -2,7 +2,7 @@
 include_once '../inc/dbconnect.php';
 session_start();
 $current_timestamp = date('Y-m-d H:i:s');
-ini_set('display_errors', 1);
+
 
 if(isset($_SESSION['admin']))
 {
@@ -116,10 +116,10 @@ if ($uploadOk == 0) {
     if (file_exists($target_file)) {
     $msg1 = "The image ". htmlspecialchars( basename( $_FILES["image_upload"]["name"])). " has been uploaded.";
     $sqlupdateproduct = "UPDATE `products` SET `product_name` = '$product_name', `category` = '$chosen_cat', `price` = '$final_price', `discount` = '$final_discount', `stock` = '$final_stock', `Image` = '$newimage'  WHERE `id` = '$product_id'";
-// $updateproduct = mysqli_query($conn, $sqlupdateproduct);
+     $updateproduct = mysqli_query($conn, $sqlupdateproduct);
     if ($updateproduct)
     {
-//    $msg1 = "<script>window.location.replace('../modify-products');</script>";
+    $msg1 = "<script>window.location.replace('../modify-products');</script>";
 echo $sqlupdateproduct;
     }
     else
