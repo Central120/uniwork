@@ -197,7 +197,7 @@ else
    <label for='comment'>Post a new comment</label>
      <textarea class='form-control' style='width:50%' minlength='10' id='exampleFormControlTextarea1' rows='3' name='comment'></textarea>
    </div>
-   <input type='hidden' value='<?php echo $chosen_post; ?>' name='id'>
+   <input type='hidden' value='$chosen_post' name='id'>
    <button type='submit' class='btn btn-primary'>Post Comment</button>
  
  
