@@ -67,7 +67,7 @@ $findimages = mysqli_query($conn, "SELECT * FROM `photo_sharing` WHERE `approver
       
         if($approver == "pending")
         {
-          echo "<form id='#ApproveImage' action='php/approve-image' method='post'>
+          $approve1 = "<form id='#ApproveImage' action='php/approve-image' method='post'>
           <input type='hidden' value='$imageid'>
           <button type='submit' class='btn btn-success'>Approve Image</button>
           </form>
