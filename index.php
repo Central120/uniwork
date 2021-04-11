@@ -56,7 +56,7 @@ session_start();
   <?php
 
 $imageQuery = mysqli_query($conn, "SELECT * FROM photo_sharing WHERE approver != 'pending' LIMIT 5");
-
+$counter = 1;
 while($row = mysqli_fetch_array($imageQuery))
 {
   $imageid = $row['id'];
@@ -70,7 +70,7 @@ while($row = mysqli_fetch_array($imageQuery))
     ?>
 
 
-    <div class="carousel-item active">
+    <div class="carousel-item <?php if($counter <= 1) { echo 'active'; } ?>">
 			<p class="carouselTitle">Arashiyama</p>
       <img src="<?php echo $pLocation; ?>" alt="First slide">
     </div>
