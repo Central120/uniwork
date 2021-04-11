@@ -96,7 +96,7 @@ $findcurrentbookings = mysqli_query($conn, "SELECT * FROM `bookings` WHERE `user
       <form action="php/report-photo" method="post" enctype='multipart/form-data'>
           <div class="form-group">
             <label for="recipient-name" class="col-form-label">Reason Option</label>
-            <select name="report_option" class="form-control">
+            <select name="report_option" class="form-control" required>
               <option selected disabled>Please select...</option>
               <option value="Harassment">Harassment</option>
               <option value="Unpermitted use of image">Unpermitted use of Image</option>
@@ -107,12 +107,8 @@ $findcurrentbookings = mysqli_query($conn, "SELECT * FROM `bookings` WHERE `user
             </select>
           </div>
           <div class="form-group">
-            <label for="message-text" class="col-form-label">Image Description:</label>
-            <input type="text" class="form-control" name="caption" id="image-description" placeholder="E.g. My little border collie enjoyed them!">
-          </div>
-          <div class="form-group">
-            <label for="message-text" class="col-form-label">Upload Photo:</label>
-            <input type="file" class="form-control-file" name="image_upload" id="exampleFormControlFile1" accept="image/*">
+            <label for="message-text" class="col-form-label">Report Information</label>
+            <input type="text" class="form-control" name="caption" id="image-description" placeholder="E.g. What exactly is making you report this image, or more information..." required>
           </div>
         
       </div>
