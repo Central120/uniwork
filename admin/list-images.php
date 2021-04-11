@@ -51,7 +51,6 @@ $findimages = mysqli_query($conn, "SELECT * FROM `photo_sharing` WHERE `approver
                             <th scope="col">Image Caption</th>
                             <th scope="col">Submitted on</th>
                             <th scope="col">Approved By</th>
-                            <th>Manage</th>
                         </tr>
                     </thead>
                     <tbody>
