@@ -103,17 +103,19 @@ $findimages = mysqli_query($conn, "SELECT * FROM `photo_sharing` WHERE `approver
             </div>
             <div class='modal-body'>
             <div id='manage-results'></div>
+            <div id='mark-results'></div>
+            <div id='delete-results'></div>
             <p>Please note: Deleting the image cannot be reversed.</p>
             </div>
             <div class='modal-footer'>
             ";
                    
            echo "
-            <form id='ManageResults' action='php/delete-image.php' method='post' role='form'>
+            <form id='DeleteImage' action='php/delete-image.php' method='post' role='form'>
             <input type='hidden' value='$imageid' name='id' />
               <button type='submit' class='btn btn-danger'>Delete Image</button>
             </form>
-            <form id='ManageResults' action='php/mark-image.php' method='post' role='form'>
+            <form id='MarkImage' action='php/mark-image.php' method='post' role='form'>
             <input type='hidden' value='$imageid' name='id' />
               <button type='submit' class='btn btn-warning'>Mark Image for Review</button>
             </form>
@@ -164,7 +166,7 @@ window.location.replace('signup');
   </script>
 
 <script type='text/javascript'>
-    $('#ManageImage').submit(function(event) {
+    $('#MarkImage').submit(function(event) {
       event.preventDefault(); //prevent default action
       var post_url = $(this).attr('action'); //get form action url
       var form_data = $(this).serialize(); //Encode form elements for submission
@@ -174,7 +176,33 @@ window.location.replace('signup');
         type: 'post',
         data: form_data
       }).done(function(response) { //
-        $('#manage-results').html(response);
+        $('#mark-results').html(response);
+
+      });
+    });
+  </script>
+<script>
+$('#forgot').click(function(){
+window.location.replace('forgot-password');
+});
+
+$('#signup').click(function() {
+window.location.replace('signup');
+});
+  </script>
+
+<script type='text/javascript'>
+    $('#DeleteImage').submit(function(event) {
+      event.preventDefault(); //prevent default action
+      var post_url = $(this).attr('action'); //get form action url
+      var form_data = $(this).serialize(); //Encode form elements for submission
+
+      $.ajax({
+        url: post_url,
+        type: 'post',
+        data: form_data
+      }).done(function(response) { //
+        $('#delete-results').html(response);
 
       });
     });
