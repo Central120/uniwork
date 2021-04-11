@@ -58,7 +58,7 @@ $ctcat = mysqli_num_rows($findcategories);
 
       echo "
       <form action='forum-posts.php' method='post'>
-      <div class='card bg-$colour'>
+      <div class='card bg-$colour' style='margin-bottom: 15px'>
       <div class='card-body'>
         <h4 class='card-title'>$category</h4>
         <p class='card-text'>$cat_desc</p>
