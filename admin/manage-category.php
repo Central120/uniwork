@@ -57,8 +57,8 @@ $findcategory = mysqli_query($conn, $sqlfindcategory);
     while ($rowfindcategory = $findcategory->fetch_assoc())
     {
         $id = $rowfindcategory['id'];
-        $title = $rowfindcategory['title'];
-        $description = $rowfindcategory['description'];
+        $title = $rowfindcategory['category'];
+        $description = $rowfindcategory['category_desc'];
         $colour = $rowfindcategory['colour'];
 
         if ($colour == "success")
