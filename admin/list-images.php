@@ -91,7 +91,7 @@ $findimages = mysqli_query($conn, "SELECT * FROM `photo_sharing` WHERE `approver
         </tr>
         ";
 
-        echo "<div class='modal fade' id='manage{$booking_id}' tabindex='-1' role='dialog' aria-labelledby='manage{$imageid}' aria-hidden='true'>
+        echo "<div class='modal fade' id='manage{$imageid}' tabindex='-1' role='dialog' aria-labelledby='manage{$imageid}' aria-hidden='true'>
         <div class='modal-dialog' role='document'>
           <div class='modal-content' style='width:150%;left:-10%;'>
             <div class='modal-header'>
