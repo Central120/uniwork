@@ -32,7 +32,7 @@ session_start();
 	text-shadow: 0 1px 2px #000;
 	position: absolute;
 	bottom: 60px;
-	left: 20px;
+	left: 165px;
 }
   .card {display:inline-block; margin-bottom: 10px; }
     </style>
