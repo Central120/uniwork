@@ -64,7 +64,7 @@ else
     </div>
     <div class="form-group">
     <label for="post_content">Content of Post</label>
-    <textarea class='form-control' minlength='10' id='exampleFormControlTextarea1' rows='3' name='comment'></textarea>
+    <textarea class='form-control' minlength='10' id='exampleFormControlTextarea1' rows='3' name='content'></textarea>
      </div>
      <button type='submit' class='btn btn-primary'>Submit new post</button>
      </div>
