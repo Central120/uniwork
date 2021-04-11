@@ -121,7 +121,7 @@ if ($uploadOk == 0) {
     <script>
 $('#retry').click(function()
 {
-window.location.replace('../add-product');
+window.location.replace('../gallery');
 });
 </script>
 </html>
