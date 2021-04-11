@@ -126,7 +126,7 @@ else
         <div class='card $colour text-center' style='$txt margin-bottom: 5px'>
     <div class='card-header'>
         $title from $commenter
-        <div style='margin-left:40px'><form><i style='color:red' class='fa fa-trash' aria-hidden='true'></i></form></div>
+        
     </div>
     <div class='card-body'>
         <p class='card-text'>$comment</p>
