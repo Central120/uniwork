@@ -102,7 +102,7 @@ $findcurrentbookings = mysqli_query($conn, "SELECT * FROM `bookings` WHERE `user
       
       <div class="modal-body">
       <small>Your image will be put as pending whilst our team approves your submission.</small>
-      <form action="php/upload-photo" method="post">
+      <form action="php/upload-photo" method="post" enctype='multipart/form-data'>
           <div class="form-group">
             <label for="recipient-name" class="col-form-label">Image Title</label>
             <input type="text" class="form-control" name="title" id="image-title" placeholder="E.g. Dog Biscuits">
