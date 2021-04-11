@@ -36,8 +36,6 @@ else
   
         <center>
     <h2 class="mb-42">Add a new category</h2><br>
-    <h5 style='color:red'>Note: if you would like to post to a new category, create the category first.</h5>
-    <div id="server-results"></div>
     <div class="container">
     <div class="d-flex justify-content-center">
     <form style='width:50%' action='php/add-category.php' method='post'>
