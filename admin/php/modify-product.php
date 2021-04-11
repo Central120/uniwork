@@ -60,9 +60,8 @@ $final_stock = ceil($stock); // ensures the value is rounded to the nearest whol
 
 $target_dir = "../../images/";
 $file = "images/" . $_FILES["image_upload"]["name"];
-if (is_uploaded_file($file)) {
-    $target_file = $target_dir . basename($file);
-} 
+$target_file = $target_dir . basename($file);
+ 
 
 $uploadOk = 1;
 $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
