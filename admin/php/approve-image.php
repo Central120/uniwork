@@ -19,7 +19,7 @@ $approvesql = "UPDATE photo_sharing SET approver='$session_usern' WHERE id='$ima
 
 if(mysqli_query($conn,$approvesql))
 {
-    echo "<div class='alert alert-success alert-dismissable fade show' role='alert'><strong>Complete!</strong> Image approved. <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+    echo "<div class='alert alert-success alert-dismissable fade show' role='alert'><strong>Complete!</strong> Image approved. Please refresh to show results <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
     <span aria-hidden='true'>&times;</span>
   </button></div>";
 }
