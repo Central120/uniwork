@@ -17,7 +17,7 @@ else
 <!doctype html>
 <html lang="en">
   <head>
-  	<title>Kerry's K9's - Add a product</title>
+  	<title>Kerry's K9's - Add a new post</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
@@ -64,7 +64,7 @@ else
     </div>
     <div class="form-group">
     <label for="post_content">Content of Post</label>
-    <textarea class='form-control' minlength='10' id='exampleFormControlTextarea1' rows='3' name='comment'></textarea>
+    <textarea class='form-control' minlength='10' id='exampleFormControlTextarea1' rows='3' name='content'></textarea>
      </div>
      <button type='submit' class='btn btn-primary'>Submit new post</button>
      </div>

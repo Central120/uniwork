@@ -105,7 +105,7 @@ else
 
       if ($type == "main")
       {
-        $title = "Announcement";
+        $title = "Main message";
           $colour = "bg-secondary";
           $txt = "color:white!important;";
       }
