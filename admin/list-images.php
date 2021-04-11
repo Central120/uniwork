@@ -86,8 +86,10 @@ $findimages = mysqli_query($conn, "SELECT * FROM `photo_sharing` WHERE `approver
         echo "<tr>";
         if($rowcountphotos == '0')
         {
-          echo "<td colspan='6'>No photos have been submitted at this time.</td>";
+          echo "<td>No photos have been submitted at this time.</td>";
         }
+        else
+        {
         echo "
         <td>$imageUsername</td>
         <td><a href='../$p_location' target='_blank'>View Image</a></td>
@@ -136,7 +138,7 @@ $findimages = mysqli_query($conn, "SELECT * FROM `photo_sharing` WHERE `approver
       </div>";
 
     }
-
+  }
 
 ?>
  </tbody>
