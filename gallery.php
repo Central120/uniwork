@@ -70,7 +70,7 @@ $findcurrentbookings = mysqli_query($conn, "SELECT * FROM `bookings` WHERE `user
       <div class="col-xl-3 col-lg-4 col-md-6 mb-4">
         <div class="bg-dark rounded shadow-sm"><img src="/<?php echo $pLocation; ?>" alt="" class="img-fluid card-img-top" style="width: 100%; height: 250px; object-fit: cover;">
           <div class="p-4">
-            <h5> <a href="#" class="text-white"><?php echo $productName; ?> </a></h5> <div style="float: right;"><button data-toggle='modal' id='cancel_btn' data-target='#manage{$imageid}' class="text-white"><i class="fa fa-file"></i></button> </div>
+            <h5> <a href="#" class="text-white"><?php echo $productName; ?> </a></h5> <div style="float: right;"><button data-toggle='modal' id='cancel_btn' data-target='<?php echo "#manage{$imageid}"; ?>' class="text-white"><i class="fa fa-file"></i></button> </div>
             <p class="small text-white mb-0"><?php echo $caption; ?></p>
             <div class="d-flex align-items-center justify-content-between rounded-pill bg-light px-3 py-2 mt-4">
               <p class="small mb-0"><i class="fa fa-user-o mr-2"></i><span class="font-weight-bold"><?php echo $author; ?></span></p>
