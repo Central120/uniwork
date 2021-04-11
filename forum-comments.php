@@ -192,17 +192,23 @@ else
    <?php 
    if (isset($_SESSION['admin']) || isset($_SESSION['user']))
    {
-   echo "<form action='php/new-comment.php' method='post'>
-   <div class='form-group'>
-   <label for='comment'>Post a new comment</label>
-     <textarea class='form-control' style='width:50%' minlength='10' id='exampleFormControlTextarea1' rows='3' name='comment'></textarea>
-   </div>
-   <input type='hidden' value='$chosen_post' name='id'>
-   <button type='submit' class='btn btn-primary'>Post Comment</button>
- 
- 
- 
-   </form>";
+     if ($status != "closed" || isset($_SESSION['admin']))
+     {
+       $comment_form = "<form action='php/new-comment.php' method='post'>
+       <div class='form-group'>
+       <label for='comment'>Post a new comment</label>
+         <textarea class='form-control' style='width:50%' minlength='10' id='exampleFormControlTextarea1' rows='3' name='comment'></textarea>
+       </div>
+       <input type='hidden' value='$chosen_post' name='id'>
+       <button type='submit' class='btn btn-primary'>Post Comment</button>
+       </form>";
+     }
+     else
+     {
+       $comment_form = "";
+     }
+     
+   echo $comment_form;
    }
    else
    {
