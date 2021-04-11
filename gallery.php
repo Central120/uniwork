@@ -93,14 +93,18 @@ $findcurrentbookings = mysqli_query($conn, "SELECT * FROM `bookings` WHERE `user
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalCenterTitle">Upload your image!</h5>
+        <h5 class="modal-title" id="exampleModalCenterTitle">Report Image</h5>
         
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
         
       </div>
-      
+      <?php
+        $reportinfosql = "SELECT * FROM photo_sharing WHERE id='$imageid'";
+        $resultreportinfo = mysqli_query($conn, $reportinfosql);
+        $rowreportinfo = mysqli_fetch_array($resultreuportinfo);
+      ?>
       <div class="modal-body">
       <small>Your image will be put as pending whilst our team approves your submission.</small>
       <form action="php/upload-photo" method="post" enctype='multipart/form-data'>
