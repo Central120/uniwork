@@ -21,9 +21,10 @@ else
 $imageTitle = mysqli_real_escape_string($conn, $_POST['title']);
 $imageCaption = mysqli_real_escape_string($conn, $_POST['caption']);
 
+
 $target_dir = "../images/uploads/";
 $file = "images/uploads/" . $_FILES["image_upload"]["name"];
-$target_file = $target_dir . basename($file);
+$target_file = $target_dir . basename($_FILES["image_upload"]["name"]);
 $uploadOk = 1;
 $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
 
@@ -31,53 +32,58 @@ $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
 if(isset($_POST["submit"])) {
   $check = getimagesize($_FILES["image_upload"]["tmp_name"]);
   if($check !== false) {
+    echo "File is an image - " . $check["mime"] . ".";
     $uploadOk = 1;
   } else {
-    $msg1 = "<div class='alert alert-danger alert-dismissable fade show' role='alert'><strong>An error occured.</strong> The image you uploaded is not a real image. <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
-        <span aria-hidden='true'>&times;</span>
-        </button></div>";
+    $msq1 = "<div class='alert alert-danger alert-dismissable fade show' role='alert'><strong>Uhh ohh!</strong> The file you're uploading isn't an image file. <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+    <span aria-hidden='true'>&times;</span>
+    </button></div>";
     $uploadOk = 0;
   }
 }
 
+// Check if file already exists
+if (file_exists($target_file)) {
+  $msq1 = "<div class='alert alert-danger alert-dismissable fade show' role='alert'><strong>Uhh ohh!</strong> This file name already exists. <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+    <span aria-hidden='true'>&times;</span>
+    </button></div>";
+  $uploadOk = 0;
+}
 
 // Allow certain file formats
-if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg") {
-    $msg1 = "<div class='alert alert-danger alert-dismissable fade show' role='alert'><strong>An error occured.</strong> Only JPG, JPEG or PNG images are allowed $imageFileType. <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
-        <span aria-hidden='true'>&times;</span>
-        </button></div>";
+if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg") 
+{
+  $msq1 = "<div class='alert alert-danger alert-dismissable fade show' role='alert'><strong>Uhh ohh!</strong> Only JPG, PNG & JPEG files are allowed. <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+    <span aria-hidden='true'>&times;</span>
+    </button></div>";
   $uploadOk = 0;
 }
 
 // Check if $uploadOk is set to 0 by an error
 if ($uploadOk == 0) {
-    $msg = "<div class='alert alert-danger alert-dismissable fade show' role='alert'><strong>An error occured.</strong> The image was not uploaded. <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
-    <span aria-hidden='true'>&times;</span>
-    </button></div>";
+  echo "Sorry, your file was not uploaded.";
 // if everything is ok, try to upload file
 } else {
   if (move_uploaded_file($_FILES["image_upload"]["tmp_name"], $target_file)) {
-    if (file_exists($target_file)) {
-    $msg1 = "The image ". htmlspecialchars( basename( $_FILES["image_upload"]["name"])). " has been uploaded.";
-    $sqlinsertimage = "INSERT INTO photo_sharing VALUES(DEFAULT, '$file', '$imageTitle', '$imageCaption', '$current_timestamp', 'pending')";
-    $insertimage = mysqli_query($conn, $sqlinsertimage);
-    if ($insertimage)
+    $uploadimagesql = "INSERT INTO photo_sharing VALUES(DEFAULT, '$session_usern', '$file', '$imageTitle', '$imageCaption', '$current_timestamp', 'pending')";
+    $imagerunsql = mysqli_query($conn, $uploadimagesql);
+
+    if($imagerunsql)
     {
-        $msg1 = "<script>window.location.replace('../gallery');</script>";
+      echo "<script>window.location.replace('../gallery');</script>";
     }
     else
     {
-        $msg1 = "<div class='alert alert-danger alert-dismissable fade show' role='alert'><strong>An error occured.</strong> Your image hasn't been uploaded. <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
-        <span aria-hidden='true'>&times;</span>
-        </button></div>";
-    }
-  } else {
-    $msg1 = "<div class='alert alert-danger alert-dismissable fade show' role='alert'><strong>An error occured.</strong> There was an error uploading your image. <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+      $msq1 = "<div class='alert alert-danger alert-dismissable fade show' role='alert'><strong>Uhh ohh!</strong> We failed to upload your image to the gallery. Please try again. <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
     <span aria-hidden='true'>&times;</span>
     </button></div>";
+    }
+
+  } else {
+    echo "Sorry, there was an error uploading your file.";
   }
 }
-}
+
   ?>
   <!doctype html>
 <html lang="en">
@@ -101,7 +107,7 @@ if ($uploadOk == 0) {
     <div class="container">
     <div class="d-flex justify-content-center">
     <?php echo $msg; ?><br>
-    <?php echo $msg1; ?><br>
+    <?php echo $msq1; ?><br>
     <button id='retry' class='btn btn-warning'>Try again</button>
     </div>
     </div>
