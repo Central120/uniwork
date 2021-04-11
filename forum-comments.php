@@ -70,7 +70,7 @@ else
 <div class="container" style='min-height:40vh'><br>
   <h2 class="mb-4"><?php echo $posts_name;?> </h2><br>
   <?php echo $modtools; ?>
-  <div class="overflow-auto">
+  <div style="height:100%; overflow-y: scroll;">
   <?php 
   if ($ctcomments != 0)
   {
