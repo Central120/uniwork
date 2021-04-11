@@ -134,7 +134,7 @@ $findreports = mysqli_query($conn, "SELECT * FROM `image_report`");
             <select name='handle-option' class='form-control'>
             <option value='close'>Close Report (No Rules Broken)</option>
             <option value='delete'>Delete Image & Close Report</option>
-            </select>
+            </select><br>
             <button type='submit' class='btn btn-secondary'>Handle</button>
             </div>
             </form>
