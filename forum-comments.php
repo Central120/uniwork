@@ -85,11 +85,11 @@ else
       }
       if (isset($_SESSION['admin']))
       {
-        $tools = "<form><i class='fa fa-trash' style='color:red!important' aria-hidden='true'></i></form>";
+        $tools = "<form action='php/delete-comment.php' method='post'><input type='hidden' value='$comment_id' name='comment'><button type='submit' class='btn btn-danger'><i class='fa fa-trash' style='color:red!important' aria-hidden='true'></i></button></form>";
       }
       else if ($session_usern == $commenter)
       {
-        $tools = "<form><i class='fa fa-trash' style='color:red!important' aria-hidden='true'></i></form>";
+        $tools = "<form action='php/delete-comment.php' method='post'><input type='hidden' value='$comment_id' name='comment'><button type='submit' class='btn btn-danger'><i class='fa fa-trash' style='color:red!important' aria-hidden='true'></i></button></form>";
       }
       else
       {
@@ -137,7 +137,7 @@ else
       
         <div class='card $colour text-center' style='$txt margin-bottom: 5px'>
     <div class='card-header'>
-        $title from $commenter $tools
+        $title from $commenter - $msg
         
     </div>
     <div class='card-body'>
@@ -145,7 +145,7 @@ else
         
     </div>
     <div class='card-footer text-muted' style='$txt'>
-        $msg
+        $tools
     </div>
     </div>
     ";
