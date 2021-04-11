@@ -77,7 +77,7 @@ while($row = mysqli_fetch_array($imageQuery))
   
 
 <?php
-
+$counter++;
 }
 ?>
 </div>
