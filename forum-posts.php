@@ -69,6 +69,7 @@ else
         <th>Post</th>
         <th>Author</th>
         <th>Time Posted</th>
+        <th>Status</th>
         <th>View Post</th>
       </tr>
     </thead>
@@ -118,21 +119,31 @@ else
       $msg = "$years years, $months months, $days days, $hours hours and $minutes minutes ago";
       }
 
-      if ($status == "open")
+      if ($status == "open" || isset($_SESSION['admin'])))
       {
         $input = "<input type='hidden' value='$post_id' name='id'><input type='submit' value='View Post' class='btn btn-success'>";
+        if (isset($_SESSION['admin']))
+        {
+          $msgstatus = "Open";
+        }
+        else
+        {
+          $msgstatus = "Closed";
+        }
       }
       else
       {
+        $msgstatus = "Closed";
         $input = "";
       }
-      
+
       echo "
       <form action='forum-comments.php' method='post'>
       <tr>
       <td>$post_name</td>
       <td>$poster</td>
       <td title='$timestamp'>$msg</td>
+      <td>$msgstatus</td>
       <td>$input</td></tr>
     </form>";
     }
