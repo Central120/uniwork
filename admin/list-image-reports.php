@@ -47,51 +47,68 @@ $findreports = mysqli_query($conn, "SELECT * FROM `image_report`");
                     <thead>
                         <tr>
                             <th scope="col">Reporter</th>
-                            <th scope="col">Image<br><small>Click to view image</small></th>
-                            <th scope="col">Image Title</th>
-                            <th scope="col">Image Caption</th>
-                            <th scope="col">Submitted on</th>
-                            <th scope="col">Approved By</th>
-                            <th scope="col">Manage Image</th>
+                            <th scope="col">Reported by</th>
+                            <th scope="col">Reason Option</th>
+                            <th scope="col">Reason Information</th>
+                            <th scope="col">Outcome on Report</th>
+                            <th scope="col">Report Status</th>
+                            <th scope="col">View Image</th>
+                            <th scope="col">Manage Report</th>
                         </tr>
                     </thead>
                     <tbody>
   <?php
-    while ($rowimages = $findimages->fetch_assoc())
+    while ($reportrow = $findreports->fetch_assoc())
     {
-      $sqlcountphotos = "SELECT count(*) as totalphotos FROM `photo_sharing`";
-      $resultcountphotos = mysqli_query($conn, $sqlcountphotos);
-      $rowcountphotos = mysqli_fetch_array($resultcountphotos);
-
-        $countPhotos = mysqli_num_rows($findimages);
-        $imageid = $rowimages['id'];
-        $imageUsername = $rowimages['username'];
-        $p_location = $rowimages['p_location'];
-        $title = $rowimages['product_name'];
-        $caption = $rowimages['caption'];
-        $imageTimestamp = $rowimages['timestamp'];
-        $approver = $rowimages['approver'];
       
-        if($approver == "pending")
+        $reportid = $reportrow['id'];
+        $reporter = $reportrow['reporter'];
+        $reportinng = $reportrow['reported'];
+        $reportoption = $reportrow['reason_title'];
+        $reportinformation = $reportrow['reason_description'];
+        $reportoutcome = $reportrow['outcome'];
+        $reportstatus = $reportrow['status'];
+        $imageid = $reportrow['imageid'];
+      
+        // collecting image information
+        $findimage = "SELECT * FROM photo_sharing WHERE id='$imageid'";
+        $resultimage = mysqli_query($conn,$findimage);
+        $resultimagerow = mysqli_fetch_array($resultimage);
+
+        $p_location = $resultimagerow['p_location'];
+        $author = $resultimagerow['username'];
+        $imagetitle = $resultimagerow['product_name'];
+        $imagecaption = $resultimagerow['caption'];
+        $imagetimestamp = $resultimagerow['timestamp'];
+        $imageapprover['approver'];
+
+        if($reportstatus == 'open')
         {
-          $approve1 = "<form id='ApproveImage' action='php/approve-image' method='post'>
-          <input type='hidden' value='$imageid' name='imageid'>
-          <button type='submit' class='btn btn-success'>Approve Image</button>
-          </form>
-          ";
+          $statusofreport = "Open";
         }
         else
         {
-          $approve1 = $rowimages['approver'];
+          $statusofreport = "Closed";
+        }
+
+        if($reportoutcome == 'pending')
+        {
+          $outcomeofreport = "Pending Action";
+        }
+        else
+        {
+          $outcomeofreport = $reportrow['outcome'];
         }
 
         echo "<tr>
-        <td>$imageUsername</td>
+        <td>$reporter</td>
         <td><a href='../$p_location' target='_blank'>View Image</a></td>
-        <td>$title</b></td>
-        <td>$caption</td>
-        <td>$imageTimestamp</td>
-        <td>$approve1</td>
+        <td>$reporting</b></td>
+        <td>$reportoption</td>
+        <td>$reportinformation</td>
+        <td>$outcomeofreport</td>
+        <td>$statusofreport</td>
+        
         
         <td><input type='button' data-toggle='modal' id='cancel_btn' data-target='#manage{$imageid}' class='btn btn-primary' value='Manage Image' /></td>
         
