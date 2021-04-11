@@ -42,7 +42,7 @@ $ctcat = mysqli_num_rows($findcategories);
   <body>
   <?php include "inc/header.php"; ?>
 <center>
-<div class="container-fluid" style='min-height:40vh'>
+<div class="container" style='min-height:40vh'>
   <h2 class="mb-4">Welcome to Kerry's K9's Forum</h2><br>
   <p>Below are the forum categories</p>
   <br>
@@ -58,12 +58,12 @@ $ctcat = mysqli_num_rows($findcategories);
 
       echo "
       <form action='forum-posts.php' method='post'>
-      <div class='card bg-$colour'>
+      <div class='card bg-$colour' style='margin-bottom: 15px'>
       <div class='card-body'>
         <h4 class='card-title'>$category</h4>
         <p class='card-text'>$cat_desc</p>
         <input type='hidden' value='$cat_id' name='id'>
-        <input type='submit' value='View Posts' class='btn btn-primary'>
+        <input type='submit' value='View Posts' class='btn btn-dark'>
       </div>
     </div>
     </form>";
