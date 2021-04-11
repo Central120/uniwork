@@ -66,7 +66,7 @@ $quantity1 = $rowfindcart1['quantity'];
 $product1 = $rowfindcart1['product'];
 $image1 = $rowfindcart1['Image'];
 $total2 = $price1 * $quantity1;
-$total1 = $total1 + $total2;
+$total_1 = $total_1 + $total2;
 echo "<img src='$image1' style='height: 100px; width: 100px;'/><h5 style='display:list-item;'>$product1 - $quantity1 x £$price1</h5><br>";
     }
 } 
@@ -80,7 +80,7 @@ echo "<img src='$image1' style='height: 100px; width: 100px;'/><h5 style='displa
         <div style="margin-bottom: 1.25rem;">
           <p></p>
           Total:
-          <select id="item-options"><option value="<?php echo $total1;?>" price="<?php echo $total1;?>">£<?php echo $total1;?> -  GBP</option></select>
+          <select id="item-options"><option value="<?php echo $total_1;?>" price="<?php echo $total_1;?>">£<?php echo $total_1;?> -  GBP</option></select>
           <select style="visibility: hidden" id="quantitySelect"></select>
         </div>
       <div id="paypal-button-container"></div>
