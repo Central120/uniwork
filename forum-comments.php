@@ -11,7 +11,7 @@ if (isset($_SESSION['user']))
 else if(isset($_SESSION['admin']))
 {
     $session_usern = $_SESSION['admin'];
-    $modtools = "<div style='margin-bottom: 10px' class='btn-group' role='group' aria-label='button'>
+    $modtools = "<div style='margin-bottom: 10px;margin-left: 10px;' class='btn-group' role='group' aria-label='button'>
     <form action='php/lock-post.php' method='post'>
     <input type='hidden' value='<?php echo $chosen_post;?>' name='post_id'>
     <button type='submit' title='Lock Post' class='btn btn-warning'><i class='fa fa-lock' aria-hidden='true'></i></button>
