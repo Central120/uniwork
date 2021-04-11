@@ -14,10 +14,10 @@ else if(isset($_SESSION['admin']))
 
 $reporter = mysqli_real_escape_string($conn, $_POST['reporter']);
 $reporting = mysqli_real_escape_string($conn, $_POST['reporting']);
-$report_option = mysqli_real_escape_string($conn, $_POST['report_option']);
-$report_information = mysqli_real_escape_string($conn, $_POST['report_information']);
+$reportoption = mysqli_real_escape_string($conn, $_POST['report_option']);
+$reportinformation = mysqli_real_escape_string($conn, $_POST['report_information']);
 
-$reportsql = "INSERT INTO image_report VALUES(DEFAULT, '$reporter', '$reporting', $report_option', '$report_information', 'pending', 'pending')";
+$reportsql = "INSERT INTO image_report VALUES(DEFAULT, '$reporter', '$reporting', $reportoption', '$reportinformation', 'pending', 'pending')";
 $reportresult = mysqli_query($conn, $reportsql);
 
 if($reportrow = mysqli_fetch_array($reportresult))
@@ -28,7 +28,7 @@ if($reportrow = mysqli_fetch_array($reportresult))
 }
 else
 {
-    echo "div class='alert alert-danger alert-dismissable fade show' role='alert'><strong>Uhh ohh!</strong> We failed to submit your report. Please try again. If this problem persists, please contact our team as soon as possible. <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+    echo "<div class='alert alert-danger alert-dismissable fade show' role='alert'><strong>Uhh ohh!</strong> We failed to submit your report. Please try again. If this problem persists, please contact our team as soon as possible. <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
     <span aria-hidden='true'>&times;</span>
     </button></div>";
 }
