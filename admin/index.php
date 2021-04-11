@@ -188,7 +188,7 @@ $rowcountbookings = mysqli_fetch_array($resultcountbookings);
   }
 
   // sql for counting Image Reports
-  $sqlcountimagereports = "SELECT count(*) as totalimagereports FROM `image_reports`";
+  $sqlcountimagereports = "SELECT count(*) as totalimagereports FROM `image_report`";
   $resultimagereports = mysqli_query($conn, $sqlcountimagereports);
   $rowcountimagereports = mysqli_fetch_array($resultimagereports);
   if($rowcountimagereports['totalimagereports'] == '1')
