@@ -86,7 +86,7 @@ else
             <div class="form-group">
               <input type='hidden' name='usern' value='<?php echo $username2; ?>'>
                 <button type='submit' class="btn btn-primary">Next Stage</button>
-                <button id='login' type="button" class="btn btn-info">Login</button>
+                <button id='login' type="button" class="btn btn-info">Go to Login</button>
             </div>
         </form>
     </center>

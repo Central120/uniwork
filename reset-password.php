@@ -70,7 +70,7 @@ else
 
 <div class='form-group'>
 <?php echo $input; ?>
-                <button id='login' type="button" class="btn btn-info">Login</button>
+                <button id='login' type="button" class="btn btn-info">Go to Login</button>
             </div>
         </form>
     </center>
