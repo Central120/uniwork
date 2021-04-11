@@ -61,7 +61,9 @@ if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg
 
 // Check if $uploadOk is set to 0 by an error
 if ($uploadOk == 0) {
-  echo "Sorry, your file was not uploaded.";
+  $msq1 = "<div class='alert alert-danger alert-dismissable fade show' role='alert'><strong>Uhh ohh!</strong> Your file hasn't been uploaded. <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+    <span aria-hidden='true'>&times;</span>
+    </button></div>";
 // if everything is ok, try to upload file
 } else {
   if (move_uploaded_file($_FILES["image_upload"]["tmp_name"], $target_file)) {
