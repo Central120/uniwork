@@ -52,7 +52,7 @@ if (file_exists($target_file)) {
 // Allow certain file formats
 if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg") 
 {
-  $msg = "<div class='alert alert-danger alert-dismissable fade show' role='alert'><strong>Uhh ohh!</strong> Only JPG, PNG & JPEG files are allowed.$imageFileType <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+  $msg = "<div class='alert alert-danger alert-dismissable fade show' role='alert'><strong>Uhh ohh!</strong> Only JPG, PNG & JPEG files are allowed.$target_file $imageFileType <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
     <span aria-hidden='true'>&times;</span>
     </button></div>";
   $uploadOk = 0;
