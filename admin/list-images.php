@@ -95,26 +95,27 @@ $findimages = mysqli_query($conn, "SELECT * FROM `photo_sharing` WHERE `approver
         <div class='modal-dialog' role='document'>
           <div class='modal-content' style='width:150%;left:-10%;'>
             <div class='modal-header'>
-              <h5 class='modal-title'>What would you like to do with $imageUsername's booking?</h5>
+              <h5 class='modal-title'>What would you like to do with $imageUsername's image?</h5>
               <button type='button' class='close' data-dismiss='modal' aria-label='Close'>
                 <span aria-hidden='true'>&times;</span>
               </button>
             </div>
             <div class='modal-body'>
-            <p>Please note: Cancelling the booking cannot be reversed.</p>
+            <p>Please note: Deleting the image cannot be reversed.</p>
             </div>
             <div class='modal-footer'>
             ";
                    
            echo "
-            <form action='php/cancel-booking.php' method='post' role='form'>
+            <form action='php/delete-image.php' method='post' role='form'>
             <input type='hidden' value='$imageid' name='id' />
-              <button type='submit' class='btn btn-danger'>Confirm Cancellation</button>
+              <button type='submit' class='btn btn-danger'>Delete Image</button>
             </form>
-            <form action='php/complete-booking.php' method='post' role='form'>
+            <form action='php/approve-image.php' method='post' role='form'>
             <input type='hidden' value='$imageid' name='id' />
-              <button type='submit' class='btn btn-success'>Mark as complete</button>
+              <button type='submit' class='btn btn-success'>Approve Image Submission</button>
             </form>
+            <a href='../$p_location' target='_blank' class='btn btn-primary' data-dismiss='modal'>View Image</a>
               <button type='button' class='btn btn-secondary' data-dismiss='modal'>Close</button>
             </div>
           </div>
