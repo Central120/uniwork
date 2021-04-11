@@ -30,62 +30,29 @@ session_start();
   <br>
   <p>
     
-    <!-- Card -->
-<div class="card">
+  <div class="block">
 
-<div class="view zoom overlay">
-  <img class="img-fluid w-100" src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/13a.jpg" alt="Sample">
-  <h4 class="mb-0"><span class="badge badge-primary badge-pill badge-news">Sale</span></h4>
-  <a href="#!">
-    <div class="mask">
-      <img class="img-fluid w-100"
-        src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/13.jpg">
-      <div class="mask rgba-black-slight"></div>
-    </div>
-  </a>
-</div>
-
-<div class="card-body text-center">
-
-  <h5>Fantasy T-shirt</h5>
-  <p class="small text-muted text-uppercase mb-2">Shirts</p>
-  <ul class="rating">
-    <li>
-      <i class="fas fa-star fa-sm text-primary"></i>
-    </li>
-    <li>
-      <i class="fas fa-star fa-sm text-primary"></i>
-    </li>
-    <li>
-      <i class="fas fa-star fa-sm text-primary"></i>
-    </li>
-    <li>
-      <i class="fas fa-star fa-sm text-primary"></i>
-    </li>
-    <li>
-      <i class="far fa-star fa-sm text-primary"></i>
-    </li>
+<div class="top">
+  <ul>
+    <li><a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a></li>
+    <li><span class="converse">Converse</span></li>
+    <li><a href="#"><i class="fa fa-shopping-basket" aria-hidden="true"></i>
+</a></li>
   </ul>
-  <hr>
-  <h6 class="mb-3">
-    <span class="text-danger mr-1">$12.99</span>
-    <span class="text-grey"><s>$36.99</s></span>
-  </h6>
+</div>
 
-  <button type="button" class="btn btn-primary btn-sm mr-1 mb-2">
-    <i class="fas fa-shopping-cart pr-2"></i>Add to cart
-  </button>
-  <button type="button" class="btn btn-light btn-sm mr-1 mb-2">
-    <i class="fas fa-info-circle pr-2"></i>Details
-  </button>
-  <button type="button" class="btn btn-danger btn-sm px-3 mb-2 material-tooltip-main" data-toggle="tooltip" data-placement="top" title="Add to wishlist">
-    <i class="far fa-heart"></i>
-  </button>
+<div class="middle">
+  <img src="https://www.converse.com/on/demandware.static/-/Sites-ConverseMaster/default/dw33d36cdd/images/hi-res/654210C_standard.jpg?sw=580&sh=580&sm=fit" alt="pic" />
+</div>
 
+<div class="bottom">
+  <div class="heading">Chuck Taylor All Star Neon Floral Yth/Jr</div>
+  <div class="info">Neon converse edition</div>
+  <div class="style">Color: Black/White/Aegean Aqua / Style: 654210C</div>
+  <div class="price">$35.00 <span class="old-price">$45.00</span></div>
 </div>
 
 </div>
-<!-- Card -->
     
     
     
