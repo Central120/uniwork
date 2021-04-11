@@ -128,7 +128,7 @@ else
         <p class='card-text'>$comment</p>
         
     </div>
-    <div class='card-footer text-muted'>
+    <div class='card-footer text-muted' style='$txt'>
         $msg
     </div>
     </div>
