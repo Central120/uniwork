@@ -18,8 +18,7 @@ $handleoption = mysqli_real_escape_string($conn, $_POST['handle-option']);
 
 if($handleoption == "close")
 {
-    $closeoutcome = mysqli_query($conn, "UPDATE image_report SET outcome='Closed without action' WHERE id='$reportid'");
-    $closestatus = mysqli_query($conn, "UPDATE image_report SET status='closed' WHERE id='$reportid'");
+    $reportsql = mysqli_query($conn, "UPDATE image_report SET outcome='Closed without action', status='closed' WHERE id='$reportid'");
     echo "<div class='alert alert-success alert-dismissable fade show' role='alert'><strong>Closed!</strong> The report has been closed with no action taken. <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
     <span aria-hidden='true'>&times;</span>
     </button></div>";
