@@ -36,7 +36,6 @@ else
   <div class="container-fluid" style='min-height:40vh'>
   <h2 class="mb-4">Welcome to Kerry's K9's shop!</h2>
   <h5>Filters</h5>
-  <br>
   <div class = 'btn-group' role = 'group'>
   <form action='filters.php' method='post' class='filterfrm'>
     <input type='hidden' value='all' name='category'>
