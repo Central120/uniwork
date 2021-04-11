@@ -18,7 +18,7 @@ else
 }
 
 $chosen_post = mysqli_real_escape_string($conn, $_POST['id']);
-$sqlfindposts = "SELECT * FROM `forum_posts` WHERE `id` = '$chosen_cat'";
+$sqlfindposts = "SELECT * FROM `forum_posts` WHERE `id` = '$chosen_post'";
 $findposts = mysqli_query($conn, $sqlfindposts);
 $ctposts = mysqli_num_rows($findposts);
 
