@@ -20,6 +20,8 @@ session_start();
   {
     margin-top: 20% !important; 
   }
+
+  .card {display:inline-block;}
     </style>
   </head>
   <body>
