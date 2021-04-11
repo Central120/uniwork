@@ -25,7 +25,7 @@ if(mysqli_query($conn,$approvesql))
 }
 else
 {
-    echo "<div class='alert alert-danger alert-dismissable fade show' role='alert'><strong>An error occured.</strong> The image couldn't be approved. <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+    echo "<div class='alert alert-danger alert-dismissable fade show' role='alert'><strong>An error occured.</strong> The image couldn't be approved. {$imageid} <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
     <span aria-hidden='true'>&times;</span>
   </button></div>";
 }
