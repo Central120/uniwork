@@ -73,8 +73,8 @@ while($row = mysqli_fetch_array($imageQuery))
 
 
     <div class="carousel-item <?php if($counter <= 1) { echo 'active'; } ?>">
-			<p class="carouselTitle">Arashiyama</p>
-      <img src="<?php echo $pLocation; ?>" alt="First slide">
+			<p class="carouselTitle"><?php echo $productName; ?></p>
+      <img src="<?php echo $pLocation; ?>" alt="First slide" style="width: 700px; height: 525px;">
     </div>
   
 
@@ -92,7 +92,7 @@ $counter++;
     <span class="sr-only">Next</span>
   </a>
 </div>
-  
+  <br><br><br>
   </div>
     <?php
 $sqlfinddiscounts = "SELECT * FROM `products` WHERE `discount` != '0'";
