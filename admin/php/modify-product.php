@@ -21,6 +21,21 @@ $discount = mysqli_real_escape_string($conn, $_POST['discount']);
 $stock = mysqli_real_escape_string($conn, $_POST['stock']);
 $product_id = mysqli_real_escape_string($conn, $_POST['id']);
 
+if ($existing_category == "")
+{
+    $chosen_cat = $new_category;
+}
+
+if ($new_category == "")
+{
+    $chosen_cat = $existing_category;
+}
+
+$final_price = number_format((float)$price, 2, '.','');
+$final_discount = ceil($discount); // ensures the value is rounded to the nearest whole number (incase of decimal value being sent)
+$final_stock = ceil($stock); // ensures the value is rounded to the nearest whole number (incase of decimal value being sent)
+
+
 $sqlfindproduct = "SELECT * FROM `products` WHERE `id` = '$product_id'";
 $findproduct = mysqli_query($conn, $sqlfindproduct);
 $countfindproduct = mysqli_num_rows($findproduct);
@@ -41,59 +56,21 @@ else
   </button></div>";
 }
 
-
-
-if ($existing_category == "")
-{
-    $chosen_cat = $new_category;
-}
-
-if ($new_category == "")
-{
-    $chosen_cat = $existing_category;
-}
-
-$final_price = number_format((float)$price, 2, '.','');
-$final_discount = ceil($discount); // ensures the value is rounded to the nearest whole number (incase of decimal value being sent)
-$final_stock = ceil($stock); // ensures the value is rounded to the nearest whole number (incase of decimal value being sent)
-
-
 $target_dir = "../../images/";
 $file = "images/" . $_FILES["image_upload"]["name"];
 $target_file = $target_dir . basename($file);
- 
-
 $uploadOk = 1;
 $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
 
-if($target_file == $target_file1){
-    $msg1 = "<div class='alert alert-danger alert-dismissable fade show' role='alert'><strong>An error occured.</strong> The image you entered was the same. <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
-    <span aria-hidden='true'>&times;</span>
-    </button></div>";
-    $newimage = $image;
-    
-}
-else{
-    if (file_exists($target_file)) {
-        unlink($target_file);
-        $newimage = $file;
-        
-    }
-    else{
-        $newimage = $file;
-        $msg2 = "<div class='alert alert-danger alert-dismissable fade show' role='alert'><strong>An error occured.</strong> There was an error finding the old image. <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
-        <span aria-hidden='true'>&times;</span>
-        </button></div>";
-    }
-}
-
+if (is_uploaded_file($_FILES['image_upload']['name'])) {
+     
 // Check if image file is a actual image or fake image
 if(isset($_POST["submit"])) {
   $check = getimagesize($_FILES["image_upload"]["tmp_name"]);
   if($check !== false) {
     $uploadOk = 1;
   } else {
-    $msg3 = "<div class='alert alert-danger alert-dismissable fade show' role='alert'><strong>An error occured.</strong> The image you uploaded is not a real image. <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+    $msg1 = "<div class='alert alert-danger alert-dismissable fade show' role='alert'><strong>An error occured.</strong> The image you uploaded is not a real image. <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
         <span aria-hidden='true'>&times;</span>
         </button></div>";
     $uploadOk = 0;
@@ -102,8 +79,8 @@ if(isset($_POST["submit"])) {
 
 
 // Allow certain file formats
-if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg" && $imageFileType != ""){
-    $msg4 = "<div class='alert alert-danger alert-dismissable fade show' role='alert'><strong>An error occured.</strong> Only JPG, JPEG or PNG images are allowed. <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg") {
+    $msg1 = "<div class='alert alert-danger alert-dismissable fade show' role='alert'><strong>An error occured.</strong> Only JPG, JPEG or PNG images are allowed. <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
         <span aria-hidden='true'>&times;</span>
         </button></div>";
   $uploadOk = 0;
@@ -111,77 +88,48 @@ if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg
 
 // Check if $uploadOk is set to 0 by an error
 if ($uploadOk == 0) {
-    $msg5 = "<div class='alert alert-danger alert-dismissable fade show' role='alert'><strong>An error occured.</strong> The image was not uploaded. <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+    $msg = "<div class='alert alert-danger alert-dismissable fade show' role='alert'><strong>An error occured.</strong> The image was not uploaded. <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
     <span aria-hidden='true'>&times;</span>
     </button></div>";
 // if everything is ok, try to upload file
 } else {
   if (move_uploaded_file($_FILES["image_upload"]["tmp_name"], $target_file)) {
-  
     if (file_exists($target_file)) {
     $msg1 = "The image ". htmlspecialchars( basename( $_FILES["image_upload"]["name"])). " has been uploaded.";
-    $sqlupdateproduct = "UPDATE `products` SET `product_name` = '$product_name', `category` = '$chosen_cat', `price` = '$final_price', `discount` = '$final_discount', `stock` = '$final_stock', `Image` = '$newimage'  WHERE `id` = '$product_id'";
-     $updateproduct = mysqli_query($conn, $sqlupdateproduct);
+    $sqlupdateproduct = "UPDATE `products` SET `product_name` = '$product_name', `category` = '$chosen_cat', `price` = '$final_price', `discount` = '$final_discount', `stock` = '$final_stock', `Image` = '$file' WHERE `id` = '$product_id'";
+    $updateproduct = mysqli_query($conn, $sqlupdateproduct);
     if ($updateproduct)
     {
-    $msg6 = "<script>window.location.replace('../modify-products');</script>";
-echo $sqlupdateproduct;
+        $msg1 = "<script>window.location.replace('../modify-products');</script>";
     }
     else
     {
-        $msg7 = "<div class='alert alert-danger alert-dismissable fade show' role='alert'><strong>An error occured.</strong> Your product was not added. $sqlupdateproduct <br> $target_file <br> $target_file1<button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+        $msg1 = "<div class='alert alert-danger alert-dismissable fade show' role='alert'><strong>An error occured.</strong> Your product was not added. <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
         <span aria-hidden='true'>&times;</span>
         </button></div>";
     }
   } else {
-    $msg8 = "<div class='alert alert-danger alert-dismissable fade show' role='alert'><strong>An error occured.</strong> There was an error uploading your image. <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+    $msg1 = "<div class='alert alert-danger alert-dismissable fade show' role='alert'><strong>An error occured.</strong> There was an error uploading your image. <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
     <span aria-hidden='true'>&times;</span>
     </button></div>";
   }
 }
 }
-?>
-<!doctype html>
-<html lang="en">
-  <head>
-  	<title>Kerry's K9's - Modify Product</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-   	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700' rel='stylesheet' type='text/css' />
-     
-     <style>
-    .footer 
+}
+else {
+    $sqlupdateproduct = "UPDATE `products` SET `product_name` = '$product_name', `category` = '$chosen_cat', `price` = '$final_price', `discount` = '$final_discount', `stock` = '$final_stock' WHERE `id` = '$product_id'";
+    $updateproduct = mysqli_query($conn, $sqlupdateproduct);
+    if ($updateproduct)
     {
-        margin-top:20% !important;
+        $msg1 = "<script>window.location.replace('../modify-products');</script>";
     }
-     </style>
-</head>
-<body>
-    <?php include "../inc/header.php"; ?>
-    <div class="container">
-    <div class="d-flex justify-content-center">
-    <?php echo $msg1; ?><br>
-    <?php echo $msg2; ?><br>
-    <?php echo $msg3; ?><br>
-    <?php echo $msg4; ?><br>
-    <?php echo $msg5; ?><br>
-    <?php echo $msg6; ?><br>
-    <?php echo $msg7; ?><br>
-    <?php echo $msg8; ?><br>
-    <button id='retry' class='btn btn-warning'>Try again</button>
-    </div>
-    </div>
-    <?php include "../inc/footer.php"; ?>
-</body>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-    <script>
-$('#retry').click(function()
-{
-window.location.replace('../modify-products');
-});
-</script>
-</html>
+    else
+    {
+        $msg1 = "<div class='alert alert-danger alert-dismissable fade show' role='alert'><strong>An error occured.</strong> Your product was not added. <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+        <span aria-hidden='true'>&times;</span>
+        </button></div>";
+    }
+}
+?>
+
+
