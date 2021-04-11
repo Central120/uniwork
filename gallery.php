@@ -58,6 +58,7 @@ $findcurrentbookings = mysqli_query($conn, "SELECT * FROM `bookings` WHERE `user
       
       while($row = mysqli_fetch_array($imageQuery))
       {
+        $imageid = $row['id'];
           $author = $row['username'];
           $productName = $row['product_name'];
           $caption = $row['caption'];
@@ -69,7 +70,7 @@ $findcurrentbookings = mysqli_query($conn, "SELECT * FROM `bookings` WHERE `user
       <div class="col-xl-3 col-lg-4 col-md-6 mb-4">
         <div class="bg-dark rounded shadow-sm"><img src="/<?php echo $pLocation; ?>" alt="" class="img-fluid card-img-top" style="width: 100%; height: 250px; object-fit: cover;">
           <div class="p-4">
-            <h5> <a href="#" class="text-white"><?php echo $productName; ?> </a></h5> <div style="float: right;"><a class="text-white"><i class="fa fa-file"></i></a> </div>
+            <h5> <a href="#" class="text-white"><?php echo $productName; ?> </a></h5> <div style="float: right;"><a data-toggle='modal' id='cancel_btn' data-target='#manage{$imageid}' class="text-white"><i class="fa fa-file"></i></a> </div>
             <p class="small text-white mb-0"><?php echo $caption; ?></p>
             <div class="d-flex align-items-center justify-content-between rounded-pill bg-light px-3 py-2 mt-4">
               <p class="small mb-0"><i class="fa fa-user-o mr-2"></i><span class="font-weight-bold"><?php echo $author; ?></span></p>
@@ -126,6 +127,39 @@ $findcurrentbookings = mysqli_query($conn, "SELECT * FROM `bookings` WHERE `user
   </div>
 </div>
 
+<div class='modal fade' id='<?php echo "manage{$imageid}"; ?>' tabindex='-1' role='dialog' aria-labelledby='<?php echo "manage{$imageid}"; ?>' aria-hidden='true'>
+        <div class='modal-dialog' role='document'>
+          <div class='modal-content' style='width:150%;left:-10%;'>
+            <div class='modal-header'>
+              <h5 class='modal-title'>What would you like to do with $imageUsername's image?</h5>
+              <button type='button' class='close' data-dismiss='modal' aria-label='Close'>
+                <span aria-hidden='true'>&times;</span>
+              </button>
+            </div>
+            <div class='modal-body'>
+            <div id='manage-results'></div>
+            <div id='mark-results'></div>
+            <div id='delete-result'></div>
+            <p>Please note: Deleting the image cannot be reversed.</p>
+            </div>
+            <div class='modal-footer'>
+            ";
+                   
+           echo "
+            <form id='DeleteImage1' action='php/delete-image.php' method='post' role='form'>
+            <input type='hidden' value='$imageid' name='imageid' />
+              <button type='submit' class='btn btn-danger'>Delete Image</button>
+            </form>
+            <form id='MarkImage' action='php/mark-image.php' method='post' role='form'>
+            <input type='hidden' value='$imageid' name='imageid' />
+              <button type='submit' class='btn btn-warning'>Mark Image for Review</button>
+            </form>
+            <a href='../$p_location' target='_blank' class='btn btn-primary'>View Image</a>
+              <button type='button' class='btn btn-secondary' data-dismiss='modal'>Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
 
   <?php include "inc/footer.php"; ?>
 </body>
