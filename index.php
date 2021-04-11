@@ -48,32 +48,41 @@ session_start();
     <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
     <li data-target="#carousel-example-generic" data-slide-to="1"></li>
     <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="3"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="4"></li>
   </ol>
  
 
 
-  
+  <div class="carousel-inner" role="listbox">
   <?php
 
 $imageQuery = mysqli_query($conn, "SELECT * FROM photo_sharing WHERE approver != 'pending' LIMIT 5");
-$row = mysqli_fetch_array($imageQuery);
-
-foreach ($row as $result)
-
-$pLocation = $row['p_location'];
+$counter = 1;
+while($row = mysqli_fetch_array($imageQuery))
 {
-		?>
+  $imageid = $row['id'];
+    $author = $row['username'];
+    $productName = $row['product_name'];
+    $caption = $row['caption'];
+    $imageTimestamp = $row['timestamp'];
+    $pLocation = $row['p_location'];
 
-      <div class="carousel-inner" role="listbox">
-    <div class="carousel-item active">
+   
+    ?>
+
+
+    <div class="carousel-item <?php if($counter <= 1) { echo 'active'; } ?>">
 			<p class="carouselTitle">Arashiyama</p>
       <img src="<?php echo $pLocation; ?>" alt="First slide">
     </div>
-  </div>
   
-  <?php
+
+<?php
+$counter++;
 }
 ?>
+</div>
 	<a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
     <span class="icon-prev" aria-hidden="true"></span>
     <span class="sr-only">Previous</span>
