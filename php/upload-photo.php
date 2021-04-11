@@ -25,7 +25,7 @@ $imageCaption = mysqli_real_escape_string($conn, $_POST['caption']);
 $target_dir = "../images/uploads/";
 $file1 = "images/uploads/" . $_FILES["image_upload"]["name"];
 $file = $_FILES["image_upload"]["name"];
-$target_file = $target_dir . basename($_FILES["image_upload"]["name"]);
+$target_file = $target_dir . basename($file);
 $uploadOk = 1;
 $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
 
