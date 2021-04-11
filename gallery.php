@@ -111,7 +111,7 @@ $findcurrentbookings = mysqli_query($conn, "SELECT * FROM `bookings` WHERE `user
           </div>
           <div class="form-group">
             <label for="message-text" class="col-form-label">Report Information</label>
-            <input type="text" class="form-control" name="reportinformation" id="image-description" placeholder="E.g. More information..." required>
+            <textarea type="text" class="form-control" name="reportinformation" id="image-description" placeholder="E.g. More information..." required></textarea>
           </div>
         
       </div>
