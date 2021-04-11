@@ -31,7 +31,7 @@ else
     <span aria-hidden='true'>&times;</span>
     </button></div>";
 
-    echo("Error description: " . $mysqli -> error($conn));
+    echo("Error description: " . $mysqli->error);
 }
 
 
