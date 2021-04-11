@@ -51,6 +51,7 @@ $findimages = mysqli_query($conn, "SELECT * FROM `photo_sharing` WHERE `approver
                             <th scope="col">Image Caption</th>
                             <th scope="col">Submitted on</th>
                             <th scope="col">Approved By</th>
+                            <th scope="col">Manage Image</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -85,6 +86,7 @@ $findimages = mysqli_query($conn, "SELECT * FROM `photo_sharing` WHERE `approver
         <td>$caption</td>
         <td>$imageTimestamp</td>
         <td>$approve1</td>
+        <td><button class='btn btn-primary'>Manage Image</button></td>
         
         </tr>
         ";
