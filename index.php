@@ -21,14 +21,14 @@ session_start();
     margin-top: 20% !important; 
   }
 
-  
+  .card {display:inline-block; margin-bottom: 10px; }
     </style>
   </head>
   <body>
   <?php include "inc/header.php"; ?>
 <center>
   <h2 class="mb-4">Welcome to Kerry's K9's!</h2><br>
-  
+  <p>
   <?php
 
 $imageQuery = mysqli_query($conn, "SELECT * FROM photo_sharing WHERE approver != 'pending' LIMIT 5");
