@@ -134,9 +134,9 @@ $findreports = mysqli_query($conn, "SELECT * FROM `image_report`");
             <option value='close'>Close Report (No Rules Broken)</option>
             <option value='delete'>Delete Image & Close Report</option>
             </select><br>
-            <button type='submit' class='btn btn-secondary'>Handle</button>
+            
             </div>
-            </form>
+            
 
 
             </div>
@@ -144,8 +144,10 @@ $findreports = mysqli_query($conn, "SELECT * FROM `image_report`");
             ";
                    
            echo "
+           <button type='button' class='btn btn-secondary' data-dismiss='modal'>Close</button>
             <a href='../$p_location' target='_blank' class='btn btn-primary'>View Image</a>
-              <button type='button' class='btn btn-secondary' data-dismiss='modal'>Close</button>
+               <button type='submit' class='btn btn-info'>Handle</button>
+              </form>
             </div>
           </div>
         </div>
