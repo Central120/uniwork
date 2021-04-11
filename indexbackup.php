@@ -21,7 +21,7 @@ session_start();
     margin-top: 20% !important; 
   }
 
-  .card {display:inline-block; margin-left: 2px; }
+  .card {display:inline-block; margin-bottom: 10px; }
     </style>
   </head>
   <body>
