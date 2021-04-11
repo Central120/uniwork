@@ -121,16 +121,31 @@ $rowcountbookings = mysqli_fetch_array($resultcountbookings);
   {
     $bookingtxt = "Bookings";
   }
+
+  // sql for counting products
   $sqlcountproducts = "select count(*) as totalproducts FROM `products`";
-$resultcountproducts = mysqli_query($conn,$sqlcountproducts);
-$rowcountproducts = mysqli_fetch_array($resultcountproducts);
-  if ($rowcountproducts['totalproducts'] == '1')
+  $resultcountproducts = mysqli_query($conn,$sqlcountproducts);
+  $rowcountproducts = mysqli_fetch_array($resultcountproducts);
+    if ($rowcountproducts['totalproducts'] == '1')
+    {
+      $producttxt = "Product";
+    }
+    else
+    {
+      $producttxt = "Products";
+    }
+    
+  // sql for counting users
+  $sqlcountusers = "SELECT count(*) as totalusers FROM `accounts`";
+  $resultcountusers = mysqli_query($conn, $sqlcountusers);
+  $rowcountusers = mysqli_fetch_array($resultcountusers);
+  if($rowcountusers['totalusers'] == '1')
   {
-    $producttxt = "Product";
+    $userstxt = "User";
   }
   else
   {
-    $producttxt = "Products";
+    $userstxt = "Users";
   }
 
         echo "
@@ -160,8 +175,8 @@ $rowcountproducts = mysqli_fetch_array($resultcountproducts);
     <a href='users' style='color: white' title='Click here to view User Options'>
       <div class='card-counter info'>
         <i class='fa fa-users'></i>
-        <span class='count-numbers'>Amount</span>
-        <span class='count-name'>Users</span>
+        <span class='count-numbers'>{$rowcountusers['totalusers']}</span>
+        <span class='count-name'>{$userstxt}</span>
     
       </div>
       </a>
