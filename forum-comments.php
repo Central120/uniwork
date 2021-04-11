@@ -117,7 +117,7 @@ else
 
       echo "
       <form action='forum-comments.php' method='post'>
-        <div class='card $main text-center'>
+        <div class='card $colour text-center' style='margin-bottom: 5px'>
     <div class='card-header'>
         Comment from $commenter
     </div>
