@@ -83,17 +83,13 @@ else
           $colour = "";
           $txt = "";
       }
-      if (isset($_SESSION['admin']))
+      if (isset($_SESSION['admin']) && $type != "main")
       {
-        $tools = "<form action='php/delete-comment.php' method='post'><input type='hidden' value='$comment_id' name='comment'><button style='margin-right: 95%' type='submit' class='btn btn-danger'><i class='fa fa-trash' aria-hidden='true'></i></button></form>";
+        $tools = "<form action='php/delete-comment.php' method='post'><input type='hidden' value='$comment_id' name='comment'><button style='margin-left: 95%' type='submit' class='btn btn-danger'><i class='fa fa-trash' aria-hidden='true'></i></button></form>";
       }
-      else if ($session_usern == $commenter)
+      else if ($session_usern == $commenter && $type != "main")
       {
-        $tools = "<form action='php/delete-comment.php' method='post'><input type='hidden' value='$comment_id' name='comment'><button style='margin-right: 95%' type='submit' class='btn btn-danger'><i class='fa fa-trash' aria-hidden='true'></i></button></form>";
-      }
-      else if ($type == "main")
-      {
-        $tools = "";
+        $tools = "<form action='php/delete-comment.php' method='post'><input type='hidden' value='$comment_id' name='comment'><button style='margin-left: 95%' type='submit' class='btn btn-danger'><i class='fa fa-trash' aria-hidden='true'></i></button></form>";
       }
       else
       {
