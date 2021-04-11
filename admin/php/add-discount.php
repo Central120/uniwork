@@ -31,7 +31,7 @@ if ($countfindproduct != 0)
     $adddiscount = mysqli_query($conn, $sqladddiscount);
     if ($adddiscount)
     {
-        echo "<script>window.location.replace('../modify-products');</script>";
+        echo "<script>window.location.replace('modify-products');</script>";
     }
     else
     {
