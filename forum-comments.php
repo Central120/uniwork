@@ -73,7 +73,7 @@ else
       if ($type == "main")
       {
           $colour = "bg-secondary";
-          $txt = "color:white;";
+          $txt = "color:white!important;";
       }
       else
       {
