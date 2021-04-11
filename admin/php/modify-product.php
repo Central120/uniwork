@@ -60,7 +60,7 @@ $file = "images/" . $_FILES["image_upload"]["name"];
 if (is_uploaded_file($_FILES['image_upload']['name'])) {
     $target_file = $target_dir . basename($file);
 } else {
-    $target_file = $target_file1;
+    $target_file = $image;
 }
 
 $uploadOk = 1;
