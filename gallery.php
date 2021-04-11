@@ -93,10 +93,15 @@ $findcurrentbookings = mysqli_query($conn, "SELECT * FROM `bookings` WHERE `user
       
       <div class="modal-body">
       <small>You're reporting: <?php echo $author; ?>.<br>Their image: <a href='/<?php echo $pLocation; ?>' target='_blank'>Click to view</a></small>
-      <form action="php/upload-photo" method="post" enctype='multipart/form-data'>
+      <form action="php/report-photo" method="post" enctype='multipart/form-data'>
           <div class="form-group">
-            <label for="recipient-name" class="col-form-label">Image Title</label>
-            <input type="text" class="form-control" name="title" id="image-title" placeholder="E.g. Dog Biscuits">
+            <label for="recipient-name" class="col-form-label">Reason Option</label>
+            <select name="report_option" class="form-control">
+              <option value="Harassment">Harassment</option>
+              <option value="Unpermitted use of image">Unpermitted use of Image</option>
+              <option value="Spam">Spam</spam>
+              <option value="Threat to Site">Threat to Site</option>
+            </select>
           </div>
           <div class="form-group">
             <label for="message-text" class="col-form-label">Image Description:</label>
