@@ -86,7 +86,7 @@ $findimages = mysqli_query($conn, "SELECT * FROM `photo_sharing` WHERE `approver
         <td>$caption</td>
         <td>$imageTimestamp</td>
         <td>$approve1</td>
-        <td><input type='button' data-toggle='modal' id='cancel_btn' data-target='#manage{$imageid}' class='btn btn-warning' value='Manage Booking' /></td>
+        <td><input type='button' data-toggle='modal' id='cancel_btn' data-target='#manage{$imageid}' class='btn btn-warning' value='Manage Image' /></td>
         
         </tr>
         ";
