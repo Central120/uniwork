@@ -17,7 +17,7 @@ else
 <!doctype html>
 <html lang="en">
   <head>
-  	<title>Kerry's K9's - Add a product</title>
+  	<title>Kerry's K9's - Add a new post</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
