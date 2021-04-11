@@ -98,7 +98,7 @@ else
     <div class='container'>
     <div class='row'>
     <div class='col-md-3'>
-    <a href='add-discount' style='color: white' title='Click here to add a discount'>
+    <a href='list-images' style='color: white' title='Click here to add a discount'>
       <div class='card-counter primary'>
         <i class='fa fa-calendar-o'></i>
       
@@ -108,7 +108,7 @@ else
       </div>
 
     <div class='col-md-3'>
-    <a href='modify-products' style='color: white' title='Click here to modify products'>
+    <a href='manage-image-submissions' style='color: white' title='Click here to modify products'>
       <div class='card-counter info'>
         <i class='fa fa-book'></i>
         <span class='count-name'>Manage Image Submissions</span>
