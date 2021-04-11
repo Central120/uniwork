@@ -71,7 +71,7 @@ else
     <tbody>
   <br>
   <?php
-  if ($ctcat != 0)
+  if ($ctposts != 0)
   {
     while ($rowctposts = $findposts->fetch_assoc())
     {
