@@ -20,7 +20,20 @@ session_start();
   {
     margin-top: 20% !important; 
   }
+  #carousel-example-generic {
+	height: 480px;
+	width: 848px;
+}
 
+.carouselTitle {
+	font-size: 64px;
+	font-weight: 100;
+	color: white;
+	text-shadow: 0 1px 2px #000;
+	position: absolute;
+	bottom: 60px;
+	left: 80px;
+}
   .card {display:inline-block; margin-bottom: 10px; }
     </style>
   </head>
