@@ -62,7 +62,7 @@ $target_file = $target_dir . basename($file);
 $uploadOk = 1;
 $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
 
-if (is_uploaded_file("images/" . $_FILES['image_upload']['name'])) {
+if(file_exists($_FILES['image_upload']['name']) || is_uploaded_file($_FILES['image_upload']['name'])) {
      
 // Check if image file is a actual image or fake image
 if(isset($_POST["submit"])) {
@@ -94,6 +94,7 @@ if ($uploadOk == 0) {
 // if everything is ok, try to upload file
 } else {
   if (move_uploaded_file($_FILES["image_upload"]["tmp_name"], $target_file)) {
+      
     if (file_exists($target_file)) {
     $msg1 = "The image ". htmlspecialchars( basename( $_FILES["image_upload"]["name"])). " has been uploaded.";
     $sqlupdateproduct = "UPDATE `products` SET `product_name` = '$product_name', `category` = '$chosen_cat', `price` = '$final_price', `discount` = '$final_discount', `stock` = '$final_stock', `Image` = '$file' WHERE `id` = '$product_id'";
