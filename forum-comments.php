@@ -24,6 +24,7 @@ $ctposts = mysqli_num_rows($findposts);
 
 if ($ctposts != 0)
 {
+  
 $rowposts = mysqli_fetch_assoc($findposts);
 $posts_name = $rowposts['forum_post'];
 $sqlfindcomments = "SELECT * FROM `forum_comments` WHERE `post_id` = '$chosen_post' ORDER BY `timestamp` DESC";
@@ -121,10 +122,11 @@ else
 
 
       echo "
-      <form action='forum-comments.php' method='post'>
+      
         <div class='card $colour text-center' style='$txt margin-bottom: 5px'>
     <div class='card-header'>
         $title from $commenter
+        <div style='margin-left:40px'><form><i style='color:red' class='fa fa-trash' aria-hidden='true'></i></form></div>
     </div>
     <div class='card-body'>
         <p class='card-text'>$comment</p>
@@ -134,7 +136,7 @@ else
         $msg
     </div>
     </div>
-    </form>";
+    ";
     }
   }
   else
@@ -150,6 +152,9 @@ else
   </div>
   <input type="hidden" value="<?php echo $chosen_post; ?>" name='id'>
   <button type="submit" class="btn btn-primary">Post Comment</button>
+
+
+
   </form>
 </div>
 <?php include "inc/footer.php"; ?>
