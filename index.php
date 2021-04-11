@@ -44,28 +44,11 @@ while($row = mysqli_fetch_array($imageQuery))
     ?>
 
 
-<div class="col-xl-3 col-lg-4 col-md-6 mb-4">
-  <div class="bg-dark rounded shadow-sm"><img src="/<?php echo $pLocation; ?>" alt="" class="img-fluid card-img-top" style="width: 100%; height: 250px; object-fit: cover;">
-    <div class="p-4">
-      <h5> <a href="#" class="text-white"><?php echo $productName; ?> </a></h5> <div style="float: right;">
-      <?php
-      if($author == $session_usern)
-      {
-        ?>
-        <form action="php/user-delete-photo" method="post">
-        <input type="hidden" value="<?php echo $imageid; ?>">
-        <button class="btn btn-danger" type="submit"><i class="fa fa-trash"></i></button>
-      </form>
-        <?php
-      }
-      ?>
-    </div>
-      <p class="small text-white mb-0"><?php echo $caption; ?></p>
-      <div class="d-flex align-items-center justify-content-between rounded-pill bg-light px-3 py-2 mt-4">
-        <p class="small mb-0"><i class="fa fa-user-o mr-2"></i><span class="font-weight-bold"><?php echo $author; ?></span></p>
-        <div class="badge badge-danger px-3 rounded-pill font-weight-normal"><?php echo $imageTimestamp; ?></div>
-      </div>
-    </div>
+<div class="carousel-item">
+  <img src="..." alt="...">
+  <div class="carousel-caption d-none d-md-block">
+    <h5>...</h5>
+    <p>...</p>
   </div>
 </div>
 
