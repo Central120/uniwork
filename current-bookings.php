@@ -13,7 +13,7 @@ else if(isset($_SESSION['admin']))
 }
 else
 {
-    echo "<script>window.location.replace('index');</script>";
+    echo "<script>window.location.replace('login');</script>";
 }
 
 
