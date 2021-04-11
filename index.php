@@ -57,7 +57,7 @@ while($row = mysqli_fetch_array($imageQuery))
 
 			
 			<div class="carousel-inner">
-				<div class="carousel-item active">
+				<div class="carousel-item">
 					<img class="d-block img-fluid" src="<?php echo $pLocation; ?>" alt="">
 					<div class="carousel-caption d-none d-md-block">
 						<h1>Mountain</h1>
