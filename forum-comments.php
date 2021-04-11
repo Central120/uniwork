@@ -72,11 +72,13 @@ else
 
       if ($type == "main")
       {
+        $title = "Announcement";
           $colour = "bg-secondary";
           $txt = "color:white!important;";
       }
       else
       {
+        $title = "Comment";
           $colour = "";
           $txt = "";
       }
@@ -122,7 +124,7 @@ else
       <form action='forum-comments.php' method='post'>
         <div class='card $colour text-center' style='$txt margin-bottom: 5px'>
     <div class='card-header'>
-        Comment from $commenter
+        $title from $commenter
     </div>
     <div class='card-body'>
         <p class='card-text'>$comment</p>
