@@ -68,6 +68,10 @@ if($target_file == $target_file1){
     $newimage = $image;
     
 }
+else if ($target_file == "")
+{
+    $newimage = $image;
+}
 else{
     if (file_exists($target_file1)) {
         unlink($target_file1);
