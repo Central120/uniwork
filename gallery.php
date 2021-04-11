@@ -103,11 +103,11 @@ $findcurrentbookings = mysqli_query($conn, "SELECT * FROM `bookings` WHERE `user
         </button>
         
       </div>
-      
+      <form id="FormReport(<?php echo $imageid; ?>)" class="gallery" action="php/report-image" method="post">
       <div class="modal-body">
       <small>You're reporting: <?php echo $author; ?>.<br>Their image: <a href='/<?php echo $pLocation; ?>' target='_blank'>Click to view</a></small>
       <div id="report-results"></div>
-      <form id="FormReport(<?php echo $imageid; ?>)" class="gallery" action="php/report-image" method="post">
+      
           <div class="form-group">
             <label for="recipient-name" class="col-form-label">Reason Option</label>
             <input type="hidden" name="reporter" value="<?php echo $session_usern; ?>">
@@ -132,8 +132,9 @@ $findcurrentbookings = mysqli_query($conn, "SELECT * FROM `bookings` WHERE `user
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
         <button type="submit" class="btn btn-danger">Report</button>
-        </form>
+        
       </div>
+      </form>
     </div>
   </div>
 </div>
