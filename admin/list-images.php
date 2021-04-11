@@ -111,7 +111,7 @@ $findimages = mysqli_query($conn, "SELECT * FROM `photo_sharing` WHERE `approver
             ";
                    
            echo "
-            <form id='DeleteImage' action='php/delete-image.php' method='post' role='form'>
+            <form id='MarkImage' action='php/delete-image.php' method='post' role='form'>
             <input type='hidden' value='$imageid' name='imageid' />
               <button type='submit' class='btn btn-danger'>Delete Image</button>
             </form>
