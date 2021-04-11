@@ -192,7 +192,7 @@ else
    <?php 
    if (isset($_SESSION['admin']) || isset($_SESSION['user']))
    {
-   echo "<form action='php/new-comment'>
+   echo "<form action='php/new-comment.php' method='post'>
    <div class='form-group'>
    <label for='comment'>Post a new comment</label>
      <textarea class='form-control' style='width:50%' minlength='10' id='exampleFormControlTextarea1' rows='3' name='comment'></textarea>
