@@ -59,7 +59,7 @@ else
 <div class="container" style='min-height:40vh'>
   <h2 class="mb-4"><?php echo $post_name;?> </h2><br>
   <?php 
-  if ($ctposts != 0)
+  if ($ctcomments != 0)
   {
     while ($rowctcomments = $findcomments->fetch_assoc())
     {
