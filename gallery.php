@@ -83,7 +83,7 @@ $findcurrentbookings = mysqli_query($conn, "SELECT * FROM `bookings` WHERE `user
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalCenterTitle">Upload your image!</h5>
+        <h5 class="modal-title" id="exampleModalCenterTitle">Report Tools</h5>
         
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
@@ -92,7 +92,7 @@ $findcurrentbookings = mysqli_query($conn, "SELECT * FROM `bookings` WHERE `user
       </div>
       
       <div class="modal-body">
-      <small>Your image will be put as pending whilst our team approves your submission.</small>
+      <small>You're reporting: <?php echo $author; ?>.<br>Their image: <a href='/<?php echo $pLocation; ?>' target='_blank'>Click to view</a></small>
       <form action="php/upload-photo" method="post" enctype='multipart/form-data'>
           <div class="form-group">
             <label for="recipient-name" class="col-form-label">Image Title</label>
@@ -130,7 +130,7 @@ $findcurrentbookings = mysqli_query($conn, "SELECT * FROM `bookings` WHERE `user
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalCenterTitle">Report Image</h5>
+        <h5 class="modal-title" id="exampleModalCenterTitle">Upload your image!</h5>
         
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
