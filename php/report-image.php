@@ -17,7 +17,7 @@ $reporting = mysqli_real_escape_string($conn, $_POST['reporting']);
 $reportoption = mysqli_real_escape_string($conn, $_POST['report_option']);
 $reportinformation = mysqli_real_escape_string($conn, $_POST['report_information']);
 
-$reportsql = "INSERT INTO image_report VALUES(DEFAULT, '$reporter', '$reporting', $reportoption', '$reportinformation', 'pending', 'pending')";
+
 $reportresult = mysqli_query($conn, $reportsql);
 
 if($reportrow = mysqli_fetch_array($reportresult))
