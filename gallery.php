@@ -128,38 +128,42 @@ $findcurrentbookings = mysqli_query($conn, "SELECT * FROM `bookings` WHERE `user
 </div>
 
 <div class='modal fade' id='<?php echo "manage{$imageid}"; ?>' tabindex='-1' role='dialog' aria-labelledby='<?php echo "manage{$imageid}"; ?>' aria-hidden='true'>
-        <div class='modal-dialog' role='document'>
-          <div class='modal-content' style='width:150%;left:-10%;'>
-            <div class='modal-header'>
-              <h5 class='modal-title'>What would you like to do with $imageUsername's image?</h5>
-              <button type='button' class='close' data-dismiss='modal' aria-label='Close'>
-                <span aria-hidden='true'>&times;</span>
-              </button>
-            </div>
-            <div class='modal-body'>
-            <div id='manage-results'></div>
-            <div id='mark-results'></div>
-            <div id='delete-result'></div>
-            <p>Please note: Deleting the image cannot be reversed.</p>
-            </div>
-            <div class='modal-footer'>
-            ";
-                   
-           echo "
-            <form id='DeleteImage1' action='php/delete-image.php' method='post' role='form'>
-            <input type='hidden' value='$imageid' name='imageid' />
-              <button type='submit' class='btn btn-danger'>Delete Image</button>
-            </form>
-            <form id='MarkImage' action='php/mark-image.php' method='post' role='form'>
-            <input type='hidden' value='$imageid' name='imageid' />
-              <button type='submit' class='btn btn-warning'>Mark Image for Review</button>
-            </form>
-            <a href='../$p_location' target='_blank' class='btn btn-primary'>View Image</a>
-              <button type='button' class='btn btn-secondary' data-dismiss='modal'>Close</button>
-            </div>
-          </div>
-        </div>
+<div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalCenterTitle">Upload your image!</h5>
+        
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        
       </div>
+      
+      <div class="modal-body">
+      <small>Your image will be put as pending whilst our team approves your submission.</small>
+      <form action="php/upload-photo" method="post" enctype='multipart/form-data'>
+          <div class="form-group">
+            <label for="recipient-name" class="col-form-label">Image Title</label>
+            <input type="text" class="form-control" name="title" id="image-title" placeholder="E.g. Dog Biscuits">
+          </div>
+          <div class="form-group">
+            <label for="message-text" class="col-form-label">Image Description:</label>
+            <input type="text" class="form-control" name="caption" id="image-description" placeholder="E.g. My little border collie enjoyed them!">
+          </div>
+          <div class="form-group">
+            <label for="message-text" class="col-form-label">Upload Photo:</label>
+            <input type="file" class="form-control-file" name="image_upload" id="exampleFormControlFile1" accept="image/*">
+          </div>
+        
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-success">Upload</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
 
   <?php include "inc/footer.php"; ?>
 </body>
