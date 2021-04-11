@@ -70,7 +70,20 @@ $findcurrentbookings = mysqli_query($conn, "SELECT * FROM `bookings` WHERE `user
       <div class="col-xl-3 col-lg-4 col-md-6 mb-4">
         <div class="bg-dark rounded shadow-sm"><img src="/<?php echo $pLocation; ?>" alt="" class="img-fluid card-img-top" style="width: 100%; height: 250px; object-fit: cover;">
           <div class="p-4">
-            <h5> <a href="#" class="text-white"><?php echo $productName; ?> </a></h5> <div style="float: right;"><a href='#' type='button' data-toggle='modal' id='cancel_btn' data-target='<?php echo "#manage{$imageid}";?>' class='text-white'/ title='Report <?php echo $author, 's image';?>'><i class="fa fa-gavel"></i></a> </div>
+            <h5> <a href="#" class="text-white"><?php echo $productName; ?> </a></h5> <div style="float: right;">
+            <?php
+            if($author == $session_usern)
+            {
+              ?>
+              <form action="php/user-delete-photo" method="post">
+              <input type="hidden" value="<?php echo $imageid; ?>">
+              <button type="submit"><i class="fa fa-trash"></i></button>
+            </form>
+              <?php
+            }
+            ?>
+            
+            <a href='#' type='button' data-toggle='modal' id='cancel_btn' data-target='<?php echo "#manage{$imageid}";?>' class='text-white'/ title='Report <?php echo $author, 's image';?>'><i class="fa fa-gavel"></i></a> </div>
             <p class="small text-white mb-0"><?php echo $caption; ?></p>
             <div class="d-flex align-items-center justify-content-between rounded-pill bg-light px-3 py-2 mt-4">
               <p class="small mb-0"><i class="fa fa-user-o mr-2"></i><span class="font-weight-bold"><?php echo $author; ?></span></p>
@@ -124,7 +137,22 @@ $findcurrentbookings = mysqli_query($conn, "SELECT * FROM `bookings` WHERE `user
     </div>
   </div>
 </div>
+<script type='text/javascript'>
+    $('#FormReport(<?php echo $imageid; ?>)').submit(function(event) {
+      event.preventDefault(); //prevent default action
+      var post_url = $(this).attr('action'); //get form action url
+      var form_data = $(this).serialize(); //Encode form elements for submission
 
+      $.ajax({
+        url: post_url,
+        type: 'post',
+        data: form_data
+      }).done(function(response) { //
+        $('#report-results').html(response);
+
+      });
+    });
+  </script>
 
 
       <?php
@@ -179,22 +207,7 @@ $findcurrentbookings = mysqli_query($conn, "SELECT * FROM `bookings` WHERE `user
   <?php include "inc/footer.php"; ?>
 </body>
 <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-<script type='text/javascript'>
-    $('#FormReport(<?php echo $imageid; ?>)').submit(function(event) {
-      event.preventDefault(); //prevent default action
-      var post_url = $(this).attr('action'); //get form action url
-      var form_data = $(this).serialize(); //Encode form elements for submission
 
-      $.ajax({
-        url: post_url,
-        type: 'post',
-        data: form_data
-      }).done(function(response) { //
-        $('#report-results').html(response);
-
-      });
-    });
-  </script>
 <script type="text/javascript">
 const myCarousel = document.querySelector('#myCarousel')
 const carousel = new mdb.Carousel(myCarousel)
