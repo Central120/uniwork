@@ -32,10 +32,10 @@ else if(isset($_SESSION['user']))
           Bookings
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item <?php if (strpos($url,'requestbooking') !== false) {
+          <a class="dropdown-item <?php if (strpos($url,'select-staff') !== false) {
     echo 'active';
 } ?>" href="select-staff">Request a booking</a>
-          <a class="dropdown-item <?php if (strpos($url,'currentbookings') !== false) {
+          <a class="dropdown-item <?php if (strpos($url,'current-bookings') !== false) {
     echo 'active';
 } ?>" href="current-bookings">View current bookings</a>
       </li>
@@ -57,7 +57,7 @@ else if(isset($_SESSION['user']))
 
         <a class="nav-link" href="#">News</a>
       </li>
-      <li class="nav-item <?php if (strpos($url,'images') !== false) {
+      <li class="nav-item <?php if (strpos($url,'gallery') !== false) {
     echo 'active';
 } ?>">
         <a class="nav-link" href="gallery">Gallery</a>
