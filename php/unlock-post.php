@@ -24,7 +24,7 @@ if ($ctfindpost != 0)
     $proclock = mysqli_query($conn, $sqllockpost);
     if ($proclock)
     {
-        echo "<script>window.location.replace('forum');</script>";
+        echo "<script>window.location.replace('../forum');</script>";
     }
     else
     {

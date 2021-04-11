@@ -24,7 +24,7 @@ if ($ctfindcomment != 0)
     $procdel = mysqli_query($conn, $sqldeletecomment);
     if ($procdel)
     {
-        echo "<script>window.location.replace('forum');</script>";
+        echo "<script>window.location.replace('../forum');</script>";
     }
     else
     {

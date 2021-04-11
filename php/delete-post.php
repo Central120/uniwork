@@ -26,7 +26,7 @@ if ($ctfindpost != 0)
     $proccommdelete = mysqli_query($conn, $sqldeletecomments);
     if ($proclock && $proccommdelete)
     {
-        echo "<script>window.location.replace('forum');</script>";
+        echo "<script>window.location.replace('../forum');</script>";
     }
     else
     {
