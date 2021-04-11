@@ -143,13 +143,13 @@ else
   }
   ?>
    </div>
-   <form>
+   <form action="php/new-comment">
   <div class="form-group">
-  <label for="exampleFormControlTextarea1">Example textarea</label>
-    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+  <label for="comment">Post a new comment</label>
+    <textarea class="form-control" style='width:50%' minlength="10" id="exampleFormControlTextarea1" rows="3" name="comment"></textarea>
   </div>
-  <input type="hidden" value="<?php echo $chosen_post_id; ?>" name='id'>
-  <button type="submit" value="Post Comment" class="btn btn-primary">
+  <input type="hidden" value="<?php echo $chosen_post; ?>" name='id'>
+  <button type="submit" class="btn btn-primary">Post Comment</button>
   </form>
 </div>
 <?php include "inc/footer.php"; ?>
