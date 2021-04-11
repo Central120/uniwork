@@ -64,6 +64,16 @@ $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
 
 if($_FILES["image_upload"]["name"]) {
      
+
+if ($target_file==$target_file1)
+{
+    $msg1 = "<div class='alert alert-danger alert-dismissable fade show' role='alert'><strong>An error occured.</strong> The image you uploaded is the same as your current. <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+        <span aria-hidden='true'>&times;</span>
+        </button></div>";
+$uploadOk = 0;
+}
+else
+{
 // Check if image file is a actual image or fake image
 if(isset($_POST["submit"])) {
   $check = getimagesize($_FILES["image_upload"]["tmp_name"]);
@@ -115,6 +125,7 @@ if ($uploadOk == 0) {
     <span aria-hidden='true'>&times;</span>
     </button></div>";
   }
+}
 }
 }
 }
