@@ -100,7 +100,7 @@ else
         <div class='col-md-3'>
         <a href='add-post' style='color: white' title='Click here to add a new post'>
           <div class='card-counter primary'>
-            <i class='fa fa-calendar-o'></i>
+            <i class='fa fa-file-text'></i>
           
             <span class='count-name'>Add a new post</span>
           </div>
@@ -110,7 +110,7 @@ else
         <div class='col-md-3'>
         <a href='new-category' style='color: white' title='Click here to add a new category'>
           <div class='card-counter info'>
-            <i class='fa fa-book'></i>
+            <i class='fa fa-plus'></i>
             <span class='count-name'>Add a new category</span>
           </div>
           </a>
@@ -119,7 +119,7 @@ else
         <div class='col-md-3'>
         <a href='delete-category' style='color: white' title='Click here to delete a category'>
           <div class='card-counter danger'>
-            <i class='fa fa-check'></i>
+            <i class='fa fa-trash'></i>
             <span class='count-name'>Delete a category</span>
           </div>
           </a>
