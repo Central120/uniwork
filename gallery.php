@@ -99,6 +99,7 @@ $findcurrentbookings = mysqli_query($conn, "SELECT * FROM `bookings` WHERE `user
             <label for="recipient-name" class="col-form-label">Reason Option</label>
             <input type="hidden" name="reporter" value="<?php echo $session_usern; ?>">
             <input type="hidden" name="reporting" value="<?php echo $author; ?>">
+            <input type="hidden" name="imageid" value="<?php echo $imageid; ?>">
             <select name="reportoption" class="form-control" required>
               <option selected disabled>Please select...</option>
               <option value="Harassment">Harassment</option>
