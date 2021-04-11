@@ -103,7 +103,7 @@ $findcurrentbookings = mysqli_query($conn, "SELECT * FROM `bookings` WHERE `user
       <?php
         $reportinfosql = "SELECT * FROM photo_sharing WHERE id='$imageid'";
         $resultreportinfo = mysqli_query($conn, $reportinfosql);
-        $rowreportinfo = mysqli_fetch_array($resultreuportinfo);
+        $rowreportinfo = mysqli_fetch_array($resultreportinfo);
       ?>
       <div class="modal-body">
       <small>Your image will be put as pending whilst our team approves your submission.</small>
