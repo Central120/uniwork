@@ -3,7 +3,7 @@ include_once 'inc/dbconnect.php';
 session_start();
 $current_timestamp = date('Y-m-d H:i:s');
 
-
+$chosen_post = mysqli_real_escape_string($conn, $_POST['id']);
 if (isset($_SESSION['user']))
 {
     $session_usern = $_SESSION['user'];
@@ -27,7 +27,7 @@ else
     $session_usern = "Guest";
 }
 
-$chosen_post = mysqli_real_escape_string($conn, $_POST['id']);
+
 $sqlfindposts = "SELECT * FROM `forum_posts` WHERE `id` = '$chosen_post'";
 $findposts = mysqli_query($conn, $sqlfindposts);
 $ctposts = mysqli_num_rows($findposts);
