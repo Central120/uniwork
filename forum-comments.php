@@ -26,7 +26,7 @@ if ($ctposts != 0)
 {
 $rowposts = mysqli_fetch_assoc($findposts);
 $posts_name = $rowcat['forum_posts'];
-$sqlfindcomments = "SELECT * FROM `forum_comments` WHERE `post_id` = '$chosen_cat' ORDER BY `timestamp` DESC";
+$sqlfindcomments = "SELECT * FROM `forum_comments` WHERE `post_id` = '$chosen_post' ORDER BY `timestamp` DESC";
 $findcomments = mysqli_query($conn, $sqlfindcomments);
 $ctcomments = mysqli_num_rows($findcomments);
 }
