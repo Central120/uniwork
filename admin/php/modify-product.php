@@ -74,6 +74,7 @@ $uploadOk = 0;
 }
 else
 {
+    unlink($target_file1);
 // Check if image file is a actual image or fake image
 if(isset($_POST["submit"])) {
   $check = getimagesize($_FILES["image_upload"]["tmp_name"]);
@@ -111,8 +112,8 @@ if ($uploadOk == 0) {
     $updateproduct = mysqli_query($conn, $sqlupdateproduct);
     if ($updateproduct)
     {
-        $msg1 = "testyup";
-      //  $msg1 = "<script>window.location.replace('../modify-products');</script>";
+        
+        $msg1 = "<script>window.location.replace('../modify-products');</script>";
     }
     else
     {
@@ -134,8 +135,7 @@ else {
     $updateproduct = mysqli_query($conn, $sqlupdateproduct);
     if ($updateproduct)
     {
-        $msg1 = "testy";
-      //  $msg1 = "<script>window.location.replace('../modify-products');</script>";
+        $msg1 = "<script>window.location.replace('../modify-products');</script>";
     }
     else
     {
