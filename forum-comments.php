@@ -11,14 +11,14 @@ if (isset($_SESSION['user']))
 else if(isset($_SESSION['admin']))
 {
     $session_usern = $_SESSION['admin'];
-    $modtools = "<div class='btn-group' role='group' aria-label='button'>
+    $modtools = "<div style='margin-bottom: 10px' class='btn-group' role='group' aria-label='button'>
     <form action='php/lock-post.php' method='post'>
     <input type='hidden' value='<?php echo $chosen_post;?>' name='post_id'>
-    <button type='submit' class='btn btn-warning'><i class='fa fa-lock' aria-hidden='true'></i></button>
+    <button type='submit' title='Lock Post' class='btn btn-warning'><i class='fa fa-lock' aria-hidden='true'></i></button>
      </form>
      <form action='php/delete-post.php' method='post'>
     <input type='hidden' value='<?php echo $chosen_post;?>' name='post_id'>
-    <button type='submit' class='btn btn-warning'><i class='fa fa-lock' aria-hidden='true'></i></button>
+    <button type='submit' title='Delete Post' class='btn btn-danger'><i class='fa fa-trash' aria-hidden='true'></i></button>
      </form>
      </div>";
 }
@@ -96,11 +96,11 @@ else
       }
       if (isset($_SESSION['admin']) && $type != "main")
       {
-        $tools = "<form action='php/delete-comment.php' method='post'><input type='hidden' value='$comment_id' name='comment'><button style='margin-left: 95%' type='submit' class='btn btn-danger'><i class='fa fa-trash' aria-hidden='true'></i></button></form>";
+        $tools = "<form action='php/delete-comment.php' method='post'><input type='hidden' value='$comment_id' name='comment'><button title='Delete comment' style='margin-left: 95%' type='submit' class='btn btn-danger'><i class='fa fa-trash' aria-hidden='true'></i></button></form>";
       }
       else if ($session_usern == $commenter && $type != "main")
       {
-        $tools = "<form action='php/delete-comment.php' method='post'><input type='hidden' value='$comment_id' name='comment'><button style='margin-left: 95%' type='submit' class='btn btn-danger'><i class='fa fa-trash' aria-hidden='true'></i></button></form>";
+        $tools = "<form action='php/delete-comment.php' method='post'><input type='hidden' value='$comment_id' name='comment'><button title='Delete comment' style='margin-left: 95%' type='submit' class='btn btn-danger'><i class='fa fa-trash' aria-hidden='true'></i></button></form>";
       }
       else
       {
