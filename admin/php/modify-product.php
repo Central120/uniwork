@@ -68,7 +68,7 @@ if($target_file == $target_file1){
     $newimage = $image;
     
 }
-else if ($target_file == "" || $target_file1 == "")
+else if ($file == "images/")
 {
     $newimage = $image;
 }
