@@ -87,7 +87,7 @@ $findimages = mysqli_query($conn, "SELECT * FROM `photo_sharing` WHERE `approver
         echo "<tr>";
         if($rowcountphotos['totalphotos'] == '0')
         {
-          echo "<td>No photos have been submitted at this time.</td>";
+          echo "No photos have been submitted at this time.";
         }
         else
         {
