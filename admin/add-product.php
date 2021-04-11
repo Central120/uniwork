@@ -85,7 +85,7 @@ else
     <input type="text" class="form-control" id="new_cat" name="new" placeholder="Enter new category name">
   </div><br>
 <div class="form-group">
-<label for="price">Price</label>
+<label for="price">Price (£)</label>
 <input type="number" pattern="^\d+(\.|\,)\d{2}$" step="0.01" name="price" value="0.00" min='0' class="form-control">
 </div><br>
 <div class="form-group">
