@@ -19,7 +19,7 @@ else
 $comment = mysqli_real_escape_string($conn, $_POST['comment']);
 $post_id = mysqli_real_escape_string($conn, $_POST['id']);
 
-if ($comment = "")
+if ($comment == "")
 {
     echo "The comment must have text in it.";
 }
