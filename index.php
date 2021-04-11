@@ -50,7 +50,7 @@ while($row = mysqli_fetch_array($imageQuery))
     <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
     <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
   </ol>
-  <div class="carousel-inner">
+ 
     <div class="carousel-item active">
       <img src="<?php echo $pLocation; ?>" class="d-block w-100" alt="...">
       <div class="carousel-caption d-none d-md-block">
@@ -58,7 +58,7 @@ while($row = mysqli_fetch_array($imageQuery))
         <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
       </div>
     </div>
-  </div>
+  
   <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
     <span class="sr-only">Previous</span>
