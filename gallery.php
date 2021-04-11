@@ -58,6 +58,7 @@ $findcurrentbookings = mysqli_query($conn, "SELECT * FROM `bookings` WHERE `user
       
       while($row = mysqli_fetch_array($imageQuery))
       {
+        $imageid = $row['id'];
           $author = $row['username'];
           $productName = $row['product_name'];
           $caption = $row['caption'];
@@ -67,9 +68,9 @@ $findcurrentbookings = mysqli_query($conn, "SELECT * FROM `bookings` WHERE `user
       
 
       <div class="col-xl-3 col-lg-4 col-md-6 mb-4">
-        <div class="bg-dark rounded shadow-sm"><img src="<?php echo $pLocation; ?>" alt="" class="img-fluid card-img-top" style="width: 100%; height: 250px; object-fit: cover;">
+        <div class="bg-dark rounded shadow-sm"><img src="/<?php echo $pLocation; ?>" alt="" class="img-fluid card-img-top" style="width: 100%; height: 250px; object-fit: cover;">
           <div class="p-4">
-            <h5> <a href="#" class="text-white"><?php echo $productName; ?> </a></h5> <div style="float: right;"><a class="text-white"><i class="fa fa-pencil"></i> <i class="fa fa-trash"></i> <i class="fa fa-pencil-square-o"></i></a> </div>
+            <h5> <a href="#" class="text-white"><?php echo $productName; ?> </a></h5> <div style="float: right;"><input type='button' data-toggle='modal' id='cancel_btn' data-target='<?php echo "#manage{$imageid}";?>' class='btn btn-primary' value='Report Image' /> </div>
             <p class="small text-white mb-0"><?php echo $caption; ?></p>
             <div class="d-flex align-items-center justify-content-between rounded-pill bg-light px-3 py-2 mt-4">
               <p class="small mb-0"><i class="fa fa-user-o mr-2"></i><span class="font-weight-bold"><?php echo $author; ?></span></p>
@@ -78,8 +79,52 @@ $findcurrentbookings = mysqli_query($conn, "SELECT * FROM `bookings` WHERE `user
           </div>
         </div>
       </div>
-
+      <div class='modal fade' id='<?php echo "manage{$imageid}"; ?>' tabindex='-1' role='dialog' aria-labelledby='<?php echo "manage{$imageid}"; ?>' aria-hidden='true'>
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalCenterTitle">Report Tools</h5>
+        
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        
+      </div>
+      
+      <div class="modal-body">
+      <small>You're reporting: <?php echo $author; ?>.<br>Their image: <a href='/<?php echo $pLocation; ?>' target='_blank'>Click to view</a></small>
+      <div id="report-results"></div>
+      <form id="FormReport" action="php/report-image" method="post">
+          <div class="form-group">
+            <label for="recipient-name" class="col-form-label">Reason Option</label>
+            <input type="hidden" name="reporter" value="<?php echo $session_usern; ?>">
+            <input type="hidden" name="reporting" value="<?php echo $author; ?>">
+            <select name="reportoption" class="form-control" required>
+              <option selected disabled>Please select...</option>
+              <option value="Harassment">Harassment</option>
+              <option value="Unpermitted use of image">Unpermitted use of Image</option>
+              <option value="Spam">Spam</spam>
+              <option value="Threat to Site">Threat to Site</option>
+              <option value="Identity Theft">Identity Theft</option>
+              <option value="Contains inappropriate language">Contains inappropriate language</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="message-text" class="col-form-label">Report Information</label>
+            <textarea type="text" class="form-control" name="reportinformation" id="image-description" placeholder="E.g. More information..." required></textarea>
+          </div>
+        
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-danger">Report</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
       <?php
+      
       }
       ?>
        
@@ -99,10 +144,9 @@ $findcurrentbookings = mysqli_query($conn, "SELECT * FROM `bookings` WHERE `user
         </button>
         
       </div>
-      
       <div class="modal-body">
       <small>Your image will be put as pending whilst our team approves your submission.</small>
-      <form id="Form1" action="inc/submit-photo" method="post">
+      <form action="php/upload-photo" method="post" enctype='multipart/form-data'>
           <div class="form-group">
             <label for="recipient-name" class="col-form-label">Image Title</label>
             <input type="text" class="form-control" name="title" id="image-title" placeholder="E.g. Dog Biscuits">
@@ -113,7 +157,7 @@ $findcurrentbookings = mysqli_query($conn, "SELECT * FROM `bookings` WHERE `user
           </div>
           <div class="form-group">
             <label for="message-text" class="col-form-label">Upload Photo:</label>
-            <input type="file" class="form-control-file" name="fileUpload" id="exampleFormControlFile1" accept="image/*">
+            <input type="file" class="form-control-file" name="image_upload" id="exampleFormControlFile1" accept="image/*">
           </div>
         
       </div>
@@ -127,17 +171,12 @@ $findcurrentbookings = mysqli_query($conn, "SELECT * FROM `bookings` WHERE `user
 </div>
 
 
+
   <?php include "inc/footer.php"; ?>
 </body>
 <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-
-<script type="text/javascript">
-const myCarousel = document.querySelector('#myCarousel')
-const carousel = new mdb.Carousel(myCarousel)
-</script>
-
   <script type='text/javascript'>
-    $('#Form1').submit(function(event) {
+    $('#FormReport').submit(function(event) {
       event.preventDefault(); //prevent default action
       var post_url = $(this).attr('action'); //get form action url
       var form_data = $(this).serialize(); //Encode form elements for submission
@@ -147,12 +186,15 @@ const carousel = new mdb.Carousel(myCarousel)
         type: 'post',
         data: form_data
       }).done(function(response) { //
-        $('#server-results').html(response);
+        $('#report-results').html(response);
 
       });
     });
   </script>
-
+<script type="text/javascript">
+const myCarousel = document.querySelector('#myCarousel')
+const carousel = new mdb.Carousel(myCarousel)
+</script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>

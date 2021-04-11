@@ -121,16 +121,70 @@ $rowcountbookings = mysqli_fetch_array($resultcountbookings);
   {
     $bookingtxt = "Bookings";
   }
+
+  // sql for counting products
   $sqlcountproducts = "select count(*) as totalproducts FROM `products`";
-$resultcountproducts = mysqli_query($conn,$sqlcountproducts);
-$rowcountproducts = mysqli_fetch_array($resultcountproducts);
-  if ($rowcountproducts['totalproducts'] == '1')
+  $resultcountproducts = mysqli_query($conn,$sqlcountproducts);
+  $rowcountproducts = mysqli_fetch_array($resultcountproducts);
+    if ($rowcountproducts['totalproducts'] == '1')
+    {
+      $producttxt = "Product";
+    }
+    else
+    {
+      $producttxt = "Products";
+    }
+    
+  // sql for counting users
+  $sqlcountusers = "SELECT count(*) as totalusers FROM `accounts`";
+  $resultcountusers = mysqli_query($conn, $sqlcountusers);
+  $rowcountusers = mysqli_fetch_array($resultcountusers);
+  if($rowcountusers['totalusers'] == '1')
   {
-    $producttxt = "Product";
+    $userstxt = "User";
   }
   else
   {
-    $producttxt = "Products";
+    $userstxt = "Users";
+  }
+
+  // sql for counting photos
+  $sqlcountphotos = "SELECT count(*) as totalphotos FROM `photo_sharing`";
+  $resultcountphotos = mysqli_query($conn, $sqlcountphotos);
+  $rowcountphotos = mysqli_fetch_array($resultcountphotos);
+  if($rowcountphotos['totalphotos'] == '1')
+  {
+    $phototxt = "Photo";
+  }
+  else
+  {
+    $phototxt = "Photos";
+  }
+
+  // sql for counting reviews
+  $sqlcountreviews = "SELECT count(*) as totalreviews FROM `reviews`";
+  $resultcountreviews = mysqli_query($conn, $sqlcountreviews);
+  $rowcountreviews = mysqli_fetch_array($resultcountreviews);
+  if($rowcountreviews['totalreviews'] == '1')
+  {
+    $reviewtxt = "Review";
+  }
+  else
+  {
+    $reviewtxt = "Reviews";
+  }
+
+  // sql for counting News Posts
+  $sqlcountnews = "SELECT count(*) as totalnews FROM `announcements`";
+  $resultcountnews = mysqli_query($conn, $sqlcountnews);
+  $rowcountnews = mysqli_fetch_array($resultcountnews);
+  if($rowcountnews['totalnews'] == '1')
+  {
+    $newstxt = "News Post";
+  }
+  else
+  {
+    $newstxt = "News Posts";
   }
 
         echo "
@@ -160,19 +214,19 @@ $rowcountproducts = mysqli_fetch_array($resultcountproducts);
     <a href='users' style='color: white' title='Click here to view User Options'>
       <div class='card-counter info'>
         <i class='fa fa-users'></i>
-        <span class='count-numbers'>Amount</span>
-        <span class='count-name'>Users</span>
+        <span class='count-numbers'>{$rowcountusers['totalusers']}</span>
+        <span class='count-name'>{$userstxt}</span>
     
       </div>
       </a>
     </div>
 
     <div class='col-md-3'>
-    <a href='users' style='color: white' title='Click here to view Photo Options'>
+    <a href='list-images' style='color: white' title='Click here to view Photo Options'>
       <div class='card-counter photos'>
         <i class='fa fa-picture-o'></i>
-        <span class='count-numbers'>Amount</span>
-        <span class='count-name'>Photos</span>
+        <span class='count-numbers'>{$rowcountphotos['totalphotos']}</span>
+        <span class='count-name'>{$phototxt}</span>
     
       </div>
       </a>
@@ -182,8 +236,8 @@ $rowcountproducts = mysqli_fetch_array($resultcountproducts);
     <a href='users' style='color: white' title='Click here to view Reviews'>
       <div class='card-counter reviews'>
         <i class='fa fa-pencil-square-o'></i>
-        <span class='count-numbers'>Amount</span>
-        <span class='count-name'>Reviews</span>
+        <span class='count-numbers'>{$rowcountreviews['totalreviews']}</span>
+        <span class='count-name'>{$reviewtxt}</span>
     
       </div>
       </a>
@@ -193,8 +247,8 @@ $rowcountproducts = mysqli_fetch_array($resultcountproducts);
     <a href='users' style='color: white' title='Click here to view News and Announcements'>
       <div class='card-counter news'>
         <i class='fa fa-newspaper-o'></i>
-        <span class='count-numbers'>Amount</span>
-        <span class='count-name'>News Posts</span>
+        <span class='count-numbers'>{$rowcountnews['totalnews']}</span>
+        <span class='count-name'>{$newstxt}</span>
     
       </div>
       </a>
