@@ -71,7 +71,7 @@ $ctcat = mysqli_num_rows($findcategories);
   }
   else
   {
-    echo "There are no categories";
+    echo "<h5>There are no categories</h5>";
   }
   ?>
 </div>
