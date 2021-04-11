@@ -30,12 +30,14 @@ session_start();
   <h2 class="mb-4">Welcome to Kerry's K9's!</h2><br>
   <p>
 
-  <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
-  <ol class="carousel-indicators">
-    <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
-    <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
-    <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
-  </ol>
+  <div class="container">
+		<div class="carousel slide" id="main-carousel" data-ride="carousel">
+			<ol class="carousel-indicators">
+				<li data-target="#main-carousel" data-slide-to="0" class="active"></li>
+				<li data-target="#main-carousel" data-slide-to="1"></li>
+				<li data-target="#main-carousel" data-slide-to="2"></li>
+				<li data-target="#main-carousel" data-slide-to="3"></li>
+			</ol><!-- /.carousel-indicators -->
 
   
   <?php
@@ -52,28 +54,33 @@ while($row = mysqli_fetch_array($imageQuery))
     $pLocation = $row['p_location'];
     ?>
 
-<div class="carousel-inner">
-    <div class="carousel-item">
-      <img src="<?php echo $pLocation; ?>" class="d-block w-100" alt="...">
-      <div class="carousel-caption d-none d-md-block">
-        <h5>Third slide label</h5>
-        <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
-      </div>
-    </div>
-  </div>
+
+			
+			<div class="carousel-inner">
+				<div class="carousel-item active">
+					<img class="d-block img-fluid" src="<?php echo $pLocation; ?>" alt="">
+					<div class="carousel-caption d-none d-md-block">
+						<h1>Mountain</h1>
+					</div>
+				</div>
+
+			</div><!-- /.carousel-inner -->
+		
 <?php
 
 }
 ?>
- <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
-  </a>
-</div>
+	
+  <a href="#main-carousel" class="carousel-control-prev" data-slide="prev">
+				<span class="carousel-control-prev-icon"></span>
+				<span class="sr-only" aria-hidden="true">Prev</span>
+			</a>
+			<a href="#main-carousel" class="carousel-control-next" data-slide="next">
+				<span class="carousel-control-next-icon"></span>
+				<span class="sr-only" aria-hidden="true">Next</span>
+			</a>
+		</div><!-- /.carousel -->
+	</div><!-- /.container -->
     <?php
 $sqlfinddiscounts = "SELECT * FROM `products` WHERE `discount` != '0'";
 $finddiscount = mysqli_query($conn, $sqlfinddiscounts);
