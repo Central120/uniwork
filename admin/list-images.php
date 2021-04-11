@@ -104,7 +104,7 @@ $findimages = mysqli_query($conn, "SELECT * FROM `photo_sharing` WHERE `approver
             <div class='modal-body'>
             <div id='manage-results'></div>
             <div id='mark-results'></div>
-            <div id='delete-results'></div>
+            <div id='delete-result'></div>
             <p>Please note: Deleting the image cannot be reversed.</p>
             </div>
             <div class='modal-footer'>
@@ -155,15 +155,6 @@ $findimages = mysqli_query($conn, "SELECT * FROM `photo_sharing` WHERE `approver
       });
     });
   </script>
-<script>
-$('#forgot').click(function(){
-window.location.replace('forgot-password');
-});
-
-$('#signup').click(function() {
-window.location.replace('signup');
-});
-  </script>
 
 <script type='text/javascript'>
     $('#MarkImage').submit(function(event) {
@@ -181,16 +172,6 @@ window.location.replace('signup');
       });
     });
   </script>
-<script>
-$('#forgot').click(function(){
-window.location.replace('forgot-password');
-});
-
-$('#signup').click(function() {
-window.location.replace('signup');
-});
-  </script>
-
 
 <script type='text/javascript'>
     $('#DeleteImage1').submit(function(event) {
@@ -203,19 +184,10 @@ window.location.replace('signup');
         type: 'post',
         data: form_data
       }).done(function(response) { //
-        $('#delete-results').html(response);
+        $('#delete-result').html(response);
 
       });
     });
-  </script>
-<script>
-$('#forgot').click(function(){
-window.location.replace('forgot-password');
-});
-
-$('#signup').click(function() {
-window.location.replace('signup');
-});
   </script>
 
 
