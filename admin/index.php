@@ -175,16 +175,16 @@ $rowcountbookings = mysqli_fetch_array($resultcountbookings);
   }
 
   // sql for counting News Posts
-  $sqlcountnews = "SELECT count(*) as totalnews FROM `announcements`";
+  $sqlcountnews = "SELECT count(*) as totalnews FROM `forum_posts`";
   $resultcountnews = mysqli_query($conn, $sqlcountnews);
   $rowcountnews = mysqli_fetch_array($resultcountnews);
   if($rowcountnews['totalnews'] == '1')
   {
-    $newstxt = "News Post";
+    $newstxt = "Forum Post";
   }
   else
   {
-    $newstxt = "News Posts";
+    $newstxt = "Forum Posts";
   }
 
   // sql for counting Image Reports
@@ -257,7 +257,7 @@ $rowcountbookings = mysqli_fetch_array($resultcountbookings);
     </div>
 
     <div class='col-md-3'>
-    <a href='users' style='color: white' title='Click here to view News and Announcements'>
+    <a href='forums' style='color: white' title='Click here to view News and Announcements'>
       <div class='card-counter news'>
         <i class='fa fa-newspaper-o'></i>
         <span class='count-numbers'>{$rowcountnews['totalnews']}</span>

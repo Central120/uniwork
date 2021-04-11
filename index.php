@@ -26,8 +26,7 @@ session_start();
   <?php include "inc/header.php"; ?>
 <center>
   <h2 class="mb-4">Welcome to Kerry's K9's!</h2><br>
-  <p>Below are the most recent announcements.</p>
-  <br>
+  
   <p><?php
 $sqlfinddiscounts = "SELECT * FROM `products` WHERE `discount` != '0'";
 $finddiscount = mysqli_query($conn, $sqlfinddiscounts);
