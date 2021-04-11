@@ -77,7 +77,7 @@ $findcurrentbookings = mysqli_query($conn, "SELECT * FROM `bookings` WHERE `user
               ?>
               <form action="php/user-delete-photo" method="post">
               <input type="hidden" value="<?php echo $imageid; ?>">
-              <button type="submit"><i class="fa fa-trash"></i></button>
+              <a type="submit"><i class="fa fa-trash"></i></a>
             </form>
               <?php
             }
@@ -131,7 +131,7 @@ $findcurrentbookings = mysqli_query($conn, "SELECT * FROM `bookings` WHERE `user
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <a type="submit" class="btn btn-danger">Report</button>
+        <button type="submit" class="btn btn-danger">Report</button>
         </form>
       </div>
     </div>
