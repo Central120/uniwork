@@ -92,6 +92,8 @@ $counter++;
     <span class="sr-only">Next</span>
   </a>
 </div>
+<br>
+<a class="btn btn-primary" href="gallery">Visit our Gallery</a>
   <br><br><br>
   </div>
     <?php
