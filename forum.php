@@ -63,7 +63,7 @@ $ctcat = mysqli_num_rows($findcategories);
         <h4 class='card-title'>$category</h4>
         <p class='card-text'>$cat_desc</p>
         <input type='hidden' value='$cat_id' name='id'>
-        <input type='submit' value='View Posts' class='btn btn-primary'>
+        <input type='submit' value='View Posts' class='btn btn-dark'>
       </div>
     </div>
     </form>";
