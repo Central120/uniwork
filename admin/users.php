@@ -1,0 +1,106 @@
+<?php
+include_once 'inc/dbconnect.php';
+session_start();
+$current_timestamp = date('Y-m-d H:i:s');
+
+if(isset($_SESSION['admin']))
+{
+    $session_usern = $_SESSION['admin'];
+}
+else
+{
+    echo "<script>window.location.replace('../index');</script>";
+}
+
+
+$listaccounts = mysqli_query($conn, "SELECT * FROM `accounts`");
+
+?>
+<!doctype html>
+<html lang="en">
+  <head>
+  	<title>Kerry's K9's - Accounts</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+   	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700' rel='stylesheet' type='text/css' />
+     
+     <style>
+    .footer 
+    {
+        margin-top:10% !important;
+    }
+     </style>
+</head>
+<body>
+    <?php include "inc/header.php"; ?>
+  
+        <center>
+    <h2 class="mb-42">Account List</h2>
+    <div id="server-results"></div>
+    <div class="container" style='margin-bottom: 30%'>
+    <div class="d-flex justify-content-center">
+    <div class="table-responsive">
+      <div id="approve-results"></div>
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th scope="col">Account ID</th>
+                            <th scope="col">Username</th>
+                            <th scope="col">Security Question 1</th>
+                            <th scope="col">Security Question 2</th>
+                            <th scope="col">User/Admin</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+  <?php
+    while ($rowaccounts = $listaccounts->fetch_assoc())
+    {
+     
+
+        
+        $accountid = $rowaccounts['id'];
+        $accountusername = $rowaccounts['username'];
+        $secq1 = $rowaccounts['secq1'];
+        $secq2 = $rowaccounts['secq2'];
+        if($rowaccounts['admin_id'] == 1)
+        {
+          $admin_status = "User";
+        }
+        else if($rowaccounts['admin_id'] == 2)
+        {
+          $admin_status = "Admin";
+        }
+      
+       
+
+        echo "<tr>
+        <td>$accountid</td>
+        <td>$accountusername</td>
+        <td>$secq1</b></td>
+        <td>$secq2</td>
+        <td>$admin_status</td>
+        </tr>
+        ";
+    }
+  
+
+?>
+ </tbody>
+                </table>
+            </div>
+        </div>
+        </div>
+  <?php include "inc/footer.php"; ?>
+</body>
+
+<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+ 
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+</html>

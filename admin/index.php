@@ -187,6 +187,19 @@ $rowcountbookings = mysqli_fetch_array($resultcountbookings);
     $newstxt = "News Posts";
   }
 
+  // sql for counting Image Reports
+  $sqlcountimagereports = "SELECT count(*) as totalimagereports FROM `image_report`";
+  $resultimagereports = mysqli_query($conn, $sqlcountimagereports);
+  $rowcountimagereports = mysqli_fetch_array($resultimagereports);
+  if($rowcountimagereports['totalimagereports'] == '1')
+  {
+    $imgreporttxt = "Image Report";
+  }
+  else
+  {
+    $imgreporttxt = "Image Reports";
+  }
+
         echo "
     <div class='container'>
     <div class='row'>
@@ -249,6 +262,17 @@ $rowcountbookings = mysqli_fetch_array($resultcountbookings);
         <i class='fa fa-newspaper-o'></i>
         <span class='count-numbers'>{$rowcountnews['totalnews']}</span>
         <span class='count-name'>{$newstxt}</span>
+    
+      </div>
+      </a>
+    </div>
+
+    <div class='col-md-3'>
+    <a href='list-image-reports' style='color: white' title='Click here to view Image Reports'>
+      <div class='card-counter news'>
+        <i class='fa fa-newspaper-o'></i>
+        <span class='count-numbers'>{$rowcountimagereports['totalimagereports']}</span>
+        <span class='count-name'>{$imgreporttxt}</span>
     
       </div>
       </a>
