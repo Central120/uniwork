@@ -94,10 +94,10 @@ else
         <h3 class="display-4 text-center">Products Panel</h3>
         <hr class="bg-dark mb-4 w-25">
 <?php
-        echo "<center>
+        echo "
     <div class='container'>
     <div class='row'>
-    <div class='col-md-3'>
+    <div class='col-md-1'>
     <a href='add-discount' style='color: white' title='Click here to add a discount'>
       <div class='card-counter primary'>
         <i class='fa fa-calendar-o'></i>
@@ -118,7 +118,7 @@ else
 
   </div>
 </div>
-</center>
+
     ";
     	?>
       
