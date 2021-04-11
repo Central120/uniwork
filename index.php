@@ -59,6 +59,8 @@ $imageQuery = mysqli_query($conn, "SELECT * FROM photo_sharing WHERE approver !=
 $row = mysqli_fetch_array($imageQuery);
 
 foreach ($row as $result)
+
+$pLocation = $row['p_location'];
 {
 		?>
 
