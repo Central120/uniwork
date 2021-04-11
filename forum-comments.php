@@ -64,8 +64,8 @@ else
     while ($rowctcomments = $findcomments->fetch_assoc())
     {
       $comment_id = $rowctcomments['id'];
-      $comment = $rowctcomments['forum_post'];
-      $commenter = $rowctcomments['poster'];
+      $comment = $rowctcomments['comment'];
+      $commenter = $rowctcomments['commenter'];
       $timestamp = $rowctcomments['timestamp'];
 
       $date1 = strtotime($current_timestamp);
