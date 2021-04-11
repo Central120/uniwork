@@ -96,11 +96,11 @@ else
       }
       if (isset($_SESSION['admin']) && $type != "main")
       {
-        $tools = "<div class='btn-group' role='group' aria-label='button'><form action='php/delete-comment.php' method='post'><input type='hidden' value='$comment_id' name='comment'><button title='Delete comment' style='margin-left: 95%' type='submit' class='btn btn-danger'><i class='fa fa-trash' aria-hidden='true'></i></button></form></div>";
+        $tools = "<form action='php/delete-comment.php' method='post'><input type='hidden' value='$comment_id' name='comment'><button title='Delete comment' style='margin-left: 95%' type='submit' class='btn btn-danger'><i class='fa fa-trash' aria-hidden='true'></i></button></form>";
       }
       else if ($session_usern == $commenter && $type != "main")
       {
-        $tools = "<div class='btn-group' role='group' aria-label='button'><form action='php/delete-comment.php' method='post'><input type='hidden' value='$comment_id' name='comment'><button title='Delete comment' style='margin-left: 95%' type='submit' class='btn btn-danger'><i class='fa fa-trash' aria-hidden='true'></i></button></form></div>";
+        $tools = "<form action='php/delete-comment.php' method='post'><input type='hidden' value='$comment_id' name='comment'><button title='Delete comment' style='margin-left: 95%' type='submit' class='btn btn-danger'><i class='fa fa-trash' aria-hidden='true'></i></button></form>";
       }
       else
       {
