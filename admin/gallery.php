@@ -94,7 +94,7 @@ else
         <h3 class="display-4 text-center">Products Panel</h3>
         <hr class="bg-dark mb-4 w-25">
 <?php
-        echo "
+        echo "<center>
     <div class='container'>
     <div class='row'>
     <div class='col-md-3'>
@@ -118,6 +118,7 @@ else
 
   </div>
 </div>
+</center>
     ";
     	?>
       
