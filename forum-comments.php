@@ -4,30 +4,6 @@ session_start();
 $current_timestamp = date('Y-m-d H:i:s');
 
 $chosen_post = mysqli_real_escape_string($conn, $_POST['id']);
-if (isset($_SESSION['user']))
-{
-    $session_usern = $_SESSION['user'];
-}
-else if(isset($_SESSION['admin']))
-{
-    $session_usern = $_SESSION['admin'];
-    $modtools = "<div style='margin-bottom: 10px;' class='btn-group' role='group' aria-label='button'>
-    <form action='php/lock-post.php' method='post'>
-    <input type='hidden' value='$chosen_post' name='post_id'>
-    <button type='submit' title='Lock Post' class='btn btn-warning'><i class='fa fa-lock' aria-hidden='true'></i></button>
-     </form>
-     <form action='php/delete-post.php' method='post'>
-    <input type='hidden' value='$chosen_post' name='post_id'>
-    <button type='submit' style='margin-left: 10px;' title='Delete Post' class='btn btn-danger'><i class='fa fa-trash' aria-hidden='true'></i></button>
-     </form>
-     </div>";
-}
-else
-{
-    $session_usern = "Guest";
-}
-
-
 $sqlfindposts = "SELECT * FROM `forum_posts` WHERE `id` = '$chosen_post'";
 $findposts = mysqli_query($conn, $sqlfindposts);
 $ctposts = mysqli_num_rows($findposts);
@@ -37,6 +13,7 @@ if ($ctposts != 0)
   
 $rowposts = mysqli_fetch_assoc($findposts);
 $posts_name = $rowposts['forum_post'];
+$status = $rowposts['status'];
 $sqlfindcomments = "SELECT * FROM `forum_comments` WHERE `post_id` = '$chosen_post' ORDER BY `timestamp` DESC";
 $findcomments = mysqli_query($conn, $sqlfindcomments);
 $ctcomments = mysqli_num_rows($findcomments);
@@ -45,6 +22,50 @@ else
 {
     echo "<h5>Post could not be found</h5>";
 }
+
+if (isset($_SESSION['user']))
+{
+    $session_usern = $_SESSION['user'];
+}
+else if(isset($_SESSION['admin']))
+{
+    $session_usern = $_SESSION['admin'];
+    if ($status == "closed")
+    {
+      $modtools = "<div style='margin-bottom: 10px;' class='btn-group' role='group' aria-label='button'>
+      <form action='php/unlock-post.php' method='post'>
+      <input type='hidden' value='$chosen_post' name='post_id'>
+      <button type='submit' title='Unlock Post' class='btn btn-warning'><i class='fa fa-unlock-alt' aria-hidden='true'></i></button>
+       </form>
+       <form action='php/delete-post.php' method='post'>
+       <input type='hidden' value='$chosen_post' name='post_id'>
+       <button type='submit' style='margin-left: 10px;' title='Delete Post' class='btn btn-danger'><i class='fa fa-trash' aria-hidden='true'></i></button>
+        </form>
+        </div>";
+    }
+    else
+    {
+      $modtools = "<div style='margin-bottom: 10px;' class='btn-group' role='group' aria-label='button'>
+    <form action='php/lock-post.php' method='post'>
+    <input type='hidden' value='$chosen_post' name='post_id'>
+    <button type='submit' title='Lock Post' class='btn btn-warning'><i class='fa fa-lock' aria-hidden='true'></i></button>
+     </form>
+     <form action='php/delete-post.php' method='post'>
+     <input type='hidden' value='$chosen_post' name='post_id'>
+     <button type='submit' style='margin-left: 10px;' title='Delete Post' class='btn btn-danger'><i class='fa fa-trash' aria-hidden='true'></i></button>
+      </form>
+      </div>";
+    }
+    
+     
+}
+else
+{
+    $session_usern = "Guest";
+}
+
+
+
 ?>
 
 <!doctype html>
