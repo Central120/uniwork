@@ -40,7 +40,7 @@ else
     <div id="server-results"></div>
     <div class="container">
     <div class="d-flex justify-content-center">
-    <form action='php/add-product.php' method='post'>
+    <form style='width:50%' action='php/add-product.php' method='post'>
     <label for='category'>Choose a category to post to</label>
     <select name='category' id='category' class="form-control">
     <?php
@@ -64,7 +64,7 @@ else
     </div>
     <div class="form-group">
     <label for="post_content">Content of Post</label>
-    <textarea class='form-control' style='width:50%' minlength='10' id='exampleFormControlTextarea1' rows='3' name='comment'></textarea>
+    <textarea class='form-control' minlength='10' id='exampleFormControlTextarea1' rows='3' name='comment'></textarea>
      </div>
      <button type='submit' class='btn btn-primary'>Submit new post</button>
      </div>
