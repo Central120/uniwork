@@ -118,7 +118,7 @@ else
     
         <div class='col-md-3'>
         <a href='delete-category' style='color: white' title='Click here to delete a category'>
-          <div class='card-counter success'>
+          <div class='card-counter danger'>
             <i class='fa fa-check'></i>
             <span class='count-name'>Delete a category</span>
           </div>
