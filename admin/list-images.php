@@ -59,8 +59,9 @@ $findimages = mysqli_query($conn, "SELECT * FROM `photo_sharing` WHERE `approver
   <?php
     while ($rowimages = $findimages->fetch_assoc())
     {
-        $countPhotos = mysqli_query($conn, "SELECT * FROM photo_sharing");
-        $rowcountphotos = mysqli_num_rows($countPhotos);
+      $sqlcountphotos = "SELECT count(*) as totalphotos FROM `photo_sharing`";
+      $resultcountphotos = mysqli_query($conn, $sqlcountphotos);
+      $rowcountphotos = mysqli_fetch_array($resultcountphotos);
 
         $imageid = $rowimages['id'];
         $imageUsername = $rowimages['username'];
@@ -84,7 +85,7 @@ $findimages = mysqli_query($conn, "SELECT * FROM `photo_sharing` WHERE `approver
         }
 
         echo "<tr>";
-        if($rowcountphotos == '0')
+        if($rowcountphotos['totalphotos'] == '0')
         {
           echo "<td>No photos have been submitted at this time.</td>";
         }
