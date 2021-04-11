@@ -95,19 +95,7 @@ else
         <hr class="bg-dark mb-4 w-25">
 <?php
         echo "
-    <div class='container'>
-    <div class='row'>
-    <div class='col-md-3'>
-    <a href='list-images' style='color: white' title='Click here to add a discount'>
-      <div class='card-counter primary'>
-        <i class='fa fa-calendar-o'></i>
-      
-        <span class='count-name'>List Images</span>
-      </div>
-    </a>
-      </div>
-
-    <div class='col-md-3'>
+       <div class='col-md-3'>
     <a href='manage-image-submissions' style='color: white' title='Click here to modify products'>
       <div class='card-counter info'>
         <i class='fa fa-book'></i>
