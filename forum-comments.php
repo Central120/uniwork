@@ -85,11 +85,15 @@ else
       }
       if (isset($_SESSION['admin']))
       {
-        $tools = "<form action='php/delete-comment.php' method='post'><input type='hidden' value='$comment_id' name='comment'><button type='submit' class='btn btn-danger'><i class='fa fa-trash' aria-hidden='true'></i></button></form>";
+        $tools = "<form action='php/delete-comment.php' method='post'><input type='hidden' value='$comment_id' name='comment'><button style='margin-right: 95%' type='submit' class='btn btn-danger'><i class='fa fa-trash' aria-hidden='true'></i></button></form>";
       }
       else if ($session_usern == $commenter)
       {
-        $tools = "<form action='php/delete-comment.php' method='post'><input type='hidden' value='$comment_id' name='comment'><button type='submit' class='btn btn-danger'><i class='fa fa-trash' aria-hidden='true'></i></button></form>";
+        $tools = "<form action='php/delete-comment.php' method='post'><input type='hidden' value='$comment_id' name='comment'><button style='margin-right: 95%' type='submit' class='btn btn-danger'><i class='fa fa-trash' aria-hidden='true'></i></button></form>";
+      }
+      else if ($type == "main")
+      {
+        $tools = "";
       }
       else
       {
