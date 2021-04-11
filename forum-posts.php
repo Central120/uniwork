@@ -134,7 +134,7 @@ else
       else
       {
         $msgstatus = "Open";
-        $input = "<input type='hidden' value='$post_id' name='id'><input type='submit' value='View Post' class='btn btn-success'>";";
+        $input = "<input type='hidden' value='$post_id' name='id'><input type='submit' value='View Post' class='btn btn-success'>";
       }
 
       echo "
