@@ -24,7 +24,7 @@ $ctcat = mysqli_num_rows($findcategories);
 
 if ($ctcat != 0)
 {
-    $rowcat = mysqli_fetch_assoc($rowcat);
+    $rowcat = mysqli_fetch_assoc($findcategories);
     $category_name = $rowcat['category'];
 
 $sqlfindposts = "SELECT * FROM `forum_posts` WHERE `category_id` = '$chosen_cat' ORDER BY `timestamp` DESC";
