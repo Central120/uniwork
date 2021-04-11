@@ -81,6 +81,8 @@ else
       $post_name = $rowctposts['forum_post'];
       $poster = $rowctposts['poster'];
       $timestamp = $rowctposts['timestamp'];
+      $status = $rowctposts['status'];
+
       $date1 = strtotime($current_timestamp);
       $date2 = strtotime($timestamp);
       $diff = abs($date2- $date1);
@@ -116,13 +118,22 @@ else
       $msg = "$years years, $months months, $days days, $hours hours and $minutes minutes ago";
       }
 
+      if ($status == "open")
+      {
+        $input = "<input type='hidden' value='$post_id' name='id'><input type='submit' value='View Post' class='btn btn-success'>";
+      }
+      else
+      {
+        $input = "";
+      }
+      
       echo "
       <form action='forum-comments.php' method='post'>
       <tr>
       <td>$post_name</td>
       <td>$poster</td>
       <td title='$timestamp'>$msg</td>
-      <td><input type='hidden' value='$post_id' name='id'><input type='submit' value='View Post' class='btn btn-success'></td></tr>
+      <td>$input</td></tr>
     </form>";
     }
   }

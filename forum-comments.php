@@ -96,11 +96,11 @@ else
       }
       if (isset($_SESSION['admin']) && $type != "main")
       {
-        $tools = "<form action='php/delete-comment.php' method='post'><input type='hidden' value='$comment_id' name='comment'><button title='Delete comment' style='margin-left: 95%' type='submit' class='btn btn-danger'><i class='fa fa-trash' aria-hidden='true'></i></button></form>";
+        $tools = "<div class='btn-group' role='group' aria-label='button'><form action='php/delete-comment.php' method='post'><input type='hidden' value='$comment_id' name='comment'><button title='Delete comment' style='margin-left: 95%' type='submit' class='btn btn-danger'><i class='fa fa-trash' aria-hidden='true'></i></button></form></div>";
       }
       else if ($session_usern == $commenter && $type != "main")
       {
-        $tools = "<form action='php/delete-comment.php' method='post'><input type='hidden' value='$comment_id' name='comment'><button title='Delete comment' style='margin-left: 95%' type='submit' class='btn btn-danger'><i class='fa fa-trash' aria-hidden='true'></i></button></form>";
+        $tools = "<div class='btn-group' role='group' aria-label='button'><form action='php/delete-comment.php' method='post'><input type='hidden' value='$comment_id' name='comment'><button title='Delete comment' style='margin-left: 95%' type='submit' class='btn btn-danger'><i class='fa fa-trash' aria-hidden='true'></i></button></form></div>";
       }
       else
       {
@@ -168,17 +168,26 @@ else
   }
   ?>
    </div>
-   <form action="php/new-comment">
-  <div class="form-group">
-  <label for="comment">Post a new comment</label>
-    <textarea class="form-control" style='width:50%' minlength="10" id="exampleFormControlTextarea1" rows="3" name="comment"></textarea>
-  </div>
-  <input type="hidden" value="<?php echo $chosen_post; ?>" name='id'>
-  <button type="submit" class="btn btn-primary">Post Comment</button>
-
-
-
-  </form>
+   <?php 
+   if (isset($_SESSION['admin']) || isset($_SESSION['user']))
+   {
+   echo "<form action='php/new-comment'>
+   <div class='form-group'>
+   <label for='comment'>Post a new comment</label>
+     <textarea class='form-control' style='width:50%' minlength='10' id='exampleFormControlTextarea1' rows='3' name='comment'></textarea>
+   </div>
+   <input type='hidden' value='<?php echo $chosen_post; ?>' name='id'>
+   <button type='submit' class='btn btn-primary'>Post Comment</button>
+ 
+ 
+ 
+   </form>";
+   }
+   else
+   {
+     echo "<h5>You must be signed in to post a new comment</h5>";
+   }
+   ?>
 </div>
 <?php include "inc/footer.php"; ?>
 </body>
