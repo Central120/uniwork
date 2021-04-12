@@ -59,7 +59,7 @@ $description = $rowfindcategory['category_desc'];
     <label for="post_content">Colour</label>
     <select name="colour" class="form-control">
     <?php
-    $sqlfindcolours = "SELECT * FROM `forum_category` WHERE `id` = '$id'";
+    $sqlfindcolours = "SELECT * FROM `forum_category` WHERE `id` = '$category'";
     $findcolours = mysqli_query($conn, $sqlfindcolours);
     while ($colours = $findcolours->fetch_assoc())
     {
@@ -90,7 +90,7 @@ $description = $rowfindcategory['category_desc'];
         }
        
     }
-    echo $sqlfindcolours;
+    
     ?>
     </select>
      </div>
