@@ -90,6 +90,7 @@ $description = $rowfindcategory['category_desc'];
         }
        
     }
+    echo $sqlfindcolours;
     ?>
     </select>
      </div>
