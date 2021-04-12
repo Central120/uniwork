@@ -60,7 +60,7 @@ else
     }
 
 
-    $sqlfindcategory = "SELECT * FROM `forum_category` WHERE `category` = '$id'";
+    $sqlfindcategory = "SELECT * FROM `forum_category` WHERE `id` = '$id'";
     $procfindcategory = mysqli_query($conn, $sqlfindcategory);
     $ctfindcategory = mysqli_num_rows($procfindcategory);
 
