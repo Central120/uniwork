@@ -70,7 +70,7 @@ else
         $modifycat = mysqli_query($conn, $sqlmodifycat);
         if ($modifycat)
         {    
-             echo "<script>window.location.replace('../add-post');</script>";
+             echo "<script>window.location.replace('../../forum');</script>";
         }
         else
         {
