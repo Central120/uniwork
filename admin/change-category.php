@@ -64,28 +64,52 @@ $description = $rowfindcategory['category_desc'];
     while ($colours = $findcolours->fetch_assoc())
     {
         $colour1 = "success";
-        $real = "Green";
+        $real1 = "Green";
         $colour2 = "danger";
-        $real = "Red";
+        $real2 = "Red";
         $colour3 = "warning";
-        $real = "Yellow";
+        $real3 = "Yellow";
         $colour4 = "primary";
-        $real = "Blue";
+        $real4 = "Blue";
         $colour5 = "info";
-        $real = "Light Blue";
+        $real5 = "Light Blue";
         $colour6 = "light";
-        $real = "Light Grey";
-        $real = "Grey";
+        $real6 = "Light Grey";
+        $real7 = "Grey";
         $colour7 = "secondary";
 
       $colour = $colours['colour'];
-    if ($colour == $colour1 || $colour == $colour2 || $colour == $colour3 || $colour == $colour4 || $colour == $colour5 || $colour == $colour6 || $colour == $colour7)
+    if ($colour == $colour1)
         { 
-            echo "<option value='$real' selected>$real</option>";
+            echo "<option value='$real1' selected>$real1</option>";
         }
+    else if ($colour == $colour2)
+    {
+        echo "<option value='$real2' selected>$real2</option>";
+    }
+    else if ($colour == $colour3)
+    {
+        echo "<option value='$real3' selected>$real3</option>";
+    }
+    else if ($colour == $colour4)
+    {
+        echo "<option value='$real4' selected>$real4</option>";
+    }
+    else if ($colour == $colour5)
+    {
+        echo "<option value='$real5' selected>$real5</option>";
+    }
+    else if ($colour == $colour6)
+    {
+        echo "<option value='$real6' selected>$real6</option>";
+    }
+    else if ($colour == $colour7)
+    {
+        echo "<option value='$real7' selected>$real7</option>";
+    }
         else 
         {
-            echo "<option value='$real'>$real</option>";
+            echo "<option value='$colour'>$colour</option>";
         }
        
     }
