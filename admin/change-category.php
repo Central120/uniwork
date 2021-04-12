@@ -18,7 +18,7 @@ $sqlfindcategory = "SELECT * FROM `forum_category` WHERE `id` = '$category'";
 $findcategory = mysqli_query($conn, $sqlfindcategory);
 $rowfindcategory = mysqli_fetch_assoc($findcategory);
 $title = $rowfindcategory['category'];
-$description = $rowfindcategory['description'];
+$description = $rowfindcategory['category_desc'];
 
 ?>
 
