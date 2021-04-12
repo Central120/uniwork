@@ -53,7 +53,7 @@ $description = $rowfindcategory['category_desc'];
     </div>
     <div class="form-group">
     <label for="post_content">Category Description</label>
-    <textarea class='form-control' minlength='10' value="<?php echo $description; ?>" id='exampleFormControlTextarea1' rows='3' name='description'></textarea>
+    <textarea class='form-control' minlength='10' id='exampleFormControlTextarea1' rows='3' name='description'><?php echo $description; ?></textarea>
      </div>
      <div class="form-group">
     <label for="post_content">Colour</label>
@@ -63,46 +63,30 @@ $description = $rowfindcategory['category_desc'];
     $findcolours = mysqli_query($conn, $sqlfindcolours);
     while ($colours = $findcolours->fetch_assoc())
     {
+        $colour1 = "success";
+        $real1 = "Green";
+        $colour2 = "danger";
+        $real2 = "Red";
+        $colour3 = "warning";
+        $real3 = "Yellow";
+        $colour4 = "primary";
+        $real4 = "Blue";
+        $colour5 = "info";
+        $real5 = "Light Blue";
+        $colour6 = "light";
+        $real6 = "Light Grey";
+        $real7 = "Grey";
+        $colour7 = "secondary";
+
       $colour = $colours['colour'];
-    if ($colour == "success")
-        {
-            $real = "Green";
-            echo "<option value='$real' selected>$real</option>";
-        }
-        else if ($colour == "danger")
-        {
-            $real = "Red";
-            echo "<option value='$real' selected>$real</option>";
-        }
-        else if ($colour == "warning")
-        {
-            $real = "Yellow";
-            echo "<option value='$real' selected>$real</option>";
-        }
-        else if ($colour == "primary")
-        {
-            $real = "Blue";
-            echo "<option value='$real' selected>$real</option>";
-        }
-        else if ($colour == "info")
-        {
-            $real = "Light Blue";
-            echo "<option value='$real' selected>$real</option>";
-        }
-        else if ($colour == "secondary")
-        {
-            $real = "Grey";
-            echo "<option value='$real' selected>$real</option>";
-        }
-        else if ($colour == "light")
-        {
-            $real = "Light Grey";
-            echo "<option value='$real' selected>$real</option>";
+    if ($colour == $colour1 || $colour == $colour2 || $colour == $colour3 || $colour == $colour4 || $colour == $colour5 || $colour == $colour6 || $colour == $colour7)
+        { 
+            echo "<option value='$colour' selected>$colour</option>";
         }
         else 
         {
-            $real = "";
-            echo "Colour not accepted";
+            echo "<option value='$colour'>$colour</option>";
+            
         }
        
     }
