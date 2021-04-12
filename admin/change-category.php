@@ -14,7 +14,7 @@ else
 }
 
 $category = mysqli_real_escape_string($conn, $_POST['id']);
-$sqlfindcategory = "SELECT * FROM `forum_categories` WHERE `id` = '$category'";
+$sqlfindcategory = "SELECT * FROM `forum_category` WHERE `id` = '$category'";
 $findcategory = mysqli_query($conn, $sqlfindcategory);
 $rowfindcategory = mysqli_fetch_assoc($findcategory);
 $title = $rowfindcategory['category'];
