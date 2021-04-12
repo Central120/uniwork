@@ -64,29 +64,28 @@ $description = $rowfindcategory['category_desc'];
     while ($colours = $findcolours->fetch_assoc())
     {
         $colour1 = "success";
-        $real1 = "Green";
+        $real = "Green";
         $colour2 = "danger";
-        $real2 = "Red";
+        $real = "Red";
         $colour3 = "warning";
-        $real3 = "Yellow";
+        $real = "Yellow";
         $colour4 = "primary";
-        $real4 = "Blue";
+        $real = "Blue";
         $colour5 = "info";
-        $real5 = "Light Blue";
+        $real = "Light Blue";
         $colour6 = "light";
-        $real6 = "Light Grey";
-        $real7 = "Grey";
+        $real = "Light Grey";
+        $real = "Grey";
         $colour7 = "secondary";
 
       $colour = $colours['colour'];
     if ($colour == $colour1 || $colour == $colour2 || $colour == $colour3 || $colour == $colour4 || $colour == $colour5 || $colour == $colour6 || $colour == $colour7)
         { 
-            echo "<option value='$colour' selected>$colour</option>";
+            echo "<option value='$real' selected>$real</option>";
         }
         else 
         {
-            echo "<option value='$colour'>$colour</option>";
-            
+            echo "<option value='$real'>$real</option>";
         }
        
     }
