@@ -46,7 +46,7 @@ $description = $rowfindcategory['category_desc'];
     <h2 class="mb-42">Modify Category</h2><br>
     <div class="container">
     <div class="d-flex justify-content-center">
-    <form style='width:50%' action='php/add-category.php' method='post'>
+    <form style='width:50%' action='php/modify-category.php' method='post'>
     <div class="form-group">
     <label for="post_title">Title of New Category</label>
     <input type="text" class="form-control" value="<?php echo $title; ?>" name="title" placeholder="Enter title" />
