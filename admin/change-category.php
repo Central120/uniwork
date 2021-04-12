@@ -142,6 +142,7 @@ $description = $rowfindcategory['category_desc'];
     ?>
     </select>
      </div>
+     <input type="hidden" name="id" value="<?php echo $category; ?>">
      <button type='submit' class='btn btn-primary'>Modify Category</button>
      </form>
      </div>
