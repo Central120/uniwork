@@ -52,18 +52,18 @@ $description = $rowfindcategory['description'];
     </div>
     <div class="form-group">
     <label for="post_content">Category Description</label>
-    <textarea class='form-control' minlength='10' value="<?php echo $description; ?>"id='exampleFormControlTextarea1' rows='3' name='description'></textarea>
+    <textarea class='form-control' minlength='10' value="<?php echo $description; ?>" id='exampleFormControlTextarea1' rows='3' name='description'></textarea>
      </div>
      <div class="form-group">
     <label for="post_content">Colour</label>
     <select name="colour" class="form-control">
     <?php
     $sqlfindcolours = "SELECT * FROM `forum_category` WHERE `id` = '$id'";
-    $findcolours = mysqli_query($conn, $sqlfindcolours)
+    $findcolours = mysqli_query($conn, $sqlfindcolours);
     while ($colours = $findcolours->fetch_assoc())
     {
       $colour = $colours['colour'];
-if ($colour == "success")
+    if ($colour == "success")
         {
             $real = "Green";
             echo "<option value='$real' selected>$real</option>";
@@ -109,6 +109,7 @@ if ($colour == "success")
     </select>
      </div>
      <button type='submit' class='btn btn-primary'>Modify Category</button>
+     </form>
      </div>
      </div>
      <?php include "inc/footer.php"; ?>
