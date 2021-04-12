@@ -83,34 +83,59 @@ $description = $rowfindcategory['category_desc'];
         { 
             echo "<option value='$real1' selected>$real1</option>";
         }
-    else if ($colour == $colour2)
+        else 
+        {
+            echo "<option value='$real1'>$real1</option>";
+        }
+     if ($colour == $colour2)
     {
         echo "<option value='$real2' selected>$real2</option>";
     }
-    else if ($colour == $colour3)
+    else 
+        {
+            echo "<option value='$real2'>$real2</option>";
+        }
+     if ($colour == $colour3)
     {
         echo "<option value='$real3' selected>$real3</option>";
     }
-    else if ($colour == $colour4)
+    else 
+        {
+            echo "<option value='$real3'>$real3</option>";
+        }
+     if ($colour == $colour4)
     {
         echo "<option value='$real4' selected>$real4</option>";
     }
-    else if ($colour == $colour5)
+    else 
+        {
+            echo "<option value='$real4'>$real4</option>";
+        }
+     if ($colour == $colour5)
     {
         echo "<option value='$real5' selected>$real5</option>";
     }
-    else if ($colour == $colour6)
+    else 
+        {
+            echo "<option value='$real5'>$real5</option>";
+        }
+     if ($colour == $colour6)
     {
         echo "<option value='$real6' selected>$real6</option>";
     }
-    else if ($colour == $colour7)
+    else 
+        {
+            echo "<option value='$real6'>$real6</option>";
+        }
+    if ($colour == $colour7)
     {
         echo "<option value='$real7' selected>$real7</option>";
     }
-        else 
+    else 
         {
-            echo "<option value='$colour'>$colour</option>";
+            echo "<option value='$real7'>$real7</option>";
         }
+        
        
     }
     
