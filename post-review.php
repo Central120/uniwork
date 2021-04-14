@@ -14,7 +14,7 @@ else if(isset($_SESSION['admin']))
 }
 else
 {
-    $session_usern = "Guest";
+    echo "<script>window.location.replace('login');</script>";
 }
 
 $findreview = "SELECT * from reviews where status = 'approved' order by submit_date asc";
@@ -39,9 +39,10 @@ $numberreview = mysqli_num_rows($searchreview);
 <?php include "inc/header.php"; ?>
 <div class="container-fluid" >
     <div class="d-flex justify-content-center">
+        <div id="server-results"> </div>
         <center>
             <h2 class="mb-4">Welcome to Kerry's K9's reviews!</h2>
-                <form>
+                <form id="ratingsystem" action="php/confirmreview.php" method="post">
                     <label> Rate us out of 5: </label>
                     <div class="rating" style="margin-bottom: 10px;">
                         <input id="star5" name="star" type="radio" value="5" class="radio-btn hide" />
@@ -78,6 +79,22 @@ $numberreview = mysqli_num_rows($searchreview);
 <?php include "inc/footer.php"; ?>
 </body>
 <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+<script type='text/javascript'>
+    $('#ratingsystem').submit(function(event) {
+        event.preventDefault(); //prevent default action
+        var post_url = $(this).attr('action'); //get form action url
+        var form_data = $(this).serialize(); //Encode form elements for submission
+
+        $.ajax({
+            url: post_url,
+            type: 'post',
+            data: form_data
+        }).done(function(response) { //
+            $('#server-results').html(response);
+
+        });
+    });
+</script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
