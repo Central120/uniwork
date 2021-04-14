@@ -99,7 +99,7 @@ $numberreview = mysqli_num_rows($searchreview);
     <h6 class='card-subtitle mb-2 text-muted'>";
             for ($i = 0; $i<= $star_rating; $i++)
             {
-                echo "<i class='fas fa-star' style='color:yellow'></i>";
+                echo "<i class='fa fa-star' style='color:darkyellow'></i>";
             }
 
 
