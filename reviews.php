@@ -17,7 +17,7 @@ else
     $session_usern = "Guest";
 }
 
-$findreview = "SELECT * from reviews where status = 'approved' order by submit_date asc";
+$findreview = "SELECT * from reviews where status = 'approved' order by submit_date desc";
 $searchreview = mysqli_query($conn, $findreview);
 $numberreview = mysqli_num_rows($searchreview);
 
