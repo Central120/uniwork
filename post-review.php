@@ -43,6 +43,7 @@ $numberreview = mysqli_num_rows($searchreview);
             <h2 class="mb-4">Welcome to Kerry's K9's reviews!</h2>
             <?php
             echo $username;
+            echo $msg;
             ?>
             <div class="txt-center">
                 <form>
@@ -62,7 +63,7 @@ $numberreview = mysqli_num_rows($searchreview);
                 </form>
             </div>
                 <div class="mb-3 row">
-                    <label for="inputComment" class="col-sm-2 col-form-label">Write a review...</label>
+                    <label for="inputComment" class="col-sm-2 col-form-label">Review:</label>
                     <div class="col-sm-10">
                         <input type="comments" class="form-control" id="comments">
                     </div>
