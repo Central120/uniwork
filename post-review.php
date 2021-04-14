@@ -42,9 +42,9 @@ $numberreview = mysqli_num_rows($searchreview);
         <center>
             <h2 class="mb-4">Welcome to Kerry's K9's reviews!</h2>
             <div class="mb-3 row">
-                <label for="username" class="col-sm-2 col-form-label">Email</label>
+                <label for="username" class="col-sm-2 col-form-label">Username</label>
                 <div class="col-sm-10">
-                    <input type="text" readonly class="form-control-plaintext" id=" $username" value= $username>
+                    <input type="text" readonly class="form-control-plaintext" id= $username value= $username>
                 </div>
             </div>
             <div class="txt-center">
