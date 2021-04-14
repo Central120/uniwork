@@ -1,4 +1,5 @@
 # Kerry's K9's
+Here at Kerry's K9's, we like to give you, the customer the best experience we can. Therefore, please email us with any suggestions or improvements we can do for you!
 
 ## Admin Default Account
 * Username: admin
@@ -11,4 +12,4 @@
 * shaunlawlor
 * shonsunny
 * matthewcelik
-* WhySoSerious_4
+* WhySoSerious4
