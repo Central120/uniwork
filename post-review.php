@@ -43,7 +43,7 @@ $numberreview = mysqli_num_rows($searchreview);
             <h2 class="mb-4">Welcome to Kerry's K9's reviews!</h2>
             <?php
             echo $username;
-            echo $msg;
+            echo $submit_date;
             ?>
             <div class="txt-center">
                 <form>
