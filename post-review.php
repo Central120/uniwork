@@ -41,12 +41,9 @@ $numberreview = mysqli_num_rows($searchreview);
     <div class="d-flex justify-content-center">
         <center>
             <h2 class="mb-4">Welcome to Kerry's K9's reviews!</h2>
-            <div class="mb-3 row">
-                <label for="username" class="col-sm-2 col-form-label">Username</label>
-                <div class="col-sm-10">
-                    <input type="text" readonly class="form-control-plaintext" id= $username value= $username>
-                </div>
-            </div>
+            <?php
+            echo "$username"</h6>
+            ?>
             <div class="txt-center">
                 <form>
                     <div class="star_rating">
@@ -64,6 +61,12 @@ $numberreview = mysqli_num_rows($searchreview);
                     </div>
                 </form>
             </div>
+                <div class="mb-3 row">
+                    <label for="inputPassword" class="col-sm-2 col-form-label">Password</label>
+                    <div class="col-sm-10">
+                        <input type="password" class="form-control" id="inputPassword">
+                    </div>
+                </div>
 
 
 
