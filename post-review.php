@@ -43,7 +43,7 @@ $numberreview = mysqli_num_rows($searchreview);
             <h2 class="mb-4">Welcome to Kerry's K9's reviews!</h2>
             <div class="txt-center">
                 <form>
-                    <div class="star_rating">
+                    <div class="rating">
                         <input id="star5" name="star" type="radio" value="5" class="radio-btn hide" />
                         <label for="star5" >☆</label>
                         <input id="star4" name="star" type="radio" value="4" class="radio-btn hide" />
