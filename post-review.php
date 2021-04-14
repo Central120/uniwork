@@ -62,11 +62,14 @@ $numberreview = mysqli_num_rows($searchreview);
                 </form>
             </div>
                 <div class="mb-3 row">
-                    <label for="inputPassword" class="col-sm-2 col-form-label">Password</label>
+                    <label for="inputComment" class="col-sm-2 col-form-label">Write a review...</label>
                     <div class="col-sm-10">
-                        <input type="password" class="form-control" id="inputPassword">
+                        <input type="comments" class="form-control" id="comments">
                     </div>
                 </div>
+            <div>
+                <input type="submit" value="Submit" accesskey="u">
+            </div>
 
 
 
