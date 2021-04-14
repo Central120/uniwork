@@ -7,9 +7,10 @@ Here at Kerry's K9's, we like to give you, the customer the best experience we c
 
 *For first use please make a new account for yourself, mark the new account as an admin via the default admin account and delete the default admin account afterwards*
 
-## Contributors
-* Central120
-* shaunlawlor
-* shonsunny
-* matthewcelik
-* WhySoSerious4
+## Contributors 
+*_Name (GitHub Username)_*
+* Nathan Watters *(Central120)*
+* Shaun Lawlor *(shaunlawlor)*
+* Shon Sunny *(shonsunny)*
+* Matthew Celik *(matthewcelik)*
+* Vitalijus Kasparavicius *(WhySoSerious4)*
