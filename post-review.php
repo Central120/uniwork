@@ -41,10 +41,6 @@ $numberreview = mysqli_num_rows($searchreview);
     <div class="d-flex justify-content-center">
         <center>
             <h2 class="mb-4">Welcome to Kerry's K9's reviews!</h2>
-            <?php
-            echo $username;
-            echo $submit_date;
-            ?>
             <div class="txt-center">
                 <form>
                     <div class="star_rating">
@@ -71,6 +67,8 @@ $numberreview = mysqli_num_rows($searchreview);
             <div>
                 <input type="submit" value="Submit" accesskey="u">
             </div>
+    </div>
+</div>
 
 
 
@@ -81,14 +79,6 @@ $numberreview = mysqli_num_rows($searchreview);
 <?php include "inc/footer.php"; ?>
 </body>
 <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-<script>
-    $("#reviewbutton").click(function(){
-        window.location.replace("post-review");
-    });
-
-
-</script>
-
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
