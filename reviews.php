@@ -99,7 +99,7 @@ $numberreview = mysqli_num_rows($searchreview);
                 // prints years
                 $msg = "$years years, $months months, $days days, $hours hours and $minutes minutes ago";
             }
-            echo "<div class='card' style='width: 18rem; margin-bottom: 10px; padding: 30px'>
+            echo "<div class='card' style='width: 18rem; margin-bottom: 10px; padding-left: 30px; padding-right: 30px;'>
   <div class='card-body'>
     <h5 class='card-title'>$username $status_message</h5>
     <h6 class='card-subtitle mb-2 text-muted'>";
