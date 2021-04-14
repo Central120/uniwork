@@ -43,7 +43,8 @@ $numberreview = mysqli_num_rows($searchreview);
             <h2 class="mb-4">Welcome to Kerry's K9's reviews!</h2>
             <div class="txt-center">
                 <form>
-                    <div class="rating">
+                    <div class="rating" style = "margin-left: 50%">
+                        <label> Rate us out of 5: </label>
                         <input id="star5" name="star" type="radio" value="5" class="radio-btn hide" />
                         <label for="star5" >☆</label>
                         <input id="star4" name="star" type="radio" value="4" class="radio-btn hide" />
@@ -65,7 +66,7 @@ $numberreview = mysqli_num_rows($searchreview);
                     </div>
                 </div>
             <div>
-                <input type="submit" value="Submit" accesskey="u">
+                <input class= "btn btn-success" type="submit" value="Submit" accesskey="u">
             </div>
     </div>
 </div>
