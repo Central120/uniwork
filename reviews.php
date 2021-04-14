@@ -43,7 +43,7 @@ $numberreview = mysqli_num_rows($searchreview);
 
     <?php
         if (isset($_SESSION['user']) || isset($_SESSION['admin'])) {
-            echo "<button type = 'button' id = 'reviewbutton' class = 'btn btn-primary'>Write a Review </button><br>";
+            echo "<button type = 'button' id = 'reviewbutton' class = 'btn btn-primary' style = 'margin-bottom: 10px'>Write a Review </button>";
         }
     ?>
 
