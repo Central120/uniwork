@@ -97,9 +97,9 @@ $numberreview = mysqli_num_rows($searchreview);
   <div class='card-body'>
     <h5 class='card-title'>$username $status_message</h5>
     <h6 class='card-subtitle mb-2 text-muted'>";
-            for ($i = 0; $i<= $star_rating; $i++)
+            for ($i = 1; $i<= $star_rating; $i++)
             {
-                echo "<i class='fa fa-star' style='color:darkyellow'></i>";
+                echo "<i class='fa fa-star' style='color: yellow'></i>";
             }
 
 
