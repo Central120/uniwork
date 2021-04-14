@@ -42,7 +42,7 @@ $numberreview = mysqli_num_rows($searchreview);
         <center>
             <h2 class="mb-4">Welcome to Kerry's K9's reviews!</h2>
             <?php
-            echo "$username"</h6>
+            echo $username;
             ?>
             <div class="txt-center">
                 <form>
