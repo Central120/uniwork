@@ -17,7 +17,7 @@ else
     $session_usern = "Guest";
 }
 
-$findreview = "SELECT * from reviews order by submit_date asc";
+$findreview = "SELECT * from reviews where status = 'approved' order by submit_date asc";
 $searchreview = mysqli_query($conn, $findreview);
 $numberreview = mysqli_num_rows($searchreview);
 
@@ -52,7 +52,7 @@ $numberreview = mysqli_num_rows($searchreview);
             $submit_date = $reviewrow['submit_date'];
 
             if ($status == 'approved') {
-                $status_message = "<span class = 'badge badge-success'> (Verified User)</span>";
+                $status_message = "<span class = 'badge badge-success'> Verified User</span>";
             }
             else {
                 $status_message = "";
