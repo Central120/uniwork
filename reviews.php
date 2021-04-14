@@ -36,7 +36,9 @@ $numberreview = mysqli_num_rows($searchreview);
 </head>
 <body>
 <?php include "inc/header.php"; ?>
-<div class="container-fluid" style='min-height:40vh'>
+<div class="container-fluid" >
+        <div class="d-flex justify-content-center">
+            <center>
     <h2 class="mb-4">Welcome to Kerry's K9's reviews!</h2>
 
     <?php
