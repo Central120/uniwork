@@ -42,6 +42,12 @@ $numberreview = mysqli_num_rows($searchreview);
     <h2 class="mb-4">Welcome to Kerry's K9's reviews!</h2>
 
     <?php
+        if (isset($_SESSION['user']) || isset($_SESSION['admin'])) {
+            echo "<button type = 'button' id = 'reviewbutton' class = 'btn btn-primary'>Write a Review </button>";
+        }
+    ?>
+
+    <?php
 
     if ($numberreview != 0) {
         while ($reviewrow = $searchreview->fetch_assoc()) {
@@ -120,21 +126,12 @@ $numberreview = mysqli_num_rows($searchreview);
 <?php include "inc/footer.php"; ?>
 </body>
 <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-<script type='text/javascript'>
-    $('#Form1').submit(function(event) {
-        event.preventDefault(); //prevent default action
-        var post_url = $(this).attr('action'); //get form action url
-        var form_data = $(this).serialize(); //Encode form elements for submission
+<script>
+$("#reviewbutton").click(function(){
+    window.location.replace("post-review");
+});
 
-        $.ajax({
-            url: post_url,
-            type: 'post',
-            data: form_data
-        }).done(function(response) { //
-            $('#server-results').html(response);
 
-        });
-    });
 </script>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
