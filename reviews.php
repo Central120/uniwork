@@ -93,7 +93,7 @@ $numberreview = mysqli_num_rows($searchreview);
                 // prints years
                 $msg = "$years years, $months months, $days days, $hours hours and $minutes minutes ago";
             }
-            echo "<div class='card' style='width: 18rem;'>
+            echo "<div class='card' style='width: 18rem; margin-bottom: 10px;'>
   <div class='card-body'>
     <h5 class='card-title'>$username $status_message</h5>
     <h6 class='card-subtitle mb-2 text-muted'>";
@@ -101,9 +101,6 @@ $numberreview = mysqli_num_rows($searchreview);
             {
                 echo "<i class='fa fa-star' style='color: #f5ea51'></i>";
             }
-
-
-
             echo "<br> $msg</h6>
     <p class='card-text'>$comments</p>
   </div>
