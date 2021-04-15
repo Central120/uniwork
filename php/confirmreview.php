@@ -18,6 +18,7 @@ else
 
 $star = mysqli_real_escape_string($conn, $_POST['star']);
 echo $star;
+echo "hi";
 
 
 
