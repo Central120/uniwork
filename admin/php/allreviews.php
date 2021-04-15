@@ -15,7 +15,7 @@ else
 <!doctype html>
 <html lang="en">
 <head>
-    <title>Kerry's K9's - Bookings Panel</title>
+    <title>Kerry's K9's - Reviews Panel</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
@@ -107,16 +107,16 @@ else
     </div>
 
     <div class='col-md-3'>
-    <a href='uploaded-reviews' style='color: white' title='Click here to view oncoming bookings'>
+    <a href='approved-reviews' style='color: white' title='Click here to view approved reviews'>
       <div class='card-counter success'>
         <i class='fa fa-check'></i>
-        <span class='count-name'>Uploaded Reviews</span>
+        <span class='count-name'>Approved Reviews</span>
       </div>
       </a>
     </div>
 
     <div class='col-md-3'>
-    <a href='denied-reviews' style='color: white' title='Click here to view past bookings'>
+    <a href='denied-reviews' style='color: white' title='Click here to view denied reviews'>
       <div class='card-counter danger'>
         <i class='fa fa-lock'></i>
         <span class='count-name'>Denied Reviews</span>
@@ -125,9 +125,6 @@ else
       </div>
       </a>
     </div>
-
-  </div>
-</div>
     ";
     ?>
 
