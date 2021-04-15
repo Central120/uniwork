@@ -86,7 +86,7 @@ echo "<img src='$image1' style='height: 100px; width: 100px;'/><h5 style='displa
       <div id="paypal-button-container"></div>
       </div>
     </div>
-    <script src="https://www.paypal.com/sdk/js?client-id=sb&currency=GBP" data-sdk-integration-source="button-factory"></script>
+    <script src="https://www.paypal.com/sdk/js?client-id=ARpeQP4r0FGAiW0XJF9HYtyrBUN5J6Js57NJPBJ_sB3wOPQbA9wzrF9AQoHa4zGyyN8JvelUJdX0zkOR&currency=GBP" data-sdk-integration-source="button-factory"></script>
     <script>
       function initPayPalButton() {
         var shipping = 0;
@@ -159,6 +159,7 @@ echo "<img src='$image1' style='height: 100px; width: 100px;'/><h5 style='displa
       onApprove: function(data, actions) {
         return actions.order.capture().then(function(details) {
           alert('Transaction completed by ' + details.payer.name.given_name + '!');
+          window.location.replace('php/finalise-checkout.php');
         });
       },
       onError: function(err) {

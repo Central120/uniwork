@@ -55,7 +55,7 @@ else
 </thead>
 <tbody>
 <?php
-$sqlfindcart = "SELECT cart.id, cart.product, cart.price, cart.quantity, products.Image, products.stock FROM `cart` LEFT JOIN `products` ON cart.product = products.product_name WHERE `username` = '$session_usern'";
+$sqlfindcart = "SELECT cart.id, cart.product, cart.price, cart.quantity, products.Image, products.stock FROM `cart` LEFT JOIN `products` ON cart.product = products.product_name WHERE `username` = '$session_usern' AND `checkout` = 'no'";
 $findcart = mysqli_query($conn,$sqlfindcart);
 while($rowfindcart = $findcart->fetch_assoc())
 {
