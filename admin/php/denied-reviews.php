@@ -19,7 +19,7 @@ $sqlfindreview = mysqli_query($conn, "SELECT * FROM `reviews` WHERE `id` = '$rev
 $countreview = mysqli_num_rows($sqlfindreview);
 
 if($countreview != 0){
-    $updatereview = mysqli_query($conn, "UPDATE `reviews` SET `status` = 'denied', `managed_by` = '$session_usern'" );
+    $updatereview = mysqli_query($conn, "UPDATE `reviews` SET `status` = 'denied', `managed_by` = '$session_usern' WHERE `id` = '$review_id'" );
     if ($updatereview){
         echo "<script>window.location.replace('../denied-reviews');</script>";
     }
