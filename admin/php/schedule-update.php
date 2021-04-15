@@ -30,9 +30,11 @@ if ($countcheckforschedule != 0)
 
     if ($start_date == $end_date || $start_time == $end_time || $sd > $ed)
     {
-        $strsd = date('l \t\h\e jS', $sd);
-        $stred = date('l \t\h\e jS', $ed);
-        echo "<div class='alert alert-danger alert-dismissable fade show' role='alert'><strong>An error occured.</strong> Please ensure the values you have entered are valid. $strsd - $stred <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+        $strsd = date('l', $sd);
+        $stred = date('l', $ed);
+        echo "<div class='alert alert-danger alert-dismissable fade show' role='alert'><strong>An error occured.</strong> Please ensure the values you have entered are valid. <br> You have entered: 
+                <br>Start day: $strsd, end day: $stred. 
+        <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
         <span aria-hidden='true'>&times;</span>
       </button></div>";
     }
