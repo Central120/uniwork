@@ -125,10 +125,11 @@ else
       </div>
       </a>
     </div>
+    </div>
+    </div>
     ";
     ?>
 
-</div>
 </div>
 
 <?php include "inc/footer.php"; ?>
