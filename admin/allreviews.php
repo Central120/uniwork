@@ -97,7 +97,7 @@ else
     echo "
     <div class='container'>
     <div class='row'>
-    <div class='col-md-3'>
+    <div class='col-md-4'>
     <a href='pending-reviews' style='color: white' title='Click here to view pending reviews'>
       <div class='card-counter info'>
         <i class='fa fa-book'></i>
@@ -106,7 +106,7 @@ else
       </a>
     </div>
 
-    <div class='col-md-3'>
+    <div class='col-md-4'>
     <a href='approved-reviews' style='color: white' title='Click here to view approved reviews'>
       <div class='card-counter success'>
         <i class='fa fa-check'></i>
@@ -115,7 +115,7 @@ else
       </a>
     </div>
 
-    <div class='col-md-3'>
+    <div class='col-md-4'>
     <a href='denied-reviews' style='color: white' title='Click here to view denied reviews'>
       <div class='card-counter danger'>
         <i class='fa fa-lock'></i>
