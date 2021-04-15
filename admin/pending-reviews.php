@@ -93,11 +93,9 @@ $countfindreview = mysqli_num_rows($findpending);
             </div>
             <div class='modal-footer'>
             ";
-
-
                         echo "<form action='php/approved-reviews.php' method='post' role='form'><input type='hidden' value='$review_id' name='approve' />
               <input type='hidden' value='$status = 1' name='id'>
-              <button type='submit' class='btn btn-success'>Approve Timeslot 1</button>
+              <button type='submit' class='btn btn-success'>Approve Review</button>
             </form>";
 
                         echo "
@@ -110,7 +108,6 @@ $countfindreview = mysqli_num_rows($findpending);
           </div>
         </div>
       </div>";
-
                     }
                 }
 
