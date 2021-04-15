@@ -13,7 +13,7 @@ else
 }
 
 
-$findpending = mysqli_query($conn, "SELECT * FROM `reviews` WHERE `status` = ''");
+$findpending = mysqli_query($conn, "SELECT * FROM `reviews` WHERE `status` = 'pending'");
 $countfindreview = mysqli_num_rows($findpending);
 ?>
 <!doctype html>
