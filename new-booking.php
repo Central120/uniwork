@@ -157,7 +157,7 @@ if ($countfindavail == 0)
           $timestamper = date('H:i:s', $timey); 
           
           echo "<option value='$timestamper'>$prtime</option>";
-         // $timey = strtotime('+1 hour',$timey);
+          $timey = strtotime('+1 hour',$timey);
         }
         
       ?>
