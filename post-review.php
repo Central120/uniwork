@@ -95,6 +95,7 @@ $numberreview = mysqli_num_rows($searchreview);
             data: form_data
         }).done(function(response) { //
             $('#server-results').html(response);
+            $('#star').val("");
             $('#comments').val("");
         });
     });
