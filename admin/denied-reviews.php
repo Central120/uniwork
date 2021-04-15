@@ -97,7 +97,7 @@ $countfindreview = mysqli_num_rows($finddenied);
             <div class='modal-footer'>
             ";
                         echo "
-            <form action='php/repost-reviews.php' method='post' role='form'>
+            <form action='php/approved-reviews.php' method='post' role='form'>
             <input type='hidden' value= '$review_id' name='id' />
               <button type='submit' class='btn btn-danger'>Repost Review</button>
             </form>

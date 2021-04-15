@@ -97,7 +97,7 @@ $countfindreview = mysqli_num_rows($findapproved);
             <div class='modal-footer'>
             ";
                         echo "
-            <form action='php/revoke-reviews.php' method='post' role='form'>
+            <form action='php/denied-reviews.php' method='post' role='form'>
             <input type='hidden' value= '$review_id' name='id' />
               <button type='submit' class='btn btn-danger'>Revoke Review</button>
             </form>
