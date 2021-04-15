@@ -43,7 +43,7 @@ $countfindreview = mysqli_num_rows($findpending);
         <div class="d-flex justify-content-center">
             <div class="table-responsive">
                 <?php
-                if ($countfindbooking == 0)
+                if ($countfindreview == 0)
                 {
                     echo "<h5 class='mb-5'>There are no pending reviews</h5>";
                 }
@@ -66,7 +66,7 @@ $countfindreview = mysqli_num_rows($findpending);
                         $review_id = $rowfindreview['id'];
                         $username = $rowfindreview['username'];
                         $star_rating = $rowfindreview['star_rating'];
-                        $submit_date = $rowfindbooking['submit_date'];
+                        $submit_date = $rowfindreview['submit_date'];
                         $comments = $rowfindreview['comments'];
 
 
@@ -88,27 +88,19 @@ $countfindreview = mysqli_num_rows($findpending);
                 <span aria-hidden='true'>&times;</span>
               </button>
             </div>
-            <div class='modal-body'>
-            <p>Reminder: <br>Timeslot 1: <b>$ts1d</b> <br>Timeslot 2: <b>$ts2d</b>
-            </div>
             <div class='modal-footer'>
             ";
 
 
-                        echo "<form action='php/approve-booking.php' method='post' role='form'><input type='hidden' value='$booking_id' name='id' />
-              <input type='hidden' value='$ts1' name='ts'>
+                        echo "<form action='php/approved-reviews.php' method='post' role='form'><input type='hidden' value='$review_id' name='approve' />
+              <input type='hidden' value='$status = 1' name='id'>
               <button type='submit' class='btn btn-success'>Approve Timeslot 1</button>
             </form>";
 
-                        echo "<form action='php/approve-booking.php' method='post' role='form'><input type='hidden' value='$booking_id' name='id' />
-            <input type='hidden' value='$ts2' name='ts'>
-            <button type='submit' class='btn btn-outline-success'>Approve Timeslot 2</button>
-          </form>";
-
                         echo "
-            <form action='php/approve-booking.php' method='post' role='form'>
-            <input type='hidden' value='$booking_id' name='id' /><input type='hidden' value='none' name='ts'>
-              <button type='submit' class='btn btn-danger'>Deny both timeslots</button>
+            <form action='php/denied-reviews.php' method='post' role='form'>
+            <input type='hidden' value='$status = 1' name='id' /><input type='hidden' value='none' name='deny'>
+              <button type='submit' class='btn btn-danger'>Deny Review</button>
             </form>
               <button type='button' class='btn btn-secondary' data-dismiss='modal'>Close</button>
             </div>
