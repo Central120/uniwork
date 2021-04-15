@@ -64,7 +64,7 @@ $numberreview = mysqli_num_rows($searchreview);
                 <div class="mb-3 row">
                     <label for="inputComment" class="col-sm-2 col-form-label">Review:</label>
                     <div class="col-sm-10">
-                        <input type="comments" class="form-control" id="comments">
+                        <input type="comments" class="form-control" id="comments" name="comments">
                     </div>
                 </div>
             <div>

@@ -17,8 +17,21 @@ else
 }
 
 $star = mysqli_real_escape_string($conn, $_POST['star']);
-echo $star;
-echo "hi";
+$comments = mysqli_real_escape_string($conn, $_POST['comments']);
+
+$sqlreviewquery = "INSERT INTO reviews VALUES (DEFAULT, '$userion_usern', '$star', '$comments', 'pending', '$current_timestamp')";
+$review = mysqli_query($conn, $sqlreviewquery);
+
+if($review){
+    echo "<div class='alert alert-success alert-dismissable fade show' role='alert'><strong>Success, your review has been submitted.</strong> It will now be moderated by staff before being posted. <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+    <span aria-hidden='true'>&times;</span>
+  </button></div>";
+} else {
+    echo "<div class='alert alert-danger alert-dismissable fade show' role='alert'><strong>An error occured.</strong> Your review did not get posted. <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+    <span aria-hidden='true'>&times;</span>
+  </button></div>";
+}
+
 
 
 
