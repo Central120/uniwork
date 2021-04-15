@@ -13,13 +13,13 @@ else
 }
 
 
-$findpending = mysqli_query($conn, "SELECT * FROM `reviews` WHERE `status` = 'pending'");
-$countfindreview = mysqli_num_rows($findpending);
+$findapproved = mysqli_query($conn, "SELECT * FROM `reviews` WHERE `status` = 'approved'");
+$countfindreview = mysqli_num_rows($findapproved);
 ?>
 <!doctype html>
 <html lang="en">
 <head>
-    <title>Kerry's K9's - Pending Reviews</title>
+    <title>Kerry's K9's - Approved Reviews</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
@@ -37,7 +37,7 @@ $countfindreview = mysqli_num_rows($findpending);
 <?php include "inc/header.php"; ?>
 
 <center>
-    <h2 class="mb-42">Pending Reviews</h2>
+    <h2 class="mb-42">Approved Reviews</h2>
     <div id="server-results"></div>
     <div class="container" style='margin-bottom: 30%'>
         <div class="d-flex justify-content-center">
@@ -45,7 +45,7 @@ $countfindreview = mysqli_num_rows($findpending);
                 <?php
                 if ($countfindreview == 0)
                 {
-                    echo "<h5 class='mb-5'>There are no pending reviews.</h5>";
+                    echo "<h5 class='mb-5'>There are no approved reviews.</h5>";
                 }
                 else
                 {
@@ -56,17 +56,19 @@ $countfindreview = mysqli_num_rows($findpending);
                     <th scope='col'>Star Ratings</th>
                     <th scope='col'>Comments</th>
                     <th scope='col'>Submitted At</th>
+                    <th scope='col'>Approved By</th>
                     <th>Manage</th>
                 </tr>
             </thead>
             <tbody>";
-                    while ($rowfindreview = $findpending->fetch_assoc())
+                    while ($rowfindreview = $findapproved->fetch_assoc())
                     {
 
                         $review_id = $rowfindreview['id'];
                         $username = $rowfindreview['username'];
                         $star_rating = $rowfindreview['star_rating'];
                         $submit_date = $rowfindreview['submit_date'];
+                        $managed_by = $rowfindreview['managed_by'];
                         $comments = $rowfindreview['comments'];
 
                         $strts1 = strtotime("$submit_date");
@@ -78,6 +80,7 @@ $countfindreview = mysqli_num_rows($findpending);
         <td>$star_rating</td>
         <td>$comments</td>
         <td>$ts1d</td>
+        <td>$managed_by</td>
         <td><input type='button' data-toggle='modal' id='continue_btn' data-target='#manage{$review_id}' class='btn btn-warning' value='Manage' /></td>
         </tr>
         ";
@@ -93,15 +96,10 @@ $countfindreview = mysqli_num_rows($findpending);
             </div>
             <div class='modal-footer'>
             ";
-                        echo "<form action='php/approved-reviews.php' method='post' role='form'>
-              <input type='hidden' value= '$review_id' name='id'>
-              <button type='submit' class='btn btn-success'>Approve Review</button>
-            </form>";
-
                         echo "
-            <form action='php/denied-reviews.php' method='post' role='form'>
-            <input type='hidden' value= $review_id' name='id' />
-              <button type='submit' class='btn btn-danger'>Deny Review</button>
+            <form action='php/revoke-reviews.php' method='post' role='form'>
+            <input type='hidden' value= '$review_id' name='id' />
+              <button type='submit' class='btn btn-danger'>Revoke Review</button>
             </form>
               <button type='button' class='btn btn-secondary' data-dismiss='modal'>Close</button>
             </div>
