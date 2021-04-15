@@ -44,6 +44,7 @@ $numberreview = mysqli_num_rows($searchreview);
 <div class="container-fluid" >
     <div class="d-flex justify-content-center">
         <div id="server-results"> </div> <br>
+        <br>
         <center>
             <h2 class="mb-4">Welcome to Kerry's K9's reviews!</h2>
                 <form id="ratingsystem" action="php/confirmreview.php" method="post">
