@@ -69,12 +69,15 @@ $countfindreview = mysqli_num_rows($findpending);
                         $submit_date = $rowfindreview['submit_date'];
                         $comments = $rowfindreview['comments'];
 
+                        $strts1 = strtotime("$submit_date");
+
+                        $ts1d = date("l jS \of F, g:i a", $strts1);
 
                         echo "<tr>
         <td>$username</td>
         <td>$star_rating</td>
-        <td>$submit_date</td>
         <td>$comments</td>
+        <td>$ts1d</td>
         <td><input type='button' data-toggle='modal' id='continue_btn' data-target='#manage{$review_id}' class='btn btn-warning' value='Manage' /></td>
         </tr>
         ";
