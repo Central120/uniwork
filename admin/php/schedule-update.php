@@ -1,6 +1,7 @@
 <?php
 include_once '../inc/dbconnect.php';
 session_start();
+$current_timestamp = date("Y-m-d H:i:s");
 
 if(isset($_SESSION['admin']))
 {
@@ -20,9 +21,10 @@ if ($countcheckforschedule != 0)
     $end_date = mysqli_real_escape_string($conn, $_POST['end']);
     $start_time = mysqli_real_escape_string($conn, $_POST['start_time']);
     $end_time = mysqli_real_escape_string($conn, $_POST['end_time']);
-
-    $sd = strtotime("this $start_date");
-    $ed = strtotime("this $end_date");
+    $cts = strtotime($current_timestamp);
+    
+    $sd = strtotime("next $start_date");
+    $ed = strtotime("next $end_date");
 
     
 
