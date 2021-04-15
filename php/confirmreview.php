@@ -19,7 +19,7 @@ else
 $star = mysqli_real_escape_string($conn, $_POST['star']);
 $comments = mysqli_real_escape_string($conn, $_POST['comments']);
 
-$sqlreviewquery = "INSERT INTO reviews VALUES (DEFAULT, '$userion_usern', '$star', '$comments', 'pending', '$current_timestamp')";
+$sqlreviewquery = "INSERT INTO reviews VALUES (DEFAULT, '$session_usern', '$star', '$comments', 'pending', '$current_timestamp')";
 $review = mysqli_query($conn, $sqlreviewquery);
 
 if($review){
