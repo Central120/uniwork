@@ -23,8 +23,8 @@ if ($countcheckforschedule != 0)
     $end_time = mysqli_real_escape_string($conn, $_POST['end_time']);
     $cts = strtotime($current_timestamp);
     
-    $sd = strtotime("next $start_date");
-    $ed = strtotime("next $end_date");
+    $sd = strtotime("next week $start_date");
+    $ed = strtotime("next week $end_date");
 
     
 
