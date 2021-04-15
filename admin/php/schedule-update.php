@@ -32,11 +32,11 @@ if ($countcheckforschedule != 0)
     {
         $strsd = date('l', $sd);
         $stred = date('l', $ed);
-        echo "<div class='alert alert-danger alert-dismissable fade show' role='alert'><strong>An error occured.</strong> Please ensure the values you have entered are valid. <br> You have entered: 
-                <br>Start day: $strsd, end day: $stred. 
-        <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+        echo "<div class='alert alert-danger alert-dismissable fade show' role='alert'><button type='button' class='close' data-dismiss='alert' aria-label='Close'>
         <span aria-hidden='true'>&times;</span>
-      </button></div>";
+      </button><strong>An error occured.</strong> Please ensure the values you have entered are valid. <br> You have entered: 
+                <br>Start day: $strsd, End day: $stred. 
+        </div>";
     }
     else
     {
