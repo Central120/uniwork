@@ -1,6 +1,7 @@
 <?php
 include_once '../inc/dbconnect.php';
 session_start();
+$current_timestamp = date("Y-m-d H:i:s");
 
 if(isset($_SESSION['admin']))
 {
@@ -20,19 +21,22 @@ if ($countcheckforschedule != 0)
     $end_date = mysqli_real_escape_string($conn, $_POST['end']);
     $start_time = mysqli_real_escape_string($conn, $_POST['start_time']);
     $end_time = mysqli_real_escape_string($conn, $_POST['end_time']);
-
-    $sd = strtotime("this $start_date");
-    $ed = strtotime("this $end_date");
+    $cts = strtotime($current_timestamp);
+    
+    $sd = strtotime("next week $start_date");
+    $ed = strtotime("next week $end_date");
 
     
 
     if ($start_date == $end_date || $start_time == $end_time || $sd > $ed)
     {
-        $strsd = date('Y:m:d', $sd);
-        $stred = date('Y:m:d', $ed);
-        echo "<div class='alert alert-danger alert-dismissable fade show' role='alert'><strong>An error occured.</strong> Please ensure the values you have entered are valid. $sd - $ed <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+        $strsd = date('l', $sd);
+        $stred = date('l', $ed);
+        echo "<div class='alert alert-danger alert-dismissable fade show' role='alert'><button type='button' class='close' data-dismiss='alert' aria-label='Close'>
         <span aria-hidden='true'>&times;</span>
-      </button></div>";
+      </button><strong>An error occured.</strong> Please ensure the values you have entered are valid. <br> You have entered: 
+                <br>Start day: $strsd, End day: $stred. 
+        </div>";
     }
     else
     {

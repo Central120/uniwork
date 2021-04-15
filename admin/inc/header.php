@@ -65,7 +65,7 @@ else if(isset($_SESSION['user']))
       <li class="nav-item <?php if (strpos($url,'reviews') !== false) {
     echo 'active';
 } ?>">
-        <a class="nav-link" href="#">Reviews</a>
+        <a class="nav-link" href="../reviews">Reviews</a>
       </li>
       </ul>
       <ul class="navbar-nav">
