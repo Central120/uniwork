@@ -42,9 +42,9 @@ $numberreview = mysqli_num_rows($searchreview);
 <body>
 <?php include "inc/header.php"; ?>
 <div class="container-fluid" >
+    <div id="server-results"> </div>
     <div class="d-flex justify-content-center">
-        <div id="server-results"> </div> <br>
-        <br>
+         <br>
         <center>
             <h2 class="mb-4">Welcome to Kerry's K9's reviews!</h2>
                 <form id="ratingsystem" action="php/confirmreview.php" method="post">
@@ -96,7 +96,7 @@ $numberreview = mysqli_num_rows($searchreview);
             data: form_data
         }).done(function(response) { //
             $('#server-results').html(response);
-            $('#star').val("");
+            $('.radio-btn').prop("checked", false);
             $('#comments').val("");
         });
     });
