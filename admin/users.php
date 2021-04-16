@@ -51,6 +51,7 @@ $listaccounts = mysqli_query($conn, "SELECT * FROM `accounts`");
                             <th scope="col">Security Question 1</th>
                             <th scope="col">Security Question 2</th>
                             <th scope="col">User/Admin</th>
+                            <th scope="col">Manage</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -64,16 +65,21 @@ $listaccounts = mysqli_query($conn, "SELECT * FROM `accounts`");
         $accountusername = $rowaccounts['username'];
         $secq1 = $rowaccounts['secq1'];
         $secq2 = $rowaccounts['secq2'];
-        if($rowaccounts['admin_id'] == 1)
+        if($rowaccounts['admin_id'] == 0)
+        {
+          $admin_status = "Suspended";
+        }
+        else if($rowaccounts['admin_id'] == 1)
         {
           $admin_status = "User";
         }
         else if($rowaccounts['admin_id'] == 2)
         {
-          $admin_status = "Admin";
+            $admin_status = "Admin";
         }
-      
-       
+
+
+
 
         echo "<tr>
         <td>$accountid</td>
@@ -81,8 +87,60 @@ $listaccounts = mysqli_query($conn, "SELECT * FROM `accounts`");
         <td>$secq1</b></td>
         <td>$secq2</td>
         <td>$admin_status</td>
+        <td><input type='button' data-toggle='modal' id='continue_btn' data-target='#manage{$accountid}' class='btn btn-warning' value='Manage' /></td>
         </tr>
         ";
+        echo "<div class='modal fade' id='manage{$accountid}' tabindex='-1' role='dialog' aria-labelledby='manage{$accountid}' aria-hidden='true'>
+        <div class='modal-dialog' role='document'>
+          <div class='modal-content' style='width:150%;left:-10%;'>
+            <div class='modal-header'>
+              <h5 class='modal-title'>What would you like to do with $accountusername?</h5>
+              <button type='button' class='close' data-dismiss='modal' aria-label='Close'>
+                <span aria-hidden='true'>&times;</span>
+              </button>
+            </div>
+            <div class='modal-footer'>
+            ";
+        if ($admin_status == "Suspended"){
+            echo "<form action='php/unsuspend-user.php' method='post' role='form'>
+            <input type='hidden' value= '$accountid' name='id' />
+              <button type='submit' class='btn btn-danger'>Unsuspend</button>
+            </form>
+            <form action='php/make-admin.php' method='post' role='form'>
+            <input type='hidden' value= '$accountid' name='id' />
+              <button type='submit' class='btn btn-danger'>Unsuspend and set as admin</button>
+            </form>";
+        }
+        else if ($admin_status == "User"){
+            echo "<form action='php/suspend.php' method='post' role='form'>
+            <input type='hidden' value= '$accountid' name='id' />
+              <button type='submit' class='btn btn-danger'>Suspend user</button>
+            </form>
+            <form action='php/make-admin.php' method='post' role='form'>
+            <input type='hidden' value= '$accountid' name='id' />
+              <button type='submit' class='btn btn-danger'>Make admin</button>
+            </form>";
+        }
+        else if ($admin_status == "Admin"){
+            echo "<form action='php/suspend.php' method='post' role='form'>
+            <input type='hidden' value= '$accountid' name='id' />
+              <button type='submit' class='btn btn-danger'>Suspend user</button>
+            </form>
+            <form action='php/make-user.php' method='post' role='form'>
+            <input type='hidden' value= '$accountid' name='id' />
+              <button type='submit' class='btn btn-danger'>Make user</button>
+            </form>";
+        }
+        else {
+            echo "";
+        }
+        echo "
+            
+              <button type='button' class='btn btn-secondary' data-dismiss='modal'>Close</button>
+            </div>
+          </div>
+        </div>
+      </div>";
     }
   
 
