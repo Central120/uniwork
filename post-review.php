@@ -51,15 +51,15 @@ $numberreview = mysqli_num_rows($searchreview);
                     <label> Rate us out of 5: </label>
                     <div class="rating" style="margin-bottom: 10px;">
                         <input id="star5" name="star" type="radio" value="5" class="radio-btn hide" />
-                        <label for="star5" style="font-size: 20px;">☆</label>
+                        <label for="star5" >☆</label>
                         <input id="star4" name="star" type="radio" value="4" class="radio-btn hide" />
-                        <label for="star4" style="font-size: 20px;">☆</label>
+                        <label for="star4" >☆</label>
                         <input id="star3" name="star" type="radio" value="3" class="radio-btn hide" />
-                        <label for="star3" style="font-size: 20px;">☆</label>
+                        <label for="star3" >☆</label>
                         <input id="star2" name="star" type="radio" value="2" class="radio-btn hide" />
-                        <label for="star2" style="font-size: 20px;">☆</label>
+                        <label for="star2" >☆</label>
                         <input id="star1" name="star" type="radio" value="1" class="radio-btn hide" />
-                        <label for="star1" style="font-size: 20px;">☆</label>
+                        <label for="star1" >☆</label>
                         <div class="clear"></div>
                     </div>
                 <div class="mb-3 row">
