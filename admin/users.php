@@ -102,7 +102,7 @@ $listaccounts = mysqli_query($conn, "SELECT * FROM `accounts`");
             <div class='modal-footer'>
             ";
         if ($admin_status == "Suspended"){
-            echo "<form action='php/unsuspend-user.php' method='post' role='form'>
+            echo "<form action='php/unsuspend.php' method='post' role='form'>
             <input type='hidden' value= '$accountid' name='id' />
               <button type='submit' class='btn btn-danger'>Unsuspend</button>
             </form>
