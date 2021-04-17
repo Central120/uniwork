@@ -23,6 +23,6 @@ if(mysqli_query($conn,$approvesql))
 }
 else
 {
-  echo "<script>window.location.replace('../list-images');</script>";
+  echo "<script>window.location.reload();</script>";
 }
 ?>
