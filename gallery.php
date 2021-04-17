@@ -77,17 +77,17 @@ $findcurrentbookings = mysqli_query($conn, "SELECT * FROM `bookings` WHERE `user
               ?>
               <form action="php/user-delete-photo" method="post">
               <input type="hidden" value="<?php echo $imageid; ?>">
-              <div style="float: right; display: inline-block;">
+              
               <button class="btn btn-danger" type="submit"><i class="fa fa-trash"></i></button>
-              </div>
+              
             </form>
               <?php
             }
             ?>
             
-            
+            <div style="float: right; display: inline-block;">
             <a href='#' type='button' data-toggle='modal' id='cancel_btn' data-target='<?php echo "#manage{$imageid}";?>' class='btn btn-primary'/ title='Report <?php echo $author, 's image';?>'><i class="fa fa-gavel"></i></a> </div>
-            
+            </div>
             <p class="small text-white mb-0"><?php echo $caption; ?></p>
             <div class="d-flex align-items-center justify-content-between rounded-pill bg-light px-3 py-2 mt-4">
               <p class="small mb-0"><i class="fa fa-user-o mr-2"></i><span class="font-weight-bold"><?php echo $author; ?></span></p>
