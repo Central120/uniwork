@@ -70,7 +70,7 @@ $findcurrentbookings = mysqli_query($conn, "SELECT * FROM `bookings` WHERE `user
       <div class="col-xl-3 col-lg-4 col-md-6 mb-4">
         <div class="bg-dark rounded shadow-sm"><img src="/<?php echo $pLocation; ?>" alt="" class="img-fluid card-img-top" style="width: 100%; height: 250px; object-fit: cover;">
           <div class="p-4">
-            <h5> <a href="#" class="text-white"><?php echo $productName; ?> </a></h5> <div style="float: right;">
+            <h5> <a href="#" class="text-white"><?php echo $productName; ?> </a></h5> <div style="float: right; margin-right: 20px;">
             <?php
             if($author == $session_usern)
             {
