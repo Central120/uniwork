@@ -105,7 +105,7 @@ $findcurrentbookings = mysqli_query($conn, "SELECT * FROM `bookings` WHERE `user
       </div>
       <form id="FormReport(<?php echo $imageid; ?>)" class="gallery" action="php/report-image" method="post">
       <div class="modal-body">
-      <small>You're reporting: <?php echo $author; ?>.<br>Their image: <a href='/<?php echo $pLocation; ?>' target='_blank'>Click to view</a></small>
+      <small>You're reporting: <?php echo $author; ?>.<br>Their image: <a href='/<?php echo $pLocation; ?>' target='_blank'>Click to view</a><br>The page will refresh and your report will be sent.</small>
       <div id="report-results"></div>
       
           <div class="form-group">
