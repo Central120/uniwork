@@ -13,14 +13,10 @@ else if(isset($_SESSION['admin']))
 }
 
 $imageid = mysqli_real_escape_string($conn, $_POST['imageid']);
-$reporter = mysqli_real_escape_string($conn, $_POST['reporter']);
-$reporting = mysqli_real_escape_string($conn, $_POST['reporting']);
-$reportoption = mysqli_real_escape_string($conn, $_POST['reportoption']);
-$reportinformation = mysqli_real_escape_string($conn, $_POST['reportinformation']);
 
-$reportsql = "INSERT INTO image_report VALUES(DEFAULT, '$reporter', '$reporting', '$reportoption', '$reportinformation', 'pending', 'open', '$imageid')";
+$deletesql = "DELETE FROM photo_sharing WHERE id='$imageid'";
 
-if(mysqli_query($conn,$reportsql))
+if(mysqli_query($conn,$deletesql))
 {
     echo "<script>window.location.replace('../gallery');</script>";
 }
