@@ -19,14 +19,10 @@ $approvesql = "UPDATE photo_sharing SET approver='pending' WHERE id='$imageid'";
 
 if(mysqli_query($conn,$approvesql))
 {
-    echo "<div class='alert alert-success alert-dismissable fade show' role='alert'><strong>Complete!</strong> Image marked for approval. Please refresh to show results <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
-    <span aria-hidden='true'>&times;</span>
-  </button></div>";
+  echo "<script>window.location.reload();</script>";
 }
 else
 {
-    echo "<div class='alert alert-danger alert-dismissable fade show' role='alert'><strong>An error occured.</strong> The image couldn't be marked for approval. <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
-    <span aria-hidden='true'>&times;</span>
-  </button></div>";
+  echo "<script>window.location.reload();</script>";
 }
 ?>
