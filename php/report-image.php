@@ -22,12 +22,11 @@ $reportsql = "INSERT INTO image_report VALUES(DEFAULT, '$reporter', '$reporting'
 
 if(mysqli_query($conn,$reportsql))
 {
-    echo "<script>window.location.reload();</script>";
+    echo "<script>window.location.replace('../gallery');</script>";
 }
 else
 {
-    echo "<script>window.location.reload();</script>";
-
+    echo "<script>window.location.replace('../gallery');</script>";
 }
 
 
