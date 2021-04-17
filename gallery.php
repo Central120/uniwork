@@ -180,7 +180,7 @@ $findcurrentbookings = mysqli_query($conn, "SELECT * FROM `bookings` WHERE `user
         
       </div>
       <div class="modal-body">
-      <small>Your image will be put as pending whilst our team approves your submission.<br><i>Don't be alarmed if you don't see your photo uploaded straight away; our site team are on it and will look at your request as soon as possible. <br><br><b>Why does my photo need approved?</b><br>To avoid any sort of breach against our Terms of Use / Code of Conduct, we feel as if it's best that all photo uploads should be reviewed and dealt with individually to avoid any future issues.</small>
+      <small>Your image will be put as pending whilst our team approves your submission.<br><br><i>Don't be alarmed if you don't see your photo uploaded straight away; our site team are on it and will look at your request as soon as possible.</i> <br><br><b>Why does my photo need approved?</b><br><i>To avoid any sort of breach against our Terms of Use / Code of Conduct, we feel as if it's best that all photo uploads should be reviewed and dealt with individually to avoid any future issues.</i></small>
       <form action="php/upload-photo" method="post" enctype='multipart/form-data'>
           <div class="form-group">
             <label for="recipient-name" class="col-form-label">Image Title</label>
