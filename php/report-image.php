@@ -22,15 +22,11 @@ $reportsql = "INSERT INTO image_report VALUES(DEFAULT, '$reporter', '$reporting'
 
 if(mysqli_query($conn,$reportsql))
 {
-    echo "<div class='alert alert-success alert-dismissable fade show' role='alert'><strong>Reported!</strong> Our moderation team will review the report and take the appropriate action. Thank you for the report! <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
-    <span aria-hidden='true'>&times;</span>
-    </button></div>";
+    echo "<script>window.location.reload();</script>";
 }
 else
 {
-    echo "<div class='alert alert-danger alert-dismissable fade show' role='alert'><strong>Uhh ohh!</strong> We failed to submit your report. Please try again. If this problem persists, please contact our team as soon as possible. <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
-    <span aria-hidden='true'>&times;</span>
-    </button></div>";
+    echo "<script>window.location.reload();</script>";
 
 }
 
