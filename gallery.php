@@ -77,7 +77,6 @@ $findcurrentbookings = mysqli_query($conn, "SELECT * FROM `bookings` WHERE `user
               ?>
               <form action="php/user-delete-photo" method="post">
               <input type="hidden" value="<?php echo $imageid; ?>">
-              <div style="float: right; display: inline-block;">
               <button class="btn btn-danger" type="submit"><i class="fa fa-trash"></i></button>
             </form>
               <?php
