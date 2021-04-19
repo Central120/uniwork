@@ -35,7 +35,8 @@ if ($countfindaccount != 0)
     {
         $_SESSION['admin'] = $username; 
         
-        echo "<script>window.location.replace('../index');</script>";
+        echo '<meta http-equiv="refresh" content="3; url=../login" />';
+ echo "<div class='alert alert-success' role='alert'>Logged in successfully, redirecting you in 3 seconds.</div>";
     }
     else
     {
