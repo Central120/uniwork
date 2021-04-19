@@ -49,7 +49,7 @@ $findproducts = mysqli_query($conn, $sqlfindproducts);
                             <th scope="col">Product</th>
                             <th scope="col">Category</th>
                             <th scope="col">Price</th>
-                            <th scope="col">Discount</th>
+                            <th scope="col">Discount%</th>
                             <th>Manage</th>
                         </tr>
                     </thead>
