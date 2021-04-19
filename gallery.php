@@ -117,7 +117,7 @@ $findcurrentbookings = mysqli_query($conn, "SELECT * FROM `bookings` WHERE `user
             <input type="hidden" name="reporter" value="<?php echo $session_usern; ?>">
             <input type="hidden" name="reporting" value="<?php echo $author; ?>">
             <input type="hidden" name="imageid" value="<?php echo $imageid; ?>">
-            <select name="reportoption" class="form-control" required>
+            <select id="select" name="reportoption" class="form-control" required>
               <option selected disabled>Please select...</option>
               <option value="Harassment">Harassment</option>
               <option value="Unpermitted use of image">Unpermitted use of Image</option>
@@ -125,6 +125,7 @@ $findcurrentbookings = mysqli_query($conn, "SELECT * FROM `bookings` WHERE `user
               <option value="Threat to Site">Threat to Site</option>
               <option value="Identity Theft">Identity Theft</option>
               <option value="Contains inappropriate language">Contains inappropriate language</option>
+              <option value="Other">Other</option>
             </select>
           </div>
           <div class="form-group">
