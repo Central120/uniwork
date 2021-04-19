@@ -97,10 +97,11 @@ else
         echo "
         
     <div class='container'>
-    <center><a href='index' class='btn btn-primary'>Back</a></center>
+    
     <div class='row'>
     
     <div class='col-md-3'>
+    <a href='index' class='btn btn-primary'>Back</a>
     <a href='list-images' style='color: white' title='Click here to set your schedule'>
       <div class='card-counter primary'>
         <i class='fa fa-picture-o'></i>
