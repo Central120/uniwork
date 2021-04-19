@@ -97,7 +97,7 @@ else
         echo "
     <div class='container'>
     <div class='row'>
-    <a href='index' class='btn btn-primary' style='text-align: center; margin:10px auto;'><i class='fa fa-arrow-left'></i></a>
+    <a href='index' class='btn btn-primary' style='text-align: center; padding:10px;'><i class='fa fa-arrow-left'></i></a>
     <div class='col-md-3'>
     <a href='list-images' style='color: white' title='Click here to set your schedule'>
       <div class='card-counter primary'>
