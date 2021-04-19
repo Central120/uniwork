@@ -165,7 +165,6 @@ $findcurrentbookings = mysqli_query($conn, "SELECT * FROM `bookings` WHERE `user
     });
 
     $(document).ready(function() {
-    $('#selectoption').change(function() {
       if ($('#selectoption').val() == 'other') {
             $('#othergroup').css('display', '');
             $('#otheroption').val('');
@@ -177,7 +176,6 @@ $findcurrentbookings = mysqli_query($conn, "SELECT * FROM `bookings` WHERE `user
             $('#otheroption').val('');
             $('#otheroption').prop('disabled', true);
         }
-    });
 });
 
   </script>
