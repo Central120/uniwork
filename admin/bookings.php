@@ -95,8 +95,9 @@ else
         <hr class="bg-dark mb-4 w-25">
 <?php
         echo "
-        <a href='index' class='btn btn-primary'>Back</a><br>
+        
     <div class='container'>
+    <a href='index' class='btn btn-primary'>Back</a><br>
     <div class='row'>
     <div class='col-md-3'>
     <a href='set-schedule' style='color: white' title='Click here to set your schedule'>
