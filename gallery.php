@@ -11,11 +11,6 @@ else if(isset($_SESSION['admin']))
 {
     $session_usern = $_SESSION['admin'];
 }
-else
-{
-    echo "<script>window.location.replace('index');</script>";
-}
-
 
 $findcurrentbookings = mysqli_query($conn, "SELECT * FROM `bookings` WHERE `username` = '$session_usern'");
 
@@ -47,7 +42,14 @@ $findcurrentbookings = mysqli_query($conn, "SELECT * FROM `bookings` WHERE `user
     <?php include "inc/header.php"; ?>
     <br><br><br>
     <center>
+    <?php
+    if($session_usern)
+    {
+      ?>
     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">Upload yours!</button>
+    <?
+    }
+    ?>
     </center>
     <div class="imageCenter">
     <div class="row">
