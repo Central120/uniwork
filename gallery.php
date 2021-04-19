@@ -207,6 +207,7 @@ $findcurrentbookings = mysqli_query($conn, "SELECT * FROM `bookings` WHERE `user
 <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 <script type='text/javascript'>
     $(document).ready(function() {
+    $('#selectoption').change(function() {
       if ($('#selectoption').val() == 'other') {
             $('#othergroup').css('display', '');
             $('#otheroption').val('');
@@ -220,6 +221,7 @@ $findcurrentbookings = mysqli_query($conn, "SELECT * FROM `bookings` WHERE `user
             $('#otheroption').prop('disabled', true);
             console.log('its not working');
         }
+      });
 });
 
   </script>
