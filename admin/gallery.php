@@ -102,13 +102,14 @@ else
         <span class='count-name'>Manage Image Submissions</span>
       </div>
       </a>
+      
+      </div>
       <a href='list-image-reports' style='color: white' title='Click here to modify products'>
       <div class='card-counter danger'>
         <i class='fa fa-gavel'></i>
         <span class='count-name'>Image Reports</span>
       </div>
       </a>
-      </div>
       </div>
 
  
