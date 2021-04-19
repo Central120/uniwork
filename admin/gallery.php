@@ -15,7 +15,7 @@ else
 <!doctype html>
 <html lang="en">
     <head>
-  	<title>Kerry's K9's - Gallery Panel</title>
+  	<title>Kerry's K9's - Bookings Panel</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
@@ -95,35 +95,32 @@ else
         <hr class="bg-dark mb-4 w-25">
 <?php
         echo "
-        <a href='index' class='btn btn-primary'>Back</a><br>
-       <div class='col-md-3'>
-    <a href='list-images' style='color: white' title='Click here to modify submitted images'>
+        
+    <div class='container'>
+    <center><a href='index' class='btn btn-primary'>Back</a></center>
+    <div class='row'>
+    
+    <div class='col-md-3'>
+    <a href='list-images' style='color: white' title='Click here to set your schedule'>
+      <div class='card-counter primary'>
+        <i class='fa fa-picture-o'></i>
+      
+        <span class='count-name'>Image Submissions</span>
+      </div>
+    </a>
+      </div>
+
+    <div class='col-md-3'>
+    <a href='list-image-reports' style='color: white' title='Click here to view pending bookings'>
       <div class='card-counter info'>
-        <i class='fa fa-book'></i>
-        <span class='count-name'>Manage Image Submissions</span>
+        <i class='fa fa-gavel'></i>
+        <span class='count-name'>Image Reports</span>
       </div>
       </a>
-      
-      </div>
-
-      <div class='col-md-3'>
-      <a href='list-image-reports' style='color: white' title='Click here to view image reports'>
-        <div class='card-counter info'>
-          <i class='fa fa-book'></i>
-          <span class='count-name'>Image Reports</span>
-        </div>
-        </a>
-        
-        </div>
-        
-      
-      </div>
-
- 
-
+    </div>
+  </div>
+</div>
     ";
-
-  
     	?>
       
     </div>
