@@ -97,7 +97,7 @@ else
         echo "
         
     <div class='container'>
-    <a href='index' class='btn btn-primary'>Back</a>
+    <center><a href='index' class='btn btn-primary'>Back</a></center>
     <div class='row'>
     
     <div class='col-md-3'>
