@@ -125,9 +125,14 @@ $findcurrentbookings = mysqli_query($conn, "SELECT * FROM `bookings` WHERE `user
               <option value="Threat to Site">Threat to Site</option>
               <option value="Identity Theft">Identity Theft</option>
               <option value="Contains inappropriate language">Contains inappropriate language</option>
-              <option value="Other">Other</option>
+              <option id="other" value="other">Other</option>
             </select>
           </div>
+          <div id="othergroup" class="form-group" style="display: none;">
+            <label for="message-text" class="col-form-label">Other Reason Option</label>
+            <input type="text" name="otheroption" id="otheroption" class="form-control">
+          </div>
+
           <div class="form-group">
             <label for="message-text" class="col-form-label">Report Information</label>
             <textarea type="text" class="form-control" name="reportinformation" id="image-description" placeholder="E.g. More information..." required></textarea>
@@ -158,6 +163,23 @@ $findcurrentbookings = mysqli_query($conn, "SELECT * FROM `bookings` WHERE `user
 
       });
     });
+
+    $(document).ready(function() {
+    $('#select').change(function() {
+        if (this.value == 'other') {
+            $('#othergroup').css('display', '');
+            $('#otheroption').val('');
+            $('#otheroption').prop('disabled', false);
+        }
+        else
+        {
+            $('#othergroup').css('display', 'none');
+            $('#otheroption').val('');
+            $('#otheroption').prop('disabled', true);
+        }
+    });
+});
+
   </script>
 
 
