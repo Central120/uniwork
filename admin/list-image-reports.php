@@ -84,6 +84,16 @@ $findreports = mysqli_query($conn, "SELECT * FROM `image_report`");
         $imagetimestamp = $resultimagerow['timestamp'];
         $imageapprover['approver'];
 
+
+        if($p_location == 'none')
+        {
+          $pLocation = "Image no longer exists";
+        }
+        else
+        {
+          $pLocation = "<a href='../$p_location target='_blank'>View Image</a>";
+        }
+
         if($reportstatus == 'open')
         {
           $statusofreport = "Open";
@@ -109,7 +119,7 @@ $findreports = mysqli_query($conn, "SELECT * FROM `image_report`");
         <td>$reportinformation</td>
         <td>$other</td>
         <td>$outcomeofreport</td>
-        <td><a href='../$p_location' target='_blank'>View Image</a></td>
+        <td>$pLocation</td>
         <td>$statusofreport</td>
         
         
