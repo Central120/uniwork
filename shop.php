@@ -33,6 +33,7 @@ else
   </head>
   <body>
   <?php include "inc/header.php"; ?>
+  <center> 
   <div class="container-fluid" style='min-height:40vh'>
   <h2 class="mb-4">Welcome to Kerry's K9's shop!</h2>
   <h5>Filters</h5>
@@ -61,7 +62,7 @@ else
   </div>
   <div id = "filtershow">
   <div class="container-fluid">
-  <div class="row">
+  <div class="row" style = "margin-left:10%">
   <?php 
 $sql = mysqli_query($conn, "SELECT * FROM products");
 
