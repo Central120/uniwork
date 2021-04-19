@@ -36,7 +36,7 @@ $findoncoming = mysqli_query($conn, "SELECT * FROM `bookings` WHERE `approver` !
 <body>
     <?php include "inc/header.php"; ?>
   
-        <center>
+        <center><br>
         <a href='bookings' class='btn btn-primary'>Back</a><br>
     <h2 class="mb-42">My Bookings</h2>
     <div id="server-results"></div>

@@ -41,7 +41,7 @@ else
 <body>
     <?php include "inc/header.php"; ?>
     
-        <center>
+        <center><br>
         <a href='bookings' class='btn btn-primary'>Back</a><br>
        <h2 class="mb-42">Past Bookings</h2>
             <div class="container">
