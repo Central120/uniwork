@@ -30,7 +30,7 @@ else {
 
 $findcat = mysqli_query($conn, $cat);
 echo "<div class='container-fluid'>
-<div class='row'>";
+<div class='row' style = 'margin-left:10%'>";
 while ($rowcat = $findcat->fetch_assoc())
 {
     $itemID = $rowcat['id'];
@@ -95,7 +95,7 @@ for($i=0;$i<=$stock;$i++)
 
 
 
-echo "</select><p><input type='submit' $disabled class='btn btn-success' value='Add to cart'></p>$stockmsg</form>
+echo "</select><br><p><input type='submit' $disabled class='btn btn-success' value='Add to cart'></p>$stockmsg</form>
 </div></div></div>";
 
 }

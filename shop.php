@@ -131,7 +131,7 @@ $disabled = "";
 
 
 
-echo "</select><p><input type='submit' $disabled class='btn btn-success' value='Add to cart'></p>$stockmsg</form>
+echo "</select><br><p><input type='submit' $disabled class='btn btn-success' value='Add to cart'></p>$stockmsg</form>
 </div></div></div>";
 
   }
