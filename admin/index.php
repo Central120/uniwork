@@ -266,19 +266,7 @@ $rowcountbookings = mysqli_fetch_array($resultcountbookings);
       </div>
       </a>
     </div>
-
-    <div class='col-md-3'>
-    <a href='list-image-reports' style='color: white' title='Click here to view Image Reports'>
-      <div class='card-counter news'>
-        <i class='fa fa-newspaper-o'></i>
-        <span class='count-numbers'>{$rowcountimagereports['totalimagereports']}</span>
-        <span class='count-name'>{$imgreporttxt}</span>
-    
-      </div>
-      </a>
     </div>
-
-  </div>
 </div>
     ";
     	?>
