@@ -47,7 +47,7 @@ $findreports = mysqli_query($conn, "SELECT * FROM `image_report`");
                     <thead>
                         <tr>
                             <th scope="col">Reporter</th>
-                            <th scope="col">Reported by</th>
+                            <th scope="col">Reported</th>
                             <th scope="col">Reason Option</th>
                             <th scope="col">Reason Information</th>
                             <th scope="col">Other</th>
