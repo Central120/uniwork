@@ -91,51 +91,31 @@ else
   <body>
   <?php include "inc/header.php"; ?> 
 <div class="container container mt-4 mb-5">
-        <h3 class="display-4 text-center">Bookings Panel</h3>
+        <h3 class="display-4 text-center">Gallery Panel</h3>
         <hr class="bg-dark mb-4 w-25">
 <?php
         echo "
     <div class='container'>
     <div class='row'>
+    <a href='index' class='btn btn-primary'>Back</a>
     <div class='col-md-3'>
-    <a href='set-schedule' style='color: white' title='Click here to set your schedule'>
+    <a href='list-images' style='color: white' title='Click here to set your schedule'>
       <div class='card-counter primary'>
-        <i class='fa fa-calendar-o'></i>
+        <i class='fa fa-picture-o'></i>
       
-        <span class='count-name'>Set Schedule</span>
+        <span class='count-name'>Image Submissions</span>
       </div>
     </a>
       </div>
 
     <div class='col-md-3'>
-    <a href='pending-bookings' style='color: white' title='Click here to view pending bookings'>
+    <a href='list-image-reports' style='color: white' title='Click here to view pending bookings'>
       <div class='card-counter info'>
-        <i class='fa fa-book'></i>
-        <span class='count-name'>Pending Bookings</span>
+        <i class='fa fa-gavel'></i>
+        <span class='count-name'>Image Reports</span>
       </div>
       </a>
     </div>
-
-    <div class='col-md-3'>
-    <a href='oncoming-bookings' style='color: white' title='Click here to view oncoming bookings'>
-      <div class='card-counter success'>
-        <i class='fa fa-check'></i>
-        <span class='count-name'>Oncoming Bookings</span>
-      </div>
-      </a>
-    </div>
-
-    <div class='col-md-3'>
-    <a href='past-bookings' style='color: white' title='Click here to view past bookings'>
-      <div class='card-counter danger'>
-        <i class='fa fa-lock'></i>
-        <span class='count-name'>Past Bookings</span>
-
-    
-      </div>
-      </a>
-    </div>
-
   </div>
 </div>
     ";
