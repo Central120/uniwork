@@ -95,6 +95,7 @@ else
         <hr class="bg-dark mb-4 w-25">
 <?php
         echo "
+        <a href='index' class='btn btn-primary'>Back</a><br>
     <div class='container'>
     <div class='row'>
     <div class='col-md-3'>
