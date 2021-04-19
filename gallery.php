@@ -165,8 +165,8 @@ $findcurrentbookings = mysqli_query($conn, "SELECT * FROM `bookings` WHERE `user
     });
 
     $(document).ready(function() {
-    $('#selectoption').change(function() {
-        if (this.value == 'other') {
+    $('#selectoption other').change(function() {
+      if (this.selected) {
             $('#othergroup').css('display', '');
             $('#otheroption').val('');
             $('#otheroption').prop('disabled', false);
