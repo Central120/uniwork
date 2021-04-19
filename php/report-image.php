@@ -17,8 +17,15 @@ $reporter = mysqli_real_escape_string($conn, $_POST['reporter']);
 $reporting = mysqli_real_escape_string($conn, $_POST['reporting']);
 $reportoption = mysqli_real_escape_string($conn, $_POST['reportoption']);
 $reportinformation = mysqli_real_escape_string($conn, $_POST['reportinformation']);
+$other = mysqli_real_escape_string($conn, $_POST['otheroption']);
 
-$reportsql = "INSERT INTO image_report VALUES(DEFAULT, '$reporter', '$reporting', '$reportoption', '$reportinformation', 'pending', 'open', '$imageid')";
+if(!$other)
+{
+    $other = "N/A";
+}
+
+
+$reportsql = "INSERT INTO image_report VALUES(DEFAULT, '$reporter', '$reporting', '$reportoption', '$reportinformation', '$other', 'pending', 'open', '$imageid')";
 
 if(mysqli_query($conn,$reportsql))
 {
