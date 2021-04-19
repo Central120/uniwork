@@ -169,12 +169,14 @@ $findcurrentbookings = mysqli_query($conn, "SELECT * FROM `bookings` WHERE `user
             $('#othergroup').css('display', '');
             $('#otheroption').val('');
             $('#otheroption').prop('disabled', false);
+            console.log('working');
         }
         else
         {
             $('#othergroup').css('display', 'none');
             $('#otheroption').val('');
             $('#otheroption').prop('disabled', true);
+            console.log('its not working');
         }
 });
 
