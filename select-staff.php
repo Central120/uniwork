@@ -100,8 +100,8 @@ if ($countfindstaff != 0)
 
     $strstart = ucwords($start);
     $strend = ucwords($end);
-    $strst = date("h A", $st);
-    $stret = date("h A", $et);
+    $strst = date("g A", $st);
+    $stret = date("g A", $et);
 
     echo "<p style='display:list-item'>$username2's availability: $strstart - $strend, $strst - $stret</p>";
   }
