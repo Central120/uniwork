@@ -102,7 +102,7 @@ else
         <span class='count-name'>Manage Image Submissions</span>
       </div>
       </a>
-    </div>
+    
 
  
 
@@ -118,6 +118,7 @@ else
    </a>
  </div>
 
+</div>
 </div>
 </div>
 
