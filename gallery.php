@@ -164,15 +164,21 @@ $findcurrentbookings = mysqli_query($conn, "SELECT * FROM `bookings` WHERE `user
       });
     });
 
-    $("#selectoption").change( function() {
-        var selectedValue = $(this).val();
-        var nextButton = $(this).next('#othergroup');
-
-        if (selectedValue == "other") {
-            nextButton.show();
-        } else {
-            nextButton.hide();
+    $(document).ready(function() {
+    $('#selectoption').change(function() {
+      if ($('#selectoption').val() == 'other') {
+            $('#othergroup').css('display', '');
+            $('#otheroption').val('');
+            $('#otheroption').prop('disabled', false);
         }
+        else
+        {
+            $('#othergroup').css('display', 'none');
+            $('#otheroption').val('');
+            $('#otheroption').prop('disabled', true);
+        }
+    });
+});
 
   </script>
 
