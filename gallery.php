@@ -148,24 +148,7 @@ $findcurrentbookings = mysqli_query($conn, "SELECT * FROM `bookings` WHERE `user
     </div>
   </div>
 </div>
-<script type='text/javascript'>
-    $(document).ready(function() {
-      if ($('#selectoption').val() == 'other') {
-            $('#othergroup').css('display', '');
-            $('#otheroption').val('');
-            $('#otheroption').prop('disabled', false);
-            console.log('working');
-        }
-        else
-        {
-            $('#othergroup').css('display', 'none');
-            $('#otheroption').val('');
-            $('#otheroption').prop('disabled', true);
-            console.log('its not working');
-        }
-});
 
-  </script>
 
 
       <?php
@@ -219,8 +202,27 @@ $findcurrentbookings = mysqli_query($conn, "SELECT * FROM `bookings` WHERE `user
 
   <?php include "inc/footer.php"; ?>
 </body>
-<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 
+
+<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+<script type='text/javascript'>
+    $(document).ready(function() {
+      if ($('#selectoption').val() == 'other') {
+            $('#othergroup').css('display', '');
+            $('#otheroption').val('');
+            $('#otheroption').prop('disabled', false);
+            console.log('working');
+        }
+        else
+        {
+            $('#othergroup').css('display', 'none');
+            $('#otheroption').val('');
+            $('#otheroption').prop('disabled', true);
+            console.log('its not working');
+        }
+});
+
+  </script>
 <script type="text/javascript">
 const myCarousel = document.querySelector('#myCarousel')
 const carousel = new mdb.Carousel(myCarousel)
