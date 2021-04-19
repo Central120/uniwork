@@ -95,13 +95,10 @@ else
         <hr class="bg-dark mb-4 w-25">
 <?php
         echo "
-        
     <div class='container'>
-    
     <div class='row'>
-    
-    <div class='col-md-3'>
     <a href='index' class='btn btn-primary'>Back</a>
+    <div class='col-md-3'>
     <a href='list-images' style='color: white' title='Click here to set your schedule'>
       <div class='card-counter primary'>
         <i class='fa fa-picture-o'></i>
