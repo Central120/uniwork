@@ -33,17 +33,18 @@ else
   </head>
   <body>
   <?php include "inc/header.php"; ?>
+  <center> 
   <div class="container-fluid" style='min-height:40vh'>
   <h2 class="mb-4">Welcome to Kerry's K9's shop!</h2>
   <h5>Filters</h5>
-  <div class = 'btn-group' role = 'group'>
+  <div class = 'btn-group' role = 'group' style = "margin-bottom:5px">
   <form action='filters.php' method='post' class='filterfrm'>
     <input type='hidden' value='all' name='category'>
-    <input type='submit' value='all' class='btn btn-success'>
+    <input type='submit' value='all' class='btn btn-success' style = "margin-right:5px">
     </form>
     <form action='filters.php' method='post' class='filterfrm'>
     <input type='hidden' value='discount' name='category'>
-    <input type='submit' value='discount' class='btn btn-success'>
+    <input type='submit' value='discount' class='btn btn-success' style = "margin-right:5px">
     </form>
   <?php
   // find categories
@@ -54,14 +55,14 @@ else
     $cat = $rowcategories['category'];
     echo "<form action='filters.php' method='post' class='filterfrm'>
     <input type='hidden' value='$cat' name='category'>
-    <input type='submit' value='$cat' class='btn btn-success'>
+    <input type='submit' value='$cat' class='btn btn-success' style ='margin-right:5px'>
     </form>";
   }
   ?>
   </div>
   <div id = "filtershow">
   <div class="container-fluid">
-  <div class="row">
+  <div class="row" style = "margin-left:10%">
   <?php 
 $sql = mysqli_query($conn, "SELECT * FROM products");
 
