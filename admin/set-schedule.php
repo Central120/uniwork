@@ -44,6 +44,7 @@ else
     <div class="d-flex justify-content-center">
         <center>
         <br><div id="server-results"></div>
+        <a href='bookings' class='btn btn-primary'>Back</a><br>
     <h2 class="mb-42">Update your schedule</h2>
   <div class="form-row">
     <div class="form-group col-md-6">
