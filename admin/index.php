@@ -235,7 +235,7 @@ $rowcountbookings = mysqli_fetch_array($resultcountbookings);
     </div>
 
     <div class='col-md-3'>
-    <a href='list-images' style='color: white' title='Click here to view Photo Options'>
+    <a href='gallery' style='color: white' title='Click here to view Photo Options'>
       <div class='card-counter photos'>
         <i class='fa fa-picture-o'></i>
         <span class='count-numbers'>{$rowcountphotos['totalphotos']}</span>
