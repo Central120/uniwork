@@ -166,6 +166,7 @@ CREATE TABLE `image_report` (
   `reported` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `reason_title` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `reason_description` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `other` text COLLATE utf8mb4_unicode_ci NULL,
   `outcome` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `status` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `imageid` int(11) NOT NULL
