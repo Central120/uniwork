@@ -130,7 +130,7 @@ $findcurrentbookings = mysqli_query($conn, "SELECT * FROM `bookings` WHERE `user
           </div>
           <div id="othergroup" class="form-group" style="display: none;">
             <label for="message-text" class="col-form-label">Other Reason Option</label>
-            <input type="text" name="otheroption" id="otheroption" class="form-control">
+            <input type="text" name="otheroption" id="otheroption" class="form-control" placeholder="Other Reason Option">
           </div>
 
           <div class="form-group">
