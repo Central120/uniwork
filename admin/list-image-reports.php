@@ -85,7 +85,7 @@ $findreports = mysqli_query($conn, "SELECT * FROM `image_report`");
         $imageapprover['approver'];
 
 
-        if($p_location == 'none')
+        if($imageid == '0')
         {
           $pLocation = "Image no longer exists";
         }
