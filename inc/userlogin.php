@@ -27,7 +27,7 @@ if ($countfindaccount != 0)
     {
         $_SESSION['user'] = $username; 
        
-        echo '<meta http-equiv="refresh" content="3; url=../login" />';
+        echo '<meta http-equiv="refresh" content="3; url=../index" />';
  echo "<div class='alert alert-success' role='alert'>Logged in successfully, redirecting you in 3 seconds.</div>";
 
     }
@@ -35,7 +35,7 @@ if ($countfindaccount != 0)
     {
         $_SESSION['admin'] = $username; 
         
-        echo '<meta http-equiv="refresh" content="3; url=../login" />';
+        echo '<meta http-equiv="refresh" content="3; url=../index" />';
  echo "<div class='alert alert-success' role='alert'>Logged in successfully, redirecting you in 3 seconds.</div>";
     }
     else
