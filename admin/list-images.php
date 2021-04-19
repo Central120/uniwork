@@ -71,6 +71,15 @@ $findimages = mysqli_query($conn, "SELECT * FROM `photo_sharing` WHERE `approver
         $caption = $rowimages['caption'];
         $imageTimestamp = $rowimages['timestamp'];
         $approver = $rowimages['approver'];
+        
+        if($p_location == 'none')
+        {
+          $pLocation = "Image no longer exists";
+        }
+        else
+        {
+          $pLocation = "<a href='../$p_location target='_blank'>View Image</a>";
+        }
       
         if($approver == "pending")
         {
@@ -87,7 +96,7 @@ $findimages = mysqli_query($conn, "SELECT * FROM `photo_sharing` WHERE `approver
 
         echo "<tr>
         <td>$imageUsername</td>
-        <td><a href='../$p_location' target='_blank'>View Image</a></td>
+        <td>$pLocation</td>
         <td>$title</b></td>
         <td>$caption</td>
         <td>$imageTimestamp</td>
