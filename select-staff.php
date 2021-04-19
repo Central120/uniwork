@@ -83,7 +83,8 @@ $countfindstaff = mysqli_num_rows($findstaff2);
       ?>
     </div>
   </div></form>
-<?php 
+  <h5>Staff Availability:</h5>
+  <?php 
 if ($countfindstaff != 0)
 {
   while ($rowfindstaff2 = $findstaff2->fetch_assoc())
@@ -100,7 +101,7 @@ if ($countfindstaff != 0)
     $strst = date("h A", $st);
     $stret = date("h A", $et);
 
-    echo "<p style='display:list-item'>$username2 availability: $start - $end, $strst - $stret</p>";
+    echo "<p style='display:list-item'>$username2's availability: $start - $end, $strst - $stret</p>";
   }
 }
 ?>
