@@ -86,7 +86,7 @@ $findcurrentbookings = mysqli_query($conn, "SELECT * FROM `bookings` WHERE `user
             ?>
             </div>
             <div style="float: right; display: inline-block; margin-left: 5px;">
-            <a href='#' type='button' data-toggle='modal' id='cancel_btn' data-target='<?php echo "#manage{$imageid}";?>' class='btn btn-primary'/ title='Report <?php echo $author, 's image';?>'><i class="fa fa-gavel"></i></a> 
+           <?php if($session_usern){?> <a href='#' type='button' data-toggle='modal' id='cancel_btn' data-target='<?php echo "#manage{$imageid}";?>' class='btn btn-primary'/ title='Report <?php echo $author, 's image';?>'><i class="fa fa-gavel"></i></a> <?php } ?>
             </div>
             <p class="small text-white mb-0"><?php echo $caption; ?></p>
             <div class="d-flex align-items-center justify-content-between rounded-pill bg-light px-3 py-2 mt-4">
