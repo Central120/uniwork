@@ -88,7 +88,7 @@ if ($countfindstaff != 0)
 {
   while ($rowfindstaff2 = $findstaff2->fetch_assoc())
   {
-    $username2 = $rowfindstaff2['username'];
+    $username2 = $rowfindstaff2['staff_name'];
     $start = $rowfindstaff2['first_date'];
     $end = $rowfindstaff2['last_date'];
     $start_t = $rowfindstaff2['start_time'];
