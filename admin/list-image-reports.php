@@ -50,6 +50,7 @@ $findreports = mysqli_query($conn, "SELECT * FROM `image_report`");
                             <th scope="col">Reported by</th>
                             <th scope="col">Reason Option</th>
                             <th scope="col">Reason Information</th>
+                            <th scope="col">Other</th>
                             <th scope="col">Outcome on Report</th>
                             <th scope="col">Report Status</th>
                             <th scope="col">View Image</th>
@@ -69,6 +70,7 @@ $findreports = mysqli_query($conn, "SELECT * FROM `image_report`");
         $reportoutcome = $reportrow['outcome'];
         $reportstatus = $reportrow['status'];
         $imageid = $reportrow['imageid'];
+        $other = $reportrow['other'];
       
         // collecting image information
         $findimage = "SELECT * FROM photo_sharing WHERE id='$imageid'";
@@ -105,6 +107,7 @@ $findreports = mysqli_query($conn, "SELECT * FROM `image_report`");
         <td>$reporting</b></td>
         <td>$reportoption</td>
         <td>$reportinformation</td>
+        <td>$other</td>
         <td>$outcomeofreport</td>
         <td><a href='../$p_location' target='_blank'>View Image</a></td>
         <td>$statusofreport</td>
