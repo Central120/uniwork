@@ -47,7 +47,7 @@ $findcurrentbookings = mysqli_query($conn, "SELECT * FROM `bookings` WHERE `user
     {
       ?>
     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">Upload yours!</button>
-    <?
+    <?php
     }
     ?>
     </center>
