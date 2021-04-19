@@ -149,21 +149,6 @@ $findcurrentbookings = mysqli_query($conn, "SELECT * FROM `bookings` WHERE `user
   </div>
 </div>
 <script type='text/javascript'>
-    $('#FormReport<?php echo "(" . $imageid . ")"; ?>').submit(function(event) {
-      event.preventDefault(); //prevent default action
-      var post_url = $(this).attr('action'); //get form action url
-      var form_data = $(this).serialize(); //Encode form elements for submission
-
-      $.ajax({
-        url: post_url,
-        type: 'post',
-        data: form_data
-      }).done(function(response) { //
-        $('#report-results').html(response);
-
-      });
-    });
-
     $(document).ready(function() {
       if ($('#selectoption').val() == 'other') {
             $('#othergroup').css('display', '');
