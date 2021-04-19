@@ -96,7 +96,7 @@ else
 <?php
         echo "
        <div class='col-md-3'>
-    <a href='manage-image-submissions' style='color: white' title='Click here to modify products'>
+    <a href='list-images' style='color: white' title='Click here to modify products'>
       <div class='card-counter info'>
         <i class='fa fa-book'></i>
         <span class='count-name'>Manage Image Submissions</span>
@@ -108,6 +108,21 @@ else
 </div>
 
     ";
+
+    echo "
+    <div class='col-md-3'>
+ <a href='list-image-reports' style='color: white' title='Click here to modify products'>
+   <div class='card-counter danger'>
+     <i class='fa fa-gavel'></i>
+     <span class='count-name'>Image Reports</span>
+   </div>
+   </a>
+ </div>
+
+</div>
+</div>
+
+ ";
     	?>
       
     </div>
