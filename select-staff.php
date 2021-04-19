@@ -19,8 +19,8 @@ else
 
 
 $findstaff = mysqli_query($conn, "SELECT * FROM `accounts` WHERE `admin_id` = '2'");
-
-
+$findstaff2 = mysqli_query($conn, "SELECT * FROM `staff_availability`");
+$countfindstaff = mysqli_num_rows($findstaff2);
 ?>
 <!doctype html>
 <html lang="en">
@@ -83,6 +83,27 @@ $findstaff = mysqli_query($conn, "SELECT * FROM `accounts` WHERE `admin_id` = '2
       ?>
     </div>
   </div></form>
+<?php 
+if ($countfindstaff != 0)
+{
+  while ($rowfindstaff2 = $findstaff2->fetch_assoc())
+  {
+    $username2 = $rowfindstaff2['username'];
+    $start = $rowfindstaff2['first_date'];
+    $end = $rowfindstaff2['last_date'];
+    $start_t = $rowfindstaff2['start_time'];
+    $end_t = $rowfindstaff2['end_time'];
+
+    $st = strtotime($start_t);
+    $et = strtotime($end_t);
+
+    $strst = date("h A", $st);
+    $stret = date("h A", $et);
+
+    echo "<p style='display:list-item'>$username availability: $start - $end, $strst - $stret</p>";
+  }
+}
+?>
   </div>
   </div>
   
