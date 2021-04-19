@@ -28,13 +28,9 @@ else if($handleoption == "delete")
     $reportsql1 = mysqli_query($conn, "UPDATE image_report SET outcome='Closed and deleted image', status='closed' WHERE id='$reportid'");
     $updateimagesql = mysqli_query($conn, "UPDATE image_report SET imageid='0' WHERE id='$reportid'");
     $imagesql = mysqli_query($conn, "DELETE FROM photo_sharing WHERE id='$imageid'");
-    echo "<div class='alert alert-success alert-dismissable fade show' role='alert'><strong>Closed & Deleted!</strong> The report has been closed with the action of deleting the image! <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
-    <span aria-hidden='true'>&times;</span>
-    </button></div>"; 
+    echo "<script>window.location.replace(../list-image-reports);</script>"; 
 }
 else
 {
-    echo "<div class='alert alert-danger alert-dismissable fade show' role='alert'><strong>Uhh oh!</strong> Our moderation team will review the report and take the appropriate action. Thank you for the report! <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
-    <span aria-hidden='true'>&times;</span>
-    </button></div>";
+    echo "<script>window.location.replace(../list-image-reports);</script>"; 
 }
