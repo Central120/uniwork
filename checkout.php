@@ -56,7 +56,7 @@ $total1 = $total1 + $total;
   <br>
   <h2 class="mb-4">Item(s) in your cart are:</h2><br>
   <?php
-$sqlfindcart1 = "SELECT cart.price, cart.quantity, cart.product, products.Image FROM `cart` LEFT JOIN `products` ON cart.product = products.product_name WHERE `username` = '$session_usern'";
+$sqlfindcart1 = "SELECT cart.price, cart.quantity, cart.product, products.Image FROM `cart` LEFT JOIN `products` ON cart.product = products.product_name WHERE `username` = '$session_usern' AND `checkout` = 'no'";
 $findcart1 = mysqli_query($conn, $sqlfindcart1);
 $countfindcart1 = mysqli_num_rows($findcart1);
 if($countfindcart1 !=0){
