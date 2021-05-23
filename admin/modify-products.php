@@ -62,7 +62,7 @@ $findproducts = mysqli_query($conn, $sqlfindproducts);
         $product = $rowfindproducts['product_name'];
         $category = $rowfindproducts['category'];
         $price = $rowfindproducts['price'];
-        $discount = $rowfindproducts['discount'%];
+        $discount = $rowfindproducts['discount'];
         
         if($discount == "0"){
             $discountmsg = "$product currently has no discount applied";
