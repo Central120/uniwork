@@ -20,7 +20,7 @@ else
 ?>
 
 <!doctype html>
-<html lang="en">
+<html lang="en">1
   <head>
   	<title>Kerry's K9's - Cart</title>
     <meta charset="utf-8">
